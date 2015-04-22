@@ -15,6 +15,12 @@
 		AA1826DA1AE7231B00A5E609 /* GiveUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1826D91AE7231B00A5E609 /* GiveUpViewController.swift */; };
 		AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */; };
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
+		AABE96AD1AE8390D00CF70C6 /* app-icon-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE96A71AE8390D00CF70C6 /* app-icon-32.png */; };
+		AABE96AE1AE8390D00CF70C6 /* app-icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE96A81AE8390D00CF70C6 /* app-icon-58.png */; };
+		AABE96AF1AE8390D00CF70C6 /* app-icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE96A91AE8390D00CF70C6 /* app-icon-80.png */; };
+		AABE96B01AE8390D00CF70C6 /* app-icon-87.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE96AA1AE8390D00CF70C6 /* app-icon-87.png */; };
+		AABE96B11AE8390D00CF70C6 /* app-icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE96AB1AE8390D00CF70C6 /* app-icon-120.png */; };
+		AABE96B21AE8390D00CF70C6 /* app-icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE96AC1AE8390D00CF70C6 /* app-icon-180.png */; };
 		AAD9F3471AE0A73900EAFA01 /* grey_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD9F3461AE0A73900EAFA01 /* grey_background.png */; };
 		AAE52B711AE2EC3200FFB13D /* logo-left.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B6F1AE2EC3200FFB13D /* logo-left.png */; };
 		AAE52B721AE2EC3200FFB13D /* logo-right.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B701AE2EC3200FFB13D /* logo-right.png */; };
@@ -141,6 +147,12 @@
 		AA1826D91AE7231B00A5E609 /* GiveUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiveUpViewController.swift; path = Controllers/GiveUpViewController.swift; sourceTree = "<group>"; };
 		AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleFailedViewController.swift; path = Controllers/PuzzleFailedViewController.swift; sourceTree = "<group>"; };
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
+		AABE96A71AE8390D00CF70C6 /* app-icon-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-32.png"; path = "images/app-icon-32.png"; sourceTree = "<group>"; };
+		AABE96A81AE8390D00CF70C6 /* app-icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-58.png"; path = "images/app-icon-58.png"; sourceTree = "<group>"; };
+		AABE96A91AE8390D00CF70C6 /* app-icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-80.png"; path = "images/app-icon-80.png"; sourceTree = "<group>"; };
+		AABE96AA1AE8390D00CF70C6 /* app-icon-87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-87.png"; path = "images/app-icon-87.png"; sourceTree = "<group>"; };
+		AABE96AB1AE8390D00CF70C6 /* app-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-120.png"; path = "images/app-icon-120.png"; sourceTree = "<group>"; };
+		AABE96AC1AE8390D00CF70C6 /* app-icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-180.png"; path = "images/app-icon-180.png"; sourceTree = "<group>"; };
 		AAD9F3461AE0A73900EAFA01 /* grey_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grey_background.png; path = images/grey_background.png; sourceTree = "<group>"; };
 		AAE52B6F1AE2EC3200FFB13D /* logo-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-left.png"; path = "images/logo-left.png"; sourceTree = "<group>"; };
 		AAE52B701AE2EC3200FFB13D /* logo-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-right.png"; path = "images/logo-right.png"; sourceTree = "<group>"; };
@@ -372,6 +384,12 @@
 		AAFB401D1ADEE9F500F44C8F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AABE96A71AE8390D00CF70C6 /* app-icon-32.png */,
+				AABE96A81AE8390D00CF70C6 /* app-icon-58.png */,
+				AABE96A91AE8390D00CF70C6 /* app-icon-80.png */,
+				AABE96AA1AE8390D00CF70C6 /* app-icon-87.png */,
+				AABE96AB1AE8390D00CF70C6 /* app-icon-120.png */,
+				AABE96AC1AE8390D00CF70C6 /* app-icon-180.png */,
 				AA70D4931AE8213900433140 /* logo-no-text.png */,
 				AA1826CB1AE7220F00A5E609 /* overlay-mask.png */,
 				AAE52B751AE2F84300FFB13D /* star-group-1.png */,
@@ -608,11 +626,13 @@
 				AAFB408A1ADEF6A100F44C8F /* Gotham-Thin.otf in Resources */,
 				AAFB40821ADEF6A100F44C8F /* Gotham-BoldIta.otf in Resources */,
 				AAFB40B81ADEF71500F44C8F /* smallstar-white.png in Resources */,
+				AABE96B21AE8390D00CF70C6 /* app-icon-180.png in Resources */,
 				AAFB407A1ADEF6A100F44C8F /* GothaBoo in Resources */,
 				AAFC6F491AE08C6A0032A98C /* small_star_bestof_x5.png in Resources */,
 				AAFB40391ADEEA3400F44C8F /* keywords.txt in Resources */,
 				AAFB408F1ADEF6A100F44C8F /* Gotham-XLightIta.otf in Resources */,
 				AAFB40A91ADEF6AD00F44C8F /* Gobold Hollow Bold.ttf in Resources */,
+				AABE96B01AE8390D00CF70C6 /* app-icon-87.png in Resources */,
 				AAFC6F471AE08C6A0032A98C /* small_star_bestof_x3.png in Resources */,
 				AAFC6F3F1AE08C6A0032A98C /* homeicon.png in Resources */,
 				AAFC6F441AE08C6A0032A98C /* play_challenge.png in Resources */,
@@ -625,6 +645,7 @@
 				AA1826D21AE722D900A5E609 /* Main.storyboard in Resources */,
 				AAFB40921ADEF6A100F44C8F /* GothaThi in Resources */,
 				AAFC6F421AE08C6A0032A98C /* newchallenge_button.png in Resources */,
+				AABE96AE1AE8390D00CF70C6 /* app-icon-58.png in Resources */,
 				AAFC6F431AE08C6A0032A98C /* play_1-1.png in Resources */,
 				AAFB40801ADEF6A100F44C8F /* Gotham-Bold in Resources */,
 				AAFB40861ADEF6A100F44C8F /* Gotham-LightIta.otf in Resources */,
@@ -650,6 +671,7 @@
 				AAFB40271ADEEA0500F44C8F /* lightbulb-0.png in Resources */,
 				AAFB403A1ADEEA3400F44C8F /* keywords.xml in Resources */,
 				AAFC6F3E1AE08C6A0032A98C /* group_icon.png in Resources */,
+				AABE96AD1AE8390D00CF70C6 /* app-icon-32.png in Resources */,
 				AAFB40911ADEF6A100F44C8F /* GothaMedIta in Resources */,
 				AAFC6F2D1AE08B6B0032A98C /* container-white.png in Resources */,
 				AAFB40841ADEF6A100F44C8F /* Gotham-BookIta.otf in Resources */,
@@ -682,6 +704,8 @@
 				AAFB40371ADEEA3400F44C8F /* combinations.txt in Resources */,
 				AAFB408B1ADEF6A100F44C8F /* Gotham-ThinIta.otf in Resources */,
 				AA1826D01AE722D900A5E609 /* Game.storyboard in Resources */,
+				AABE96B11AE8390D00CF70C6 /* app-icon-120.png in Resources */,
+				AABE96AF1AE8390D00CF70C6 /* app-icon-80.png in Resources */,
 				AAFB40961ADEF6A100F44C8F /* GothaXLig in Resources */,
 				AAFB40291ADEEA0500F44C8F /* lightbulb-2.png in Resources */,
 				AAE52B7C1AE2F84300FFB13D /* star-group-4.png in Resources */,
