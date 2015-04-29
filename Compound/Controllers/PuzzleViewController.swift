@@ -83,6 +83,14 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     /* Logic */
+    func getDateTimeNow() -> String {
+        let date = NSDate()
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd-hh-mm-ss-SSS"
+        let datetime = dateFormatter.stringFromDate(date)
+        return datetime
+    }
+    
     func handleTimer() {
         if puzzle.time > 1 {
             puzzle.time--
@@ -117,17 +125,19 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func startPuzzle() {
+        puzzle.startTime = getDateTimeNow()
         startTimer()
     }
     
     func stopPuzzle() {
         puzzle.ended = true
         stopTimer()
+        puzzle.endTime = getDateTimeNow()
+        puzzle.save()
         revealPuzzle()
     }
     
     func endPuzzle(status: Status) {
-        stopPuzzle()
         puzzle.status = status
         
         if puzzle.status == Status.Complete {
@@ -138,6 +148,8 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         } else if puzzle.status == Status.GaveUp {
             showPuzzleFailedView("GAVE UP!")
         }
+        
+        stopPuzzle()
     }
     
     func trySubmit() -> Bool {
@@ -146,6 +158,15 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     
     func useHint() {
         puzzle.useHint()
+        
+        if puzzle.hintsUsed == 1 && puzzle.hintTime1 == "" {
+            puzzle.hintTime1 = getDateTimeNow()
+        } else if puzzle.hintsUsed == 2 && puzzle.hintTime2 == "" {
+            puzzle.hintTime2 = getDateTimeNow()
+        } else if puzzle.hintsUsed == 3 && puzzle.hintTime3 == "" {
+            puzzle.hintTime3 = getDateTimeNow()
+        }
+        
         updateHintButton()
         updateStars()
         updateWordLabels()

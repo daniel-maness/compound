@@ -33,33 +33,67 @@ class PuzzleDA {
     
     func getAllCombinations(keyword: Word) -> [Combination] {
         let db = SQLiteDB.sharedInstance()
-        let data = db.query("SELECT * FROM viCombination c WHERE c.FirstId = " + String(keyword.Id) + " OR c.SecondId = " + String(keyword.Id))
+        let data = db.query("SELECT * FROM viCombination c WHERE c.FirstWordId = " + String(keyword.Id) + " OR c.SecondWordId = " + String(keyword.Id))
         var combinations = [Combination]()
         
         for row in data {
-            let wordPairId = row["WordPairId"]!.asInt()
-            let first = Word(id: row["FirstId"]!.asInt(), name: String(row["FirstName"]!.asString()).uppercaseString)
-            let second = Word(id: row["SecondId"]!.asInt(), name: String(row["SecondName"]!.asString()).uppercaseString)
-            combinations.append(Combination(wordPairId: wordPairId, keyword: keyword, leftWord: first, rightWord: second))
+            let combinationId = row["CombinationId"]!.asInt()
+            let first = Word(id: row["FirstWordId"]!.asInt(), name: String(row["FirstName"]!.asString()).uppercaseString)
+            let second = Word(id: row["SecondWordId"]!.asInt(), name: String(row["SecondName"]!.asString()).uppercaseString)
+            combinations.append(Combination(combinationId: combinationId, keyword: keyword, leftWord: first, rightWord: second))
         }
         
         return combinations
     }
     
-    func getPuzzle() -> Puzzle {
-        var puzzle = Puzzle()
+    func getNewPuzzle() -> Puzzle {
+        let db = SQLiteDB.sharedInstance()
+        let keywordIds = db.query("SELECT k.KeywordId FROM viKeyword k")
+        let keywordId = keywordIds[Int(arc4random_uniform(UInt32(keywordIds.count)))].data["KeywordId"]!.asString()
+        
+        var puzzleIds = db.query("SELECT DISTINCT p.PuzzleId FROM Puzzle p INNER JOIN UserPuzzle up ON up.PuzzleId != p.PuzzleId WHERE p.WordId = " + String(keywordId))
+        if puzzleIds.count == 0 {
+            puzzleIds = db.query("SELECT p.PuzzleId FROM Puzzle p WHERE p.WordId = " + String(keywordId))
+        }
+        
+        let puzzleId = puzzleIds[Int(arc4random_uniform(UInt32(puzzleIds.count)))].data["PuzzleId"]!.asInt()
+        let puzzle = getPuzzle(puzzleId)
         
         return puzzle
     }
     
     func getPuzzle(id: Int) -> Puzzle {
         var puzzle = Puzzle()
+        let db = SQLiteDB.sharedInstance()
+        let data = db.query("SELECT * FROM viPuzzle p WHERE p.PuzzleId = " + String(id) + " LIMIT 1")
+        let row = data[0]
+        
+        puzzle.puzzleId = id
+        puzzle.keyword = Word(id: row["KeywordId"]!.asInt(), name: row["KeywordName"]!.asString())
+        
+        let combination1 = Combination(combinationId: row["CombinationId1"]!.asInt(), keyword: puzzle.keyword, leftWord: Word(id: row["FirstWordId1"]!.asInt(), name: row["FirstName1"]!.asString()), rightWord: Word(id: row["SecondWordId1"]!.asInt(), name: row["SecondName1"]!.asString()))
+        let combination2 = Combination(combinationId: row["CombinationId2"]!.asInt(), keyword: puzzle.keyword, leftWord: Word(id: row["FirstWordId2"]!.asInt(), name: row["FirstName2"]!.asString()), rightWord: Word(id: row["SecondWordId2"]!.asInt(), name: row["SecondName2"]!.asString()))
+        let combination3 = Combination(combinationId: row["CombinationId3"]!.asInt(), keyword: puzzle.keyword, leftWord: Word(id: row["FirstWordId3"]!.asInt(), name: row["FirstName3"]!.asString()), rightWord: Word(id: row["SecondWordId3"]!.asInt(), name: row["SecondName3"]!.asString()))
+        
+        puzzle.combinations = [combination1, combination2, combination3]
         
         return puzzle
     }
     
     func savePuzzle(puzzle: Puzzle) {
-        
+        let db = SQLiteDB.sharedInstance()
+        let hintTime1 = puzzle.hintTime1 == "" ? "NULL" : "'" + puzzle.hintTime1 + "'"
+        let hintTime2 = puzzle.hintTime2 == "" ? "NULL" : "'" + puzzle.hintTime2 + "'"
+        let hintTime3 = puzzle.hintTime3 == "" ? "NULL" : "'" + puzzle.hintTime3 + "'"
+        db.execute("INSERT INTO UserPuzzle (UserId, PuzzleId, StatusId, StartTime, EndTime, HintTime1, HintTime2, HintTime3) VALUES(" +
+                    String(1) + ", " +
+                    String(puzzle.puzzleId) + ", " +
+                    String(puzzle.status.rawValue) + ", " +
+                    "'" + puzzle.startTime + "', " +
+                    "'" + puzzle.endTime + "', " +
+                    "" + hintTime1 + ", " +
+                    "" + hintTime2 + ", " +
+                    "" + hintTime3 + ")")
     }
     
     func deletePuzzle(id: Int) {
@@ -77,7 +111,7 @@ class PuzzleDA {
         }
     }
     
-    func populateWordPairTable() {
+    func populateCombinationTable() {
         var words = getAllWords()
 
         var streamReader = StreamReader(fileName: "combinations")
@@ -89,15 +123,15 @@ class PuzzleDA {
                     var firstWord = combo.substringToIndex(count(word.Name))
                     if firstWord == word.Name {
                         var secondWord = combo.substringFromIndex(count(firstWord))
-                        if getWordPairId(firstWord, secondWord: secondWord) == 0 {
-                                insertWordPair(firstWord, secondWord: secondWord)
+                        if getCombinationId(firstWord, secondWord: secondWord) == 0 {
+                                insertCombination(firstWord, secondWord: secondWord)
                         }
                     } else {
                         firstWord = combo.substringToIndex(combo.length - count(word.Name))
                         var secondWord = combo.substringFromIndex(combo.length - count(word.Name))
                         
-                        if secondWord == word.Name && getWordPairId(firstWord, secondWord: secondWord) == 0 {
-                            insertWordPair(firstWord, secondWord: secondWord)
+                        if secondWord == word.Name && getCombinationId(firstWord, secondWord: secondWord) == 0 {
+                            insertCombination(firstWord, secondWord: secondWord)
                         }
                     }
                 }
@@ -116,16 +150,16 @@ class PuzzleDA {
         return Word(id: data[0]["WordId"]!.asInt(), name: data[0]["Name"]!.asString())
     }
     
-    func getWordPairId(firstWord: String, secondWord: String) -> Int {
+    func getCombinationId(firstWord: String, secondWord: String) -> Int {
         let db = SQLiteDB.sharedInstance()
         let first = getWord(firstWord)
         let second = getWord(secondWord)
         
         if (first.Id > 0 && second.Id > 0) {
-            let data = db.query("SELECT WordPairId FROM WordPair WHERE FirstWordId = " + String(first.Id) + " AND SecondWordId = " + String(second.Id))
+            let data = db.query("SELECT CombinationId FROM Combination WHERE FirstWordId = " + String(first.Id) + " AND SecondWordId = " + String(second.Id))
             
             if (data.count > 0) {
-                return data[0]["WordPairId"]!.asInt()
+                return data[0]["CombinationId"]!.asInt()
             }
             
             return 0
@@ -139,7 +173,7 @@ class PuzzleDA {
         let result = db.execute("INSERT INTO Word (Name) VALUES ('" + name + "')")
     }
     
-    func insertWordPair(firstWord: String, secondWord: String) {
+    func insertCombination(firstWord: String, secondWord: String) {
         let db = SQLiteDB.sharedInstance()
         let first = db.query("SELECT WordId FROM Word WHERE Name = '" + firstWord + "'")
         let second = db.query("SELECT WordId FROM Word WHERE Name = '" + secondWord + "'")
@@ -147,7 +181,7 @@ class PuzzleDA {
         let firstId = first[0]["WordId"]?.asString()
         let secondId = second[0]["WordId"]?.asString()
         
-        let result = db.execute("INSERT INTO WordPair (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
+        let result = db.execute("INSERT INTO Combination (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
     }
     
     func generatePuzzles() {
@@ -167,16 +201,16 @@ class PuzzleDA {
                        puzzle[0].combinedWord != puzzle[2].combinedWord &&
                        puzzle[1].combinedWord != puzzle[2].combinedWord {
                         let wordId = String(puzzle[0].keyword.Id)
-                        let wordPairId1 = String(puzzle[0].wordPairId)
-                        let wordPairId2 = String(puzzle[1].wordPairId)
-                        let wordPairId3 = String(puzzle[2].wordPairId)
+                        let combinationId1 = String(puzzle[0].combinationId)
+                        let combinationId2 = String(puzzle[1].combinationId)
+                        let combinationId3 = String(puzzle[2].combinationId)
                         
                         let data = db.query("SELECT PuzzleId FROM Puzzle p WHERE p.WordId = " + wordId +
-                                            " AND p.WordPairId1 = " + wordPairId1 +
-                                            " AND p.WordPairId2 = " + wordPairId2 +
-                                            " AND p.WordPairId3 = " + wordPairId3)
+                                            " AND p.CombinationId1 = " + combinationId1 +
+                                            " AND p.CombinationId2 = " + combinationId2 +
+                                            " AND p.CombinationId3 = " + combinationId3)
                         if data.count == 0 {
-                            db.query("INSERT INTO PUZZLE (WordId, WordPairId1, WordPairId2, WordPairId3) VALUES (" + wordId + ", " + wordPairId1 + ", " + wordPairId2 + ", " + wordPairId3 + ")")
+                            db.query("INSERT INTO PUZZLE (WordId, CombinationId1, CombinationId2, CombinationId3) VALUES (" + wordId + ", " + combinationId1 + ", " + combinationId2 + ", " + combinationId3 + ")")
                         }
                     }
                 }

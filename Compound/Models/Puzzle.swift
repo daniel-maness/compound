@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Status: Int {
-    case Incomplete = -1, Complete, TimeUp, GaveUp
+    case Incomplete = 0, Complete, TimeUp, GaveUp
 }
 
 class Puzzle {
@@ -21,15 +21,22 @@ class Puzzle {
     
     private var puzzleDA: PuzzleDA
     
-    var combinations: [Combination]
+    var puzzleId: Int
     var keyword: Word
+    var combinations: [Combination]
     var guesses: [String]
+    var hintTime1: String
+    var hintTime2: String
+    var hintTime3: String
+    var startTime: String
+    var endTime: String
+    var status: Status
+    
     var hintsUsed: Int
     var currentHint: String
     var points: Int
     var ended: Bool
     var time: Int
-    var status: Status
     
     var currentStars: Int {
         return self.maxStars - self.hintsUsed
@@ -37,16 +44,37 @@ class Puzzle {
     
     init() {
         self.puzzleDA = PuzzleDA()
+        self.puzzleId = 0
         self.combinations = [Combination]()
         self.keyword = Word(id: 0, name: "")
         self.guesses = [String]()
+        self.hintTime1 = ""
+        self.hintTime2 = ""
+        self.hintTime3 = ""
+        self.startTime = ""
+        self.endTime = ""
+        self.status = Status.Incomplete
+        
         self.currentHint = ""
         self.hintsUsed = 0
         self.points = 0
         self.ended = false
         self.time = maxTime
-        self.status = Status.Incomplete
     }
+    
+//    init(puzzleId: String) {
+//        self.puzzleDA = PuzzleDA()
+//        
+//        self.new
+//        
+//        self.guesses = [String]()
+//        self.currentHint = ""
+//        self.hintsUsed = 0
+//        self.points = 0
+//        self.ended = false
+//        self.time = maxTime
+//        self.status = Status.Incomplete
+//    }
     
     func resetPuzzle() {
         self.guesses = [String]()
@@ -58,36 +86,31 @@ class Puzzle {
         self.status = Status.Incomplete
     }
     
+    func save() {
+        puzzleDA.savePuzzle(self)
+    }
+    
     func newPuzzle() {
-        //puzzleDA.populateWordTable()
-        //puzzleDA.populateWordPairTable()
-        //puzzleDA.generatePuzzles()
-        var keywords = puzzleDA.getAllWordsUppercase()
-        var keyword: Word
-        var allCombinations = [Combination]()
+//        puzzleDA.populateWordTable()
+//        puzzleDA.populateCombinationTable()
+//        puzzleDA.generatePuzzles()
+        let newPuzzle = puzzleDA.getNewPuzzle()
         
-        do {
-            let randomIndex = Int(arc4random_uniform(UInt32(keywords.count)))
-            keyword = keywords[randomIndex]
-            
-            allCombinations = puzzleDA.getAllCombinations(keyword)
-        } while allCombinations.count < 3
-        
-        var combinations = [Combination]()
-        for i in 0..<3 {
-            let randomIndex = Int(arc4random_uniform(UInt32(allCombinations.count)))
-            combinations.append(allCombinations[randomIndex])
-            allCombinations.removeAtIndex(randomIndex)
-        }
-        
-        self.keyword = keyword
-        self.combinations = combinations
+        self.puzzleId = newPuzzle.puzzleId
+        self.keyword = newPuzzle.keyword
+        self.combinations = newPuzzle.combinations
         
         resetPuzzle()
     }
     
     func loadPuzzle(id: Int) {
+        let puzzle = puzzleDA.getPuzzle(id)
         
+        self.puzzleId = puzzle.puzzleId
+        self.keyword = puzzle.keyword
+        self.combinations = puzzle.combinations
+        
+        resetPuzzle()
     }
     
     func useHint() {
@@ -116,7 +139,7 @@ class Puzzle {
     func checkAnswer(answer: String) -> Bool {
         self.guesses.append(answer)
         
-        if answer == self.keyword.Name {
+        if answer.uppercaseString == self.keyword.Name.uppercaseString {
             return true
         } else {
             return false
