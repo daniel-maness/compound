@@ -29,6 +29,7 @@ enum Location: Int {
 }
 
 class Combination: Printable, Hashable {
+    var wordPairId: Int
     var keyword: Word
     var leftWord: Word
     var rightWord: Word
@@ -43,7 +44,8 @@ class Combination: Printable, Hashable {
         return leftWord.Id * rightWord.Id + leftWord.Id - rightWord.Id
     }
     
-    init (keyword: Word, leftWord: Word, rightWord: Word) {
+    init (wordPairId: Int, keyword: Word, leftWord: Word, rightWord: Word) {
+        self.wordPairId = wordPairId
         self.keyword = keyword
         self.leftWord = leftWord
         self.rightWord = rightWord

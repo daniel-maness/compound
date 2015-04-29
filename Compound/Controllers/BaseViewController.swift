@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     enum ViewControllerType {
-        case HomeView, GameView, ChallengesView, SettingsView, ProfileView
+        case HomeView, PuzzleView, ChallengesView, SettingsView, ProfileView
     }
     
     convenience init() {
@@ -45,8 +45,8 @@ class BaseViewController: UIViewController {
         switch viewControllerType {
         case .HomeView:
             vc = storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        case .GameView:
-            vc = storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
+        case .PuzzleView:
+            vc = storyboard?.instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
         case .ChallengesView:
             vc = storyboard?.instantiateViewControllerWithIdentifier("ChallengesViewController") as! ChallengesViewController
         default:

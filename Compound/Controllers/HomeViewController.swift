@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: BaseViewController {
     /* Actions */
     @IBAction func onPlayPressed(sender: UIButton) {
-        var viewController = UIStoryboard(name: "Game", bundle: nil).instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
+        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
 }

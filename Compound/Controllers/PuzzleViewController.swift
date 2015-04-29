@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  PuzzleViewController.swift
 //  Compound
 //
 //  Created by Daniel Maness on 3/28/15.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class GameViewController: BaseViewController, UITextFieldDelegate {
+class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     /* Properties */
-    var game: Game!
+    var puzzle: Puzzle!
     var totalPoints: Int = 0
     var guess: String = ""
     var timer = NSTimer()
@@ -36,7 +36,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func hintButtonPressed(sender: AnyObject) {
-        if game.hintsUsed < game.maxHints {
+        if puzzle.hintsUsed < puzzle.maxHints {
             useHint()
         } else {
             showGiveUpView()
@@ -50,8 +50,8 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
         let uiView = self.view as UIView
         setupView()
         
-        createGame()
-        startGame()
+        createPuzzle()
+        startPuzzle()
     }
     
     func setupView() {
@@ -72,7 +72,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if trySubmit() {
-            endGame(Status.Complete)
+            endPuzzle(Status.Complete)
         } else {
             guess = ""
             hiddenText.text = ""
@@ -84,23 +84,23 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     
     /* Logic */
     func handleTimer() {
-        if game.time > 1 {
-            game.time--
+        if puzzle.time > 1 {
+            puzzle.time--
             
-            if (game.time == 45 && game.hintsUsed == 0) || (game.time == 30 && game.hintsUsed == 1) || (game.time == 10 && game.hintsUsed == 2) {
+            if (puzzle.time == 45 && puzzle.hintsUsed == 0) || (puzzle.time == 30 && puzzle.hintsUsed == 1) || (puzzle.time == 10 && puzzle.hintsUsed == 2) {
                 useHint()
             }
             
             updateTimerLabel()
         } else {
-            game.time = 0
+            puzzle.time = 0
             updateTimerLabel()
-            endGame(Status.TimeUp)
+            endPuzzle(Status.TimeUp)
         }
     }
     
     func startTimer() {
-        game.time = game.maxTime
+        puzzle.time = puzzle.maxTime
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("handleTimer"), userInfo: nil, repeats: true)
         updateTimerLabel()
     }
@@ -109,48 +109,48 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
         timer.invalidate()
     }
     
-    func createGame() {
-        self.game = Game()
-        self.game.newGame()
+    func createPuzzle() {
+        self.puzzle = Puzzle()
+        self.puzzle.newPuzzle()
         self.guess = ""
-        resetGameView()
+        resetPuzzleView()
     }
     
-    func startGame() {
+    func startPuzzle() {
         startTimer()
     }
     
-    func stopGame() {
-        game.ended = true
+    func stopPuzzle() {
+        puzzle.ended = true
         stopTimer()
         revealPuzzle()
     }
     
-    func endGame(status: Status) {
-        stopGame()
-        game.status = status
+    func endPuzzle(status: Status) {
+        stopPuzzle()
+        puzzle.status = status
         
-        if game.status == Status.Complete {
-            userData.addStars(game.currentStars)
+        if puzzle.status == Status.Complete {
+            userData.addStars(puzzle.currentStars)
             showPuzzleCompletedView()
-        } else if game.status == Status.TimeUp {
+        } else if puzzle.status == Status.TimeUp {
             showPuzzleFailedView("TIMES UP!")
-        } else if game.status == Status.GaveUp {
+        } else if puzzle.status == Status.GaveUp {
             showPuzzleFailedView("GAVE UP!")
         }
     }
     
     func trySubmit() -> Bool {
-        return game.checkAnswer(guess)
+        return puzzle.checkAnswer(guess)
     }
     
     func useHint() {
-        game.useHint()
+        puzzle.useHint()
         updateHintButton()
         updateStars()
         updateWordLabels()
         
-        if game.hintsUsed == game.maxHints {
+        if puzzle.hintsUsed == puzzle.maxHints {
             hiddenText.text = ""
         }
         
@@ -158,11 +158,11 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func revealPuzzle() {
-        wordLabel0.attributedText = getAttributedString(game.keyword.Name, combination: game.combinations[0])
-        wordLabel1.attributedText = getAttributedString(game.keyword.Name, combination: game.combinations[1])
-        wordLabel2.attributedText = getAttributedString(game.keyword.Name, combination: game.combinations[2])
+        wordLabel0.attributedText = getAttributedString(puzzle.keyword.Name, combination: puzzle.combinations[0])
+        wordLabel1.attributedText = getAttributedString(puzzle.keyword.Name, combination: puzzle.combinations[1])
+        wordLabel2.attributedText = getAttributedString(puzzle.keyword.Name, combination: puzzle.combinations[2])
         
-        answerLabel.text = game.keyword.Name
+        answerLabel.text = puzzle.keyword.Name
     }
     
     /* UI */
@@ -176,7 +176,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     
     func updateStars() {
         for i in 0..<stars.count {
-            if i < game.currentStars {
+            if i < puzzle.currentStars {
                 stars[i].highlighted = true
             } else {
                 stars[i].highlighted = false
@@ -185,45 +185,39 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateHintButton() {
-        var image = UIImage(named: "lightbulb-" + String(game.maxHints - game.hintsUsed))
+        var image = UIImage(named: "lightbulb-" + String(puzzle.maxHints - puzzle.hintsUsed))
         hintButton.setImage(image, forState: UIControlState.Normal)
-        
-//        if game.hintsUsed >= game.maxHints {
-//            hintButton.selected = true
-//        } else {
-//            hintButton.selected = false
-//        }
     }
     
     func updateTimerLabel() {
-        if game.time == game.maxTime {
+        if puzzle.time == puzzle.maxTime {
             timerLabel.text = "1:00"
-        } else if game.time <= 10 {
+        } else if puzzle.time <= 10 {
             timerLabel.textColor = ColorPalette.pink
-            if game.time == 10 {
-                timerLabel.text = ":" + String(game.time)
+            if puzzle.time == 10 {
+                timerLabel.text = ":" + String(puzzle.time)
             } else {
-                timerLabel.text = ":0" + String(game.time)
+                timerLabel.text = ":0" + String(puzzle.time)
             }
         } else {
-            timerLabel.text = ":" + String(game.time)
+            timerLabel.text = ":" + String(puzzle.time)
         }
     }
     
     func updateWordLabels() {
-        wordLabel0.attributedText = getAttributedString(game.currentHint, combination: game.combinations[0])
-        wordLabel1.attributedText = getAttributedString(game.currentHint, combination: game.combinations[1])
-        wordLabel2.attributedText = getAttributedString(game.currentHint, combination: game.combinations[2])
+        wordLabel0.attributedText = getAttributedString(puzzle.currentHint, combination: puzzle.combinations[0])
+        wordLabel1.attributedText = getAttributedString(puzzle.currentHint, combination: puzzle.combinations[1])
+        wordLabel2.attributedText = getAttributedString(puzzle.currentHint, combination: puzzle.combinations[2])
     }
     
     func updateAnswerLabel() {
-        if game.hintsUsed >= game.maxHints - 1 {
-            if game.hintsUsed == game.maxHints && hiddenText.text == "" {
-                hiddenText.text = game.keyword.Name[0]
+        if puzzle.hintsUsed >= puzzle.maxHints - 1 {
+            if puzzle.hintsUsed == puzzle.maxHints && hiddenText.text == "" {
+                hiddenText.text = puzzle.keyword.Name[0]
             }
             
-            if count(hiddenText.text) >= count(game.keyword.Name) {
-                hiddenText.text = hiddenText.text.subStringTo(count(game.keyword.Name))
+            if count(hiddenText.text) >= count(puzzle.keyword.Name) {
+                hiddenText.text = hiddenText.text.subStringTo(count(puzzle.keyword.Name))
             }
         
             self.guess = hiddenText.text.uppercaseString
@@ -235,7 +229,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
                 formattedGuess += self.guess[i] + " "
             }
             
-            while count(formattedGuess) / 2 < count(game.keyword.Name) {
+            while count(formattedGuess) / 2 < count(puzzle.keyword.Name) {
                 formattedGuess += "_ "
             }
             
@@ -254,7 +248,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    func resetGameView() {
+    func resetPuzzleView() {
         wordLabel0.text = ""
         wordLabel1.text = ""
         wordLabel2.text = ""
@@ -272,9 +266,9 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
         var attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ? hint + combination.rightWord.Name : combination.leftWord.Name + hint)
         var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord.Name)
         var length = count(hint)
-        if game.ended {
+        if puzzle.ended {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
-        } else if length > 0 && game.hintsUsed == game.maxHints {
+        } else if length > 0 && puzzle.hintsUsed == puzzle.maxHints {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
             attributedString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(location, 1))
         }
@@ -286,7 +280,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     func showGiveUpView() {
         // This method is good for showing a view we may need to return from
         hideKeyboard()
-        var viewController = UIStoryboard(name: "Game", bundle: nil).instantiateViewControllerWithIdentifier("GiveUpViewController") as! GiveUpViewController
+        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("GiveUpViewController") as! GiveUpViewController
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)
         viewController.didMoveToParentViewController(self)
@@ -294,11 +288,11 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     
     func showPuzzleCompletedView() {
         // This method is good for showing a view we won't need to return from
-        var viewController = UIStoryboard(name: "Game", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleCompletedViewController") as! PuzzleCompletedViewController
+        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleCompletedViewController") as! PuzzleCompletedViewController
         viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
-        viewController.currentStars = game.currentStars
+        viewController.currentStars = puzzle.currentStars
         viewController.totalStars = userData.getTotalStars()
         
         self.presentViewController(viewController, animated: true, completion: nil)
@@ -306,7 +300,7 @@ class GameViewController: BaseViewController, UITextFieldDelegate {
     
     func showPuzzleFailedView(message: String) {
         // This method is good for showing a view we won't need to return from
-        var viewController = UIStoryboard(name: "Game", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
+        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
         viewController.totalStars = userData.getTotalStars()
         

@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  Puzzle.swift
 //  Compound
 //
 //  Created by Daniel Maness on 11/13/14.
@@ -13,13 +13,13 @@ enum Status: Int {
     case Incomplete = -1, Complete, TimeUp, GaveUp
 }
 
-class Game {
+class Puzzle {
     let maxHints: Int = 3
     let maxStars: Int = 4
     let minStars: Int = 1
     let maxTime = 60
     
-    private var dataAccess: DataAccess
+    private var puzzleDA: PuzzleDA
     
     var combinations: [Combination]
     var keyword: Word
@@ -36,7 +36,7 @@ class Game {
     }
     
     init() {
-        self.dataAccess = DataAccess()
+        self.puzzleDA = PuzzleDA()
         self.combinations = [Combination]()
         self.keyword = Word(id: 0, name: "")
         self.guesses = [String]()
@@ -48,7 +48,7 @@ class Game {
         self.status = Status.Incomplete
     }
     
-    func resetGame() {
+    func resetPuzzle() {
         self.guesses = [String]()
         self.hintsUsed = 0
         self.currentHint = ""
@@ -58,10 +58,11 @@ class Game {
         self.status = Status.Incomplete
     }
     
-    func newGame() {
-        //dataAccess.populateWordTable()
-        //dataAccess.populateWordPairTable()
-        var keywords = dataAccess.getAllWords()
+    func newPuzzle() {
+        //puzzleDA.populateWordTable()
+        //puzzleDA.populateWordPairTable()
+        //puzzleDA.generatePuzzles()
+        var keywords = puzzleDA.getAllWordsUppercase()
         var keyword: Word
         var allCombinations = [Combination]()
         
@@ -69,7 +70,7 @@ class Game {
             let randomIndex = Int(arc4random_uniform(UInt32(keywords.count)))
             keyword = keywords[randomIndex]
             
-            allCombinations = dataAccess.getAllCombinations(keyword)
+            allCombinations = puzzleDA.getAllCombinations(keyword)
         } while allCombinations.count < 3
         
         var combinations = [Combination]()
@@ -82,10 +83,10 @@ class Game {
         self.keyword = keyword
         self.combinations = combinations
         
-        resetGame()
+        resetPuzzle()
     }
     
-    func loadGame(id: Int) {
+    func loadPuzzle(id: Int) {
         
     }
     
