@@ -82,15 +82,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         return true
     }
     
-    /* Logic */
-    func getDateTimeNow() -> String {
-        let date = NSDate()
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd-hh-mm-ss-SSS"
-        let datetime = dateFormatter.stringFromDate(date)
-        return datetime
-    }
-    
+    /* Logic */    
     func handleTimer() {
         if puzzle.time > 1 {
             puzzle.time--
@@ -125,31 +117,29 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func startPuzzle() {
-        puzzle.startTime = getDateTimeNow()
+        puzzle.startTime = DateTime.now()
         startTimer()
     }
     
     func stopPuzzle() {
         puzzle.ended = true
         stopTimer()
-        puzzle.endTime = getDateTimeNow()
-        puzzle.save()
-        revealPuzzle()
+        puzzle.endTime = DateTime.now()
     }
     
     func endPuzzle(status: Status) {
         puzzle.status = status
+        stopPuzzle()
+        puzzle.save()
+        revealPuzzle()
         
         if puzzle.status == Status.Complete {
-            userData.addStars(puzzle.currentStars)
             showPuzzleCompletedView()
         } else if puzzle.status == Status.TimeUp {
             showPuzzleFailedView("TIMES UP!")
         } else if puzzle.status == Status.GaveUp {
             showPuzzleFailedView("GAVE UP!")
         }
-        
-        stopPuzzle()
     }
     
     func trySubmit() -> Bool {
@@ -160,11 +150,11 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         puzzle.useHint()
         
         if puzzle.hintsUsed == 1 && puzzle.hintTime1 == "" {
-            puzzle.hintTime1 = getDateTimeNow()
+            puzzle.hintTime1 = DateTime.now()
         } else if puzzle.hintsUsed == 2 && puzzle.hintTime2 == "" {
-            puzzle.hintTime2 = getDateTimeNow()
+            puzzle.hintTime2 = DateTime.now()
         } else if puzzle.hintsUsed == 3 && puzzle.hintTime3 == "" {
-            puzzle.hintTime3 = getDateTimeNow()
+            puzzle.hintTime3 = DateTime.now()
         }
         
         updateHintButton()
@@ -284,7 +274,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func getAttributedString(hint: String, combination: Combination) -> NSMutableAttributedString {
-        var attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ? hint + combination.rightWord.Name : combination.leftWord.Name + hint)
+        var attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ?
+            hint.uppercaseString + combination.rightWord.Name.uppercaseString :
+            combination.leftWord.Name.uppercaseString + hint.uppercaseString)
         var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord.Name)
         var length = count(hint)
         if puzzle.ended {
@@ -314,7 +306,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.currentStars = puzzle.currentStars
-        viewController.totalStars = userData.getTotalStars()
+        viewController.totalStars = currentUser.getTotalStars()
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
@@ -323,7 +315,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         // This method is good for showing a view we won't need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
-        viewController.totalStars = userData.getTotalStars()
+        viewController.totalStars = currentUser.getTotalStars()
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

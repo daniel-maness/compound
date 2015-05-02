@@ -13,6 +13,20 @@ enum Status: Int {
     case Incomplete = 0, Complete, TimeUp, GaveUp
 }
 
+class Guess {
+    var guessId: Int
+    var userPuzzleId: Int
+    var description: String
+    var submitTime: String
+    
+    init(description: String, submitTime: String) {
+        self.guessId = 0
+        self.userPuzzleId = 0
+        self.description = description
+        self.submitTime = submitTime
+    }
+}
+
 class Puzzle {
     let maxHints: Int = 3
     let maxStars: Int = 4
@@ -24,7 +38,7 @@ class Puzzle {
     var puzzleId: Int
     var keyword: Word
     var combinations: [Combination]
-    var guesses: [String]
+    var guesses: [Guess]
     var hintTime1: String
     var hintTime2: String
     var hintTime3: String
@@ -47,7 +61,7 @@ class Puzzle {
         self.puzzleId = 0
         self.combinations = [Combination]()
         self.keyword = Word(id: 0, name: "")
-        self.guesses = [String]()
+        self.guesses = [Guess]()
         self.hintTime1 = ""
         self.hintTime2 = ""
         self.hintTime3 = ""
@@ -62,22 +76,8 @@ class Puzzle {
         self.time = maxTime
     }
     
-//    init(puzzleId: String) {
-//        self.puzzleDA = PuzzleDA()
-//        
-//        self.new
-//        
-//        self.guesses = [String]()
-//        self.currentHint = ""
-//        self.hintsUsed = 0
-//        self.points = 0
-//        self.ended = false
-//        self.time = maxTime
-//        self.status = Status.Incomplete
-//    }
-    
     func resetPuzzle() {
-        self.guesses = [String]()
+        self.guesses = [Guess]()
         self.hintsUsed = 0
         self.currentHint = ""
         self.points = 0
@@ -91,9 +91,10 @@ class Puzzle {
     }
     
     func newPuzzle() {
-//        puzzleDA.populateWordTable()
-//        puzzleDA.populateCombinationTable()
-//        puzzleDA.generatePuzzles()
+//        let adminDA = AdminDA()
+//        adminDA.populateWordTable()
+//        adminDA.populateCombinationTable()
+//        adminDA.generatePuzzles()
         let newPuzzle = puzzleDA.getNewPuzzle()
         
         self.puzzleId = newPuzzle.puzzleId
@@ -137,7 +138,8 @@ class Puzzle {
     }
     
     func checkAnswer(answer: String) -> Bool {
-        self.guesses.append(answer)
+        let newGuess = Guess(description: answer, submitTime: DateTime.now())
+        self.guesses.append(newGuess)
         
         if answer.uppercaseString == self.keyword.Name.uppercaseString {
             return true

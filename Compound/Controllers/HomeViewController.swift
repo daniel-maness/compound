@@ -14,4 +14,9 @@ class HomeViewController: BaseViewController {
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
+    
+    @IBAction func onProfilePressed(sender: UIButton) {
+        var viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
 }

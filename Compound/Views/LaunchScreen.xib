@@ -15,7 +15,6 @@
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.91764705882352937" green="0.0" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-            <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
