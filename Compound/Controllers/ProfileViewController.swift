@@ -87,7 +87,14 @@ class ProfileViewController: BaseViewController {
         totalLost = "- " + String(personalStats.totalPuzzles - personalStats.totalWon)
         averageStars = String(format:"%.1f", personalStats.averageStars)
         totalHints = String(personalStats.totalHints)
-        averageTime = personalStats.averageTime == 60 ? "1:00" : "0:" + String(personalStats.averageTime)
+        
+        if personalStats.averageTime == 60 {
+            averageTime = "1:00"
+        } else if personalStats.averageTime > 9 {
+            averageTime = "0:" + String(personalStats.averageTime)
+        } else {
+            averageTime = "0:0" + String(personalStats.averageTime)
+        }
         
         //let versusStats = userDA.getVersusStats()
         

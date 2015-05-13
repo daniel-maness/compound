@@ -38,16 +38,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Compound/DataAccess/PuzzleDA.swift"
-            timestampString = "452127890.014508"
+            filePath = "Compound/Models/Challenge.swift"
+            timestampString = "453163997.423042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "savePuzzle(_:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "Challenge"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Compound/Models/Challenge.swift"
+            timestampString = "453164043.008168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(challengeId:puzzle:friend:friendPuzzle:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

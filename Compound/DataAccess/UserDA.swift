@@ -61,4 +61,38 @@ class UserDA {
         
         return data.count > 0 ? Int(totalDuration) / data.count : 0
     }
+    
+    func getFriend(userId: Int) -> Friend {
+        let db = SQLiteDB.sharedInstance()
+        let data = db.query("SELECT u.UserId, u.FirstName, u.LastName FROM User u WHERE u.UserId = ?", parameters: [String(userId)])[0]
+        
+        var friend = Friend(id: data["UserId"]!.asInt())
+        friend.firstName = data["FirstName"]!.asString()
+        friend.lastName = data["LastName"]!.asString()
+        friend.pictureFileName = "group-icon"
+        
+        return friend
+    }
+    
+    func getFriendsList(userId: Int) -> [Friend] {
+        let db = SQLiteDB.sharedInstance()
+        let userIdString = String(userId)
+        let data = db.query("SELECT u.UserId, u.FirstName, u.LastName " +
+                            "FROM UserFriend uf " +
+                            "JOIN User u ON u.UserId = uf.UserId OR u.UserId = uf.FriendId " +
+                            "WHERE (uf.UserId = " + userIdString + " OR uf.FriendId = " + userIdString + ") " +
+                            "AND u.UserId != " + userIdString + " " +
+                            "ORDER BY u.FirstName")
+        
+        var friends = [Friend]()
+        for row in data {
+            var friend = Friend(id: row["UserId"]!.asInt())
+            friend.firstName = row["FirstName"]!.asString()
+            friend.lastName = row["LastName"]!.asString()
+            friend.pictureFileName = "group-icon"
+            friends.append(friend)
+        }
+        
+        return friends
+    }
 }

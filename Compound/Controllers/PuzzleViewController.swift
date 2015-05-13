@@ -11,6 +11,7 @@ import UIKit
 class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     /* Properties */
     var puzzle: Puzzle!
+    var challenge: Challenge!
     var totalPoints: Int = 0
     var guess: String = ""
     var timer = NSTimer()
@@ -110,8 +111,12 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func createPuzzle() {
-        self.puzzle = Puzzle()
-        self.puzzle.newPuzzle()
+        if self.challenge != nil {
+            self.puzzle = challenge.puzzle
+        } else {
+            self.puzzle = Puzzle()
+            self.puzzle.newPuzzle()
+        }
         self.guess = ""
         resetPuzzleView()
     }
@@ -131,6 +136,12 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         puzzle.status = status
         stopPuzzle()
         puzzle.save()
+        
+        if challenge != nil {
+            challenge.friendPuzzle = self.puzzle
+            challenge.save()
+        }
+        
         revealPuzzle()
         
         if puzzle.status == Status.Complete {
@@ -307,6 +318,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.currentStars = puzzle.currentStars
         viewController.totalStars = currentUser.getTotalStars()
+        viewController.userPuzzleId = self.puzzle.userPuzzleId
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

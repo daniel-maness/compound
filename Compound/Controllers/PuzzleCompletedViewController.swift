@@ -15,6 +15,7 @@ class PuzzleCompletedViewController: BaseViewController {
     var word2: NSMutableAttributedString!
     var currentStars: Int = 0
     var totalStars: Int = 0
+    var userPuzzleId: Int = 0
     
     /* Outlets */
     @IBOutlet weak var wordLabel0: UILabel!
@@ -22,12 +23,28 @@ class PuzzleCompletedViewController: BaseViewController {
     @IBOutlet weak var wordLabel2: UILabel!
     @IBOutlet weak var starsImageView: UIImageView!
     @IBOutlet weak var totalStarsLabel: UILabel!
+    @IBOutlet weak var challengeButton: UIButton!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
         self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onChallengePressed(sender: UIButton) {
+        challengeButton.enabled = false
+        
+        // This method is good for showing a view we may need to return from
+        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("ChallengePuzzleViewController") as! ChallengePuzzleViewController
+        viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
+        viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
+        viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
+        viewController.totalStars = currentUser.getTotalStars()
+        viewController.userPuzzleId = self.userPuzzleId
+        self.addChildViewController(viewController)
+        view.addSubview(viewController.view)
+        viewController.didMoveToParentViewController(self)
     }
     
     /* Setup */

@@ -10,6 +10,7 @@ import Foundation
 
 class User {
     private var userDA = UserDA()
+    private var challengeDA = ChallengeDA()
     
     let userId: Int
     
@@ -54,6 +55,14 @@ class User {
     
     func getAverageTime() -> Int {
         return userDA.getAverageTime(self.userId)
+    }
+    
+    func getFriendsList() -> [Friend] {
+        return userDA.getFriendsList(self.userId)
+    }
+    
+    func getChallengesReceived() -> [Challenge] {
+        return challengeDA.getChallengesReceived(self.userId)
     }
 }
 

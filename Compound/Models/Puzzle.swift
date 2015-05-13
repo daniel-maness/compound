@@ -34,8 +34,10 @@ class Puzzle {
     let maxTime = 60
     
     private var puzzleDA: PuzzleDA
+    private var challengeDA: ChallengeDA
     
     var puzzleId: Int
+    var userPuzzleId: Int!
     var keyword: Word
     var combinations: [Combination]
     var guesses: [Guess]
@@ -58,6 +60,7 @@ class Puzzle {
     
     init() {
         self.puzzleDA = PuzzleDA()
+        self.challengeDA = ChallengeDA()
         self.puzzleId = 0
         self.combinations = [Combination]()
         self.keyword = Word(id: 0, name: "")
@@ -87,7 +90,9 @@ class Puzzle {
     }
     
     func save() {
-        puzzleDA.savePuzzle(self)
+        if let userPuzzleId = puzzleDA.savePuzzle(self) {
+            self.userPuzzleId = userPuzzleId
+        }
     }
     
     func newPuzzle() {
@@ -104,15 +109,15 @@ class Puzzle {
         resetPuzzle()
     }
     
-    func loadPuzzle(id: Int) {
-        let puzzle = puzzleDA.getPuzzle(id)
-        
-        self.puzzleId = puzzle.puzzleId
-        self.keyword = puzzle.keyword
-        self.combinations = puzzle.combinations
-        
-        resetPuzzle()
-    }
+//    func loadPuzzle(puzzleId: Int) {
+//        let puzzle = puzzleDA.getPuzzle(puzzleId, userPuzzleId: nil)
+//        
+//        self.puzzleId = puzzle.puzzleId
+//        self.keyword = puzzle.keyword
+//        self.combinations = puzzle.combinations
+//        
+//        resetPuzzle()
+//    }
     
     func useHint() {
         if self.hintsUsed < maxHints {
