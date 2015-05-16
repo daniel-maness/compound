@@ -27,9 +27,7 @@ class PuzzleCompletedViewController: BaseViewController {
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.showHomeViewController()
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {

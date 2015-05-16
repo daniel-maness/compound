@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 /********** Admin Functions **********/
 class AdminDA {
@@ -34,14 +35,14 @@ class AdminDA {
                     var firstWord = combo.substringToIndex(count(word.Name))
                     if firstWord == word.Name {
                         var secondWord = combo.substringFromIndex(count(firstWord))
-                        if puzzleDA.getCombinationId(firstWord, secondWord: secondWord) == 0 {
+                        if puzzleDA.getCombinationId(firstWord, secondWord: secondWord) == "" {
                             insertCombination(firstWord, secondWord: secondWord)
                         }
                     } else {
                         firstWord = combo.substringToIndex(combo.length - count(word.Name))
                         var secondWord = combo.substringFromIndex(combo.length - count(word.Name))
                         
-                        if secondWord == word.Name && puzzleDA.getCombinationId(firstWord, secondWord: secondWord) == 0 {
+                        if secondWord == word.Name && puzzleDA.getCombinationId(firstWord, secondWord: secondWord) == "" {
                             insertCombination(firstWord, secondWord: secondWord)
                         }
                     }
@@ -51,19 +52,34 @@ class AdminDA {
     }
 
     func insertWord(name: String) {
-        let db = SQLiteDB.sharedInstance()
-        let result = db.execute("INSERT INTO Word (Name) VALUES ('" + name + "')")
+        let word = PFObject(className: "Word")
+        word["name"] = name
+        word.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in println("Object has been saved") }
+        
+        //let db = SQLiteDB.sharedInstance()
+        //let result = db.execute("INSERT INTO Word (Name) VALUES ('" + name + "')")
     }
 
     func insertCombination(firstWord: String, secondWord: String) {
-        let db = SQLiteDB.sharedInstance()
-        let first = db.query("SELECT WordId FROM Word WHERE Name = '" + firstWord + "'")
-        let second = db.query("SELECT WordId FROM Word WHERE Name = '" + secondWord + "'")
+        let pfCombination = PFObject(className: "Combination")
+        let first = PFQuery(className: "Word").whereKey("name", equalTo: firstWord).findObjects()
+            pfCombination["firstWord"] = first?.first
+        let second = PFQuery(className: "Word").whereKey("name", equalTo: secondWord).findObjects()
+            pfCombination["secondWord"] = second?.first
         
-        let firstId = first[0]["WordId"]?.asString()
-        let secondId = second[0]["WordId"]?.asString()
+        if first != nil && second != nil {
+            pfCombination.save()
+        }
         
-        let result = db.execute("INSERT INTO Combination (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
+        
+//        let db = SQLiteDB.sharedInstance()
+//        let first = db.query("SELECT WordId FROM Word WHERE Name = '" + firstWord + "'")
+//        let second = db.query("SELECT WordId FROM Word WHERE Name = '" + secondWord + "'")
+//        
+//        let firstId = first[0]["WordId"]?.asString()
+//        let secondId = second[0]["WordId"]?.asString()
+//        
+//        let result = db.execute("INSERT INTO Combination (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
     }
 
     func generatePuzzles() {

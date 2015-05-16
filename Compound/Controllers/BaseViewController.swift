@@ -39,6 +39,12 @@ class BaseViewController: UIViewController {
         return false
     }
     
+    func showHomeViewController() {
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
     func switchView(viewControllerType: ViewControllerType) {
         var vc: UIViewController!
         

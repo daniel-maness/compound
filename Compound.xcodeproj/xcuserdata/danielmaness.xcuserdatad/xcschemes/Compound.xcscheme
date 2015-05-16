@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-               BuildableName = "Compound.app"
-               BlueprintName = "Compound"
-               ReferencedContainer = "container:Compound.xcodeproj">
+               BuildableName = "compound.app"
+               BlueprintName = "compound"
+               ReferencedContainer = "container:compound.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "AAFB3FE31ADED47100F44C8F"
                BuildableName = "CompoundTests.xctest"
                BlueprintName = "CompoundTests"
-               ReferencedContainer = "container:Compound.xcodeproj">
+               ReferencedContainer = "container:compound.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "AAFB3FE31ADED47100F44C8F"
                BuildableName = "CompoundTests.xctest"
                BlueprintName = "CompoundTests"
-               ReferencedContainer = "container:Compound.xcodeproj">
+               ReferencedContainer = "container:compound.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-            BuildableName = "Compound.app"
-            BlueprintName = "Compound"
-            ReferencedContainer = "container:Compound.xcodeproj">
+            BuildableName = "compound.app"
+            BlueprintName = "compound"
+            ReferencedContainer = "container:compound.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-            BuildableName = "Compound.app"
-            BlueprintName = "Compound"
-            ReferencedContainer = "container:Compound.xcodeproj">
+            BuildableName = "compound.app"
+            BlueprintName = "compound"
+            ReferencedContainer = "container:compound.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -89,16 +89,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-            BuildableName = "Compound.app"
-            BlueprintName = "Compound"
-            ReferencedContainer = "container:Compound.xcodeproj">
+            BuildableName = "compound.app"
+            BlueprintName = "compound"
+            ReferencedContainer = "container:compound.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

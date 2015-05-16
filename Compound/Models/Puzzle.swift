@@ -98,6 +98,7 @@ class Puzzle {
     func newPuzzle() {
 //        let adminDA = AdminDA()
 //        adminDA.populateWordTable()
+//        syncHelper.syncPuzzleData()
 //        adminDA.populateCombinationTable()
 //        adminDA.generatePuzzles()
         let newPuzzle = puzzleDA.getNewPuzzle()

@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import Parse
 
 class ChallengeDA {
     private let userDA = UserDA()
     private let puzzleDA = PuzzleDA()
     
     func sendChallenge(userPuzzleId: Int, friendId: Int, challengeTime: String) {
-        let db = SQLiteDB.sharedInstance()
-        db.execute("INSERT INTO Challenge (UserPuzzleId, FriendId, ChallengeTime) VALUES(" + String(userPuzzleId) + ", " + String(friendId) + ", '" + challengeTime + "')")
+        let challenge = PFObject(className: "Challange")
+        let challenger = currentUser.parseUser
+        let friend = PFQuery(className: "User")
+        //let db = SQLiteDB.sharedInstance()
+        //db.execute("INSERT INTO Challenge (UserPuzzleId, FriendId, ChallengeTime) VALUES(" + String(userPuzzleId) + ", " + String(friendId) + ", '" + challengeTime + "')")
     }
     
     func sendChallenge(userPuzzleId: Int, friendIds: [Int], challengeTime: String) {

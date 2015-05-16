@@ -40,7 +40,7 @@
         <!--Puzzle View Controller-->
         <scene sceneID="cPi-9t-XZW">
             <objects>
-                <viewController storyboardIdentifier="PuzzleViewController" id="9Bb-KE-iFr" customClass="PuzzleViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PuzzleViewController" id="9Bb-KE-iFr" customClass="PuzzleViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e1K-3S-DjX"/>
                         <viewControllerLayoutGuide type="bottom" id="Qeo-88-sxY"/>
@@ -150,7 +150,7 @@
         <!--Puzzle Completed View Controller-->
         <scene sceneID="1FH-tr-Uau">
             <objects>
-                <viewController storyboardIdentifier="PuzzleCompletedViewController" modalPresentationStyle="overCurrentContext" id="WSe-JU-og6" customClass="PuzzleCompletedViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PuzzleCompletedViewController" modalPresentationStyle="overCurrentContext" id="WSe-JU-og6" customClass="PuzzleCompletedViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hKk-8g-7kA"/>
                         <viewControllerLayoutGuide type="bottom" id="b1t-YQ-v05"/>
@@ -268,7 +268,7 @@
         <!--Give Up View Controller-->
         <scene sceneID="KJ7-rY-6r9">
             <objects>
-                <viewController storyboardIdentifier="GiveUpViewController" modalPresentationStyle="overCurrentContext" id="xuC-7n-QE5" customClass="GiveUpViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GiveUpViewController" modalPresentationStyle="overCurrentContext" id="xuC-7n-QE5" customClass="GiveUpViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hxy-Oe-j7s"/>
                         <viewControllerLayoutGuide type="bottom" id="i2p-V2-P4y"/>
@@ -327,7 +327,7 @@
         <!--Puzzle Failed View Controller-->
         <scene sceneID="9jY-QQ-9iK">
             <objects>
-                <viewController storyboardIdentifier="PuzzleFailedViewController" modalPresentationStyle="overCurrentContext" id="U0X-Qt-IGt" customClass="PuzzleFailedViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PuzzleFailedViewController" modalPresentationStyle="overCurrentContext" id="U0X-Qt-IGt" customClass="PuzzleFailedViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Glv-8z-4ic"/>
                         <viewControllerLayoutGuide type="bottom" id="0bG-oL-jC4"/>
@@ -399,7 +399,7 @@
         <!--Challenge Puzzle View Controller-->
         <scene sceneID="gbv-sx-1DG">
             <objects>
-                <viewController storyboardIdentifier="ChallengePuzzleViewController" modalPresentationStyle="overCurrentContext" id="SZb-kL-pBN" customClass="ChallengePuzzleViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengePuzzleViewController" modalPresentationStyle="overCurrentContext" id="SZb-kL-pBN" customClass="ChallengePuzzleViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ezz-d2-ywj"/>
                         <viewControllerLayoutGuide type="bottom" id="l1o-tq-Y5h"/>

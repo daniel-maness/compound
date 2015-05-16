@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ProfileViewController: BaseViewController {
     /* Properties */
@@ -28,7 +30,7 @@ class ProfileViewController: BaseViewController {
     
     /* Outlets */
     @IBOutlet weak var shareButton: UIButton!
-    
+    @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var totalWonLabel: UILabel!
     @IBOutlet weak var totalLostLabel: UILabel!
@@ -45,9 +47,7 @@ class ProfileViewController: BaseViewController {
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.showHomeViewController()
     }
     
     @IBAction func onSharePressed(sender: UIButton) {
@@ -63,6 +63,7 @@ class ProfileViewController: BaseViewController {
     
     func setupView() {
         shareButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        profilePicture.image = currentUser.profilePicture
         totalStarsLabel.text = totalStars
         totalWonLabel.text = totalWon
         totalLostLabel.text = totalLost

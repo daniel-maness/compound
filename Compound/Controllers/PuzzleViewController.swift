@@ -135,12 +135,13 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func endPuzzle(status: Status) {
         puzzle.status = status
         stopPuzzle()
-        puzzle.save()
-        
-        if challenge != nil {
-            challenge.friendPuzzle = self.puzzle
-            challenge.save()
-        }
+        currentUser.savePuzzleStats(puzzle)
+//        puzzle.save()
+//        
+//        if challenge != nil {
+//            challenge.friendPuzzle = self.puzzle
+//            challenge.save()
+//        }
         
         revealPuzzle()
         

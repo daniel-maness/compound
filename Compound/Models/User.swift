@@ -7,15 +7,24 @@
 //
 
 import Foundation
+import Parse
 
 class User {
+    let USERNAME: String = "dmaness"
     private var userDA = UserDA()
     private var challengeDA = ChallengeDA()
+    var parseUser: PFObject!
+    var friends: [PFObject]!
+    var facebookUserId: String!
+    var parseUserId: String!
+    var profilePicture: UIImage!
     
     let userId: Int
     
     init() {
-        self.userId = 1
+        self.userId = 3
+        //loadParseUser()
+        //loadFriends()
     }
     
     func getPersonalStats() -> (totalStars: Int, totalPuzzles: Int, totalWon: Int, averageStars: Double, totalHints: Int, averageTime: Int) {
@@ -27,6 +36,28 @@ class User {
         let averageTime = getAverageTime()
         
         return (totalStars, totalPuzzles, totalWon, averageStars, totalHints, averageTime)
+    }
+    
+    func loadParseUser() {
+        let result = PFQuery(className: "User").whereKey("username", equalTo: "dmaness").findObjects()
+        let json: AnyObject! = result?.first
+        
+        if let user = json as? PFObject {
+            self.parseUser = user
+        }
+    }
+    
+    func loadFriends() {
+        let results = PFQuery(className: "UserFriend").whereKey("user", equalTo: self.parseUser).findObjects()
+        
+        for r in results! {
+            let result = PFQuery(className: "User").whereKey("objectId", equalTo: r["objectId"]).findObjects()
+            let json: AnyObject? = result?.first
+            
+            if let friend = json as? PFObject {
+                self.friends.append(friend)
+            }
+        }
     }
     
     func getVersusStats() {
@@ -64,6 +95,10 @@ class User {
     func getChallengesReceived() -> [Challenge] {
         return challengeDA.getChallengesReceived(self.userId)
     }
+    
+    func savePuzzleStats(puzzle: Puzzle) {
+        
+    }
 }
 
-var currentUser = User()
+var currentUser: User!

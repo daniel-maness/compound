@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 class PuzzleDA {
     func getAllWords() -> [Word] {
@@ -94,31 +95,49 @@ class PuzzleDA {
     }
     
     func savePuzzle(puzzle: Puzzle) -> Int? {
-        let db = SQLiteDB.sharedInstance()
-        let hintTime1 = puzzle.hintTime1 == "" ? "NULL" : "'" + puzzle.hintTime1 + "'"
-        let hintTime2 = puzzle.hintTime2 == "" ? "NULL" : "'" + puzzle.hintTime2 + "'"
-        let hintTime3 = puzzle.hintTime3 == "" ? "NULL" : "'" + puzzle.hintTime3 + "'"
-        db.execute("INSERT INTO UserPuzzle (UserId, PuzzleId, StatusId, StartTime, EndTime, HintTime1, HintTime2, HintTime3) VALUES(" +
-                    String(currentUser.userId) + ", " +
-                    String(puzzle.puzzleId) + ", " +
-                    String(puzzle.status.rawValue) + ", " +
-                    "'" + puzzle.startTime + "', " +
-                    "'" + puzzle.endTime + "', " +
-                    "" + hintTime1 + ", " +
-                    "" + hintTime2 + ", " +
-                    "" + hintTime3 + ")")
-        
-        let userPuzzleId = db.query("SELECT last_insert_rowid() AS userPuzzleId FROM UserPuzzle up WHERE up.UserId = " + String(currentUser.userId))[0]["userPuzzleId"]!.asInt()
-
-        for guess in puzzle.guesses {
-            guess.userPuzzleId = userPuzzleId
-            db.execute("INSERT INTO Guess (UserPuzzleId, Description, SubmitTime) VALUES(" +
-                        String(guess.userPuzzleId) + ", " +
-                        "'" + guess.description + "', " +
-                        "'" + guess.submitTime + "')")
+        let userPuzzle = PFObject(className: "UserPuzzle")
+        let user = PFObject(className: "User")
+        let pfPuzzle = PFObject(className: "Puzzle")
+        let status = PFObject(className: "Status")
+        //userPuzzle["UserId"] = currentUser.userId
+        //userPuzzle["PuzzleId"] = puzzle.puzzleId
+        //userPuzzle["StatusId"] = puzzle.status.rawValue
+        userPuzzle["StartTime"] = puzzle.startTime
+        userPuzzle["StopTime"] = puzzle.endTime
+        userPuzzle["HintTime1"] = puzzle.hintTime1
+        userPuzzle["HintTime2"] = puzzle.hintTime2
+        userPuzzle["HintTime3"] = puzzle.hintTime3
+        userPuzzle.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Object has been saved.")
         }
         
-        return userPuzzleId
+        var id = userPuzzle.objectId
+        return id?.toInt()
+//        let db = SQLiteDB.sharedInstance()
+//        let hintTime1 = puzzle.hintTime1 == "" ? "NULL" : "'" + puzzle.hintTime1 + "'"
+//        let hintTime2 = puzzle.hintTime2 == "" ? "NULL" : "'" + puzzle.hintTime2 + "'"
+//        let hintTime3 = puzzle.hintTime3 == "" ? "NULL" : "'" + puzzle.hintTime3 + "'"
+//        db.execute("INSERT INTO UserPuzzle (UserId, PuzzleId, StatusId, StartTime, EndTime, HintTime1, HintTime2, HintTime3) VALUES(" +
+//                    String(currentUser.userId) + ", " +
+//                    String(puzzle.puzzleId) + ", " +
+//                    String(puzzle.status.rawValue) + ", " +
+//                    "'" + puzzle.startTime + "', " +
+//                    "'" + puzzle.endTime + "', " +
+//                    "" + hintTime1 + ", " +
+//                    "" + hintTime2 + ", " +
+//                    "" + hintTime3 + ")")
+//        
+//        let userPuzzleId = db.query("SELECT last_insert_rowid() AS userPuzzleId FROM UserPuzzle up WHERE up.UserId = " + String(currentUser.userId))[0]["userPuzzleId"]!.asInt()
+//
+//        for guess in puzzle.guesses {
+//            guess.userPuzzleId = userPuzzleId
+//            db.execute("INSERT INTO Guess (UserPuzzleId, Description, SubmitTime) VALUES(" +
+//                        String(guess.userPuzzleId) + ", " +
+//                        "'" + guess.description + "', " +
+//                        "'" + guess.submitTime + "')")
+//        }
+//        
+//        return userPuzzleId
     }
     
     func deletePuzzle(id: Int) {
@@ -136,21 +155,37 @@ class PuzzleDA {
         return Word(id: data[0]["WordId"]!.asInt(), name: data[0]["Name"]!.asString())
     }
     
-    func getCombinationId(firstWord: String, secondWord: String) -> Int {
-        let db = SQLiteDB.sharedInstance()
-        let first = getWord(firstWord)
-        let second = getWord(secondWord)
+    func getCombinationId(firstWord: String, secondWord: String) -> String? {
+        let first = PFQuery(className: "Word").whereKey("name", equalTo: firstWord).findObjects()
+        let second = PFQuery(className: "Word").whereKey("name", equalTo: secondWord).findObjects()
+        let f: AnyObject! = first?.first
+        let s: AnyObject! = second?.first
+        if f == nil || s == nil {
+            return nil
+        }
+        let combination = PFQuery(className: "Combination").whereKey("firstWord", equalTo: f).whereKey("secondWord", equalTo: s).findObjects()
         
-        if (first.Id > 0 && second.Id > 0) {
-            let data = db.query("SELECT CombinationId FROM Combination WHERE FirstWordId = " + String(first.Id) + " AND SecondWordId = " + String(second.Id))
-            
-            if (data.count > 0) {
-                return data[0]["CombinationId"]!.asInt()
-            }
-            
-            return 0
+        if combination?.first == nil {
+            return ""
         }
         
-        return -1
+        return combination?.first?.objectId
+        
+        
+//        let db = SQLiteDB.sharedInstance()
+//        let first = getWord(firstWord)
+//        let second = getWord(secondWord)
+//        
+//        if (first.Id > 0 && second.Id > 0) {
+//            let data = db.query("SELECT CombinationId FROM Combination WHERE FirstWordId = " + String(first.Id) + " AND SecondWordId = " + String(second.Id))
+//            
+//            if (data.count > 0) {
+//                return data[0]["CombinationId"]!.asInt()
+//            }
+//            
+//            return 0
+//        }
+//        
+//        return -1
     }
 }

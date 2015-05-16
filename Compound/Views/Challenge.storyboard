@@ -19,7 +19,7 @@
         <!--Challenges View Controller-->
         <scene sceneID="aiM-4R-oAm">
             <objects>
-                <viewController storyboardIdentifier="ChallengesViewController" id="iT2-7U-RST" customClass="ChallengesViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengesViewController" id="iT2-7U-RST" customClass="ChallengesViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hgd-We-AaZ"/>
                         <viewControllerLayoutGuide type="bottom" id="51U-Wt-xJU"/>

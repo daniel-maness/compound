@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dCI-Is-lLo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -10,6 +10,9 @@
             <string>GoboldBold</string>
         </mutableArray>
         <mutableArray key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
@@ -35,13 +38,19 @@
             <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
         <!--Profile View Controller-->
         <scene sceneID="e74-A0-JKi">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="Dmh-d0-VAi" customClass="ProfileViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="Dmh-d0-VAi" customClass="ProfileViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cGK-AX-BXT"/>
                         <viewControllerLayoutGuide type="bottom" id="YIB-26-uyd"/>
@@ -254,6 +263,7 @@
                         <outlet property="bestAverageRankLabel" destination="PqB-JP-YtT" id="0ds-Gj-ta1"/>
                         <outlet property="bestAverageStarsLabel" destination="R6m-xR-efW" id="o8e-M0-Ejp"/>
                         <outlet property="bestAverageTimeLabel" destination="4Vw-ky-sMP" id="jFA-OU-wF4"/>
+                        <outlet property="profilePicture" destination="mXa-bS-Scq" id="93Z-gH-RWe"/>
                         <outlet property="shareButton" destination="uKa-yN-3p4" id="mZP-gf-lIV"/>
                         <outlet property="totalHintsLabel" destination="nCQ-3b-a4U" id="cS7-mo-aUJ"/>
                         <outlet property="totalLostLabel" destination="A6D-bh-lhG" id="A7l-Xj-iBZ"/>
@@ -267,13 +277,295 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUO-83-ACi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="225"/>
+            <point key="canvasLocation" x="-640" y="147"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="laA-XH-Vvw">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" id="n1A-Yz-APQ" customClass="SignupViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bkO-0i-9QZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hXv-Ma-8Zx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sry-9t-5UB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaX-Zy-REU">
+                                <rect key="frame" x="16" y="202" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8U1-R7-Xo0">
+                                <rect key="frame" x="16" y="245" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geW-ZR-APv">
+                                <rect key="frame" x="16" y="288" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU5-tk-4s3">
+                                <rect key="frame" x="16" y="173" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                <color key="textColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO5-9G-qiu">
+                                <rect key="frame" x="16" y="442" width="50" height="30"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="42A-pt-Oxv" kind="show" id="opr-jj-oFg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMI-pT-853">
+                                <rect key="frame" x="16" y="340" width="288" height="60"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="SIGNUP">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-highlighted.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignupPressed:" destination="n1A-Yz-APQ" eventType="touchUpInside" id="jnM-Ue-9Ba"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="aiz-8M-q3D">
+                                <rect key="frame" x="50" y="0.0" width="220" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="geW-ZR-APv" id="6Gy-ZL-lPf"/>
+                        <outlet property="messageLabel" destination="uU5-tk-4s3" id="trE-O5-mke"/>
+                        <outlet property="passwordTextField" destination="8U1-R7-Xo0" id="IPT-8E-56w"/>
+                        <outlet property="signupButton" destination="CMI-pT-853" id="euX-p6-tWg"/>
+                        <outlet property="usernameTextField" destination="TaX-Zy-REU" id="GyU-99-5qO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oba-ie-zBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="99" y="-397"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="H86-zW-hzk">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="42A-pt-Oxv" customClass="LoginViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sad-un-Mp4"/>
+                        <viewControllerLayoutGuide type="bottom" id="WeV-YD-iKg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o5a-wU-m6L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vS1-PH-13t">
+                                <rect key="frame" x="16" y="246" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loh-Dv-KIM">
+                                <rect key="frame" x="16" y="298" width="288" height="60"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-highlighted.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLoginPressed:" destination="42A-pt-Oxv" eventType="touchUpInside" id="pQ8-iD-uHY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tC0-lF-TaU">
+                                <rect key="frame" x="16" y="173" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                <color key="textColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SeP-dN-Zph">
+                                <rect key="frame" x="16" y="203" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIu-6b-WjQ">
+                                <rect key="frame" x="234" y="278" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkW-Uq-LCb">
+                                <rect key="frame" x="159" y="442" width="100" height="30"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAk-Gq-Stg">
+                                <rect key="frame" x="258" y="442" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                <state key="normal" title="HERE">
+                                    <color key="titleColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="n1A-Yz-APQ" kind="show" id="3eM-To-nx4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywe-ua-tRh">
+                                <rect key="frame" x="16" y="442" width="50" height="30"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dCI-Is-lLo" kind="show" id="7tS-d2-Kkc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fns-XZ-d5f">
+                                <rect key="frame" x="50" y="0.0" width="220" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="loginButton" destination="loh-Dv-KIM" id="PvF-jb-QOX"/>
+                        <outlet property="messageLabel" destination="tC0-lF-TaU" id="iXW-HB-pcV"/>
+                        <outlet property="passwordTextField" destination="vS1-PH-13t" id="zh3-Nw-ljc"/>
+                        <outlet property="usernameTextField" destination="SeP-dN-Zph" id="bXw-bc-7VT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8m-eu-U0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="-397"/>
+        </scene>
+        <!--Connect View Controller-->
+        <scene sceneID="hVr-Gs-i3X">
+            <objects>
+                <viewController storyboardIdentifier="ConnectViewController" id="dCI-Is-lLo" customClass="ConnectViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HyR-m1-GIG"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Hu-Jn-dqR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sr1-2o-DYg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-M7-OB0">
+                                <rect key="frame" x="50" y="0.0" width="220" height="160"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-54-tBD">
+                                <rect key="frame" x="234" y="278" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-Z3-jqu">
+                                <rect key="frame" x="60" y="316" width="200" height="40"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Connect with Email" backgroundImage="container-grey.png"/>
+                                <state key="highlighted" backgroundImage="button-highlighted.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="42A-pt-Oxv" kind="show" id="kfm-G5-eEL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woi-Hb-aiI" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="20" y="210" width="280" height="60"/>
+                                <state key="normal" title="Facebook Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <outlet property="delegate" destination="dCI-Is-lLo" id="q1J-LC-TOO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="woi-Hb-aiI" id="kTK-0w-mev"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6c-qO-cBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="-397"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="nOe-ST-I4Y">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="waF-oB-RCF" customClass="SettingsViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bx2-FW-gBQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="iPY-bt-EyN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DqR-fj-WUp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="svJ-Rt-mye">
+                                <rect key="frame" x="50" y="0.0" width="220" height="160"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHW-uo-Huf">
+                                <rect key="frame" x="234" y="278" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-PY-oW7">
+                                <rect key="frame" x="285" y="5" width="30" height="30"/>
+                                <state key="normal" image="homeicon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onHomePressed:" destination="waF-oB-RCF" eventType="touchUpInside" id="srz-2k-pvn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-0l-GFe" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="20" y="241" width="280" height="60"/>
+                                <state key="normal" title="Facebook Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <outlet property="delegate" destination="waF-oB-RCF" id="kBf-yT-ugF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="kqv-0l-GFe" id="D3w-il-cEw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ads-Ym-6ci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="147"/>
         </scene>
     </scenes>
     <resources>
+        <image name="button-highlighted.png" width="480" height="120"/>
+        <image name="container-grey.png" width="32" height="32"/>
         <image name="group-icon.png" width="94" height="94"/>
         <image name="homeicon.png" width="65" height="65"/>
         <image name="largestar.png" width="159" height="159"/>
+        <image name="logo.png" width="384" height="318"/>
         <image name="uploadicon.png" width="36" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kfm-G5-eEL"/>
+    </inferredMetricsTieBreakers>
 </document>
