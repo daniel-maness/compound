@@ -320,7 +320,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.currentStars = puzzle.currentStars
-        viewController.totalStars = currentUser.getTotalStars()
+        viewController.totalStars = currentUser.getStats().totalStarsEarned
         //viewController.userPuzzleId = self.puzzle.userPuzzleId
         
         self.presentViewController(viewController, animated: true, completion: nil)
@@ -330,7 +330,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         // This method is good for showing a view we won't need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
-        viewController.totalStars = currentUser.getTotalStars()
+        viewController.totalStars = currentUser.getStats().totalStarsEarned
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

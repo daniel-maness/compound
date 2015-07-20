@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class LoginViewController: BaseViewController {
+class EmailLoginViewController: LoginViewController {
     /* Outlets */
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -22,12 +22,16 @@ class LoginViewController: BaseViewController {
         var password = passwordTextField.text
         
         if username == "" {
-            messageLabel.text = "Username required"
+            messageLabel.text = "Email required"
         } else if password == "" {
             messageLabel.text = "Password required"
         } else {
             messageLabel.text = ""
-            userLogin(username, password: password)
+            if self.loginParse(username, password: password, facebookUserId: nil, email: nil) {
+                self.showHomeViewController()
+            } else {
+                messageLabel.text = "Invalid email/password combination"
+            }
         }
     }
     
@@ -41,9 +45,5 @@ class LoginViewController: BaseViewController {
     
     func setupView() {
         messageLabel.text = ""
-    }
-    
-    func userLogin(username: String, password: String) {
-        
     }
 }

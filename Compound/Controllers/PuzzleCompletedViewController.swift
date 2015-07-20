@@ -38,7 +38,7 @@ class PuzzleCompletedViewController: BaseViewController {
         viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
-        viewController.totalStars = currentUser.getTotalStars()
+        viewController.totalStars = currentUser.getStats().totalStarsEarned
         viewController.userPuzzleId = self.userPuzzleId
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)

@@ -12,26 +12,35 @@ import FBSDKCoreKit
 
 class UserDA {
     func userExists(username: String) -> Bool {
-        let query = PFQuery(className: USER_CLASSNAME).whereKey("facebookUserId", equalTo: username)
+        let query = PFUser.query()!.whereKey("username", equalTo: username)
         let user = query.findObjects()?.first as! PFObject!
         
         return user != nil && username == user["username"] as! String
     }
     
-    func createUser(facebookUserId: String!, username: String, email: String!, password: String) -> Bool {
+    func createUser(facebookUserId: String!, username: String, email: String!, password: String) {
         var user = PFUser()
         
         user.username = username
         user.password = password
         user.email = email
         
-        user["facebookUserId"] = facebookUserId
+        if facebookUserId != nil {
+            user["facebookUserId"] = facebookUserId
+        }
         
-        return user.signUp()
+        user.signUpInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if error == nil {
+                println("User created")
+            } else {
+                println("Error creating user")
+            }
+        }
     }
     
     func loginUser(username: String, password: String) -> Bool {
-        PFUser.logInWithUsername(username, password: password)
+        PFUser.logInWithUsernameInBackground(username, password: password)
         
         return PFUser.currentUser() != nil
     }
@@ -41,11 +50,9 @@ class UserDA {
         let urlRequest = NSURLRequest(URL: url!)
         
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
-            
             // Display the image
             let image = UIImage(data: data)
             currentUser.profilePicture = image
-            
         }
     }
     
@@ -92,64 +99,6 @@ class UserDA {
         stats.oneStarsEarned = user["oneStarsEarned"] == nil ? 0 : user["oneStarsEarned"] as! Int
         
         return stats
-    }
-    
-    func getTotalStars(userId: String) -> Int {
-//        let db = SQLiteDB.sharedInstance()
-//        let starCount4 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle WHERE HintTime1 IS NULL AND StatusId = 1")[0]["Total"]!.asInt()
-//        let starCount3 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle WHERE HintTime1 IS NOT NULL AND HintTime2 IS NULL AND StatusId = 1")[0]["Total"]!.asInt()
-//        let starCount2 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle WHERE HintTime2 IS NOT NULL AND HintTime3 IS NULL AND StatusId = 1")[0]["Total"]!.asInt()
-//        let starCount1 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle WHERE HintTime3 IS NOT NULL AND StatusId = 1")[0]["Total"]!.asInt()
-//        
-//        return starCount4 * 4 + starCount3 * 3 + starCount2 * 2 + starCount1
-        return 0
-    }
-    
-    func getPuzzleCount(userId: String, status: Status!) -> Int {
-//        var sql: String        
-//        if status == nil {
-//            sql = "SELECT COUNT(*) AS Total FROM UserPuzzle up WHERE up.UserId = " + String(userId)
-//        } else {
-//            sql = "SELECT COUNT(*) AS Total FROM UserPuzzle up WHERE up.UserId = " + String(userId) + " AND up.StatusId = " + String(status.rawValue)
-//        }
-//        
-//        let db = SQLiteDB.sharedInstance()
-//        let count = db.query(sql)[0]["Total"]!.asInt()
-//        
-//        return count
-        return 0
-    }
-    
-    func getAverageStars(userId: String) -> Double {
-//        let totalStars = Double(getTotalStars(userId))
-//        let possibleStars = Double(getPuzzleCount(userId, status: Status.Complete) * 4)
-//        let average = possibleStars > 0 ? totalStars / possibleStars * 4.0 : 0
-//        
-//        return average
-        return 0
-    }
-    
-    func getHintCount(userId: String) -> Int {
-//        let db = SQLiteDB.sharedInstance()
-//        let hintCount1 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle up WHERE up.UserId = " + String(userId) + " AND up.StatusId = 1 AND up.HintTime1 IS NOT NULL")[0]["Total"]!.asInt()
-//        let hintCount2 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle up WHERE up.UserId = " + String(userId) + " AND up.StatusId = 1 AND up.HintTime2 IS NOT NULL")[0]["Total"]!.asInt()
-//        let hintCount3 = db.query("SELECT COUNT(*) AS Total FROM UserPuzzle up WHERE up.UserId = " + String(userId) + " AND up.StatusId = 1 AND up.HintTime3 IS NOT NULL")[0]["Total"]!.asInt()
-//        
-//        return hintCount1 + hintCount2 + hintCount3
-        return 0
-    }
-    
-    func getAverageTime(userId: String) -> Int {
-//        let db = SQLiteDB.sharedInstance()
-//        let data = db.query("SELECT strftime('%s', up.EndTime) - strftime('%s', up.StartTime) AS Duration FROM UserPuzzle up WHERE up.UserId = " + String(userId) + " AND up.StatusId = 1")
-//        
-//        var totalDuration = 0.0
-//        for row in data {
-//            totalDuration += row["Duration"]!.asDouble()
-//        }
-//        
-//        return data.count > 0 ? Int(totalDuration) / data.count : 0
-        return 0
     }
     
     func getFriend(userId: String) -> Friend {

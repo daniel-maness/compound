@@ -11,11 +11,10 @@ import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class FacebookLoginViewController: BaseViewController, FBSDKLoginButtonDelegate {
+class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate {
     /* Outlets */
     @IBOutlet var facebookLoginButton: FBSDKLoginButton!
     let permissions = ["public_profile", "email", "user_friends"]
-    let userDA = UserDA()
     var userName: String!
     var userEmail: String!
     
@@ -31,7 +30,12 @@ class FacebookLoginViewController: BaseViewController, FBSDKLoginButtonDelegate 
     }
     
     override func viewDidAppear(animated: Bool) {
-        loginFacebook()
+        if PFUser.currentUser() == nil {
+            loginFacebook()
+        } else {
+            currentUser = User()
+            self.showHomeViewController()
+        }
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -44,22 +48,10 @@ class FacebookLoginViewController: BaseViewController, FBSDKLoginButtonDelegate 
     
     func loginFacebook() {
         if let accessToken = FBSDKAccessToken.currentAccessToken() {
-            loginParse(accessToken.userID)
+            self.loginParse(accessToken.userID, password: accessToken.userID, facebookUserId: accessToken.userID, email: nil)
             
+            currentUser = User()
             self.showHomeViewController()
         }
-    }
-    
-    func loginParse(facebookUserId: String) -> Bool {
-        if !userDA.userExists(facebookUserId) {
-            userDA.createUser(facebookUserId, username: facebookUserId, email: nil, password: facebookUserId)
-            userDA.loginUser(facebookUserId, password: facebookUserId)
-        } else if PFUser.currentUser() == nil {
-            userDA.loginUser(facebookUserId, password: facebookUserId)
-        }
-        
-        currentUser = User()
-        
-        return currentUser.userId != nil
     }
 }

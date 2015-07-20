@@ -10,28 +10,28 @@ import Foundation
 import Parse
 
 class SignupViewController: BaseViewController {
+    var userDA = UserDA()
+    
     /* Outlets */
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     
     /* Actions */
     @IBAction func onSignupPressed(sender: UIButton) {
         var username = usernameTextField.text
         var password = passwordTextField.text
-        var email = emailTextField.text
         
         if username == "" {
             messageLabel.text = "Username required"
         } else if password == "" {
             messageLabel.text = "Password required"
-        } else if email == "" {
-            messageLabel.text = "E-mail address required"
         } else {
             messageLabel.text = ""
-            userSignUp(username, password: password, email: email)
+            if userSignUp(username, password: password) {
+                self.showHomeViewController()
+            }
         }
     }
     
@@ -47,23 +47,16 @@ class SignupViewController: BaseViewController {
         messageLabel.text = ""
     }
     
-    func userSignUp(username: String, password: String, email: String) {
-        var user = PFUser()
-        user.username = username
-        user.password = password
-        user.email = email
-        
-        user.signUpInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if error == nil {
-                self.showHomeViewController()
-            } else {
-                self.messageLabel.text = "User already exists"
-            }
+    func userSignUp(username: String, password: String) -> Bool {
+        if userDA.userExists(username) {
+            self.messageLabel.text = "User already exists"
+        } else {
+            userDA.createUser(nil, username: username, email: nil, password: password)
+            userDA.loginUser(username, password: password)
+            currentUser = User()
+            return true
         }
-    }
-    
-    func userSignIn() {
         
+        return false
     }
 }
