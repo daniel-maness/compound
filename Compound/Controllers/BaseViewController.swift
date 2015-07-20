@@ -64,4 +64,17 @@ class BaseViewController: UIViewController {
             self.view?.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
         }
     }
+    
+    func setUserPicture(image: UIImageView) {
+        image.image = currentUser.profilePicture
+        formatImageAsCircle(image)
+    }
+    
+    func formatImageAsCircle(image: UIImageView) {
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.whiteColor().CGColor
+        image.layer.cornerRadius = image.frame.height/2
+        image.clipsToBounds = true
+    }
 }

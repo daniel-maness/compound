@@ -35,6 +35,7 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
             facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
             //self.view.addSubview(facebookLoginButton)
         }
+        
         setupView()
         
         let uiView = self.view as UIView

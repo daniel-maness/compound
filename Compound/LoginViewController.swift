@@ -11,33 +11,34 @@ import Foundation
 class LoginViewController: BaseViewController {
     let userDA = UserDA()
     
-    func loginParse(username: String, password: String, facebookUserId: String!, email: String!) -> Bool {
+    func loginParse(username: String, password: String, facebookUserId: String!, email: String!) -> (success: Bool, error: String!) {
         if userDA.userExists(username) {
-            userDA.loginUser(username, password: username)
+            let result = userDA.loginUser(username, password: username)
             currentUser = User()
             
-            return true
+            return result
         } else if facebookUserId != nil {
-            if signUpParse(username, password: password, facebookUserId: facebookUserId, email: email) {
-                userDA.loginUser(username, password: username)
+            var result = signUpParse(username, password: password, facebookUserId: facebookUserId, email: email)
+            if result.success {
+                result = userDA.loginUser(username, password: username)
                 currentUser = User()
-                
-                return true
             }
+            
+            return result
         }
         
-        return false
+        return (false, "Login failed")
     }
     
-    func signUpParse(username: String, password: String, facebookUserId: String!, email: String!) -> Bool {
+    func signUpParse(username: String, password: String, facebookUserId: String!, email: String!) -> (success: Bool, error: String!) {
         if userDA.userExists(username) {
-            return false
+            return (false, "User already exists")
         } else {
             userDA.createUser(facebookUserId, username: username, email: email, password: password)
         }
         
-        self.loginParse(username, password: password, facebookUserId: facebookUserId, email: email)
+        let result = self.loginParse(username, password: password, facebookUserId: facebookUserId, email: email)
         
-        return true
+        return result
     }
 }

@@ -17,38 +17,6 @@ enum UserType: Int {
     case Email = 0, Facebook
 }
 
-class Statistics {
-    var totalPuzzlesCompleted: Int!
-    var totalPuzzlesTimeUp: Int!
-    var totalPuzzlesGaveUp: Int!
-    var totalHintsUsed: Int!
-    var totalSecondsPlayed: Int!
-    var fourStarsEarned: Int!
-    var threeStarsEarned: Int!
-    var twoStarsEarned: Int!
-    var oneStarsEarned: Int!
-    
-    var totalPuzzlesPlayed: Int {
-        return totalPuzzlesCompleted + totalPuzzlesGaveUp + totalPuzzlesTimeUp
-    }
-    
-    var totalStarsEarned: Int {
-        return fourStarsEarned * 4 + threeStarsEarned * 3 + twoStarsEarned * 2 + oneStarsEarned
-    }
-    
-    var averageStars: Double {
-        return totalPuzzlesPlayed == 0 ? 0.0 : Double(totalStarsEarned) / 4.0 / Double(totalPuzzlesPlayed)
-    }
-    
-    var averageTime: Int {
-        return totalPuzzlesPlayed == 0 ? 0 : totalSecondsPlayed / totalPuzzlesPlayed
-    }
-    
-    init() {
-        
-    }
-}
-
 class User: NSObject {
     private var userDA = UserDA()
     private var challengeDA = ChallengeDA()
@@ -70,13 +38,15 @@ class User: NSObject {
         super.init()
         
         self.facebookUserId = PFUser.currentUser()?.objectForKey("facebookUserId") == nil ? nil : PFUser.currentUser()?.objectForKey("facebookUserId") as! String
+        
+        self.updateProfilePicture()
     }
     
     func updateProfilePicture() {
         if self.facebookUserId != nil {
             userDA.loadFacebookProfilePicture(self.facebookUserId)
         } else {
-            self.profilePicture = UIImage(named: "group-icon")
+            self.profilePicture = UIImage(named: PROFILE_PICTURE)
         }
     }
     

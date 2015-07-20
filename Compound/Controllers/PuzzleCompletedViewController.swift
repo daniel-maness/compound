@@ -24,6 +24,7 @@ class PuzzleCompletedViewController: BaseViewController {
     @IBOutlet weak var starsImageView: UIImageView!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
@@ -31,8 +32,6 @@ class PuzzleCompletedViewController: BaseViewController {
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
-        challengeButton.enabled = false
-        
         // This method is good for showing a view we may need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("ChallengePuzzleViewController") as! ChallengePuzzleViewController
         viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
@@ -64,5 +63,7 @@ class PuzzleCompletedViewController: BaseViewController {
         totalStarsLabel.text = String(totalStars)
         
         starsImageView.image = UIImage(named: "star-group-" + String(currentStars))
+        
+        self.setUserPicture(profilePicture)
     }
 }

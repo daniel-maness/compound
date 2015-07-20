@@ -43,6 +43,10 @@
 		AA603DBB1AF7E5A000EF7B99 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA603DBA1AF7E5A000EF7B99 /* User.storyboard */; };
 		AA603DBE1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DBC1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift */; };
 		AA603DBF1AF7E5AC00EF7B99 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DBD1AF7E5AC00EF7B99 /* ProfileViewController.swift */; };
+		AA65FB471B5D63D900BE9F01 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA65FB461B5D63D900BE9F01 /* Statistics.swift */; };
+		AA65FB491B5D71B900BE9F01 /* exit-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB481B5D71B900BE9F01 /* exit-button.png */; };
+		AA65FB4B1B5D748C00BE9F01 /* exit-button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */; };
+		AA65FB4F1B5D7E0300BE9F01 /* profile-picture-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */; };
 		AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */; };
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
 		AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */; };
@@ -213,6 +217,10 @@
 		AA603DBA1AF7E5A000EF7B99 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = User.storyboard; path = Views/User.storyboard; sourceTree = "<group>"; };
 		AA603DBC1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengePuzzleViewController.swift; path = Controllers/ChallengePuzzleViewController.swift; sourceTree = "<group>"; };
 		AA603DBD1AF7E5AC00EF7B99 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		AA65FB461B5D63D900BE9F01 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		AA65FB481B5D71B900BE9F01 /* exit-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-button.png"; path = "images/exit-button.png"; sourceTree = "<group>"; };
+		AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-button-highlighted.png"; path = "images/exit-button-highlighted.png"; sourceTree = "<group>"; };
+		AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile-picture-overlay.png"; path = "images/profile-picture-overlay.png"; sourceTree = "<group>"; };
 		AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleFailedViewController.swift; path = Controllers/PuzzleFailedViewController.swift; sourceTree = "<group>"; };
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
 		AA9FF7521B5C3CA700A75571 /* Puzzles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puzzles.swift; sourceTree = "<group>"; };
@@ -467,6 +475,7 @@
 				AAFB40141ADEE9E900F44C8F /* Resources.swift */,
 				AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */,
 				AA9FF7521B5C3CA700A75571 /* Puzzles.swift */,
+				AA65FB461B5D63D900BE9F01 /* Statistics.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -507,6 +516,9 @@
 		AAFB401D1ADEE9F500F44C8F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */,
+				AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */,
+				AA65FB481B5D71B900BE9F01 /* exit-button.png */,
 				AAFD69141AFD1858001F6063 /* container-green.png */,
 				AA5767AA1AFAD896006014FC /* container-grey.png */,
 				AA4FA4E41AF2E0DA004D6934 /* appicon-40.png */,
@@ -758,6 +770,7 @@
 				AAFB40821ADEF6A100F44C8F /* Gotham-BoldIta.otf in Resources */,
 				AAFB40B81ADEF71500F44C8F /* smallstar-white.png in Resources */,
 				AAFB407A1ADEF6A100F44C8F /* GothaBoo in Resources */,
+				AA65FB491B5D71B900BE9F01 /* exit-button.png in Resources */,
 				AAFC6F491AE08C6A0032A98C /* small_star_bestof_x5.png in Resources */,
 				AAFB40391ADEEA3400F44C8F /* keywords.txt in Resources */,
 				AA5767AB1AFAD896006014FC /* container-grey.png in Resources */,
@@ -802,6 +815,7 @@
 				AAFC6F3E1AE08C6A0032A98C /* group-icon.png in Resources */,
 				AAFB40911ADEF6A100F44C8F /* GothaMedIta in Resources */,
 				AAFC6F2D1AE08B6B0032A98C /* container-white.png in Resources */,
+				AA65FB4B1B5D748C00BE9F01 /* exit-button-highlighted.png in Resources */,
 				AAFB40841ADEF6A100F44C8F /* Gotham-BookIta.otf in Resources */,
 				AAFB40B01ADEF6AD00F44C8F /* Gobold Thin.ttf in Resources */,
 				AAFB40A71ADEF6AD00F44C8F /* Gobold Bold.ttf in Resources */,
@@ -809,6 +823,7 @@
 				AA4FA4E91AF2E0DA004D6934 /* appicon-40.png in Resources */,
 				AAFB3FDC1ADED47100F44C8F /* Images.xcassets in Resources */,
 				AA4FA4EA1AF2E0DA004D6934 /* appicon-60.png in Resources */,
+				AA65FB4F1B5D7E0300BE9F01 /* profile-picture-overlay.png in Resources */,
 				AAFB40941ADEF6A100F44C8F /* GothaUlt in Resources */,
 				AAFB408E1ADEF6A100F44C8F /* Gotham-XLight.otf in Resources */,
 				AAFB40871ADEF6A100F44C8F /* Gotham-Medium.otf in Resources */,
@@ -903,6 +918,7 @@
 				AAFB40151ADEE9E900F44C8F /* Puzzle.swift in Sources */,
 				AAFB401C1ADEE9F200F44C8F /* HomeViewController.swift in Sources */,
 				AAFB403D1ADEEA9900F44C8F /* PuzzleDA.swift in Sources */,
+				AA65FB471B5D63D900BE9F01 /* Statistics.swift in Sources */,
 				AAFB40311ADEEA2C00F44C8F /* SQLiteDB.swift in Sources */,
 				AAFB403F1ADEEAEB00F44C8F /* Combination.swift in Sources */,
 				AA603DB91AF7E59300EF7B99 /* User.swift in Sources */,

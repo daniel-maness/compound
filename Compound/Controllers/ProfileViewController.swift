@@ -63,7 +63,7 @@ class ProfileViewController: BaseViewController {
     
     func setupView() {
         shareButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-        profilePicture.image = currentUser.profilePicture
+        self.setUserPicture(profilePicture)
         totalStarsLabel.text = totalStars
         totalWonLabel.text = totalWon
         totalLostLabel.text = totalLost

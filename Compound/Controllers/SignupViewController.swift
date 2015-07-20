@@ -23,12 +23,15 @@ class SignupViewController: BaseViewController {
         var username = usernameTextField.text
         var password = passwordTextField.text
         
+        messageLabel.text = ""
+        
         if username == "" {
             messageLabel.text = "Username required"
         } else if password == "" {
             messageLabel.text = "Password required"
         } else {
-            messageLabel.text = ""
+            usernameTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
             if userSignUp(username, password: password) {
                 self.showHomeViewController()
             }
@@ -58,5 +61,9 @@ class SignupViewController: BaseViewController {
         }
         
         return false
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 }

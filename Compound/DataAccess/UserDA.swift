@@ -39,20 +39,28 @@ class UserDA {
         }
     }
     
-    func loginUser(username: String, password: String) -> Bool {
+    func loginUser(username: String, password: String) -> (success: Bool, error: String!) {
         PFUser.logInWithUsername(username, password: password)
         
-        return PFUser.currentUser() != nil
+        if PFUser.currentUser() == nil {
+            return (false, "Login failed")
+        }
+        
+        return (true, nil)
     }
     
     func loadFacebookProfilePicture(facebookUserId: String) {
-        let url = NSURL(string: "https://graph.facebook.com/\(facebookUserId)/picture?type=large")
+        let url = NSURL(string: "https://graph.facebook.com/\(facebookUserId)/picture?type=normal")
         let urlRequest = NSURLRequest(URL: url!)
         
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             // Display the image
-            let image = UIImage(data: data)
-            currentUser.profilePicture = image
+            if error == nil {
+                let image = UIImage(data: data)
+                currentUser.profilePicture = image
+            } else {
+                currentUser.profilePicture = UIImage(named: PROFILE_PICTURE)
+            }
         }
     }
     

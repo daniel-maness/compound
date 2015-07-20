@@ -27,10 +27,11 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
-    @IBAction func onHomePressed(sender: UIButton) {
-        self.showHomeViewController()
+    @IBAction func onExitPressed(sender: UIButton) {
+        exitView(false)
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
@@ -42,7 +43,8 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         }
         
         challengeDA.sendChallenge(self.userPuzzleId, friendIds: friendIds, challengeTime: DateTime.now())
-        self.view.removeFromSuperview()
+        
+        exitView(true)
     }
     
     /* Setup */
@@ -62,6 +64,8 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         wordLabel1.attributedText = word1
         wordLabel2.attributedText = word2
         totalStarsLabel.text = String(totalStars)
+        
+        self.setUserPicture(profilePicture)
         
         challengeButton.enabled = false
         
@@ -111,5 +115,11 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     
     func toggleChallengeButton() {
         challengeButton.enabled = selectedCount > 0 ? true : false
+    }
+    
+    func exitView(challengeSent: Bool) {
+        var parent = self.parentViewController as! PuzzleCompletedViewController
+        parent.challengeButton.enabled = !challengeSent
+        self.view.removeFromSuperview()
     }
 }

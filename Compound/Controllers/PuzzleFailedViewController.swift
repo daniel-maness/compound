@@ -16,6 +16,7 @@ class PuzzleFailedViewController: BaseViewController {
     /* Outlets */
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var totalStarsLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
@@ -33,5 +34,7 @@ class PuzzleFailedViewController: BaseViewController {
     func setupView() {
         messageLabel.text = self.message
         totalStarsLabel.text = String(self.totalStars)
+        
+        self.setUserPicture(profilePicture)
     }
 }

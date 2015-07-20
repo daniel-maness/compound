@@ -23,6 +23,7 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
     @IBAction func onSharePressed(sender: UIButton) {
@@ -49,6 +50,8 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         populateStats()
         populateChallengesTable()
+        
+        self.setUserPicture(profilePicture)
     }
     
     func populateStats() {

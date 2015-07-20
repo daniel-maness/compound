@@ -21,16 +21,20 @@ class EmailLoginViewController: LoginViewController {
         var username = usernameTextField.text
         var password = passwordTextField.text
         
+        messageLabel.text = ""
+        
         if username == "" {
             messageLabel.text = "Email required"
         } else if password == "" {
             messageLabel.text = "Password required"
         } else {
-            messageLabel.text = ""
-            if self.loginParse(username, password: password, facebookUserId: nil, email: nil) {
+            usernameTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            let result = self.loginParse(username, password: password, facebookUserId: nil, email: nil)
+            if result.success {
                 self.showHomeViewController()
             } else {
-                messageLabel.text = "Invalid email/password combination"
+                messageLabel.text = result.error
             }
         }
     }
@@ -45,5 +49,9 @@ class EmailLoginViewController: LoginViewController {
     
     func setupView() {
         messageLabel.text = ""
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 }

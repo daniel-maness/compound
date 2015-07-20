@@ -13,5 +13,11 @@ let CHALLENGE_CLASSNAME = "Challenge"
 let FRIEND_CLASSNAME = "UserFriend"
 let WORD_CLASSNAME = "Word"
 let COMBINATION_CLASSNAME = "Combination"
+let PROFILE_PICTURE = "group-icon"
+let GROUP_PICTURE = "group-icon"
 
 let MAX_TIME = 60
+
+class Settings {
+    static var autoWin: Bool!
+}
