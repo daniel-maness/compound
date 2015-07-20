@@ -40,7 +40,7 @@ class UserDA {
     }
     
     func loginUser(username: String, password: String) -> Bool {
-        PFUser.logInWithUsernameInBackground(username, password: password)
+        PFUser.logInWithUsername(username, password: password)
         
         return PFUser.currentUser() != nil
     }
