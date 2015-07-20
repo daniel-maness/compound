@@ -15,7 +15,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     var word2: NSMutableAttributedString!
     var totalStars: Int = 0
     var friendsList: [Friend]!
-    var selectedFriends: [Int?] = []
+    var selectedFriends: [String?] = []
     var selectedCount = 0
     var userPuzzleId: Int = 0
     let challengeDA = ChallengeDA()
@@ -27,16 +27,15 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
-    @IBAction func onHomePressed(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+    @IBAction func onExitPressed(sender: UIButton) {
+        exitView(false)
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
-        var friendIds = [Int]()
+        var friendIds = [String]()
         for selected in selectedFriends {
             if selected != nil {
                 friendIds.append(selected!)
@@ -44,7 +43,8 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         }
         
         challengeDA.sendChallenge(self.userPuzzleId, friendIds: friendIds, challengeTime: DateTime.now())
-        self.view.removeFromSuperview()
+        
+        exitView(true)
     }
     
     /* Setup */
@@ -64,6 +64,8 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         wordLabel1.attributedText = word1
         wordLabel2.attributedText = word2
         totalStarsLabel.text = String(totalStars)
+        
+        self.setUserPicture(profilePicture)
         
         challengeButton.enabled = false
         
@@ -98,7 +100,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         let id = self.friendsList[indexPath.row].id
-        self.selectedFriends[index] = id
+        self.selectedFriends[index] = String(id)
         selectedCount++
         toggleChallengeButton()
     }
@@ -113,5 +115,11 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     
     func toggleChallengeButton() {
         challengeButton.enabled = selectedCount > 0 ? true : false
+    }
+    
+    func exitView(challengeSent: Bool) {
+        var parent = self.parentViewController as! PuzzleCompletedViewController
+        parent.challengeButton.enabled = !challengeSent
+        self.view.removeFromSuperview()
     }
 }

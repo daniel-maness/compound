@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-               BuildableName = "Compound.app"
-               BlueprintName = "Compound"
+               BuildableName = "compound.app"
+               BlueprintName = "compound"
                ReferencedContainer = "container:Compound.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-            BuildableName = "Compound.app"
-            BlueprintName = "Compound"
+            BuildableName = "compound.app"
+            BlueprintName = "compound"
             ReferencedContainer = "container:Compound.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-            BuildableName = "Compound.app"
-            BlueprintName = "Compound"
+            BuildableName = "compound.app"
+            BlueprintName = "compound"
             ReferencedContainer = "container:Compound.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -89,15 +89,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAFB3FCE1ADED47100F44C8F"
-            BuildableName = "Compound.app"
-            BlueprintName = "Compound"
+            BuildableName = "compound.app"
+            BlueprintName = "compound"
             ReferencedContainer = "container:Compound.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

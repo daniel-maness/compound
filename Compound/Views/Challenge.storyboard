@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Medium.otf">
@@ -19,7 +19,7 @@
         <!--Challenges View Controller-->
         <scene sceneID="aiM-4R-oAm">
             <objects>
-                <viewController storyboardIdentifier="ChallengesViewController" id="iT2-7U-RST" customClass="ChallengesViewController" customModule="Compound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengesViewController" id="iT2-7U-RST" customClass="ChallengesViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hgd-We-AaZ"/>
                         <viewControllerLayoutGuide type="bottom" id="51U-Wt-xJU"/>
@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZA-DJ-Wl4">
-                                <rect key="frame" x="285" y="5" width="30" height="30"/>
+                                <rect key="frame" x="288" y="3" width="30" height="30"/>
                                 <state key="normal" image="homeicon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -127,6 +127,7 @@
                     <connections>
                         <outlet property="bestOfAverageLabel" destination="Hg6-ym-yfd" id="MuZ-95-Nlu"/>
                         <outlet property="homeButton" destination="9ZA-DJ-Wl4" id="rtR-ec-HPc"/>
+                        <outlet property="profilePicture" destination="wBM-dd-TRJ" id="YKZ-gF-1dG"/>
                         <outlet property="tableView" destination="rqA-Tc-Xsj" id="7RQ-dF-ZCa"/>
                         <outlet property="totalLostLabel" destination="Bmo-QY-aUz" id="EgU-Qu-rDB"/>
                         <outlet property="totalWonLabel" destination="kLS-Wn-wvK" id="cW1-hm-5aJ"/>

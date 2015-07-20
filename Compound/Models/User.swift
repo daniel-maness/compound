@@ -7,26 +7,47 @@
 //
 
 import Foundation
+import Parse
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class User {
+var currentUser: User!
+
+enum UserType: Int {
+    case Email = 0, Facebook
+}
+
+class User: NSObject {
     private var userDA = UserDA()
     private var challengeDA = ChallengeDA()
     
-    let userId: Int
+    var userType: UserType!
+    var profilePicture: UIImage!
+    var friends: [PFObject]!
+    var facebookUserId: String!
     
-    init() {
-        self.userId = 1
+    var userId: String! {
+        return PFUser.currentUser()?.objectId
     }
     
-    func getPersonalStats() -> (totalStars: Int, totalPuzzles: Int, totalWon: Int, averageStars: Double, totalHints: Int, averageTime: Int) {
-        let totalStars = getTotalStars()
-        let totalPuzzles = getPuzzleCount(nil)
-        let totalWon = getPuzzleCount(Status.Complete)
-        let averageStars = getAverageStars()
-        let totalHints = getHintCount()
-        let averageTime = getAverageTime()
+    var email: String! {
+        return PFUser.currentUser()?.email
+    }
+    
+    override init() {
+        super.init()
         
-        return (totalStars, totalPuzzles, totalWon, averageStars, totalHints, averageTime)
+        self.facebookUserId = PFUser.currentUser()?.objectForKey("facebookUserId") == nil ? nil : PFUser.currentUser()?.objectForKey("facebookUserId") as! String
+        
+        self.updateProfilePicture()
+    }
+    
+    func updateProfilePicture() {
+        if self.facebookUserId != nil {
+            userDA.loadFacebookProfilePicture(self.facebookUserId)
+        } else {
+            self.profilePicture = UIImage(named: PROFILE_PICTURE)
+        }
     }
     
     func getVersusStats() {
@@ -37,26 +58,6 @@ class User {
         
     }
     
-    func getTotalStars() -> Int {
-        return userDA.getTotalStars(self.userId)
-    }
-    
-    func getPuzzleCount(status: Status!) -> Int {
-        return userDA.getPuzzleCount(self.userId, status: status)
-    }
-    
-    func getAverageStars() -> Double {
-        return userDA.getAverageStars(self.userId)
-    }
-    
-    func getHintCount() -> Int {
-        return userDA.getHintCount(self.userId)
-    }
-    
-    func getAverageTime() -> Int {
-        return userDA.getAverageTime(self.userId)
-    }
-    
     func getFriendsList() -> [Friend] {
         return userDA.getFriendsList(self.userId)
     }
@@ -64,6 +65,12 @@ class User {
     func getChallengesReceived() -> [Challenge] {
         return challengeDA.getChallengesReceived(self.userId)
     }
+    
+    func getStats() -> Statistics {
+        return userDA.getStats(self.userId)
+    }
+    
+    func updateStats(puzzle: Puzzle) {
+        userDA.updateStats(puzzle)
+    }
 }
-
-var currentUser = User()

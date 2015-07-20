@@ -24,23 +24,20 @@ class PuzzleCompletedViewController: BaseViewController {
     @IBOutlet weak var starsImageView: UIImageView!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.showHomeViewController()
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
-        challengeButton.enabled = false
-        
         // This method is good for showing a view we may need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("ChallengePuzzleViewController") as! ChallengePuzzleViewController
         viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
-        viewController.totalStars = currentUser.getTotalStars()
+        viewController.totalStars = currentUser.getStats().totalStarsEarned
         viewController.userPuzzleId = self.userPuzzleId
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)
@@ -66,5 +63,7 @@ class PuzzleCompletedViewController: BaseViewController {
         totalStarsLabel.text = String(totalStars)
         
         starsImageView.image = UIImage(named: "star-group-" + String(currentStars))
+        
+        self.setUserPicture(profilePicture)
     }
 }

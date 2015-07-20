@@ -67,6 +67,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         hiddenText.hidden = true
         hiddenText.autocorrectionType = UITextAutocorrectionType.No
         hiddenText.returnKeyType = UIReturnKeyType.Go
+        hiddenText.keyboardType = UIKeyboardType.ASCIICapable
         self.hiddenText.delegate = self
         showKeyboard()
     }
@@ -101,7 +102,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func startTimer() {
-        puzzle.time = puzzle.maxTime
+        puzzle.time = MAX_TIME
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("handleTimer"), userInfo: nil, repeats: true)
         updateTimerLabel()
     }
@@ -135,12 +136,14 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func endPuzzle(status: Status) {
         puzzle.status = status
         stopPuzzle()
-        puzzle.save()
+        currentUser.updateStats(puzzle)
         
-        if challenge != nil {
-            challenge.friendPuzzle = self.puzzle
-            challenge.save()
-        }
+//        puzzle.save()
+//        
+//        if challenge != nil {
+//            challenge.friendPuzzle = self.puzzle
+//            challenge.save()
+//        }
         
         revealPuzzle()
         
@@ -212,7 +215,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateTimerLabel() {
-        if puzzle.time == puzzle.maxTime {
+        if puzzle.time == MAX_TIME {
             timerLabel.text = "1:00"
         } else if puzzle.time <= 10 {
             timerLabel.textColor = ColorPalette.pink
@@ -235,7 +238,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func updateAnswerLabel() {
         if puzzle.hintsUsed >= puzzle.maxHints - 1 {
             if puzzle.hintsUsed == puzzle.maxHints && hiddenText.text == "" {
-                hiddenText.text = puzzle.keyword.Name[0]
+                //hiddenText.text = puzzle.keyword.Name[0]
             }
             
             if count(hiddenText.text) >= count(puzzle.keyword.Name) {
@@ -317,8 +320,8 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.currentStars = puzzle.currentStars
-        viewController.totalStars = currentUser.getTotalStars()
-        viewController.userPuzzleId = self.puzzle.userPuzzleId
+        viewController.totalStars = currentUser.getStats().totalStarsEarned
+        //viewController.userPuzzleId = self.puzzle.userPuzzleId
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
@@ -327,7 +330,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         // This method is good for showing a view we won't need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
-        viewController.totalStars = currentUser.getTotalStars()
+        viewController.totalStars = currentUser.getStats().totalStarsEarned
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

@@ -23,6 +23,7 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
     @IBAction func onSharePressed(sender: UIButton) {
@@ -30,9 +31,7 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func onHomePressed(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.showHomeViewController()
     }
     
     @IBAction func onNewChallengePressed(sender: UIButton) {
@@ -51,6 +50,8 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         populateStats()
         populateChallengesTable()
+        
+        self.setUserPicture(profilePicture)
     }
     
     func populateStats() {

@@ -31,7 +31,6 @@ class Puzzle {
     let maxHints: Int = 3
     let maxStars: Int = 4
     let minStars: Int = 1
-    let maxTime = 60
     
     private var puzzleDA: PuzzleDA
     private var challengeDA: ChallengeDA
@@ -76,7 +75,7 @@ class Puzzle {
         self.hintsUsed = 0
         self.points = 0
         self.ended = false
-        self.time = maxTime
+        self.time = MAX_TIME
     }
     
     func resetPuzzle() {
@@ -85,7 +84,7 @@ class Puzzle {
         self.currentHint = ""
         self.points = 0
         self.ended = false
-        self.time = maxTime
+        self.time = MAX_TIME
         self.status = Status.Incomplete
     }
     
@@ -98,6 +97,7 @@ class Puzzle {
     func newPuzzle() {
 //        let adminDA = AdminDA()
 //        adminDA.populateWordTable()
+//        syncHelper.syncPuzzleData()
 //        adminDA.populateCombinationTable()
 //        adminDA.generatePuzzles()
         let newPuzzle = puzzleDA.getNewPuzzle()

@@ -16,12 +16,11 @@ class PuzzleFailedViewController: BaseViewController {
     /* Outlets */
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var totalStarsLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.showHomeViewController()
     }
     
     /* Setup */
@@ -35,5 +34,7 @@ class PuzzleFailedViewController: BaseViewController {
     func setupView() {
         messageLabel.text = self.message
         totalStarsLabel.text = String(self.totalStars)
+        
+        self.setUserPicture(profilePicture)
     }
 }

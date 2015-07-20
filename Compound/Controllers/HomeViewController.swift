@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class HomeViewController: BaseViewController {
     /* Actions */
@@ -23,5 +24,14 @@ class HomeViewController: BaseViewController {
     @IBAction func onProfilePressed(sender: UIButton) {
         var viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onSettingsPressed(sender: UIButton) {
+        var viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+
     }
 }
