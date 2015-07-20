@@ -12,7 +12,6 @@ import Parse
 /********** Admin Functions **********/
 class AdminDA {
     let userDA = UserDA()
-    let puzzleDA = PuzzleDA()
     
     func populateWordTable() {
         var streamReader = StreamReader(fileName: "keywords")
@@ -24,7 +23,7 @@ class AdminDA {
     }
 
     func populateCombinationTable() {
-        var words = puzzleDA.getAllWords()
+        var words = getAllWords()
         
         var streamReader = StreamReader(fileName: "combinations")
         var rawList: Array<NSString> = streamReader.getWords()
@@ -35,14 +34,14 @@ class AdminDA {
                     var firstWord = combo.substringToIndex(count(word.Name))
                     if firstWord == word.Name {
                         var secondWord = combo.substringFromIndex(count(firstWord))
-                        if puzzleDA.getCombinationId(firstWord, secondWord: secondWord) == "" {
+                        if getCombinationId(firstWord, secondWord: secondWord) == -1 {
                             insertCombination(firstWord, secondWord: secondWord)
                         }
                     } else {
                         firstWord = combo.substringToIndex(combo.length - count(word.Name))
                         var secondWord = combo.substringFromIndex(combo.length - count(word.Name))
                         
-                        if secondWord == word.Name && puzzleDA.getCombinationId(firstWord, secondWord: secondWord) == "" {
+                        if secondWord == word.Name && getCombinationId(firstWord, secondWord: secondWord) == -1 {
                             insertCombination(firstWord, secondWord: secondWord)
                         }
                     }
@@ -52,43 +51,86 @@ class AdminDA {
     }
 
     func insertWord(name: String) {
-        let word = PFObject(className: "Word")
-        word["name"] = name
-        word.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in println("Object has been saved") }
-        
-        //let db = SQLiteDB.sharedInstance()
-        //let result = db.execute("INSERT INTO Word (Name) VALUES ('" + name + "')")
+        let db = SQLiteDB.sharedInstance()
+        let result = db.execute("INSERT INTO Word (Name) VALUES ('" + name + "')")
     }
 
     func insertCombination(firstWord: String, secondWord: String) {
-        let pfCombination = PFObject(className: "Combination")
-        let first = PFQuery(className: "Word").whereKey("name", equalTo: firstWord).findObjects()
-            pfCombination["firstWord"] = first?.first
-        let second = PFQuery(className: "Word").whereKey("name", equalTo: secondWord).findObjects()
-            pfCombination["secondWord"] = second?.first
+        let db = SQLiteDB.sharedInstance()
+        let first = db.query("SELECT WordId FROM Word WHERE Name = '" + firstWord + "'")
+        let second = db.query("SELECT WordId FROM Word WHERE Name = '" + secondWord + "'")
         
-        if first != nil && second != nil {
-            pfCombination.save()
+        let firstId = first[0]["WordId"]?.asString()
+        let secondId = second[0]["WordId"]?.asString()
+        
+        let result = db.execute("INSERT INTO Combination (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
+    }
+    
+    func getAllWords() -> [Word] {
+        let db = SQLiteDB.sharedInstance()
+        let data = db.query("SELECT * FROM Word")
+        
+        var words = [Word]()
+        for row in data {
+            let id = row["WordId"]?.asInt()
+            let name = row["Name"]?.asString()
+            words.append(Word(id: id!, name: name!))
         }
         
+        return words
+    }
+    
+    func getAllCombinations(keyword: Word) -> [Combination] {
+        let db = SQLiteDB.sharedInstance()
+        let data = db.query("SELECT * FROM viCombination c WHERE c.FirstWordId = " + String(keyword.Id) + " OR c.SecondWordId = " + String(keyword.Id))
+        var combinations = [Combination]()
         
-//        let db = SQLiteDB.sharedInstance()
-//        let first = db.query("SELECT WordId FROM Word WHERE Name = '" + firstWord + "'")
-//        let second = db.query("SELECT WordId FROM Word WHERE Name = '" + secondWord + "'")
-//        
-//        let firstId = first[0]["WordId"]?.asString()
-//        let secondId = second[0]["WordId"]?.asString()
-//        
-//        let result = db.execute("INSERT INTO Combination (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
+        for row in data {
+            let combinationId = row["CombinationId"]!.asInt()
+            let first = Word(id: row["FirstWordId"]!.asInt(), name: String(row["FirstName"]!.asString()))
+            let second = Word(id: row["SecondWordId"]!.asInt(), name: String(row["SecondName"]!.asString()))
+            combinations.append(Combination(combinationId: combinationId, keyword: keyword, leftWord: first, rightWord: second))
+        }
+        
+        return combinations
+    }
+    
+    func getWord(name: String) -> Word {
+        let db = SQLiteDB.sharedInstance()
+        let data = db.query("SELECT * FROM Word WHERE Name = '" + name + "'")
+        
+        if (data.count == 0) {
+            return Word(id: 0, name: "")
+        }
+        
+        return Word(id: data[0]["WordId"]!.asInt(), name: data[0]["Name"]!.asString())
+    }
+    
+    func getCombinationId(firstWord: String, secondWord: String) -> Int {
+        let db = SQLiteDB.sharedInstance()
+        let first = getWord(firstWord)
+        let second = getWord(secondWord)
+        
+        if (first.Id > 0 && second.Id > 0) {
+            let data = db.query("SELECT CombinationId FROM Combination WHERE FirstWordId = " + String(first.Id) + " AND SecondWordId = " + String(second.Id))
+            
+            if (data.count > 0) {
+                return data[0]["CombinationId"]!.asInt()
+            }
+            
+            return 0
+        }
+        
+        return -1
     }
 
     func generatePuzzles() {
         let db = SQLiteDB.sharedInstance()
-        var words = puzzleDA.getAllWords()
+        var words = getAllWords()
         
         for word in words {
             var allPuzzles = Array<Array<Combination>>()
-            var combinations = puzzleDA.getAllCombinations(word)
+            var combinations = getAllCombinations(word)
             let r = 3
             if combinations.count >= r {
                 allPuzzles = findCombinations(combinations, k: 3)

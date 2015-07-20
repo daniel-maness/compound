@@ -8,23 +8,71 @@
 
 import Foundation
 import Parse
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class User {
-    let USERNAME: String = "dmaness"
-    private var userDA = UserDA()
-    private var challengeDA = ChallengeDA()
-    var parseUser: PFObject!
-    var friends: [PFObject]!
-    var facebookUserId: String!
-    var parseUserId: String!
-    var profilePicture: UIImage!
+var currentUser: User!
+
+enum UserType: Int {
+    case Email = 0, Facebook
+}
+
+class Statistics {
+    var totalPuzzlesCompleted: Int!
+    var totalPuzzlesTimeUp: Int!
+    var totalPuzzlesGaveUp: Int!
+    var totalHintsUsed: Int!
+    var totalSecondsPlayed: Int!
+    var fourStarsEarned: Int!
+    var threeStarsEarned: Int!
+    var twoStarsEarned: Int!
+    var oneStarsEarned: Int!
     
-    let userId: Int
+    var totalPuzzlesPlayed: Int {
+        return totalPuzzlesCompleted + totalPuzzlesGaveUp + totalPuzzlesTimeUp
+    }
+    
+    var totalStarsEarned: Int {
+        return fourStarsEarned * 4 + threeStarsEarned * 3 + twoStarsEarned * 2 + oneStarsEarned
+    }
+    
+    var averageStars: Double {
+        return totalPuzzlesPlayed == 0 ? 0.0 : Double(totalStarsEarned) / 4.0 / Double(totalPuzzlesPlayed)
+    }
+    
+    var averageTime: Int {
+        return totalPuzzlesPlayed == 0 ? 0 : totalSecondsPlayed / totalPuzzlesPlayed
+    }
     
     init() {
-        self.userId = 3
-        //loadParseUser()
-        //loadFriends()
+        
+    }
+}
+
+class User: NSObject {
+    private var userDA = UserDA()
+    private var challengeDA = ChallengeDA()
+    
+    var userType: UserType!
+    var profilePicture: UIImage!
+    var friends: [PFObject]!
+    
+    var userId: String! {
+        return PFUser.currentUser()?.objectId
+    }
+    
+    var facebookUserId: String! {
+        return PFUser.currentUser()?.objectForKey("facebookUserId") as! String
+    }
+    
+    var email: String! {
+        return PFUser.currentUser()?.email
+    }
+    
+    override init() {
+        super.init()
+        
+        userDA.loadFacebookProfilePicture(self.facebookUserId)
     }
     
     func getPersonalStats() -> (totalStars: Int, totalPuzzles: Int, totalWon: Int, averageStars: Double, totalHints: Int, averageTime: Int) {
@@ -36,28 +84,6 @@ class User {
         let averageTime = getAverageTime()
         
         return (totalStars, totalPuzzles, totalWon, averageStars, totalHints, averageTime)
-    }
-    
-    func loadParseUser() {
-        let result = PFQuery(className: "User").whereKey("username", equalTo: "dmaness").findObjects()
-        let json: AnyObject! = result?.first
-        
-        if let user = json as? PFObject {
-            self.parseUser = user
-        }
-    }
-    
-    func loadFriends() {
-        let results = PFQuery(className: "UserFriend").whereKey("user", equalTo: self.parseUser).findObjects()
-        
-        for r in results! {
-            let result = PFQuery(className: "User").whereKey("objectId", equalTo: r["objectId"]).findObjects()
-            let json: AnyObject? = result?.first
-            
-            if let friend = json as? PFObject {
-                self.friends.append(friend)
-            }
-        }
     }
     
     func getVersusStats() {
@@ -96,9 +122,11 @@ class User {
         return challengeDA.getChallengesReceived(self.userId)
     }
     
-    func savePuzzleStats(puzzle: Puzzle) {
-        
+    func getStats() -> Statistics {
+        return userDA.getStats(self.userId)
+    }
+    
+    func updateStats(puzzle: Puzzle) {
+        userDA.updateStats(puzzle)
     }
 }
-
-var currentUser: User!

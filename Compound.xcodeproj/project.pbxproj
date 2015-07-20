@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA081AF91B138B0F00F2228D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF81B138B0F00F2228D /* FBSDKShareKit.framework */; };
+		AA081AFB1B138B1600F2228D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AFA1B138B1600F2228D /* FBSDKLoginKit.framework */; };
 		AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */; };
 		AA1826CC1AE7220F00A5E609 /* overlay-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CB1AE7220F00A5E609 /* overlay-mask.png */; };
 		AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */; };
@@ -43,15 +45,15 @@
 		AA603DBF1AF7E5AC00EF7B99 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DBD1AF7E5AC00EF7B99 /* ProfileViewController.swift */; };
 		AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */; };
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
+		AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */; };
+		AA9FF7531B5C3CA700A75571 /* Puzzles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7521B5C3CA700A75571 /* Puzzles.swift */; };
+		AA9FF7551B5C40D000A75571 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7541B5C40D000A75571 /* Global.swift */; };
 		AAC9E3F61B02C00400A7C2EE /* UserPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */; };
 		AACA0BAE1B043BC00029351B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAC1B043BC00029351B /* Bolts.framework */; };
 		AACA0BAF1B043BC00029351B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAD1B043BC00029351B /* Parse.framework */; };
 		AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */; };
 		AAD72BDE1B06A579009CDAB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDD1B06A579009CDAB5 /* LoginViewController.swift */; };
-		AAD72BE21B06AB8B009CDAB5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD72BDF1B06AB8B009CDAB5 /* FBSDKCoreKit.framework */; };
-		AAD72BE31B06AB8B009CDAB5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD72BE01B06AB8B009CDAB5 /* FBSDKLoginKit.framework */; };
-		AAD72BE41B06AB8B009CDAB5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD72BE11B06AB8B009CDAB5 /* FBSDKShareKit.framework */; };
-		AAD72BE61B06ACA2009CDAB5 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE51B06ACA2009CDAB5 /* ConnectViewController.swift */; };
+		AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */; };
 		AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */; };
 		AAD9F3471AE0A73900EAFA01 /* grey_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD9F3461AE0A73900EAFA01 /* grey_background.png */; };
 		AADD31FF1B0546AD00CD03C9 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD31FE1B0546AD00CD03C9 /* SyncHelper.swift */; };
@@ -173,6 +175,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		AA081AF81B138B0F00F2228D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		AA081AFA1B138B1600F2228D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = Models/Challenge.swift; sourceTree = "<group>"; };
 		AA1826CB1AE7220F00A5E609 /* overlay-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "overlay-mask.png"; path = "images/overlay-mask.png"; sourceTree = "<group>"; };
 		AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Puzzle.storyboard; path = Views/Puzzle.storyboard; sourceTree = "<group>"; };
@@ -209,17 +214,16 @@
 		AA603DBD1AF7E5AC00EF7B99 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/ProfileViewController.swift; sourceTree = "<group>"; };
 		AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleFailedViewController.swift; path = Controllers/PuzzleFailedViewController.swift; sourceTree = "<group>"; };
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
+		AA9FF7521B5C3CA700A75571 /* Puzzles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puzzles.swift; sourceTree = "<group>"; };
+		AA9FF7541B5C40D000A75571 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPuzzle.swift; sourceTree = "<group>"; };
 		AACA0BAC1B043BC00029351B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AACA0BAD1B043BC00029351B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/SignupViewController.swift; sourceTree = "<group>"; };
 		AAD72BDD1B06A579009CDAB5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
-		AAD72BDF1B06AB8B009CDAB5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		AAD72BE01B06AB8B009CDAB5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		AAD72BE11B06AB8B009CDAB5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		AAD72BE51B06ACA2009CDAB5 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectViewController.swift; path = Controllers/ConnectViewController.swift; sourceTree = "<group>"; };
+		AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = Controllers/FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
-		AAD72BE91B06CBB4009CDAB5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		AAD72BE91B06CBB4009CDAB5 /* Compound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Compound-Bridging-Header.h"; sourceTree = "<group>"; };
 		AAD9F3461AE0A73900EAFA01 /* grey_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grey_background.png; path = images/grey_background.png; sourceTree = "<group>"; };
 		AADD31FE1B0546AD00CD03C9 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncHelper.swift; sourceTree = "<group>"; };
 		AAE52B6F1AE2EC3200FFB13D /* logo-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-left.png"; path = "images/logo-left.png"; sourceTree = "<group>"; };
@@ -338,7 +342,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAD72BE31B06AB8B009CDAB5 /* FBSDKLoginKit.framework in Frameworks */,
 				AA2881671B03C5DA0066B95D /* Accelerate.framework in Frameworks */,
 				AA2881681B03C5DA0066B95D /* AudioToolbox.framework in Frameworks */,
 				AA2881691B03C5DA0066B95D /* CFNetwork.framework in Frameworks */,
@@ -348,12 +351,13 @@
 				AACA0BAF1B043BC00029351B /* Parse.framework in Frameworks */,
 				AA28816D1B03C5DA0066B95D /* MobileCoreServices.framework in Frameworks */,
 				AA28816E1B03C5DA0066B95D /* QuartzCore.framework in Frameworks */,
+				AA081AFB1B138B1600F2228D /* FBSDKLoginKit.framework in Frameworks */,
 				AA28816F1B03C5DA0066B95D /* Security.framework in Frameworks */,
+				AA081AF91B138B0F00F2228D /* FBSDKShareKit.framework in Frameworks */,
+				AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */,
 				AA2881701B03C5DA0066B95D /* Social.framework in Frameworks */,
 				AA2881711B03C5DA0066B95D /* StoreKit.framework in Frameworks */,
 				AA2881721B03C5DA0066B95D /* SystemConfiguration.framework in Frameworks */,
-				AAD72BE41B06AB8B009CDAB5 /* FBSDKShareKit.framework in Frameworks */,
-				AAD72BE21B06AB8B009CDAB5 /* FBSDKCoreKit.framework in Frameworks */,
 				AAFB40481ADEED2100F44C8F /* libsqlite3.dylib in Frameworks */,
 				AACA0BAE1B043BC00029351B /* Bolts.framework in Frameworks */,
 			);
@@ -372,9 +376,9 @@
 		AAFB3FC61ADED47100F44C8F = {
 			isa = PBXGroup;
 			children = (
-				AAD72BDF1B06AB8B009CDAB5 /* FBSDKCoreKit.framework */,
-				AAD72BE01B06AB8B009CDAB5 /* FBSDKLoginKit.framework */,
-				AAD72BE11B06AB8B009CDAB5 /* FBSDKShareKit.framework */,
+				AA081AFA1B138B1600F2228D /* FBSDKLoginKit.framework */,
+				AA081AF81B138B0F00F2228D /* FBSDKShareKit.framework */,
+				AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */,
 				AACA0BAC1B043BC00029351B /* Bolts.framework */,
 				AACA0BAD1B043BC00029351B /* Parse.framework */,
 				AA28815B1B03C5DA0066B95D /* Accelerate.framework */,
@@ -426,7 +430,7 @@
 		AAFB3FD21ADED47100F44C8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AAD72BE91B06CBB4009CDAB5 /* Bridging-Header.h */,
+				AAD72BE91B06CBB4009CDAB5 /* Compound-Bridging-Header.h */,
 				AAFB3FD31ADED47100F44C8F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -460,6 +464,7 @@
 				AAFB40131ADEE9E900F44C8F /* Puzzle.swift */,
 				AAFB40141ADEE9E900F44C8F /* Resources.swift */,
 				AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */,
+				AA9FF7521B5C3CA700A75571 /* Puzzles.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -480,7 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */,
-				AAD72BE51B06ACA2009CDAB5 /* ConnectViewController.swift */,
+				AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */,
 				AAD72BDD1B06A579009CDAB5 /* LoginViewController.swift */,
 				AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */,
 				AA603DBC1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift */,
@@ -578,6 +583,7 @@
 				AAFB40421ADEEB9800F44C8F /* StreamReader.swift */,
 				AAFB403C1ADEEA9900F44C8F /* PuzzleDA.swift */,
 				AADD31FE1B0546AD00CD03C9 /* SyncHelper.swift */,
+				AA9FF7541B5C40D000A75571 /* Global.swift */,
 			);
 			name = DataAccess;
 			sourceTree = "<group>";
@@ -719,7 +725,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AAFB3FCA1ADED47100F44C8F /* Build configuration list for PBXProject "compound" */;
+			buildConfigurationList = AAFB3FCA1ADED47100F44C8F /* Build configuration list for PBXProject "Compound" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -884,9 +890,11 @@
 				AA30B2301AFC445500C6CDC1 /* ChallengeDA.swift in Sources */,
 				AAFB401A1ADEE9F200F44C8F /* BaseViewController.swift in Sources */,
 				AA603DBF1AF7E5AC00EF7B99 /* ProfileViewController.swift in Sources */,
-				AAD72BE61B06ACA2009CDAB5 /* ConnectViewController.swift in Sources */,
+				AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */,
 				AAFB3FD51ADED47100F44C8F /* AppDelegate.swift in Sources */,
 				AA5767AF1AFAE094006014FC /* Friend.swift in Sources */,
+				AA9FF7531B5C3CA700A75571 /* Puzzles.swift in Sources */,
+				AA9FF7551B5C40D000A75571 /* Global.swift in Sources */,
 				AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */,
 				AAFB40151ADEE9E900F44C8F /* Puzzle.swift in Sources */,
 				AAFB401C1ADEE9F200F44C8F /* HomeViewController.swift in Sources */,
@@ -1017,7 +1025,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = compound;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Compound-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -1035,7 +1043,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = compound;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Compound-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
@@ -1088,7 +1096,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AAFB3FCA1ADED47100F44C8F /* Build configuration list for PBXProject "compound" */ = {
+		AAFB3FCA1ADED47100F44C8F /* Build configuration list for PBXProject "Compound" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAFB3FEC1ADED47100F44C8F /* Debug */,

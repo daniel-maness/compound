@@ -5,23 +5,23 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>55F294DC-8151-4C4C-8A6F-A4D58E0631D5</string>
+	<string>C213FA4F-39FE-4D52-BF77-702AF9A79692</string>
 	<key>IDESourceControlProjectName</key>
-	<string>compound</string>
+	<string>Compound</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D4EAEDD8AEDD08BAA48B716136A123835CF9401</key>
-		<string>github.com:daniel-maness/compound.git</string>
+		<string>https://github.com/daniel-maness/compound.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>compound.xcodeproj</string>
+	<string>Compound.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D4EAEDD8AEDD08BAA48B716136A123835CF9401</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:daniel-maness/compound.git</string>
+	<string>https://github.com/daniel-maness/compound.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

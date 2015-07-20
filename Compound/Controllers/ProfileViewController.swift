@@ -81,20 +81,21 @@ class ProfileViewController: BaseViewController {
     
     /* Logic */
     func getUserStats() {
-        let personalStats = currentUser.getPersonalStats()
-        totalStars = String(personalStats.totalStars)
-        totalPuzzles = String(personalStats.totalPuzzles)
-        totalWon = String(personalStats.totalWon)
-        totalLost = "- " + String(personalStats.totalPuzzles - personalStats.totalWon)
-        averageStars = String(format:"%.1f", personalStats.averageStars)
-        totalHints = String(personalStats.totalHints)
+        let stats = currentUser.getStats()
         
-        if personalStats.averageTime == 60 {
+        totalStars = String(stats.totalStarsEarned)
+        totalPuzzles = String(stats.totalPuzzlesPlayed)
+        totalWon = String(stats.totalPuzzlesCompleted)
+        totalLost = String(stats.totalPuzzlesGaveUp + stats.totalPuzzlesTimeUp)
+        averageStars = String(format:"%.1f", stats.averageStars)
+        totalHints = String(stats.totalHintsUsed)
+        
+        if stats.averageTime == 60 {
             averageTime = "1:00"
-        } else if personalStats.averageTime > 9 {
-            averageTime = "0:" + String(personalStats.averageTime)
+        } else if stats.averageTime > 9 {
+            averageTime = "0:" + String(stats.averageTime)
         } else {
-            averageTime = "0:0" + String(personalStats.averageTime)
+            averageTime = "0:0" + String(stats.averageTime)
         }
         
         //let versusStats = userDA.getVersusStats()

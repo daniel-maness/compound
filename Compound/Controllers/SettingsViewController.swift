@@ -43,7 +43,7 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         if FBSDKAccessToken.currentAccessToken() == nil {
             var storyboard = UIStoryboard(name: "User", bundle: nil)
-            var viewController = storyboard.instantiateViewControllerWithIdentifier("ConnectViewController") as! ConnectViewController
+            var viewController = storyboard.instantiateViewControllerWithIdentifier("FacebookLoginViewController") as! FacebookLoginViewController
             self.presentViewController(viewController, animated: true, completion: nil)
         }
     }

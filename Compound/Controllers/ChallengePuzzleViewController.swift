@@ -15,7 +15,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     var word2: NSMutableAttributedString!
     var totalStars: Int = 0
     var friendsList: [Friend]!
-    var selectedFriends: [Int?] = []
+    var selectedFriends: [String?] = []
     var selectedCount = 0
     var userPuzzleId: Int = 0
     let challengeDA = ChallengeDA()
@@ -34,7 +34,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
-        var friendIds = [Int]()
+        var friendIds = [String]()
         for selected in selectedFriends {
             if selected != nil {
                 friendIds.append(selected!)
@@ -96,7 +96,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         let id = self.friendsList[indexPath.row].id
-        self.selectedFriends[index] = id
+        self.selectedFriends[index] = String(id)
         selectedCount++
         toggleChallengeButton()
     }

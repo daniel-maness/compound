@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gobold Thin.ttf">
@@ -209,9 +209,7 @@
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="32"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="NEXT" backgroundImage="container-pink.png"/>
-                                <state key="highlighted" title="NEXT" backgroundImage="container-white.png">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="highlighted" title="NEXT" backgroundImage="container-white.png"/>
                                 <connections>
                                     <segue destination="9Bb-KE-iFr" kind="show" id="4Kz-8D-V0O"/>
                                 </connections>
@@ -263,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8w-ac-PhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-832" y="-1667"/>
+            <point key="canvasLocation" x="-832" y="-1649"/>
         </scene>
         <!--Give Up View Controller-->
         <scene sceneID="KJ7-rY-6r9">
