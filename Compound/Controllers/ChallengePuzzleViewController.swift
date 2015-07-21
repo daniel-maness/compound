@@ -14,11 +14,16 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     var word1: NSMutableAttributedString!
     var word2: NSMutableAttributedString!
     var totalStars: Int = 0
-    var friendsList: [Friend]!
     var selectedFriends: [String?] = []
     var selectedCount = 0
     var userPuzzleId: Int = 0
     let challengeDA = ChallengeDA()
+    
+    var friendsList = [Friend]() {
+        didSet {
+            refreshUI()
+        }
+    }
     
     /* Outlets */
     @IBOutlet weak var wordLabel0: UILabel!
@@ -70,18 +75,25 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         challengeButton.enabled = false
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //self.tableView.registerNib(UINib(nibName: "friendCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         
         populateFriendsTable()
     }
     
     func populateFriendsTable() {
-        friendsList = currentUser.getFriendsList()
-        
-        for i in 0..<friendsList.count {
-            self.selectedFriends.append(nil)
-        }
-        
-        self.selectedCount = 0
+        Facebook.getFriends(false, completion: { (result: [Friend], error: NSError!) -> Void in
+            if error == nil {
+                self.friendsList = result
+            } else {
+                println(error)
+            }
+        })
+    }
+    
+    func refreshUI() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,10 +101,23 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell: FriendCell = self.tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as! FriendCell
+        let title = self.friendsList[indexPath.row].displayName
+        let image = self.friendsList[indexPath.row].profilePicture
         
-        cell.imageView?.image = UIImage(named: self.friendsList[indexPath.row].pictureFileName)
-        cell.textLabel?.text = self.friendsList[indexPath.row].displayName
+        cell.title.text = title
+        
+        if image != nil {
+            cell.picture.contentMode = .ScaleAspectFit
+            cell.picture.image = image
+            self.formatImageAsCircle(cell.picture)
+//            dispatch_async(dispatch_get_main_queue(), {
+//                if let friendCell = tableView.cellForRowAtIndexPath(indexPath) as? FriendCell {
+//                    friendCell.picture.image = image
+//                    self.formatImageAsCircle(friendCell.picture)
+//                }
+//            })
+        }
         
         return cell
     }
@@ -100,7 +125,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         let id = self.friendsList[indexPath.row].id
-        self.selectedFriends[index] = String(id)
+        //self.selectedFriends[index] = String(id)
         selectedCount++
         toggleChallengeButton()
     }
@@ -108,7 +133,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         let id = self.friendsList[indexPath.row].id
-        self.selectedFriends[index] = nil
+        //self.selectedFriends[index] = nil
         selectedCount--
         toggleChallengeButton()
     }

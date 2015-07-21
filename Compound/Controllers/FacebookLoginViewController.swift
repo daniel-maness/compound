@@ -13,25 +13,23 @@ import FBSDKLoginKit
 
 class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate {
     /* Outlets */
-    @IBOutlet var facebookLoginButton: FBSDKLoginButton!
-    let permissions = ["public_profile", "email", "user_friends"]
-    var userName: String!
-    var userEmail: String!
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     /* Setup */
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        facebookLoginButton = FBSDKLoginButton()
-        facebookLoginButton.readPermissions = self.permissions
-        facebookLoginButton.delegate = self
+        if  FBSDKAccessToken.currentAccessToken() == nil {
+            facebookLoginButton.readPermissions = FACEBOOK_PERMISSIONS
+            facebookLoginButton.delegate = self
+        }
         
         let uiView = self.view as UIView
     }
     
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() == nil {
-            loginFacebook()
+            //loginFacebook()
         } else {
             currentUser = User()
             self.showHomeViewController()
@@ -39,7 +37,14 @@ class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        loginFacebook()
+        if error != nil {
+            println("Error: \(error)")
+        } else if result.isCancelled {
+            println("Cancelled login")
+        } else {
+            println("Granted permissions: \(result.grantedPermissions)")
+            loginFacebook()
+        }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -47,11 +52,26 @@ class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate
     }
     
     func loginFacebook() {
-        if let accessToken = FBSDKAccessToken.currentAccessToken() {
-            self.loginParse(accessToken.userID, password: accessToken.userID, facebookUserId: accessToken.userID, email: nil)
-            
-            currentUser = User()
-            self.showHomeViewController()
-        }
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            if error != nil {
+                println("Error: \(error)")
+            } else {
+                let id = result.valueForKey("id") as! String
+                //let username = result.valueForKey("name") as! String
+                let username = id
+                let password = id
+                //let email = result.valueForKey("contact_email") as! String
+                
+//                if !self.userDA.userExists(username) {
+//                    self.userDA.createUser(id, username: username, password: password, email: nil)
+//                }
+                
+                self.loginParse(username, password: password, facebookUserId: id, email: nil)
+                
+                currentUser = User()
+                self.showHomeViewController()
+            }
+        })
     }
 }

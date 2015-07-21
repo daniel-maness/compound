@@ -7,25 +7,25 @@
 //
 
 import Foundation
+import Parse
 
 class Friend {
-    var id: Int = -1
+    var id: String!
     var firstName: String = ""
     var lastName: String = ""
     var pictureFileName: String = ""
+    var profilePictureUrl: String!
+    var profilePicture: UIImage!
     var isMember: Bool = false
     var totalWonAgainst: Int = 0
     var totalLostAgainst: Int = 0
-    
-    var displayName: String {
-        return self.firstName + " " + self.lastName
-    }
+    var displayName: String!
     
     init() {
         
     }
     
-    init(id: Int) {
+    init(id: String) {
         self.id = id
     }
 }

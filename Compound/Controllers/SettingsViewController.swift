@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
     /* Outlets */
-    @IBOutlet var facebookLoginButton: FBSDKLoginButton!
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     @IBOutlet var emailLogOutButton: UIButton!
     
     /* Actions */
@@ -30,10 +30,8 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         if currentUser.facebookUserId != nil {
-            facebookLoginButton = FBSDKLoginButton()
             facebookLoginButton.delegate = self
-            facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
-            //self.view.addSubview(facebookLoginButton)
+            facebookLoginButton.readPermissions = FACEBOOK_PERMISSIONS
         }
         
         setupView()

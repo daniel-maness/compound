@@ -18,7 +18,7 @@ class UserDA {
         return user != nil && username == user["username"] as! String
     }
     
-    func createUser(facebookUserId: String!, username: String, email: String!, password: String) {
+    func createUser(facebookUserId: String!, username: String, password: String, email: String!) {
         var user = PFUser()
         
         user.username = username
@@ -49,21 +49,6 @@ class UserDA {
         return (true, nil)
     }
     
-    func loadFacebookProfilePicture(facebookUserId: String) {
-        let url = NSURL(string: "https://graph.facebook.com/\(facebookUserId)/picture?type=normal")
-        let urlRequest = NSURLRequest(URL: url!)
-        
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            // Display the image
-            if error == nil {
-                let image = UIImage(data: data)
-                currentUser.profilePicture = image
-            } else {
-                currentUser.profilePicture = UIImage(named: PROFILE_PICTURE)
-            }
-        }
-    }
-    
     func updateStats(puzzle: Puzzle) {
         let puzzleCompleted = puzzle.status == Status.Complete ? 1 : 0
         let puzzleTimeUp = puzzle.status == Status.TimeUp ? 1 : 0
@@ -83,7 +68,6 @@ class UserDA {
         user["totalPuzzlesGaveUp"] = stats.totalPuzzlesGaveUp + puzzleGaveUp
         user["totalHintsUsed"] = stats.totalHintsUsed + hintsUsed
         user["totalSecondsPlayed"] = stats.totalSecondsPlayed + secondsPlayed
-        user["secondsPlayed"] = stats.totalSecondsPlayed + secondsPlayed
         user["fourStarsEarned"] = stats.fourStarsEarned + fourStar
         user["threeStarsEarned"] = stats.threeStarsEarned + threeStar
         user["twoStarsEarned"] = stats.twoStarsEarned + twoStar
@@ -107,52 +91,5 @@ class UserDA {
         stats.oneStarsEarned = user["oneStarsEarned"] == nil ? 0 : user["oneStarsEarned"] as! Int
         
         return stats
-    }
-    
-    func getFriend(userId: String) -> Friend {
-//        let db = SQLiteDB.sharedInstance()
-//        let data = db.query("SELECT u.UserId, u.FirstName, u.LastName FROM User u WHERE u.UserId = ?", parameters: [String(userId)])[0]
-//        
-//        var friend = Friend(id: data["UserId"]!.asInt())
-//        friend.firstName = data["FirstName"]!.asString()
-//        friend.lastName = data["LastName"]!.asString()
-//        friend.pictureFileName = "group-icon"
-        
-        return Friend()
-    }
-    
-    func getFriendsList(userId: String) -> [Friend] {
-//        let db = SQLiteDB.sharedInstance()
-//        let userIdString = String(userId)
-//        let data = db.query("SELECT u.UserId, u.FirstName, u.LastName " +
-//                            "FROM UserFriend uf " +
-//                            "JOIN User u ON u.UserId = uf.UserId OR u.UserId = uf.FriendId " +
-//                            "WHERE (uf.UserId = " + userIdString + " OR uf.FriendId = " + userIdString + ") " +
-//                            "AND u.UserId != " + userIdString + " " +
-//                            "ORDER BY u.FirstName")
-        
-//        var friends = [Friend]()
-//        for row in data {
-//            var friend = Friend(id: row["UserId"]!.asInt())
-//            friend.firstName = row["FirstName"]!.asString()
-//            friend.lastName = row["LastName"]!.asString()
-//            friend.pictureFileName = "group-icon"
-//            friends.append(friend)
-//        }
-        
-        return [Friend]()
-    }
-    
-    func loadFriends() {
-//        let results = PFQuery(className: "UserFriend").whereKey("user", equalTo: self.parseUser).findObjects()
-//        
-//        for r in results! {
-//            let result = PFQuery(className: "User").whereKey("objectId", equalTo: r["objectId"]).findObjects()
-//            let json: AnyObject? = result?.first
-//            
-//            if let friend = json as? PFObject {
-//                self.friends.append(friend)
-//            }
-//        }
     }
 }

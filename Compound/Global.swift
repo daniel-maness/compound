@@ -15,6 +15,7 @@ let WORD_CLASSNAME = "Word"
 let COMBINATION_CLASSNAME = "Combination"
 let PROFILE_PICTURE = "group-icon"
 let GROUP_PICTURE = "group-icon"
+let FACEBOOK_PERMISSIONS = ["user_friends", "email", "public_profile"]
 
 let MAX_TIME = 60
 

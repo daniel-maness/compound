@@ -34,7 +34,7 @@ class LoginViewController: BaseViewController {
         if userDA.userExists(username) {
             return (false, "User already exists")
         } else {
-            userDA.createUser(facebookUserId, username: username, email: email, password: password)
+            userDA.createUser(facebookUserId, username: username, password: password, email: email)
         }
         
         let result = self.loginParse(username, password: password, facebookUserId: facebookUserId, email: email)

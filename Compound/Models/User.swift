@@ -23,7 +23,8 @@ class User: NSObject {
     
     var userType: UserType!
     var profilePicture: UIImage!
-    var friends: [PFObject]!
+    //var friends: [PFObject]!
+    var friends: [Friend]!
     var facebookUserId: String!
     
     var userId: String! {
@@ -38,13 +39,13 @@ class User: NSObject {
         super.init()
         
         self.facebookUserId = PFUser.currentUser()?.objectForKey("facebookUserId") == nil ? nil : PFUser.currentUser()?.objectForKey("facebookUserId") as! String
-        
+        self.friends = [Friend]()
         self.updateProfilePicture()
     }
     
     func updateProfilePicture() {
         if self.facebookUserId != nil {
-            userDA.loadFacebookProfilePicture(self.facebookUserId)
+            Facebook.loadProfilePicture(self.facebookUserId)
         } else {
             self.profilePicture = UIImage(named: PROFILE_PICTURE)
         }
@@ -58,9 +59,12 @@ class User: NSObject {
         
     }
     
-    func getFriendsList() -> [Friend] {
-        return userDA.getFriendsList(self.userId)
-    }
+//    func getFriendsList(completionClosure: (success: Bool, error: NSError!) -> ()) -> [Friend] {
+//        self.friends = [Friend]()
+//        let results = userDA.getFriend
+//        
+//        return currentUser.friends
+//    }
     
     func getChallengesReceived() -> [Challenge] {
         return challengeDA.getChallengesReceived(self.userId)

@@ -59,6 +59,7 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         getUserStats()
         setupView()
+        //userDA.findFriends()
     }
     
     func setupView() {

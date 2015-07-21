@@ -54,7 +54,7 @@ class SignupViewController: BaseViewController {
         if userDA.userExists(username) {
             self.messageLabel.text = "User already exists"
         } else {
-            userDA.createUser(nil, username: username, email: nil, password: password)
+            userDA.createUser(nil, username: username, password: password, email: nil)
             userDA.loginUser(username, password: password)
             currentUser = User()
             return true
