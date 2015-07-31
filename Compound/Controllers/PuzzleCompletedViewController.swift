@@ -9,6 +9,8 @@
 import UIKit
 
 class PuzzleCompletedViewController: BaseViewController {
+    private let userManager = UserManager()
+    
     /* Properties */
     var word0: NSMutableAttributedString!
     var word1: NSMutableAttributedString!
@@ -37,7 +39,7 @@ class PuzzleCompletedViewController: BaseViewController {
         viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
-        viewController.totalStars = currentUser.getStats().totalStarsEarned
+        viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.puzzle = self.puzzle
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)

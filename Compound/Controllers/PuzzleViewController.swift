@@ -9,6 +9,9 @@
 import UIKit
 
 class PuzzleViewController: BaseViewController, UITextFieldDelegate {
+    private let puzzleManager = PuzzleManager()
+    private let userManager = UserManager()
+    
     /* Properties */
     var puzzle: Puzzle!
     var challenge: Challenge!
@@ -17,6 +20,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     var timer = NSTimer()
     var stars = [UIImageView]()
     var overlay: UIView?
+    var MAX_HINTS = 3
 
     /* Outlets */
     @IBOutlet weak var star0: UIImageView!
@@ -37,7 +41,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func hintButtonPressed(sender: AnyObject) {
-        if puzzle.hintsUsed < puzzle.maxHints {
+        if puzzle.hintsUsed < MAX_HINTS {
             useHint()
         } else {
             showGiveUpView()
@@ -73,7 +77,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if trySubmit() {
+        if puzzleManager.checkAnswer(textField.text, answer: puzzle.keyword) {
             endPuzzle(Status.Complete)
         } else {
             guess = ""
@@ -115,9 +119,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         if self.challenge != nil {
             self.puzzle = challenge.puzzle
         } else {
-            self.puzzle = Puzzle()
-            self.puzzle.newPuzzle()
+            self.puzzle = puzzleManager.newPuzzle()
         }
+        
         self.guess = ""
         resetPuzzleView()
     }
@@ -136,7 +140,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func endPuzzle(status: Status) {
         puzzle.status = status
         stopPuzzle()
-        currentUser.updateStats(puzzle)        
+        userManager.updateStats(puzzle)
         revealPuzzle()
         
         if puzzle.status == Status.Complete {
@@ -148,26 +152,15 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    func trySubmit() -> Bool {
-        return puzzle.checkAnswer(guess)
-    }
-    
     func useHint() {
-        puzzle.useHint()
-        
-        if puzzle.hintsUsed == 1 && puzzle.hintTime1 == "" {
-            puzzle.hintTime1 = DateTime.now()
-        } else if puzzle.hintsUsed == 2 && puzzle.hintTime2 == "" {
-            puzzle.hintTime2 = DateTime.now()
-        } else if puzzle.hintsUsed == 3 && puzzle.hintTime3 == "" {
-            puzzle.hintTime3 = DateTime.now()
-        }
+        puzzle.hintsUsed += puzzle.hintsUsed < MAX_HINTS ? 1 : 0
+        puzzle.currentHint = puzzleManager.useHint(puzzle.keyword, hintsUsed: puzzle.hintsUsed)
         
         updateHintButton()
         updateStars()
         updateWordLabels()
         
-        if puzzle.hintsUsed == puzzle.maxHints {
+        if puzzle.hintsUsed == MAX_HINTS {
             hiddenText.text = ""
         }
         
@@ -202,7 +195,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateHintButton() {
-        var image = UIImage(named: "lightbulb-" + String(puzzle.maxHints - puzzle.hintsUsed))
+        var image = UIImage(named: "lightbulb-" + String(MAX_HINTS - puzzle.hintsUsed))
         hintButton.setImage(image, forState: UIControlState.Normal)
     }
     
@@ -228,8 +221,8 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateAnswerLabel() {
-        if puzzle.hintsUsed >= puzzle.maxHints - 1 {
-            if puzzle.hintsUsed == puzzle.maxHints && hiddenText.text == "" {
+        if puzzle.hintsUsed >= MAX_HINTS - 1 {
+            if puzzle.hintsUsed == MAX_HINTS && hiddenText.text == "" {
                 //hiddenText.text = puzzle.keyword.Name[0]
             }
             
@@ -287,7 +280,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         var length = count(hint)
         if puzzle.ended {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
-        } else if length > 0 && puzzle.hintsUsed == puzzle.maxHints {
+        } else if length > 0 && puzzle.hintsUsed == MAX_HINTS {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
             attributedString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(location, 1))
         }
@@ -312,7 +305,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.currentStars = puzzle.currentStars
-        viewController.totalStars = currentUser.getStats().totalStarsEarned
+        viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.puzzle = self.puzzle
         
         self.presentViewController(viewController, animated: true, completion: nil)
@@ -322,7 +315,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         // This method is good for showing a view we won't need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
-        viewController.totalStars = currentUser.getStats().totalStarsEarned
+        viewController.totalStars = userManager.getStats().totalStarsEarned
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

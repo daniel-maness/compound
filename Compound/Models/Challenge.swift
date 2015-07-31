@@ -15,7 +15,6 @@ class Challenge {
     var puzzle: Puzzle
     var parentChallenge: Challenge!
     var status: Status
-    private var challengeService = ChallengeService()
     
     init(objectId: String, puzzle: Puzzle, user: User, parentChallenge: Challenge!) {
         self.objectId = objectId
@@ -29,7 +28,7 @@ class Challenge {
         self.objectId = pfObject.objectId!
         
         // Initialize the user
-        self.user = User(pfObject: pfObject["userObject"] as! PFObject)
+        self.user = User(userObject: pfObject["userObject"] as! PFObject)
         
         // Initialize the puzzle
         let puzzle = Puzzle()

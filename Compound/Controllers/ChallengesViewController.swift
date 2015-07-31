@@ -9,6 +9,8 @@
 import UIKit
 
 class ChallengesViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+    private let challengeManager = ChallengeManager()
+    
     /* Properties */
     var totalWon: String = ""
     var totalLost: String = ""
@@ -65,12 +67,12 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func populateChallengesTable() {
-        currentUser.getChallengesReceived({ (result, error) -> Void in
+        challengeManager.getChallengesReceived({ (result, error) -> Void in
             if error == nil {
                 self.challenges = result
                 //self.challenges.sort({ $0.status.rawValue < $1.status.rawValue })
             } else {
-                println("Error fetching challenges: " + error!.description)
+                EventService.logError(error!, description: "Challenges could not be fetched", object: "ChallengesViewController", function: "populateChallengesTable")
             }
         })
     }
@@ -92,11 +94,9 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
         
         cell.title.text = title
         
-        if image != nil {
-            cell.picture.contentMode = .ScaleAspectFit
-            cell.picture.image = image
-            self.formatImageAsCircle(cell.picture)
-        }
+        cell.picture.contentMode = .ScaleAspectFit
+        cell.picture.image = image
+        self.formatImageAsCircle(cell.picture)
         
         if self.challenges[indexPath.row].status == Status.Complete {
             cell.userInteractionEnabled = false

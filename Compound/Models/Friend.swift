@@ -24,8 +24,4 @@ class Friend {
     init(facebookUserId: String) {
         self.facebookUserId = facebookUserId
     }
-    
-    func initializeFromFacebook() {
-        
-    }
 }

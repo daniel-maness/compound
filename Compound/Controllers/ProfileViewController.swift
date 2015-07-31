@@ -11,6 +11,8 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class ProfileViewController: BaseViewController {
+    private let userManager = UserManager()
+    
     /* Properties */
     let userService = UserService()
     var totalStars: String = ""
@@ -82,7 +84,7 @@ class ProfileViewController: BaseViewController {
     
     /* Logic */
     func getUserStats() {
-        let stats = currentUser.getStats()
+        let stats = userManager.getStats()
         
         totalStars = String(stats.totalStarsEarned)
         totalPuzzles = String(stats.totalPuzzlesPlayed)

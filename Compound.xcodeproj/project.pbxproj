@@ -52,16 +52,19 @@
 		AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */; };
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
 		AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */; };
-		AA9FF7531B5C3CA700A75571 /* Puzzles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7521B5C3CA700A75571 /* Puzzles.swift */; };
 		AA9FF7551B5C40D000A75571 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7541B5C40D000A75571 /* Global.swift */; };
 		AA9FF7571B5C991A00A75571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7561B5C991A00A75571 /* LoginViewController.swift */; };
-		AAC9E3F61B02C00400A7C2EE /* UserPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */; };
 		AACA0BAE1B043BC00029351B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAC1B043BC00029351B /* Bolts.framework */; };
 		AACA0BAF1B043BC00029351B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAD1B043BC00029351B /* Parse.framework */; };
 		AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */; };
 		AAD72BDE1B06A579009CDAB5 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDD1B06A579009CDAB5 /* EmailLoginViewController.swift */; };
 		AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */; };
 		AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */; };
+		AAD7D85F1B6AFC7E00A4F8D2 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D85E1B6AFC7E00A4F8D2 /* ErrorService.swift */; };
+		AAD7D8621B6BE4BF00A4F8D2 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */; };
+		AAD7D8641B6BE4C800A4F8D2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */; };
+		AAD7D8661B6BE4D800A4F8D2 /* PuzzleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */; };
+		AAD7D8681B6BEEBC00A4F8D2 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8671B6BEEBC00A4F8D2 /* FacebookManager.swift */; };
 		AAD9F3471AE0A73900EAFA01 /* grey_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD9F3461AE0A73900EAFA01 /* grey_background.png */; };
 		AAE52B711AE2EC3200FFB13D /* logo-left.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B6F1AE2EC3200FFB13D /* logo-left.png */; };
 		AAE52B721AE2EC3200FFB13D /* logo-right.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B701AE2EC3200FFB13D /* logo-right.png */; };
@@ -226,10 +229,8 @@
 		AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleFailedViewController.swift; path = Controllers/PuzzleFailedViewController.swift; sourceTree = "<group>"; };
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
-		AA9FF7521B5C3CA700A75571 /* Puzzles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puzzles.swift; sourceTree = "<group>"; };
 		AA9FF7541B5C40D000A75571 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AA9FF7561B5C991A00A75571 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPuzzle.swift; sourceTree = "<group>"; };
 		AACA0BAC1B043BC00029351B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AACA0BAD1B043BC00029351B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/SignupViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +238,11 @@
 		AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = Controllers/FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		AAD72BE91B06CBB4009CDAB5 /* Compound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Compound-Bridging-Header.h"; sourceTree = "<group>"; };
+		AAD7D85E1B6AFC7E00A4F8D2 /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
+		AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
+		AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleManager.swift; sourceTree = "<group>"; };
+		AAD7D8671B6BEEBC00A4F8D2 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		AAD9F3461AE0A73900EAFA01 /* grey_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grey_background.png; path = images/grey_background.png; sourceTree = "<group>"; };
 		AAE52B6F1AE2EC3200FFB13D /* logo-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-left.png"; path = "images/logo-left.png"; sourceTree = "<group>"; };
 		AAE52B701AE2EC3200FFB13D /* logo-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-right.png"; path = "images/logo-right.png"; sourceTree = "<group>"; };
@@ -385,6 +391,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAD7D8601B6BE4A600A4F8D2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */,
+				AAD7D8671B6BEEBC00A4F8D2 /* FacebookManager.swift */,
+				AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */,
+				AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		AAFB3FC61ADED47100F44C8F = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +443,7 @@
 			children = (
 				AAFB404A1ADEF5FF00F44C8F /* Resources */,
 				AAFB403B1ADEEA6700F44C8F /* Services */,
+				AAD7D8601B6BE4A600A4F8D2 /* Managers */,
 				AAFB40101ADEE9C900F44C8F /* Models */,
 				AAFB40111ADEE9CF00F44C8F /* Views */,
 				AAFB40121ADEE9D600F44C8F /* Controllers */,
@@ -469,16 +487,14 @@
 			isa = PBXGroup;
 			children = (
 				AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */,
-				AA5767AE1AFAE094006014FC /* Friend.swift */,
-				AA603DB61AF7E59300EF7B99 /* DateTime.swift */,
-				AA603DB71AF7E59300EF7B99 /* User.swift */,
 				AAFB403E1ADEEAEB00F44C8F /* Combination.swift */,
+				AA603DB61AF7E59300EF7B99 /* DateTime.swift */,
+				AA5767AE1AFAE094006014FC /* Friend.swift */,
+				AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */,
 				AAFB40131ADEE9E900F44C8F /* Puzzle.swift */,
 				AAFB40141ADEE9E900F44C8F /* Resources.swift */,
-				AAC9E3F51B02C00400A7C2EE /* UserPuzzle.swift */,
-				AA9FF7521B5C3CA700A75571 /* Puzzles.swift */,
 				AA65FB461B5D63D900BE9F01 /* Statistics.swift */,
-				AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */,
+				AA603DB71AF7E59300EF7B99 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -602,6 +618,7 @@
 				AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */,
 				AA9FF7541B5C40D000A75571 /* Global.swift */,
 				AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */,
+				AAD7D85E1B6AFC7E00A4F8D2 /* ErrorService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -893,12 +910,13 @@
 			files = (
 				AAD72BDE1B06A579009CDAB5 /* EmailLoginViewController.swift in Sources */,
 				AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */,
+				AAD7D8641B6BE4C800A4F8D2 /* UserManager.swift in Sources */,
 				AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */,
 				AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */,
 				AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */,
 				AA603DBE1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift in Sources */,
 				AAFB401B1ADEE9F200F44C8F /* PuzzleViewController.swift in Sources */,
-				AAC9E3F61B02C00400A7C2EE /* UserPuzzle.swift in Sources */,
+				AAD7D85F1B6AFC7E00A4F8D2 /* ErrorService.swift in Sources */,
 				AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */,
 				AA1826DA1AE7231B00A5E609 /* GiveUpViewController.swift in Sources */,
 				AAFB40321ADEEA2C00F44C8F /* String-Extras.swift in Sources */,
@@ -907,6 +925,7 @@
 				AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */,
 				AAFB40161ADEE9E900F44C8F /* Resources.swift in Sources */,
 				AA1826D41AE722E600A5E609 /* PuzzleCompletedViewController.swift in Sources */,
+				AAD7D8621B6BE4BF00A4F8D2 /* ChallengeManager.swift in Sources */,
 				AA6ECE511B5EBA0D00FAD8B3 /* FacebookService.swift in Sources */,
 				AA30B2301AFC445500C6CDC1 /* ChallengeService.swift in Sources */,
 				AAFB401A1ADEE9F200F44C8F /* BaseViewController.swift in Sources */,
@@ -915,7 +934,7 @@
 				AA9FF7571B5C991A00A75571 /* LoginViewController.swift in Sources */,
 				AAFB3FD51ADED47100F44C8F /* AppDelegate.swift in Sources */,
 				AA5767AF1AFAE094006014FC /* Friend.swift in Sources */,
-				AA9FF7531B5C3CA700A75571 /* Puzzles.swift in Sources */,
+				AAD7D8661B6BE4D800A4F8D2 /* PuzzleManager.swift in Sources */,
 				AA9FF7551B5C40D000A75571 /* Global.swift in Sources */,
 				AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */,
 				AAFB40151ADEE9E900F44C8F /* Puzzle.swift in Sources */,
@@ -924,6 +943,7 @@
 				AA6ECE531B5EE06A00FAD8B3 /* FriendCell.swift in Sources */,
 				AA65FB471B5D63D900BE9F01 /* Statistics.swift in Sources */,
 				AAFB40311ADEEA2C00F44C8F /* SQLiteDB.swift in Sources */,
+				AAD7D8681B6BEEBC00A4F8D2 /* FacebookManager.swift in Sources */,
 				AAFB403F1ADEEAEB00F44C8F /* Combination.swift in Sources */,
 				AA603DB91AF7E59300EF7B99 /* User.swift in Sources */,
 			);

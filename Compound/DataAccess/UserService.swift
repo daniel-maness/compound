@@ -36,9 +36,9 @@ class UserService {
         user.signUpInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if error == nil {
-                println("User created")
+                EventService.logSuccess("User created")
             } else {
-                println("Error creating user")
+                EventService.logError(error!, description: "User could not be created", object: "UserService", function: "createUser")
             }
         }
     }
@@ -53,7 +53,7 @@ class UserService {
         return (true, nil)
     }
     
-    func updateStats(puzzle: Puzzle) {
+    func updateStats(userObject: PFUser, puzzle: Puzzle) {
         let puzzleCompleted = puzzle.status == Status.Complete ? 1 : 0
         let puzzleTimeUp = puzzle.status == Status.TimeUp ? 1 : 0
         let puzzleGaveUp = puzzle.status == Status.GaveUp ? 1 : 0
@@ -64,35 +64,33 @@ class UserService {
         let twoStar = puzzle.currentStars == 2 ? 1 : 0
         let oneStar = puzzle.currentStars == 1 ? 1 : 0
         
-        let stats = self.getStats(currentUser.userId)
-        var user = PFUser.currentUser()!
+        let stats = self.getStats(userObject)
         
-        user["totalPuzzlesCompleted"] = stats.totalPuzzlesCompleted + puzzleCompleted
-        user["totalPuzzlesTimeUp"] = stats.totalPuzzlesTimeUp + puzzleTimeUp
-        user["totalPuzzlesGaveUp"] = stats.totalPuzzlesGaveUp + puzzleGaveUp
-        user["totalHintsUsed"] = stats.totalHintsUsed + hintsUsed
-        user["totalSecondsPlayed"] = stats.totalSecondsPlayed + secondsPlayed
-        user["fourStarsEarned"] = stats.fourStarsEarned + fourStar
-        user["threeStarsEarned"] = stats.threeStarsEarned + threeStar
-        user["twoStarsEarned"] = stats.twoStarsEarned + twoStar
-        user["oneStarsEarned"] = stats.oneStarsEarned + oneStar
+        userObject["totalPuzzlesCompleted"] = stats.totalPuzzlesCompleted + puzzleCompleted
+        userObject["totalPuzzlesTimeUp"] = stats.totalPuzzlesTimeUp + puzzleTimeUp
+        userObject["totalPuzzlesGaveUp"] = stats.totalPuzzlesGaveUp + puzzleGaveUp
+        userObject["totalHintsUsed"] = stats.totalHintsUsed + hintsUsed
+        userObject["totalSecondsPlayed"] = stats.totalSecondsPlayed + secondsPlayed
+        userObject["fourStarsEarned"] = stats.fourStarsEarned + fourStar
+        userObject["threeStarsEarned"] = stats.threeStarsEarned + threeStar
+        userObject["twoStarsEarned"] = stats.twoStarsEarned + twoStar
+        userObject["oneStarsEarned"] = stats.oneStarsEarned + oneStar
         
-        user.saveEventually()
+        userObject.saveEventually()
     }
     
-    func getStats(userId: String) -> Statistics {
-        var user = PFUser.currentUser()!
+    func getStats(userObject: PFUser) -> Statistics {
         var stats = Statistics()
         
-        stats.totalPuzzlesCompleted = user["totalPuzzlesCompleted"] == nil ? 0 : user["totalPuzzlesCompleted"] as! Int
-        stats.totalPuzzlesTimeUp = user["totalPuzzlesTimeUp"] == nil ? 0 : user["totalPuzzlesTimeUp"] as! Int
-        stats.totalPuzzlesGaveUp = user["totalPuzzlesGaveUp"] == nil ? 0 : user["totalPuzzlesGaveUp"] as! Int
-        stats.totalHintsUsed = user["totalHintsUsed"] == nil ? 0 : user["totalHintsUsed"] as! Int
-        stats.totalSecondsPlayed = user["totalSecondsPlayed"] == nil ? 0 : user["totalSecondsPlayed"] as! Int
-        stats.fourStarsEarned = user["fourStarsEarned"] == nil ? 0 : user["fourStarsEarned"] as! Int
-        stats.threeStarsEarned = user["threeStarsEarned"] == nil ? 0 : user["threeStarsEarned"] as! Int
-        stats.twoStarsEarned = user["twoStarsEarned"] == nil ? 0 : user["twoStarsEarned"] as! Int
-        stats.oneStarsEarned = user["oneStarsEarned"] == nil ? 0 : user["oneStarsEarned"] as! Int
+        stats.totalPuzzlesCompleted = userObject["totalPuzzlesCompleted"] == nil ? 0 : userObject["totalPuzzlesCompleted"] as! Int
+        stats.totalPuzzlesTimeUp = userObject["totalPuzzlesTimeUp"] == nil ? 0 : userObject["totalPuzzlesTimeUp"] as! Int
+        stats.totalPuzzlesGaveUp = userObject["totalPuzzlesGaveUp"] == nil ? 0 : userObject["totalPuzzlesGaveUp"] as! Int
+        stats.totalHintsUsed = userObject["totalHintsUsed"] == nil ? 0 : userObject["totalHintsUsed"] as! Int
+        stats.totalSecondsPlayed = userObject["totalSecondsPlayed"] == nil ? 0 : userObject["totalSecondsPlayed"] as! Int
+        stats.fourStarsEarned = userObject["fourStarsEarned"] == nil ? 0 : userObject["fourStarsEarned"] as! Int
+        stats.threeStarsEarned = userObject["threeStarsEarned"] == nil ? 0 : userObject["threeStarsEarned"] as! Int
+        stats.twoStarsEarned = userObject["twoStarsEarned"] == nil ? 0 : userObject["twoStarsEarned"] as! Int
+        stats.oneStarsEarned = userObject["oneStarsEarned"] == nil ? 0 : userObject["oneStarsEarned"] as! Int
         
         return stats
     }

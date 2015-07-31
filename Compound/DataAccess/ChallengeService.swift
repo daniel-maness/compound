@@ -13,45 +13,41 @@ class ChallengeService {
     private let userService = UserService()
     private let puzzleService = PuzzleService()
     
-    private func createUserChallenge(puzzle: Puzzle, facebookUserId: String, completion: (result: String!, error: NSError!) -> Void) {
-        let challenge = PFObject(className: CHALLENGE_CLASSNAME)
-        PFUser.query()?.whereKey("facebookUserId", equalTo: facebookUserId).getFirstObjectInBackgroundWithBlock { (userObject: PFObject?, error: NSError?) -> Void in
+    private func createUserChallenge(userObjectId: String, puzzle: Puzzle, completion: (result: String!, error: NSError!) -> Void) {
+        PFUser.query()?.whereKey("objectId", equalTo: userObjectId).getFirstObjectInBackgroundWithBlock { (userObject: PFObject?, error: NSError?) -> Void in
             if error == nil && userObject != nil {
-                println("1a. User exists")
-                challenge.setObject(userObject!, forKey: "userObject")
+                let challengeObject = PFObject(className: CHALLENGE_CLASSNAME)
                 
-                challenge["hintsUsed"] = puzzle.hintsUsed
-                challenge["totalSeconds"] = puzzle.time
-                challenge["keyword"] = puzzle.keyword
-                challenge["word1"] = puzzle.combinations[0].combinedWord
-                challenge["word2"] = puzzle.combinations[1].combinedWord
-                challenge["word3"] = puzzle.combinations[2].combinedWord
-                challenge["isActive"] = true
+                challengeObject.setObject(userObject!, forKey: "userObject")
+                challengeObject["hintsUsed"] = puzzle.hintsUsed
+                challengeObject["totalSeconds"] = puzzle.time
+                challengeObject["keyword"] = puzzle.keyword
+                challengeObject["word1"] = puzzle.combinations[0].combinedWord
+                challengeObject["word2"] = puzzle.combinations[1].combinedWord
+                challengeObject["word3"] = puzzle.combinations[2].combinedWord
+                challengeObject["isActive"] = true
                 
-                challenge.saveInBackgroundWithBlock { (success, error) -> Void in
+                challengeObject.saveInBackgroundWithBlock { (success, error) -> Void in
                     if error == nil {
-                        println("1b. User challenge saved")
-                        completion(result: challenge.objectId!, error: nil)
+                        completion(result: challengeObject.objectId!, error: nil)
                     } else {
-                        println("Error saving user challenge: " + error!.description)
+                        EventService.logError(error!, description: "Error saving user challenge", object: "ChallengeService", function: "createUserChallenge")
                         completion(result: nil, error: error)
                     }
                 }
             } else {
-                println("Error retrieving user for challenge: " + error!.description)
+                EventService.logError(error!, description: "Error retrieving user for challenge", object: "ChallengeService", function: "createUserChallenge")
             }
         }
     }
 
-    private func createFriendChallenge(puzzle: Puzzle, facebookUserId: String, challengeObjectId: String, completion: (result: String!, error: NSError!) -> Void) {
+    private func createFriendChallenge( facebookUserId: String, puzzle: Puzzle, challengeObjectId: String, completion: (result: String!, error: NSError!) -> Void) {
         let challenge = PFObject(className: CHALLENGE_CLASSNAME)
         PFUser.query()?.whereKey("facebookUserId", equalTo: facebookUserId).getFirstObjectInBackgroundWithBlock { (userObject: PFObject?, error: NSError?) -> Void in
             if error == nil && userObject != nil {
-                println("2a. Friend exists")
                 challenge.setObject(userObject!, forKey: "userObject")
                 PFQuery(className: CHALLENGE_CLASSNAME).whereKey("objectId", equalTo: challengeObjectId).getFirstObjectInBackgroundWithBlock { (challengeObject: PFObject?, error: NSError?) -> Void in
                     if error == nil {
-                        println("2b. Challenge exists")
                         challenge.setObject(challengeObject!, forKey: "parentChallengeObject")
                         
                         challenge["keyword"] = puzzle.keyword
@@ -62,45 +58,52 @@ class ChallengeService {
                         
                         challenge.saveInBackgroundWithBlock { (success, error) -> Void in
                             if error == nil {
-                                println("2c. Challenge saved")
                                 completion(result: challenge.objectId!, error: nil)
                             } else {
+                                EventService.logError(error!, description: "Challenge failed to save for friend " + facebookUserId, object: "ChallengeService", function: "createFriendChallenge")
                                 completion(result: nil, error: error)
                             }
                         }
                     } else {
-                        println("Error saving challenge: " + error!.description)
+                        EventService.logError(error!, description: "Could not fetch Challenge " + challengeObjectId, object: "ChallengeService", function: "createFriendChallenge")
+                        completion(result: nil, error: error)
                     }
                 }
+            } else {
+                EventService.logError(error!, description: "Could not fetch PFUser " + facebookUserId, object: "ChallengeService", function: "createFriendChallenge")
+                completion(result: nil, error: error)
             }
         }
     }
     
-    func sendChallenges(puzzle: Puzzle, friendIds: [String], challengeTime: String) {
-        self.createUserChallenge(puzzle, facebookUserId: currentUser.facebookUserId, completion: { (result: String!, error: NSError!) -> Void in
+    func sendChallenges(userObjectId: String, puzzle: Puzzle, friendIds: [String]) {
+        self.createUserChallenge(userObjectId, puzzle: puzzle, completion: { (result: String!, error: NSError!) -> Void in
             if error == nil {
                 for id in friendIds {
-                    self.createFriendChallenge(puzzle, facebookUserId: id, challengeObjectId: result, completion: { (result: String!, error: NSError!) -> Void in
+                    self.createFriendChallenge(id, puzzle: puzzle, challengeObjectId: result, completion: { (result: String!, error: NSError!) -> Void in
                         if error == nil {
-                            println("3. Challenge sent to: " + id + " with objectId of: " + result)
+                            EventService.logSuccess("Challenge sent to " + id)
                         } else {
-                            println("Error sending challenge: " + error.description)
+                            EventService.logError(error!, description: "Challenge not created for friend " + id, object: "ChallengeService", function: "sendChallenge")
                         }
                     })
                 }
             } else {
-                println("Error saving challenge: " + error.description)
+                EventService.logError(error!, description: "Challenge not created for user " + userObjectId, object: "ChallengeService", function: "sendChallenge")
             }
         })
     }
     
-    func getChallengesReceived(userId: String, completion: (result: [PFObject], error: NSError?) -> Void) {
+    func getChallengesReceived(userObjectId: String, completion: (result: [PFObject], error: NSError?) -> Void) {
+        let userObjectQuery = PFQuery(className: USER_CLASSNAME)
+        userObjectQuery.whereKey("objectId", equalTo: userObjectId)
+        
         let query = PFQuery(className: CHALLENGE_CLASSNAME)
-        query.whereKey("userObject", equalTo: PFUser.currentUser()!)
-        query.whereKey("parentChallengeObject", notEqualTo: NSNull())
         query.includeKey("userObject")
         query.includeKey("parentChallengeObject")
         query.includeKey("parentChallengeObject.userObject")
+        query.whereKey("userObject", matchesQuery: userObjectQuery)
+        query.whereKey("parentChallengeObject", notEqualTo: NSNull())
         
         query.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var challenges = [PFObject]()
@@ -108,10 +111,9 @@ class ChallengeService {
                 for i in 0..<results!.count {
                     let challenge = results?[i] as! PFObject
                     challenges.append(challenge)
-                    println("Challenge " + challenge.objectId! + " fetched")
                 }
             } else {
-                println("Error fetching Parse Challenge objects: " + error!.description)
+                EventService.logError(error!, description: "Challenges could not be fetched", object: "ChallengeService", function: "getChallengesRecieved")
             }
             
             completion(result: challenges, error: error)

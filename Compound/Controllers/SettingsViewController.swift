@@ -29,7 +29,7 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if currentUser.facebookUserId != nil {
+        if CurrentUser.facebookUserId != nil {
             facebookLoginButton.delegate = self
             facebookLoginButton.readPermissions = FACEBOOK_PERMISSIONS
         }
@@ -40,7 +40,7 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
     }
     
     func setupView() {
-        if currentUser.facebookUserId == nil {
+        if CurrentUser.facebookUserId == nil {
             facebookLoginButton.hidden = true
             emailLogOutButton.hidden = false
         } else {

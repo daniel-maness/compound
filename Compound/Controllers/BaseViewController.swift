@@ -66,7 +66,7 @@ class BaseViewController: UIViewController {
     }
     
     func setUserPicture(image: UIImageView) {
-        image.image = currentUser.profilePicture
+        image.image = CurrentUser.profilePicture
         formatImageAsCircle(image)
     }
     

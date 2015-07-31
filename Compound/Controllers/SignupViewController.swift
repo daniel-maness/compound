@@ -57,7 +57,7 @@ class SignupViewController: BaseViewController {
         } else {
             userService.createUser(nil, username: username, password: password, displayName: displayName, email: nil)
             userService.loginUser(username, password: password)
-            currentUser = User()
+            CurrentUser = User(userObject: PFUser.currentUser()!)
             return true
         }
         

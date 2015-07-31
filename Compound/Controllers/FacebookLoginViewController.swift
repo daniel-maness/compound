@@ -12,6 +12,8 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate {
+    private let userManager = UserManager()
+    
     /* Outlets */
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
@@ -31,18 +33,18 @@ class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate
         if PFUser.currentUser() == nil {
             //loginFacebook()
         } else {
-            currentUser = User()
+            CurrentUser = User(userObject: PFUser.currentUser()!)
             self.showHomeViewController()
         }
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if error != nil {
-            println("Error: \(error)")
+            EventService.logError(error!, description: "Could not log into Facebook", object: "FacebookLoginViewController", function: "loginButton")
         } else if result.isCancelled {
-            println("Cancelled login")
+            EventService.logEvent("Cancelled login")
         } else {
-            println("Granted permissions: \(result.grantedPermissions)")
+            EventService.logSuccess("Granted permissions: \(result.grantedPermissions)")
             loginFacebook()
         }
     }
@@ -54,23 +56,19 @@ class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate
     func loginFacebook() {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            if error != nil {
-                println("Error: \(error)")
-            } else {
+            if error == nil {
                 let id = result.valueForKey("id") as! String
                 let displayName = result.valueForKey("name") as! String
                 let username = id
                 let password = id
-                //let email = result.valueForKey("contact_email") as! String
-                
-//                if !self.userService.userExists(username) {
-//                    self.userService.createUser(id, username: username, password: password, email: nil)
-//                }
                 
                 self.loginParse(username, password: password, facebookUserId: id, displayName: displayName, email: nil)
                 
-                currentUser = User()
+                CurrentUser = self.userManager.getCurrentUser()
+                
                 self.showHomeViewController()
+            } else {
+                EventService.logError(error!, description: "Could not log into Facebook", object: "FacebookLoginViewController", function: "loginFacebook")
             }
         })
     }

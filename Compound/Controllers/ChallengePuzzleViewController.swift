@@ -9,6 +9,9 @@
 import UIKit
 
 class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+    private let facebookManager = FacebookManager()
+    private let challengeManager = ChallengeManager()
+    
     /* Properties */
     var word0: NSMutableAttributedString!
     var word1: NSMutableAttributedString!
@@ -16,7 +19,6 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     var totalStars: Int = 0
     var selectedFriendIds: [String] = []
     var puzzle: Puzzle!
-    let challengeService = ChallengeService()
     
     var friendsList = [Friend]() {
         didSet {
@@ -39,7 +41,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
-        challengeService.sendChallenges(self.puzzle, friendIds: self.selectedFriendIds, challengeTime: DateTime.now())
+        challengeManager.sendChallenges(puzzle, friendIds: self.selectedFriendIds)
         
         exitView(true)
     }
@@ -69,11 +71,11 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     func populateFriendsTable() {
-        currentUser.getFacebookFriends(true, completion: { (result: [Friend], error: NSError!) -> Void in
+        facebookManager.getFacebookFriends(true, completion: { (result: [Friend], error: NSError!) -> Void in
             if error == nil {
                 self.friendsList = result
             } else {
-                println(error)
+                EventService.logError(error, description: "", object: "", function: "")
             }
         })
     }
