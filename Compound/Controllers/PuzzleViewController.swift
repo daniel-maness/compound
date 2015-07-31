@@ -136,15 +136,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func endPuzzle(status: Status) {
         puzzle.status = status
         stopPuzzle()
-        currentUser.updateStats(puzzle)
-        
-//        puzzle.save()
-//        
-//        if challenge != nil {
-//            challenge.friendPuzzle = self.puzzle
-//            challenge.save()
-//        }
-        
+        currentUser.updateStats(puzzle)        
         revealPuzzle()
         
         if puzzle.status == Status.Complete {
@@ -183,11 +175,11 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func revealPuzzle() {
-        wordLabel0.attributedText = getAttributedString(puzzle.keyword.Name, combination: puzzle.combinations[0])
-        wordLabel1.attributedText = getAttributedString(puzzle.keyword.Name, combination: puzzle.combinations[1])
-        wordLabel2.attributedText = getAttributedString(puzzle.keyword.Name, combination: puzzle.combinations[2])
+        wordLabel0.attributedText = getAttributedString(puzzle.keyword, combination: puzzle.combinations[0])
+        wordLabel1.attributedText = getAttributedString(puzzle.keyword, combination: puzzle.combinations[1])
+        wordLabel2.attributedText = getAttributedString(puzzle.keyword, combination: puzzle.combinations[2])
         
-        answerLabel.text = puzzle.keyword.Name
+        answerLabel.text = puzzle.keyword
     }
     
     /* UI */
@@ -241,8 +233,8 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
                 //hiddenText.text = puzzle.keyword.Name[0]
             }
             
-            if count(hiddenText.text) >= count(puzzle.keyword.Name) {
-                hiddenText.text = hiddenText.text.subStringTo(count(puzzle.keyword.Name))
+            if count(hiddenText.text) >= count(puzzle.keyword) {
+                hiddenText.text = hiddenText.text.subStringTo(count(puzzle.keyword))
             }
         
             self.guess = hiddenText.text.uppercaseString
@@ -254,7 +246,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
                 formattedGuess += self.guess[i] + " "
             }
             
-            while count(formattedGuess) / 2 < count(puzzle.keyword.Name) {
+            while count(formattedGuess) / 2 < count(puzzle.keyword) {
                 formattedGuess += "_ "
             }
             
@@ -289,9 +281,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     
     func getAttributedString(hint: String, combination: Combination) -> NSMutableAttributedString {
         var attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ?
-            hint.uppercaseString + combination.rightWord.Name.uppercaseString :
-            combination.leftWord.Name.uppercaseString + hint.uppercaseString)
-        var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord.Name)
+            hint.uppercaseString + combination.rightWord.uppercaseString :
+            combination.leftWord.uppercaseString + hint.uppercaseString)
+        var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord)
         var length = count(hint)
         if puzzle.ended {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
@@ -321,7 +313,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.currentStars = puzzle.currentStars
         viewController.totalStars = currentUser.getStats().totalStarsEarned
-        //viewController.userPuzzleId = self.puzzle.userPuzzleId
+        viewController.puzzle = self.puzzle
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

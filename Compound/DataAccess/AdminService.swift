@@ -1,5 +1,5 @@
 //
-//  AdminDA.swift
+//  AdminService.swift
 //  Compound
 //
 //  Created by Daniel Maness on 4/30/15.
@@ -9,9 +9,55 @@
 import Foundation
 import Parse
 
+/********** Admin Classes **********/
+class SqlWord {
+    var Id: Int = 0
+    var Name: String = ""
+    
+    init(id: Int, name: String) {
+        self.Id = id
+        self.Name = name
+    }
+}
+
+class SqlCombination {
+    var combinationId: Int
+    var keyword: SqlWord
+    var leftWord: SqlWord
+    var rightWord: SqlWord
+    var combinedWord: String
+    var keywordLocation: Location
+    
+    var description: String {
+        return "combination:\(combinedWord) | keyword:\(keyword)"
+    }
+    
+    init (combinationId: Int, keyword: SqlWord, leftWord: SqlWord, rightWord: SqlWord) {
+        self.combinationId = combinationId
+        self.keyword = keyword
+        self.leftWord = leftWord
+        self.rightWord = rightWord
+        self.combinedWord = leftWord.Name + rightWord.Name
+        
+        if keyword.Name == leftWord.Name {
+            self.keywordLocation = Location.Left
+        } else {
+            self.keywordLocation = Location.Right
+        }
+    }
+}
+
+func ==(lhs: SqlCombination, rhs: SqlCombination) -> Bool {
+    return lhs.combinedWord == rhs.combinedWord
+}
+
+func ==(lhs: SqlWord, rhs: SqlWord) -> Bool {
+    return lhs.Name == rhs.Name
+}
+
 /********** Admin Functions **********/
-class AdminDA {
-    let userDA = UserDA()
+class AdminService {
+    let userService = UserService()
     
     func populateWordTable() {
         var streamReader = StreamReader(fileName: "keywords")
@@ -23,14 +69,13 @@ class AdminDA {
     }
 
     func populateCombinationTable() {
-        var words = getAllWords()
-        
+        var results = getAllWords()
         var streamReader = StreamReader(fileName: "combinations")
         var rawList: Array<NSString> = streamReader.getWords()
         
         for combo in rawList {
-            for word in words {
-                if (combo.containsString(word.Name)) {
+            for word in results {
+                if combo.containsString(word.Name) {
                     var firstWord = combo.substringToIndex(count(word.Name))
                     if firstWord == word.Name {
                         var secondWord = combo.substringFromIndex(count(firstWord))
@@ -66,44 +111,45 @@ class AdminDA {
         let result = db.execute("INSERT INTO Combination (FirstWordId, SecondWordId) VALUES (" + firstId! + ", " + secondId! + ")")
     }
     
-    func getAllWords() -> [Word] {
+    func getAllWords() -> [SqlWord] {
         let db = SQLiteDB.sharedInstance()
         let data = db.query("SELECT * FROM Word")
         
-        var words = [Word]()
+        var words = [SqlWord]()
         for row in data {
-            let id = row["WordId"]?.asInt()
-            let name = row["Name"]?.asString()
-            words.append(Word(id: id!, name: name!))
+            let id: Int! = row["WordId"]?.asInt()
+            let name: String! = row["Name"]?.asString()
+            let word = SqlWord(id: id, name: name)
+            words.append(word)
         }
         
         return words
     }
     
-    func getAllCombinations(keyword: Word) -> [Combination] {
+    func getAllCombinations(keyword: SqlWord) -> [SqlCombination] {
         let db = SQLiteDB.sharedInstance()
-        let data = db.query("SELECT * FROM viCombination c WHERE c.FirstWordId = " + String(keyword.Id) + " OR c.SecondWordId = " + String(keyword.Id))
-        var combinations = [Combination]()
+        let data = db.query("SELECT * FROM viCombination c WHERE c.FirstWordId = " + String(keyword.Id) + " OR c.SecondWordId = " + String(keyword.Name))
+        var combinations = [SqlCombination]()
         
         for row in data {
             let combinationId = row["CombinationId"]!.asInt()
-            let first = Word(id: row["FirstWordId"]!.asInt(), name: String(row["FirstName"]!.asString()))
-            let second = Word(id: row["SecondWordId"]!.asInt(), name: String(row["SecondName"]!.asString()))
-            combinations.append(Combination(combinationId: combinationId, keyword: keyword, leftWord: first, rightWord: second))
+            let first = SqlWord(id: row["FirstWordId"]!.asInt(), name: String(row["FirstName"]!.asString()))
+            let second = SqlWord(id: row["SecondWordId"]!.asInt(), name: String(row["SecondName"]!.asString()))
+            combinations.append(SqlCombination(combinationId: combinationId, keyword: keyword, leftWord: first, rightWord: second))
         }
         
         return combinations
     }
     
-    func getWord(name: String) -> Word {
+    func getWord(name: String) -> SqlWord {
         let db = SQLiteDB.sharedInstance()
         let data = db.query("SELECT * FROM Word WHERE Name = '" + name + "'")
         
         if (data.count == 0) {
-            return Word(id: 0, name: "")
+            return SqlWord(id: 0, name: "")
         }
         
-        return Word(id: data[0]["WordId"]!.asInt(), name: data[0]["Name"]!.asString())
+        return SqlWord(id: data[0]["WordId"]!.asInt(), name: data[0]["Name"]!.asString())
     }
     
     func getCombinationId(firstWord: String, secondWord: String) -> Int {
@@ -129,7 +175,7 @@ class AdminDA {
         var words = getAllWords()
         
         for word in words {
-            var allPuzzles = Array<Array<Combination>>()
+            var allPuzzles = Array<Array<SqlCombination>>()
             var combinations = getAllCombinations(word)
             let r = 3
             if combinations.count >= r {
@@ -140,7 +186,7 @@ class AdminDA {
                         puzzle[0].combinedWord != puzzle[1].combinedWord &&
                         puzzle[0].combinedWord != puzzle[2].combinedWord &&
                         puzzle[1].combinedWord != puzzle[2].combinedWord {
-                            let wordId = String(puzzle[0].keyword.Id)
+                            let wordId =  String(puzzle[0].keyword.Id)
                             let combinationId1 = String(puzzle[0].combinationId)
                             let combinationId2 = String(puzzle[1].combinationId)
                             let combinationId3 = String(puzzle[2].combinationId)
@@ -158,25 +204,25 @@ class AdminDA {
         }
     }
 
-    private func sliceArray(var arr: Array<Combination>, x1: Int, x2: Int) -> Array<Combination> {
-        var tt: Array<Combination> = []
+    private func sliceArray(var arr: Array<SqlCombination>, x1: Int, x2: Int) -> Array<SqlCombination> {
+        var tt: Array<SqlCombination> = []
         for var ii = x1; ii <= x2; ++ii {
             tt.append(arr[ii])
         }
         return tt
     }
 
-    private func findCombinations(var arr: Array<Combination>, k: Int) -> Array<Array<Combination>> {
+    private func findCombinations(var arr: Array<SqlCombination>, k: Int) -> Array<Array<SqlCombination>> {
         var i: Int
         var subI : Int
         
-        var ret: Array<Array<Combination>> = []
-        var sub: Array<Array<Combination>> = []
-        var next: Array<Combination> = []
+        var ret: Array<Array<SqlCombination>> = []
+        var sub: Array<Array<SqlCombination>> = []
+        var next: Array<SqlCombination> = []
         for var i = 0; i < arr.count; ++i {
-            if(k == 1){
+            if k == 1 {
                 ret.append([arr[i]])
-            }else {
+            } else {
                 sub = findCombinations(sliceArray(arr, x1: i + 1, x2: arr.count - 1), k: k - 1)
                 for var subI = 0; subI < sub.count; ++subI {
                     next = sub[subI]
@@ -184,7 +230,6 @@ class AdminDA {
                     ret.append(next)
                 }
             }
-            
         }
         return ret
     }

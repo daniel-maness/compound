@@ -12,7 +12,7 @@ import FBSDKLoginKit
 
 class ProfileViewController: BaseViewController {
     /* Properties */
-    let userDA = UserDA()
+    let userService = UserService()
     var totalStars: String = ""
     var totalPuzzles: String = ""
     var totalWon: String = ""
@@ -59,7 +59,7 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         getUserStats()
         setupView()
-        //userDA.findFriends()
+        //userService.findFriends()
     }
     
     func setupView() {
@@ -99,8 +99,8 @@ class ProfileViewController: BaseViewController {
             averageTime = "0:0" + String(stats.averageTime)
         }
         
-        //let versusStats = userDA.getVersusStats()
+        //let versusStats = userService.getVersusStats()
         
-        //let bestOfStats = userDA.getBestOfStats()
+        //let bestOfStats = userService.getBestOfStats()
     }
 }

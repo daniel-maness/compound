@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 class SignupViewController: BaseViewController {
-    var userDA = UserDA()
+    var userService = UserService()
     
     /* Outlets */
     @IBOutlet weak var messageLabel: UILabel!
@@ -22,6 +22,7 @@ class SignupViewController: BaseViewController {
     @IBAction func onSignupPressed(sender: UIButton) {
         var username = usernameTextField.text
         var password = passwordTextField.text
+        var displayName = ""
         
         messageLabel.text = ""
         
@@ -32,7 +33,7 @@ class SignupViewController: BaseViewController {
         } else {
             usernameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-            if userSignUp(username, password: password) {
+            if userSignUp(username, password: password, displayName: displayName) {
                 self.showHomeViewController()
             }
         }
@@ -50,12 +51,12 @@ class SignupViewController: BaseViewController {
         messageLabel.text = ""
     }
     
-    func userSignUp(username: String, password: String) -> Bool {
-        if userDA.userExists(username) {
+    func userSignUp(username: String, password: String, displayName: String!) -> Bool {
+        if userService.userExists(username) {
             self.messageLabel.text = "User already exists"
         } else {
-            userDA.createUser(nil, username: username, password: password, email: nil)
-            userDA.loginUser(username, password: password)
+            userService.createUser(nil, username: username, password: password, displayName: displayName, email: nil)
+            userService.loginUser(username, password: password)
             currentUser = User()
             return true
         }

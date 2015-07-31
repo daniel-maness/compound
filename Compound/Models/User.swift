@@ -18,14 +18,15 @@ enum UserType: Int {
 }
 
 class User: NSObject {
-    private var userDA = UserDA()
-    private var challengeDA = ChallengeDA()
+    private var userService = UserService()
+    private var challengeService = ChallengeService()
+    private var facebookService = FacebookService()
     
     var userType: UserType!
     var profilePicture: UIImage!
-    //var friends: [PFObject]!
     var friends: [Friend]!
     var facebookUserId: String!
+    var displayName: String!
     
     var userId: String! {
         return PFUser.currentUser()?.objectId
@@ -40,15 +41,39 @@ class User: NSObject {
         
         self.facebookUserId = PFUser.currentUser()?.objectForKey("facebookUserId") == nil ? nil : PFUser.currentUser()?.objectForKey("facebookUserId") as! String
         self.friends = [Friend]()
+        self.updateProfilePictureAsync()
+    }
+    
+    init(pfObject: PFObject) {
+        super.init()
+        
+        self.facebookUserId = pfObject["facebookUserId"] as! String
+        self.displayName = pfObject["displayName"] as! String
         self.updateProfilePicture()
     }
     
+    func updateProfilePictureAsync() {
+        facebookService.loadProfilePictureAsync(self.facebookUserId, completion: { (result, error) -> Void in
+            if error == nil {
+                self.profilePicture = result
+                println("Profile picture loaded")
+            } else {
+                self.profilePicture = UIImage(named: PROFILE_PICTURE)
+                println("Error loading facebook profile picture: " + error.description)
+            }
+        })
+    }
+    
     func updateProfilePicture() {
-        if self.facebookUserId != nil {
-            Facebook.loadProfilePicture(self.facebookUserId)
-        } else {
-            self.profilePicture = UIImage(named: PROFILE_PICTURE)
-        }
+        facebookService.loadProfilePicture(self.facebookUserId, completion: { (result, error) -> Void in
+            if error == nil {
+                self.profilePicture = result
+                println("Profile picture loaded")
+            } else {
+                self.profilePicture = UIImage(named: PROFILE_PICTURE)
+                println("Error loading facebook profile picture: " + error.description)
+            }
+        })
     }
     
     func getVersusStats() {
@@ -59,22 +84,45 @@ class User: NSObject {
         
     }
     
-//    func getFriendsList(completionClosure: (success: Bool, error: NSError!) -> ()) -> [Friend] {
-//        self.friends = [Friend]()
-//        let results = userDA.getFriend
-//        
-//        return currentUser.friends
-//    }
+    func getFacebookFriends(friendsWithApp: Bool, completion: (result: [Friend], error: NSError!) -> Void) {
+        facebookService.getFriends(friendsWithApp, completion: { (result, error) -> Void in
+            var friends = [Friend]()
+            
+            for i in 0..<result.count {
+                let valueDict = result[i] as Dictionary
+                let friend = Friend(facebookUserId: valueDict["facebookUserId"] as! String)
+                friend.displayName = valueDict["name"] as! String
+                friend.profilePictureUrl = valueDict["profilePictureUrl"] as! String
+                friend.profilePicture = valueDict["profilePicture"] as! UIImage
+                friends.append(friend)
+            }
+            
+            completion(result: friends, error: error)
+        })
+    }
     
-    func getChallengesReceived() -> [Challenge] {
-        return challengeDA.getChallengesReceived(self.userId)
+    func getChallengesReceived(completion: (result: [Challenge], error: NSError?) -> Void) {
+        challengeService.getChallengesReceived(self.userId, completion: { (results, error) -> Void in
+            var challenges = [Challenge]()
+            if error == nil {
+                for i in 0..<results.count {
+                    let challenge = Challenge(pfObject: results[i])
+                    challenges.append(challenge)
+                    println("Challenge " + challenge.objectId + " added")
+                }
+            } else {
+                println("Error getting challenges received: " + error!.description)
+            }
+            
+            completion(result: challenges, error: error)
+        })
     }
     
     func getStats() -> Statistics {
-        return userDA.getStats(self.userId)
+        return userService.getStats(self.userId)
     }
     
     func updateStats(puzzle: Puzzle) {
-        userDA.updateStats(puzzle)
+        userService.updateStats(puzzle)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  UserDA.swift
+//  UserService.swift
 //  Compound
 //
 //  Created by Daniel Maness on 4/29/15.
@@ -10,7 +10,7 @@ import Foundation
 import Parse
 import FBSDKCoreKit
 
-class UserDA {
+class UserService {
     func userExists(username: String) -> Bool {
         let query = PFUser.query()!.whereKey("username", equalTo: username)
         let user = query.findObjects()?.first as! PFObject!
@@ -18,7 +18,7 @@ class UserDA {
         return user != nil && username == user["username"] as! String
     }
     
-    func createUser(facebookUserId: String!, username: String, password: String, email: String!) {
+    func createUser(facebookUserId: String!, username: String, password: String, displayName: String!, email: String!) {
         var user = PFUser()
         
         user.username = username
@@ -27,6 +27,10 @@ class UserDA {
         
         if facebookUserId != nil {
             user["facebookUserId"] = facebookUserId
+        }
+        
+        if displayName != nil {
+            user["displayName"] = displayName
         }
         
         user.signUpInBackgroundWithBlock {

@@ -15,7 +15,7 @@ class PuzzleCompletedViewController: BaseViewController {
     var word2: NSMutableAttributedString!
     var currentStars: Int = 0
     var totalStars: Int = 0
-    var userPuzzleId: Int = 0
+    var puzzle: Puzzle!
     
     /* Outlets */
     @IBOutlet weak var wordLabel0: UILabel!
@@ -38,7 +38,7 @@ class PuzzleCompletedViewController: BaseViewController {
         viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
         viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
         viewController.totalStars = currentUser.getStats().totalStarsEarned
-        viewController.userPuzzleId = self.userPuzzleId
+        viewController.puzzle = self.puzzle
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)
         viewController.didMoveToParentViewController(self)

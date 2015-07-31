@@ -14,10 +14,9 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     var word1: NSMutableAttributedString!
     var word2: NSMutableAttributedString!
     var totalStars: Int = 0
-    var selectedFriends: [String?] = []
-    var selectedCount = 0
-    var userPuzzleId: Int = 0
-    let challengeDA = ChallengeDA()
+    var selectedFriendIds: [String] = []
+    var puzzle: Puzzle!
+    let challengeService = ChallengeService()
     
     var friendsList = [Friend]() {
         didSet {
@@ -40,14 +39,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     @IBAction func onChallengePressed(sender: UIButton) {
-        var friendIds = [String]()
-        for selected in selectedFriends {
-            if selected != nil {
-                friendIds.append(selected!)
-            }
-        }
-        
-        challengeDA.sendChallenge(self.userPuzzleId, friendIds: friendIds, challengeTime: DateTime.now())
+        challengeService.sendChallenges(self.puzzle, friendIds: self.selectedFriendIds, challengeTime: DateTime.now())
         
         exitView(true)
     }
@@ -64,24 +56,20 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         word0.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word0.length))
         word1.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word1.length))
         word2.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word2.length))
-        
         wordLabel0.attributedText = word0
         wordLabel1.attributedText = word1
         wordLabel2.attributedText = word2
         totalStarsLabel.text = String(totalStars)
-        
+        challengeButton.enabled = false
         self.setUserPicture(profilePicture)
         
-        challengeButton.enabled = false
-        
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        //self.tableView.registerNib(UINib(nibName: "friendCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         
         populateFriendsTable()
     }
     
     func populateFriendsTable() {
-        Facebook.getFriends(false, completion: { (result: [Friend], error: NSError!) -> Void in
+        currentUser.getFacebookFriends(true, completion: { (result: [Friend], error: NSError!) -> Void in
             if error == nil {
                 self.friendsList = result
             } else {
@@ -111,35 +99,30 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
             cell.picture.contentMode = .ScaleAspectFit
             cell.picture.image = image
             self.formatImageAsCircle(cell.picture)
-//            dispatch_async(dispatch_get_main_queue(), {
-//                if let friendCell = tableView.cellForRowAtIndexPath(indexPath) as? FriendCell {
-//                    friendCell.picture.image = image
-//                    self.formatImageAsCircle(friendCell.picture)
-//                }
-//            })
         }
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.row
-        let id = self.friendsList[indexPath.row].id
-        //self.selectedFriends[index] = String(id)
-        selectedCount++
+        let facebookUserId = self.friendsList[indexPath.row].facebookUserId
+        self.selectedFriendIds.append(String(facebookUserId))
+        
         toggleChallengeButton()
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.row
-        let id = self.friendsList[indexPath.row].id
-        //self.selectedFriends[index] = nil
-        selectedCount--
+        let facebookUserId = self.friendsList[indexPath.row].facebookUserId
+        
+        if let index = find(self.selectedFriendIds, facebookUserId) {
+            self.selectedFriendIds.removeAtIndex(index)
+        }
+        
         toggleChallengeButton()
     }
     
     func toggleChallengeButton() {
-        challengeButton.enabled = selectedCount > 0 ? true : false
+        challengeButton.enabled = self.selectedFriendIds.count > 0 ? true : false
     }
     
     func exitView(challengeSent: Bool) {

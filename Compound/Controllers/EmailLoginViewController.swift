@@ -30,7 +30,7 @@ class EmailLoginViewController: LoginViewController {
         } else {
             usernameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-            let result = self.loginParse(username, password: password, facebookUserId: nil, email: nil)
+            let result = self.loginParse(username, password: password, facebookUserId: nil, displayName: nil, email: nil)
             if result.success {
                 self.showHomeViewController()
             } else {

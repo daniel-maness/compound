@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 class Friend {
-    var id: String!
+    var facebookUserId: String
     var firstName: String = ""
     var lastName: String = ""
     var pictureFileName: String = ""
@@ -21,11 +21,11 @@ class Friend {
     var totalLostAgainst: Int = 0
     var displayName: String!
     
-    init() {
-        
+    init(facebookUserId: String) {
+        self.facebookUserId = facebookUserId
     }
     
-    init(id: String) {
-        self.id = id
+    func initializeFromFacebook() {
+        
     }
 }

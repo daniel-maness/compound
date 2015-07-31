@@ -10,10 +10,15 @@ import UIKit
 
 class ChallengesViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     /* Properties */
-    var challenges: [Challenge] = []
     var totalWon: String = ""
     var totalLost: String = ""
     var bestOfAverage: String = ""
+    
+    var challenges = [Challenge]() {
+        didSet {
+            refreshUI()
+        }
+    }
     
     /* Outlets */
     @IBOutlet weak var totalWonLabel: UILabel!
@@ -47,11 +52,10 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func setupView() {
+        self.setUserPicture(profilePicture)
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         populateStats()
         populateChallengesTable()
-        
-        self.setUserPicture(profilePicture)
     }
     
     func populateStats() {
@@ -61,8 +65,20 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func populateChallengesTable() {
-        challenges = currentUser.getChallengesReceived()
-        challenges.sort({ $0.status.rawValue < $1.status.rawValue })
+        currentUser.getChallengesReceived({ (result, error) -> Void in
+            if error == nil {
+                self.challenges = result
+                //self.challenges.sort({ $0.status.rawValue < $1.status.rawValue })
+            } else {
+                println("Error fetching challenges: " + error!.description)
+            }
+        })
+    }
+    
+    func refreshUI() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,10 +86,17 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell: FriendCell = self.tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as! FriendCell
+        let title = self.challenges[indexPath.row].parentChallenge.user.displayName
+        let image = self.challenges[indexPath.row].parentChallenge.user.profilePicture
         
-        cell.imageView?.image = UIImage(named: self.challenges[indexPath.row].friend.pictureFileName)
-        cell.textLabel?.text = self.challenges[indexPath.row].friend.displayName
+        cell.title.text = title
+        
+        if image != nil {
+            cell.picture.contentMode = .ScaleAspectFit
+            cell.picture.image = image
+            self.formatImageAsCircle(cell.picture)
+        }
         
         if self.challenges[indexPath.row].status == Status.Complete {
             cell.userInteractionEnabled = false

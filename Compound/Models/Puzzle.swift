@@ -32,12 +32,12 @@ class Puzzle {
     let maxStars: Int = 4
     let minStars: Int = 1
     
-    private var puzzleDA: PuzzleDA
-    private var challengeDA: ChallengeDA
+    private var puzzleService: PuzzleService
+    private var challengeService: ChallengeService
     
     var puzzleId: Int
     var userPuzzleId: Int!
-    var keyword: Word
+    var keyword: String
     var combinations: [Combination]
     var guesses: [Guess]
     var hintTime1: String
@@ -58,11 +58,11 @@ class Puzzle {
     }
     
     init() {
-        self.puzzleDA = PuzzleDA()
-        self.challengeDA = ChallengeDA()
+        self.puzzleService = PuzzleService()
+        self.challengeService = ChallengeService()
         self.puzzleId = 0
         self.combinations = [Combination]()
-        self.keyword = Word(id: 0, name: "")
+        self.keyword = ""
         self.guesses = [Guess]()
         self.hintTime1 = ""
         self.hintTime2 = ""
@@ -88,19 +88,12 @@ class Puzzle {
         self.status = Status.Incomplete
     }
     
-    func save() {
-        if let userPuzzleId = puzzleDA.savePuzzle(self) {
-            self.userPuzzleId = userPuzzleId
-        }
-    }
-    
     func newPuzzle() {
-//        let adminDA = AdminDA()
-//        adminDA.populateWordTable()
-//        syncHelper.syncPuzzleData()
-//        adminDA.populateCombinationTable()
-//        adminDA.generatePuzzles()
-        let newPuzzle = puzzleDA.getNewPuzzle()
+//        let adminService = AdminService()
+//        adminService.populateWordTable()
+//        adminService.populateCombinationTable()
+//        adminService.generatePuzzles()
+        let newPuzzle = puzzleService.getPuzzle(nil)
         
         self.puzzleId = newPuzzle.puzzleId
         self.keyword = newPuzzle.keyword
@@ -108,16 +101,6 @@ class Puzzle {
         
         resetPuzzle()
     }
-    
-//    func loadPuzzle(puzzleId: Int) {
-//        let puzzle = puzzleDA.getPuzzle(puzzleId, userPuzzleId: nil)
-//        
-//        self.puzzleId = puzzle.puzzleId
-//        self.keyword = puzzle.keyword
-//        self.combinations = puzzle.combinations
-//        
-//        resetPuzzle()
-//    }
     
     func useHint() {
         if self.hintsUsed < maxHints {
@@ -129,12 +112,12 @@ class Puzzle {
         if self.hintsUsed == 1 {
             hint = "____"
         } else if self.hintsUsed == 2 {
-            for i in 0..<count(self.keyword.Name) {
+            for i in 0..<count(self.keyword) {
                 hint += " _"
             }
         } else if self.hintsUsed == 3 {
-            hint = self.keyword.Name.subStringTo(1)
-            for i in 1..<count(self.keyword.Name) {
+            hint = self.keyword.subStringTo(1)
+            for i in 1..<count(self.keyword) {
                 hint += " _"
             }
         }
@@ -146,7 +129,7 @@ class Puzzle {
         let newGuess = Guess(description: answer, submitTime: DateTime.now())
         self.guesses.append(newGuess)
         
-        if answer.uppercaseString == self.keyword.Name.uppercaseString {
+        if answer.uppercaseString == self.keyword.uppercaseString {
             return true
         } else {
             return false

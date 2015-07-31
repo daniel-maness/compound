@@ -58,16 +58,16 @@ class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate
                 println("Error: \(error)")
             } else {
                 let id = result.valueForKey("id") as! String
-                //let username = result.valueForKey("name") as! String
+                let displayName = result.valueForKey("name") as! String
                 let username = id
                 let password = id
                 //let email = result.valueForKey("contact_email") as! String
                 
-//                if !self.userDA.userExists(username) {
-//                    self.userDA.createUser(id, username: username, password: password, email: nil)
+//                if !self.userService.userExists(username) {
+//                    self.userService.createUser(id, username: username, password: password, email: nil)
 //                }
                 
-                self.loginParse(username, password: password, facebookUserId: id, email: nil)
+                self.loginParse(username, password: password, facebookUserId: id, displayName: displayName, email: nil)
                 
                 currentUser = User()
                 self.showHomeViewController()

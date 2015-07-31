@@ -28,7 +28,7 @@
 		AA2881701B03C5DA0066B95D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881641B03C5DA0066B95D /* Social.framework */; };
 		AA2881711B03C5DA0066B95D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881651B03C5DA0066B95D /* StoreKit.framework */; };
 		AA2881721B03C5DA0066B95D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881661B03C5DA0066B95D /* SystemConfiguration.framework */; };
-		AA30B2301AFC445500C6CDC1 /* ChallengeDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30B22F1AFC445500C6CDC1 /* ChallengeDA.swift */; };
+		AA30B2301AFC445500C6CDC1 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30B22F1AFC445500C6CDC1 /* ChallengeService.swift */; };
 		AA4FA4E91AF2E0DA004D6934 /* appicon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E41AF2E0DA004D6934 /* appicon-40.png */; };
 		AA4FA4EA1AF2E0DA004D6934 /* appicon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E51AF2E0DA004D6934 /* appicon-60.png */; };
 		AA4FA4EB1AF2E0DA004D6934 /* appicon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E61AF2E0DA004D6934 /* appicon-80.png */; };
@@ -36,8 +36,8 @@
 		AA4FA4ED1AF2E0DA004D6934 /* appicon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */; };
 		AA5767AB1AFAD896006014FC /* container-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5767AA1AFAD896006014FC /* container-grey.png */; };
 		AA5767AF1AFAE094006014FC /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5767AE1AFAE094006014FC /* Friend.swift */; };
-		AA603DB41AF7E57600EF7B99 /* AdminDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB21AF7E57600EF7B99 /* AdminDA.swift */; };
-		AA603DB51AF7E57600EF7B99 /* UserDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB31AF7E57600EF7B99 /* UserDA.swift */; };
+		AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB21AF7E57600EF7B99 /* AdminService.swift */; };
+		AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB31AF7E57600EF7B99 /* UserService.swift */; };
 		AA603DB81AF7E59300EF7B99 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB61AF7E59300EF7B99 /* DateTime.swift */; };
 		AA603DB91AF7E59300EF7B99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB71AF7E59300EF7B99 /* User.swift */; };
 		AA603DBB1AF7E5A000EF7B99 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA603DBA1AF7E5A000EF7B99 /* User.storyboard */; };
@@ -47,7 +47,7 @@
 		AA65FB491B5D71B900BE9F01 /* exit-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB481B5D71B900BE9F01 /* exit-button.png */; };
 		AA65FB4B1B5D748C00BE9F01 /* exit-button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */; };
 		AA65FB4F1B5D7E0300BE9F01 /* profile-picture-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */; };
-		AA6ECE511B5EBA0D00FAD8B3 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6ECE501B5EBA0D00FAD8B3 /* Facebook.swift */; };
+		AA6ECE511B5EBA0D00FAD8B3 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */; };
 		AA6ECE531B5EE06A00FAD8B3 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */; };
 		AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */; };
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
@@ -63,7 +63,6 @@
 		AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */; };
 		AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */; };
 		AAD9F3471AE0A73900EAFA01 /* grey_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD9F3461AE0A73900EAFA01 /* grey_background.png */; };
-		AADD31FF1B0546AD00CD03C9 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD31FE1B0546AD00CD03C9 /* SyncHelper.swift */; };
 		AAE52B711AE2EC3200FFB13D /* logo-left.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B6F1AE2EC3200FFB13D /* logo-left.png */; };
 		AAE52B721AE2EC3200FFB13D /* logo-right.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B701AE2EC3200FFB13D /* logo-right.png */; };
 		AAE52B791AE2F84300FFB13D /* star-group-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B751AE2F84300FFB13D /* star-group-1.png */; };
@@ -91,7 +90,7 @@
 		AAFB40381ADEEA3400F44C8F /* compound.db in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40341ADEEA3400F44C8F /* compound.db */; };
 		AAFB40391ADEEA3400F44C8F /* keywords.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40351ADEEA3400F44C8F /* keywords.txt */; };
 		AAFB403A1ADEEA3400F44C8F /* keywords2.xml in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40361ADEEA3400F44C8F /* keywords2.xml */; };
-		AAFB403D1ADEEA9900F44C8F /* PuzzleDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB403C1ADEEA9900F44C8F /* PuzzleDA.swift */; };
+		AAFB403D1ADEEA9900F44C8F /* PuzzleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */; };
 		AAFB403F1ADEEAEB00F44C8F /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB403E1ADEEAEB00F44C8F /* Combination.swift */; };
 		AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB40401ADEEB2E00F44C8F /* ChallengesViewController.swift */; };
 		AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB40421ADEEB9800F44C8F /* StreamReader.swift */; };
@@ -204,7 +203,7 @@
 		AA2881641B03C5DA0066B95D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AA2881651B03C5DA0066B95D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AA2881661B03C5DA0066B95D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AA30B22F1AFC445500C6CDC1 /* ChallengeDA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeDA.swift; path = DataAccess/ChallengeDA.swift; sourceTree = "<group>"; };
+		AA30B22F1AFC445500C6CDC1 /* ChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeService.swift; path = DataAccess/ChallengeService.swift; sourceTree = "<group>"; };
 		AA4FA4E41AF2E0DA004D6934 /* appicon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-40.png"; path = "images/appicon-40.png"; sourceTree = "<group>"; };
 		AA4FA4E51AF2E0DA004D6934 /* appicon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-60.png"; path = "images/appicon-60.png"; sourceTree = "<group>"; };
 		AA4FA4E61AF2E0DA004D6934 /* appicon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-80.png"; path = "images/appicon-80.png"; sourceTree = "<group>"; };
@@ -212,8 +211,8 @@
 		AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-180.png"; path = "images/appicon-180.png"; sourceTree = "<group>"; };
 		AA5767AA1AFAD896006014FC /* container-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "container-grey.png"; path = "images/container-grey.png"; sourceTree = "<group>"; };
 		AA5767AE1AFAE094006014FC /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Models/Friend.swift; sourceTree = "<group>"; };
-		AA603DB21AF7E57600EF7B99 /* AdminDA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminDA.swift; path = DataAccess/AdminDA.swift; sourceTree = "<group>"; };
-		AA603DB31AF7E57600EF7B99 /* UserDA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDA.swift; path = DataAccess/UserDA.swift; sourceTree = "<group>"; };
+		AA603DB21AF7E57600EF7B99 /* AdminService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminService.swift; path = DataAccess/AdminService.swift; sourceTree = "<group>"; };
+		AA603DB31AF7E57600EF7B99 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = DataAccess/UserService.swift; sourceTree = "<group>"; };
 		AA603DB61AF7E59300EF7B99 /* DateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTime.swift; path = Models/DateTime.swift; sourceTree = "<group>"; };
 		AA603DB71AF7E59300EF7B99 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		AA603DBA1AF7E5A000EF7B99 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = User.storyboard; path = Views/User.storyboard; sourceTree = "<group>"; };
@@ -223,7 +222,7 @@
 		AA65FB481B5D71B900BE9F01 /* exit-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-button.png"; path = "images/exit-button.png"; sourceTree = "<group>"; };
 		AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-button-highlighted.png"; path = "images/exit-button-highlighted.png"; sourceTree = "<group>"; };
 		AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile-picture-overlay.png"; path = "images/profile-picture-overlay.png"; sourceTree = "<group>"; };
-		AA6ECE501B5EBA0D00FAD8B3 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleFailedViewController.swift; path = Controllers/PuzzleFailedViewController.swift; sourceTree = "<group>"; };
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
@@ -239,7 +238,6 @@
 		AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		AAD72BE91B06CBB4009CDAB5 /* Compound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Compound-Bridging-Header.h"; sourceTree = "<group>"; };
 		AAD9F3461AE0A73900EAFA01 /* grey_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grey_background.png; path = images/grey_background.png; sourceTree = "<group>"; };
-		AADD31FE1B0546AD00CD03C9 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncHelper.swift; sourceTree = "<group>"; };
 		AAE52B6F1AE2EC3200FFB13D /* logo-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-left.png"; path = "images/logo-left.png"; sourceTree = "<group>"; };
 		AAE52B701AE2EC3200FFB13D /* logo-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-right.png"; path = "images/logo-right.png"; sourceTree = "<group>"; };
 		AAE52B751AE2F84300FFB13D /* star-group-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-group-1.png"; path = "images/star-group-1.png"; sourceTree = "<group>"; };
@@ -271,7 +269,7 @@
 		AAFB40341ADEEA3400F44C8F /* compound.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = compound.db; path = Data/compound.db; sourceTree = "<group>"; };
 		AAFB40351ADEEA3400F44C8F /* keywords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = keywords.txt; path = Data/keywords.txt; sourceTree = "<group>"; };
 		AAFB40361ADEEA3400F44C8F /* keywords2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = keywords2.xml; path = Data/keywords2.xml; sourceTree = "<group>"; };
-		AAFB403C1ADEEA9900F44C8F /* PuzzleDA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleDA.swift; path = DataAccess/PuzzleDA.swift; sourceTree = "<group>"; };
+		AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleService.swift; path = DataAccess/PuzzleService.swift; sourceTree = "<group>"; };
 		AAFB403E1ADEEAEB00F44C8F /* Combination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combination.swift; path = Models/Combination.swift; sourceTree = "<group>"; };
 		AAFB40401ADEEB2E00F44C8F /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengesViewController.swift; path = Controllers/ChallengesViewController.swift; sourceTree = "<group>"; };
 		AAFB40421ADEEB9800F44C8F /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamReader.swift; path = DataAccess/StreamReader.swift; sourceTree = "<group>"; };
@@ -427,7 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				AAFB404A1ADEF5FF00F44C8F /* Resources */,
-				AAFB403B1ADEEA6700F44C8F /* DataAccess */,
+				AAFB403B1ADEEA6700F44C8F /* Services */,
 				AAFB40101ADEE9C900F44C8F /* Models */,
 				AAFB40111ADEE9CF00F44C8F /* Views */,
 				AAFB40121ADEE9D600F44C8F /* Controllers */,
@@ -594,19 +592,18 @@
 			name = SQLiteDB;
 			sourceTree = "<group>";
 		};
-		AAFB403B1ADEEA6700F44C8F /* DataAccess */ = {
+		AAFB403B1ADEEA6700F44C8F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AA30B22F1AFC445500C6CDC1 /* ChallengeDA.swift */,
-				AA603DB21AF7E57600EF7B99 /* AdminDA.swift */,
-				AA603DB31AF7E57600EF7B99 /* UserDA.swift */,
+				AA30B22F1AFC445500C6CDC1 /* ChallengeService.swift */,
+				AA603DB21AF7E57600EF7B99 /* AdminService.swift */,
+				AA603DB31AF7E57600EF7B99 /* UserService.swift */,
 				AAFB40421ADEEB9800F44C8F /* StreamReader.swift */,
-				AAFB403C1ADEEA9900F44C8F /* PuzzleDA.swift */,
-				AADD31FE1B0546AD00CD03C9 /* SyncHelper.swift */,
+				AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */,
 				AA9FF7541B5C40D000A75571 /* Global.swift */,
-				AA6ECE501B5EBA0D00FAD8B3 /* Facebook.swift */,
+				AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */,
 			);
-			name = DataAccess;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		AAFB404A1ADEF5FF00F44C8F /* Resources */ = {
@@ -898,8 +895,7 @@
 				AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */,
 				AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */,
 				AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */,
-				AA603DB51AF7E57600EF7B99 /* UserDA.swift in Sources */,
-				AADD31FF1B0546AD00CD03C9 /* SyncHelper.swift in Sources */,
+				AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */,
 				AA603DBE1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift in Sources */,
 				AAFB401B1ADEE9F200F44C8F /* PuzzleViewController.swift in Sources */,
 				AAC9E3F61B02C00400A7C2EE /* UserPuzzle.swift in Sources */,
@@ -908,11 +904,11 @@
 				AAFB40321ADEEA2C00F44C8F /* String-Extras.swift in Sources */,
 				AA603DB81AF7E59300EF7B99 /* DateTime.swift in Sources */,
 				AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */,
-				AA603DB41AF7E57600EF7B99 /* AdminDA.swift in Sources */,
+				AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */,
 				AAFB40161ADEE9E900F44C8F /* Resources.swift in Sources */,
 				AA1826D41AE722E600A5E609 /* PuzzleCompletedViewController.swift in Sources */,
-				AA6ECE511B5EBA0D00FAD8B3 /* Facebook.swift in Sources */,
-				AA30B2301AFC445500C6CDC1 /* ChallengeDA.swift in Sources */,
+				AA6ECE511B5EBA0D00FAD8B3 /* FacebookService.swift in Sources */,
+				AA30B2301AFC445500C6CDC1 /* ChallengeService.swift in Sources */,
 				AAFB401A1ADEE9F200F44C8F /* BaseViewController.swift in Sources */,
 				AA603DBF1AF7E5AC00EF7B99 /* ProfileViewController.swift in Sources */,
 				AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */,
@@ -924,7 +920,7 @@
 				AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */,
 				AAFB40151ADEE9E900F44C8F /* Puzzle.swift in Sources */,
 				AAFB401C1ADEE9F200F44C8F /* HomeViewController.swift in Sources */,
-				AAFB403D1ADEEA9900F44C8F /* PuzzleDA.swift in Sources */,
+				AAFB403D1ADEEA9900F44C8F /* PuzzleService.swift in Sources */,
 				AA6ECE531B5EE06A00FAD8B3 /* FriendCell.swift in Sources */,
 				AA65FB471B5D63D900BE9F01 /* Statistics.swift in Sources */,
 				AAFB40311ADEEA2C00F44C8F /* SQLiteDB.swift in Sources */,

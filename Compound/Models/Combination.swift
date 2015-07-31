@@ -14,55 +14,38 @@ extension String {
     }
 }
 
-class Word {
-    var Id: Int = 0
-    var Name: String = ""
-    
-    init(id: Int, name: String) {
-        self.Id = id
-        self.Name = name
-    }
-}
-
 enum Location: Int {
     case Unknown = 0, Left, Right
 }
 
-class Combination: Printable, Hashable {
-    var combinationId: Int
-    var keyword: Word
-    var leftWord: Word
-    var rightWord: Word
-    var combinedWord: String
+class Combination {
+    var keyword: String
+    var leftWord: String
+    var rightWord: String
     var keywordLocation: Location
+    var combinedWord: String {
+        return leftWord + rightWord
+    }
     
     var description: String {
-        return "combination:\(combinedWord) | keyword:\(keyword.Name)"
+        return "combination:\(combinedWord) | keyword:\(keyword)"
     }
     
-    var hashValue: Int {
-        return leftWord.Id * rightWord.Id + leftWord.Id - rightWord.Id
-    }
-    
-    init (combinationId: Int, keyword: Word, leftWord: Word, rightWord: Word) {
-        self.combinationId = combinationId
+    init (keyword: String, leftWord: String, rightWord: String) {
         self.keyword = keyword
         self.leftWord = leftWord
         self.rightWord = rightWord
-        self.combinedWord = leftWord.Name + rightWord.Name
-        
-        if keyword == leftWord {
-            self.keywordLocation = Location.Left
-        } else {
-            self.keywordLocation = Location.Right
-        }
+        self.keywordLocation = leftWord == keyword ? Location.Left : Location.Right
+    }
+    
+    init (keyword: String, combinedWord: String) {
+        self.keyword = keyword
+        self.leftWord = ""
+        self.rightWord = ""
+        self.keywordLocation = leftWord == keyword ? Location.Left : Location.Right
     }
 }
 
 func ==(lhs: Combination, rhs: Combination) -> Bool {
     return lhs.combinedWord == rhs.combinedWord
-}
-
-func ==(lhs: Word, rhs: Word) -> Bool {
-    return lhs.Name == rhs.Name
 }
