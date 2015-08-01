@@ -4,7 +4,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Gobold.ttf">
+            <string>Gobold</string>
+            <string>Gobold</string>
+            <string>Gobold</string>
+        </mutableArray>
+        <mutableArray key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </mutableArray>
         <mutableArray key="Gotham-Medium.otf">
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
+            <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
@@ -122,14 +134,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B43-T4-PAt" id="bmn-rF-Ytn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAb-bV-gso">
-                                                    <rect key="frame" x="20" y="2" width="40" height="40"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHw-xb-XlS">
-                                                    <rect key="frame" x="70" y="0.0" width="190" height="44"/>
+                                                    <rect key="frame" x="68" y="0.0" width="190" height="44"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAb-bV-gso">
+                                                    <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -158,15 +170,165 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tb-PA-zXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="297"/>
+            <point key="canvasLocation" x="-461" y="53"/>
+        </scene>
+        <!--Challenge Results View Controller-->
+        <scene sceneID="oKx-6X-l2p">
+            <objects>
+                <viewController storyboardIdentifier="ChallengeResultsViewController" modalPresentationStyle="overCurrentContext" id="nik-ea-81X" customClass="ChallengeResultsViewController" customModule="compound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F6j-mZ-HMg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bcg-bN-INd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="77K-nm-dMa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" image="container-black.png" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-qT-Y6Z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="container-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="5ro-pE-L4F">
+                                <rect key="frame" x="30" y="40" width="260" height="360"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yld-85-egf">
+                                <rect key="frame" x="113" y="188" width="95" height="20"/>
+                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="xCp-gw-xDN">
+                                <rect key="frame" x="113" y="142" width="95" height="20"/>
+                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBw-u1-HcR">
+                                <rect key="frame" x="30" y="350" width="260" height="50"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="32"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="NEXT" backgroundImage="container-pink.png"/>
+                                <state key="highlighted" title="NEXT" backgroundImage="container-white.png">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iT2-7U-RST" kind="show" id="ZDq-kM-Owy"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="smallstar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Ss-Q9Z">
+                                <rect key="frame" x="72" y="49" width="24" height="24"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="group-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gYc-0s-Vbg">
+                                <rect key="frame" x="35" y="45" width="32" height="32"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="profile-picture-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="ALA-xZ-RBZ">
+                                <rect key="frame" x="35" y="45" width="32" height="32"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ow0-jR-ef7">
+                                <rect key="frame" x="101" y="52" width="64" height="24"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="logo-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="xPE-3B-EkV">
+                                <rect key="frame" x="35" y="138" width="70" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="POUND IT!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jl-15-uoe">
+                                <rect key="frame" x="30" y="95" width="260" height="35"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-gN-aNd">
+                                <rect key="frame" x="113" y="165" width="95" height="20"/>
+                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="logo-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="j07-N0-XEG">
+                                <rect key="frame" x="216" y="138" width="70" height="75"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-ku-mXj">
+                                <rect key="frame" x="256" y="43" width="32" height="32"/>
+                                <state key="normal" title="HOME" image="homeicon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onHomePressed:" destination="nik-ea-81X" eventType="touchUpInside" id="hzu-mA-dfj"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7ND-7z-Y46">
+                                <rect key="frame" x="30" y="235" width="260" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="compoundCell" id="IQP-ok-spb" customClass="CompoundCell" customModule="compound">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IQP-ok-spb" id="QlO-ua-Jq7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Z2-Ji-8k6">
+                                                    <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FirstName LastName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzt-zl-0xI">
+                                                    <rect key="frame" x="70" y="0.0" width="110" height="44"/>
+                                                    <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-3f-pUX">
+                                                    <rect key="frame" x="0.0" y="2" width="20" height="40"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVg-e0-YXb">
+                                                    <rect key="frame" x="180" y="5" width="32" height="32"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWU-C2-MfD">
+                                                    <rect key="frame" x="220" y="11" width="40" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="wzt-zl-0xI" id="TSt-yU-pj2"/>
+                                            <outlet property="profileImage" destination="7Z2-Ji-8k6" id="haU-jt-zkd"/>
+                                            <outlet property="starImage" destination="aVg-e0-YXb" id="Z35-NS-pMS"/>
+                                            <outlet property="time" destination="mWU-C2-MfD" id="Slf-tu-hFQ"/>
+                                            <outlet property="trophyImage" destination="2Yy-3f-pUX" id="x9n-n2-mQA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nik-ea-81X" id="0bt-aJ-CBa"/>
+                                    <outlet property="delegate" destination="nik-ea-81X" id="xrT-c9-3tH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="profilePicture" destination="gYc-0s-Vbg" id="Lci-CI-kPf"/>
+                        <outlet property="tableView" destination="7ND-7z-Y46" id="0Sl-VQ-0TA"/>
+                        <outlet property="totalStarsLabel" destination="ow0-jR-ef7" id="2h7-1Q-9Co"/>
+                        <outlet property="wordLabel0" destination="xCp-gw-xDN" id="W1g-yG-Jne"/>
+                        <outlet property="wordLabel1" destination="1Oa-gN-aNd" id="NeT-ve-nTg"/>
+                        <outlet property="wordLabel2" destination="Yld-85-egf" id="YZ9-Pv-7FC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPI-mF-RpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="47"/>
         </scene>
     </scenes>
     <resources>
+        <image name="container-black.png" width="32" height="32"/>
         <image name="container-green.png" width="32" height="32"/>
+        <image name="container-pink.png" width="32" height="32"/>
         <image name="container-white.png" width="32" height="32"/>
         <image name="group-icon.png" width="94" height="94"/>
         <image name="homeicon.png" width="65" height="65"/>
         <image name="largestar.png" width="159" height="159"/>
+        <image name="logo-left.png" width="71" height="93"/>
+        <image name="logo-right.png" width="69" height="93"/>
+        <image name="profile-picture-overlay.png" width="192" height="192"/>
+        <image name="smallstar.png" width="50" height="50"/>
         <image name="uploadicon.png" width="36" height="50"/>
     </resources>
 </document>

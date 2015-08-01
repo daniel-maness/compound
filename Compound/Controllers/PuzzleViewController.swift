@@ -11,6 +11,7 @@ import UIKit
 class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     private let puzzleManager = PuzzleManager()
     private let userManager = UserManager()
+    private let challengeManager = ChallengeManager()
     
     /* Properties */
     var puzzle: Puzzle!
@@ -143,12 +144,19 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         userManager.updateStats(puzzle)
         revealPuzzle()
         
-        if puzzle.status == Status.Complete {
-            showPuzzleCompletedView()
-        } else if puzzle.status == Status.TimeUp {
-            showPuzzleFailedView("TIMES UP!")
-        } else if puzzle.status == Status.GaveUp {
-            showPuzzleFailedView("GAVE UP!")
+        if self.challenge == nil {
+            if puzzle.status == Status.Complete {
+                showPuzzleCompletedView()
+            } else if puzzle.status == Status.TimeUp {
+                showPuzzleFailedView("TIMES UP!")
+            } else if puzzle.status == Status.GaveUp {
+                showPuzzleFailedView("GAVE UP!")
+            }
+        } else {
+            self.challenge.puzzle = self.puzzle
+            challengeManager.completeChallenge(self.challenge)
+            challengeManager.completeChallenge(self.challenge.parentChallenge)
+            showChallengeResults()
         }
     }
     
@@ -200,18 +208,11 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateTimerLabel() {
-        if puzzle.time == MAX_TIME {
-            timerLabel.text = "1:00"
-        } else if puzzle.time <= 10 {
+        if puzzle.time <= 10 {
             timerLabel.textColor = ColorPalette.pink
-            if puzzle.time == 10 {
-                timerLabel.text = ":" + String(puzzle.time)
-            } else {
-                timerLabel.text = ":0" + String(puzzle.time)
-            }
-        } else {
-            timerLabel.text = ":" + String(puzzle.time)
         }
+        
+        timerLabel.text = DateTime.getFormattedSeconds(puzzle.time)
     }
     
     func updateWordLabels() {
@@ -316,6 +317,20 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
         viewController.totalStars = userManager.getStats().totalStarsEarned
+        
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    func showChallengeResults() {
+        // This method is good for showing a view we won't need to return from
+        var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengeResultsViewController") as! ChallengeResultsViewController
+        viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
+        viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
+        viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
+        viewController.currentStars = puzzle.currentStars
+        viewController.totalStars = userManager.getStats().totalStarsEarned
+        viewController.userChallenge = self.challenge
+        viewController.parentChallenge = self.challenge.parentChallenge
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

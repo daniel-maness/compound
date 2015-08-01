@@ -36,6 +36,8 @@ class Challenge {
         puzzle.combinations.append(Combination(keyword: puzzle.keyword, combinedWord: pfObject["word1"] as! String))
         puzzle.combinations.append(Combination(keyword: puzzle.keyword, combinedWord: pfObject["word2"] as! String))
         puzzle.combinations.append(Combination(keyword: puzzle.keyword, combinedWord: pfObject["word3"] as! String))
+        puzzle.hintsUsed = pfObject["hintsUsed"] == nil ? 0 : pfObject["hintsUsed"] as! Int
+        puzzle.time = pfObject["totalSeconds"] == nil ? 0 : pfObject["totalSeconds"] as! Int
         self.puzzle = puzzle
         
         // Initialize the parent challenge, if it exists

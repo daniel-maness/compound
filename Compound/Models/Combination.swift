@@ -40,8 +40,15 @@ class Combination {
     
     init (keyword: String, combinedWord: String) {
         self.keyword = keyword
-        self.leftWord = ""
-        self.rightWord = ""
+        
+        if combinedWord.subStringTo(count(keyword)) == keyword {
+            self.leftWord = keyword
+            self.rightWord = combinedWord.subStringFrom(count(keyword))
+        } else {
+            self.leftWord = combinedWord.subStringTo(count(combinedWord) - count(keyword))
+            self.rightWord = combinedWord.subStringFrom(count(self.leftWord))
+        }
+        
         self.keywordLocation = leftWord == keyword ? Location.Left : Location.Right
     }
 }

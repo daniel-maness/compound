@@ -16,4 +16,18 @@ class DateTime {
         let datetime = dateFormatter.stringFromDate(date)
         return datetime
     }
+    
+    class func getFormattedSeconds(seconds: Int) -> String {
+        if seconds == 60 {
+            return "1:00"
+        } else if seconds <= 10 {
+            if seconds == 10 {
+                return "0:" + String(seconds)
+            } else {
+                return "0:0" + String(seconds)
+            }
+        } else {
+            return "0:" + String(seconds)
+        }
+    }
 }

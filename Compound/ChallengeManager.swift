@@ -34,4 +34,8 @@ class ChallengeManager {
     func sendChallenges(puzzle: Puzzle, friendIds: [String]) {
         challengeService.sendChallenges(CurrentUser.objectId, puzzle: puzzle, friendIds: friendIds)
     }
+    
+    func completeChallenge(challenge: Challenge) {
+        challengeService.completeChallenge(challenge)
+    }
 }

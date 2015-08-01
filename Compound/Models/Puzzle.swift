@@ -29,6 +29,9 @@ class Puzzle {
     var points: Int
     var ended: Bool
     var time: Int
+    var starsEarned: Int {
+        return self.maxStars - self.hintsUsed
+    }
     
     var currentStars: Int {
         return self.maxStars - self.hintsUsed

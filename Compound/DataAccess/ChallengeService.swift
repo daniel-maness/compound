@@ -25,7 +25,7 @@ class ChallengeService {
                 challengeObject["word1"] = puzzle.combinations[0].combinedWord
                 challengeObject["word2"] = puzzle.combinations[1].combinedWord
                 challengeObject["word3"] = puzzle.combinations[2].combinedWord
-                challengeObject["isActive"] = true
+                challengeObject["isComplete"] = false
                 
                 challengeObject.saveInBackgroundWithBlock { (success, error) -> Void in
                     if error == nil {
@@ -54,7 +54,7 @@ class ChallengeService {
                         challenge["word1"] = puzzle.combinations[0].combinedWord
                         challenge["word2"] = puzzle.combinations[1].combinedWord
                         challenge["word3"] = puzzle.combinations[2].combinedWord
-                        challenge["isActive"] = true
+                        challenge["isComplete"] = false
                         
                         challenge.saveInBackgroundWithBlock { (success, error) -> Void in
                             if error == nil {
@@ -104,6 +104,7 @@ class ChallengeService {
         query.includeKey("parentChallengeObject.userObject")
         query.whereKey("userObject", matchesQuery: userObjectQuery)
         query.whereKey("parentChallengeObject", notEqualTo: NSNull())
+        query.whereKey("isComplete", equalTo: false)
         
         query.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var challenges = [PFObject]()
@@ -122,5 +123,16 @@ class ChallengeService {
     
     func getChallengesSent(userId: String) {
         
+    }
+    
+    func completeChallenge(challenge: Challenge) {
+        PFQuery(className: CHALLENGE_CLASSNAME).getObjectInBackgroundWithId(challenge.objectId) { (challengeObject: PFObject?, error: NSError?) -> Void in
+            if error == nil {
+                challengeObject!["isComplete"] = true
+                challengeObject!["hintsUsed"] = challenge.puzzle.hintsUsed
+                challengeObject!["totalSeconds"] = challenge.puzzle.time
+                challengeObject!.saveInBackground()
+            }
+        }
     }
 }
