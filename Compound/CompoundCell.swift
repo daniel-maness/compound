@@ -16,6 +16,7 @@ class CompoundCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var waitingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

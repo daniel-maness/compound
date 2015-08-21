@@ -24,7 +24,23 @@ class ChallengeManager {
                     challenges.append(challenge)
                 }
             } else {
-                EventService.logError(error!, description: "Challenges could not be fetched", object: "User", function: "getChallengesRecieved")
+                EventService.logError(error!, description: "Challenges Received could not be fetched", object: "User", function: "getChallengesRecieved")
+            }
+            
+            completion(result: challenges, error: error)
+        })
+    }
+    
+    func getChallengesSent(completion: (result: [Challenge], error: NSError?) -> Void) {
+        challengeService.getChallengesSent(CurrentUser.objectId, completion: { (results, error) -> Void in
+            var challenges = [Challenge]()
+            if error == nil {
+                for i in 0..<results.count {
+                    let challenge = Challenge(pfObject: results[i])
+                    challenges.append(challenge)
+                }
+            } else {
+                EventService.logError(error!, description: "Challenges Sent could not be fetched", object: "User", function: "getChallengesRecieved")
             }
             
             completion(result: challenges, error: error)
@@ -36,6 +52,10 @@ class ChallengeManager {
     }
     
     func completeChallenge(challenge: Challenge) {
-        challengeService.completeChallenge(challenge)
+        challengeService.completeChallenge(challenge.objectId, hintsUsed: challenge.puzzle.hintsUsed, time: challenge.puzzle.time)
+    }
+    
+    func markChallengeInactive(challenge: Challenge) {
+        challengeService.markChallengeInactive(challenge.objectId)
     }
 }

@@ -25,7 +25,8 @@ class ChallengeService {
                 challengeObject["word1"] = puzzle.combinations[0].combinedWord
                 challengeObject["word2"] = puzzle.combinations[1].combinedWord
                 challengeObject["word3"] = puzzle.combinations[2].combinedWord
-                challengeObject["isComplete"] = false
+                challengeObject["isComplete"] = true
+                challengeObject["isActive"] = true
                 
                 challengeObject.saveInBackgroundWithBlock { (success, error) -> Void in
                     if error == nil {
@@ -55,6 +56,7 @@ class ChallengeService {
                         challenge["word2"] = puzzle.combinations[1].combinedWord
                         challenge["word3"] = puzzle.combinations[2].combinedWord
                         challenge["isComplete"] = false
+                        challenge["isActive"] = true
                         
                         challenge.saveInBackgroundWithBlock { (success, error) -> Void in
                             if error == nil {
@@ -95,7 +97,7 @@ class ChallengeService {
     }
     
     func getChallengesReceived(userObjectId: String, completion: (result: [PFObject], error: NSError?) -> Void) {
-        let userObjectQuery = PFQuery(className: USER_CLASSNAME)
+        let userObjectQuery = PFUser.query()!
         userObjectQuery.whereKey("objectId", equalTo: userObjectId)
         
         let query = PFQuery(className: CHALLENGE_CLASSNAME)
@@ -105,6 +107,7 @@ class ChallengeService {
         query.whereKey("userObject", matchesQuery: userObjectQuery)
         query.whereKey("parentChallengeObject", notEqualTo: NSNull())
         query.whereKey("isComplete", equalTo: false)
+        query.whereKey("isActive", equalTo: true)
         
         query.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var challenges = [PFObject]()
@@ -114,23 +117,58 @@ class ChallengeService {
                     challenges.append(challenge)
                 }
             } else {
-                EventService.logError(error!, description: "Challenges could not be fetched", object: "ChallengeService", function: "getChallengesRecieved")
+                EventService.logError(error!, description: "Challenges Received could not be fetched", object: "ChallengeService", function: "getChallengesRecieved")
             }
             
             completion(result: challenges, error: error)
         }
     }
     
-    func getChallengesSent(userId: String) {
+    func getChallengesSent(userObjectId: String, completion: (result: [PFObject], error: NSError?) -> Void) {
+        let userObjectQuery = PFUser.query()!
+        userObjectQuery.whereKey("objectId", equalTo: userObjectId)
         
+        let innerQuery = PFQuery(className: CHALLENGE_CLASSNAME)
+        innerQuery.includeKey("userObject")
+        innerQuery.whereKey("userObject", matchesQuery: userObjectQuery)
+        
+        let query = PFQuery(className: CHALLENGE_CLASSNAME)
+        query.includeKey("userObject")
+        query.includeKey("parentChallengeObject")
+        query.whereKey("userObject", doesNotMatchQuery: userObjectQuery)
+        query.whereKey("parentChallengeObject", matchesQuery: innerQuery)
+        query.whereKey("isActive", equalTo: true)
+        
+        query.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+            var challenges = [PFObject]()
+            if error == nil {
+                for i in 0..<results!.count {
+                    let challenge = results?[i] as! PFObject
+                    challenges.append(challenge)
+                }
+            } else {
+                EventService.logError(error!, description: "Challenges Sent could not be fetched", object: "ChallengeService", function: "getChallengesRecieved")
+            }
+            
+            completion(result: challenges, error: error)
+        }
     }
     
-    func completeChallenge(challenge: Challenge) {
-        PFQuery(className: CHALLENGE_CLASSNAME).getObjectInBackgroundWithId(challenge.objectId) { (challengeObject: PFObject?, error: NSError?) -> Void in
+    func completeChallenge(objectId: String, hintsUsed: Int, time: Int) {
+        PFQuery(className: CHALLENGE_CLASSNAME).getObjectInBackgroundWithId(objectId) { (challengeObject: PFObject?, error: NSError?) -> Void in
             if error == nil {
                 challengeObject!["isComplete"] = true
-                challengeObject!["hintsUsed"] = challenge.puzzle.hintsUsed
-                challengeObject!["totalSeconds"] = challenge.puzzle.time
+                challengeObject!["hintsUsed"] = hintsUsed
+                challengeObject!["totalSeconds"] = time
+                challengeObject!.saveInBackground()
+            }
+        }
+    }
+    
+    func markChallengeInactive(objectId: String) {
+        PFQuery(className: CHALLENGE_CLASSNAME).getObjectInBackgroundWithId(objectId) { (challengeObject: PFObject?, error: NSError?) -> Void in
+            if error == nil {
+                challengeObject!["isActive"] = false
                 challengeObject!.saveInBackground()
             }
         }

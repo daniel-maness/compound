@@ -44,10 +44,9 @@ class Challenge {
         if let parentChallengeObject = pfObject["parentChallengeObject"] as? PFObject {
             let parentUserObject = parentChallengeObject["userObject"] as! PFObject
             self.parentChallenge = Challenge(pfObject: parentChallengeObject)
-            self.status = Status.Incomplete
-        } else {
-            self.status = Status.Complete
         }
+        
+        self.status = pfObject["isComplete"] as! Bool == true ? Status.Complete : Status.Incomplete
     }
     
     func save() {

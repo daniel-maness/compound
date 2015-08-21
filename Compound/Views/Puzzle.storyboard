@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -10,14 +10,6 @@
             <string>GoboldThin</string>
             <string>GoboldThin</string>
             <string>GoboldThin</string>
-        </mutableArray>
-        <mutableArray key="Gobold.ttf">
-            <string>Gobold</string>
-            <string>Gobold</string>
-            <string>Gobold</string>
-            <string>Gobold</string>
-            <string>Gobold</string>
-            <string>Gobold</string>
         </mutableArray>
         <mutableArray key="Gotham-Book.otf">
             <string>Gotham-Book</string>
@@ -166,18 +158,6 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="container-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="wwr-Bl-mCe">
                                 <rect key="frame" x="30" y="40" width="260" height="320"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JbJ-dh-l7w">
-                                <rect key="frame" x="113" y="227" width="95" height="20"/>
-                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
-                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="UMy-0B-luQ">
-                                <rect key="frame" x="113" y="181" width="95" height="20"/>
-                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
-                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-aI-Mlx">
                                 <rect key="frame" x="30" y="260" width="260" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,9 +203,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="logo-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="i4K-ka-vgl">
-                                <rect key="frame" x="35" y="177" width="70" height="75"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdi-2v-0gL">
                                 <rect key="frame" x="30" y="134" width="260" height="35"/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="36"/>
@@ -234,15 +211,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-group-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-wp-Pfl">
                                 <rect key="frame" x="30" y="81" width="260" height="45"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TiB-9s-Qle">
-                                <rect key="frame" x="113" y="204" width="95" height="20"/>
-                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
-                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="logo-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="g9N-FX-onJ">
-                                <rect key="frame" x="216" y="177" width="70" height="75"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBQ-30-OJv">
                                 <rect key="frame" x="256" y="43" width="32" height="32"/>
@@ -253,17 +221,19 @@
                                     <action selector="onHomePressed:" destination="WSe-JU-og6" eventType="touchUpInside" id="tO7-0r-pHC"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioy-8C-eIT" customClass="AnswerView" customModule="compound" customModuleProvider="target">
+                                <rect key="frame" x="30" y="177" width="260" height="75"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="answerView" destination="ioy-8C-eIT" id="ngx-2e-TQZ"/>
                         <outlet property="challengeButton" destination="Qy3-aI-Mlx" id="dpQ-lr-aYK"/>
                         <outlet property="profilePicture" destination="Of3-kS-O9X" id="1eU-Bn-cTK"/>
                         <outlet property="starsImageView" destination="xzn-wp-Pfl" id="PNa-oL-59d"/>
                         <outlet property="totalStarsLabel" destination="K6U-zd-MqT" id="oc1-QS-n1a"/>
-                        <outlet property="wordLabel0" destination="UMy-0B-luQ" id="bNA-r3-diN"/>
-                        <outlet property="wordLabel1" destination="TiB-9s-Qle" id="7g4-qr-SMh"/>
-                        <outlet property="wordLabel2" destination="JbJ-dh-l7w" id="lm3-9q-jWM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8w-ac-PhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,18 +393,6 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="container-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="FOJ-ga-fGd">
                                 <rect key="frame" x="30" y="40" width="260" height="400"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-ie-GQT">
-                                <rect key="frame" x="113" y="131" width="95" height="20"/>
-                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
-                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Co1-ZC-MuG">
-                                <rect key="frame" x="113" y="85" width="95" height="20"/>
-                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
-                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-HV-CyK">
                                 <rect key="frame" x="30" y="390" width="260" height="50"/>
                                 <color key="backgroundColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -464,18 +422,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="logo-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="lKe-T9-2iJ">
-                                <rect key="frame" x="35" y="81" width="70" height="75"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-6j-4sI">
-                                <rect key="frame" x="113" y="108" width="95" height="20"/>
-                                <fontDescription key="fontDescription" name="Gobold" family="Gobold" pointSize="16"/>
-                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="logo-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-jA-8td">
-                                <rect key="frame" x="216" y="81" width="70" height="75"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xV-Ti-wDB">
                                 <rect key="frame" x="262" y="45" width="24" height="24"/>
                                 <state key="normal" title="HOME" image="exit-button.png">
@@ -519,17 +465,19 @@
                                     <outlet property="delegate" destination="SZb-kL-pBN" id="n6O-Hh-X9L"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="du4-et-XzW" customClass="AnswerView" customModule="compound" customModuleProvider="target">
+                                <rect key="frame" x="30" y="77" width="260" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="answerView" destination="du4-et-XzW" id="AHL-Yv-lbl"/>
                         <outlet property="challengeButton" destination="eVd-HV-CyK" id="BCt-aA-vyz"/>
                         <outlet property="profilePicture" destination="GMf-K3-fdM" id="j52-ts-RDL"/>
                         <outlet property="tableView" destination="iZV-KR-IZF" id="z3W-0U-NoE"/>
                         <outlet property="totalStarsLabel" destination="4tV-kx-Kza" id="vmp-HJ-lwr"/>
-                        <outlet property="wordLabel0" destination="Co1-ZC-MuG" id="Gvy-XY-3Am"/>
-                        <outlet property="wordLabel1" destination="kPK-6j-4sI" id="zwA-xc-EWO"/>
-                        <outlet property="wordLabel2" destination="iwh-ie-GQT" id="5sg-2K-7E3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9V-Hs-ijc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,9 +498,7 @@
         <image name="homeicon.png" width="65" height="65"/>
         <image name="lightbulb-3.png" width="80" height="80"/>
         <image name="lightbulb-white.png" width="80" height="80"/>
-        <image name="logo-left.png" width="71" height="93"/>
         <image name="logo-no-text.png" width="384" height="223"/>
-        <image name="logo-right.png" width="69" height="93"/>
         <image name="menu-container.png" width="32" height="32"/>
         <image name="overlay-mask.png" width="320" height="480"/>
         <image name="profile-picture-overlay.png" width="192" height="192"/>

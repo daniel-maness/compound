@@ -11,11 +11,13 @@ import UIKit
 
 class ChallengeResultsViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     private let userManager = UserManager()
+    private let challengeManager = ChallengeManager()
+    private var word1: String!
+    private var word2: String!
+    private var word3: String!
+    private var keyword: String!
     
     /* Properties */
-    var word0: NSMutableAttributedString!
-    var word1: NSMutableAttributedString!
-    var word2: NSMutableAttributedString!
     var currentStars: Int = 0
     var totalStars: Int = 0
     var userChallenge: Challenge!
@@ -24,9 +26,6 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
     
     /* Outlets */
     @IBOutlet weak var totalStarsLabel: UILabel!
-    @IBOutlet weak var wordLabel0: UILabel!
-    @IBOutlet weak var wordLabel1: UILabel!
-    @IBOutlet weak var wordLabel2: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userStars: UIImageView!
@@ -37,14 +36,20 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
     @IBOutlet weak var challengerTime: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var answerView: AnswerView!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
         self.showHomeViewController()
     }
     
-    @IBAction func onNextPressed(sender: UIButton) {
+    @IBAction func onOkayPressed(sender: UIButton) {
+        if userChallenge.status == Status.Complete {
+            challengeManager.markChallengeInactive(userChallenge)
+        }
         
+        var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengesViewController") as! ChallengesViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     /* Setup */
@@ -56,13 +61,7 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
     }
     
     func setupView() {
-        word0.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word0.length))
-        word1.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word1.length))
-        word2.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word2.length))
-        
-        wordLabel0.attributedText = word0
-        wordLabel1.attributedText = word1
-        wordLabel2.attributedText = word2
+        answerView.setText(self.word1, word2: self.word2, word3: self.word3, keyword: self.keyword)
         totalStarsLabel.text = String(totalStars)
         self.setUserPicture(profilePicture)
         
@@ -96,10 +95,11 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CompoundCell = self.tableView.dequeueReusableCellWithIdentifier("compoundCell", forIndexPath: indexPath) as! CompoundCell
-        let profileImage = self.results[indexPath.row].user.profilePicture
-        let name = self.results[indexPath.row].user.displayName
-        let stars = self.results[indexPath.row].puzzle.maxStars - self.results[indexPath.row].puzzle.hintsUsed
-        let time = DateTime.getFormattedSeconds(self.results[indexPath.row].puzzle.time)
+        let challenge = self.results[indexPath.row]
+        let profileImage = challenge.user.profilePicture
+        let name = challenge.user.displayName
+        let stars = challenge.puzzle.maxStars - challenge.puzzle.hintsUsed
+        let time = DateTime.getFormattedSeconds(challenge.puzzle.time)
         
         if indexPath.row == 0 {
             cell.trophyImage.image = UIImage(named: "trophy-flag")
@@ -113,9 +113,18 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
         
         cell.name.text = name
         
-        cell.starImage.image = UIImage(named: "star-count-" + String(stars))
-        
-        cell.time.text = time
+        if challenge.status == Status.Complete {
+            cell.waitingLabel.hidden = true
+            cell.starImage.hidden = false
+            cell.time.hidden = false
+            
+            cell.starImage.image = UIImage(named: "star-count-" + String(stars))
+            cell.time.text = time
+        } else {
+            cell.waitingLabel.hidden = false
+            cell.starImage.hidden = true
+            cell.time.hidden = true
+        }
         
         return cell
     }
@@ -123,5 +132,11 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
     }
-
+    
+    func setAnswerView(word1: String, word2: String, word3: String, keyword: String) {
+        self.word1 = word1
+        self.word2 = word2
+        self.word3 = word3
+        self.keyword = keyword
+    }
 }

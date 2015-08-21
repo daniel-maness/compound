@@ -142,7 +142,6 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         puzzle.status = status
         stopPuzzle()
         userManager.updateStats(puzzle)
-        revealPuzzle()
         
         if self.challenge == nil {
             if puzzle.status == Status.Complete {
@@ -173,14 +172,6 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         }
         
         updateAnswerLabel()
-    }
-    
-    func revealPuzzle() {
-        wordLabel0.attributedText = getAttributedString(puzzle.keyword, combination: puzzle.combinations[0])
-        wordLabel1.attributedText = getAttributedString(puzzle.keyword, combination: puzzle.combinations[1])
-        wordLabel2.attributedText = getAttributedString(puzzle.keyword, combination: puzzle.combinations[2])
-        
-        answerLabel.text = puzzle.keyword
     }
     
     /* UI */
@@ -216,9 +207,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateWordLabels() {
-        wordLabel0.attributedText = getAttributedString(puzzle.currentHint, combination: puzzle.combinations[0])
-        wordLabel1.attributedText = getAttributedString(puzzle.currentHint, combination: puzzle.combinations[1])
-        wordLabel2.attributedText = getAttributedString(puzzle.currentHint, combination: puzzle.combinations[2])
+        wordLabel0.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[0])
+        wordLabel1.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[1])
+        wordLabel2.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[2])
     }
     
     func updateAnswerLabel() {
@@ -273,19 +264,18 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         timerLabel.textColor = ColorPalette.black
     }
     
-    func getAttributedString(hint: String, combination: Combination) -> NSMutableAttributedString {
+    func formatIncompleteWord(hint: String, combination: Combination) -> NSMutableAttributedString {
+        var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord)
+        var length = count(hint)
         var attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ?
             hint.uppercaseString + combination.rightWord.uppercaseString :
             combination.leftWord.uppercaseString + hint.uppercaseString)
-        var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord)
-        var length = count(hint)
-        if puzzle.ended {
-            attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
-        } else if length > 0 && puzzle.hintsUsed == MAX_HINTS {
+
+        if length > 0 && puzzle.hintsUsed == MAX_HINTS {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
             attributedString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(location, 1))
         }
-        
+
         return attributedString
     }
     
@@ -302,9 +292,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func showPuzzleCompletedView() {
         // This method is good for showing a view we won't need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleCompletedViewController") as! PuzzleCompletedViewController
-        viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
-        viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
-        viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
+        viewController.setAnswerView(puzzle.combinations[0].combinedWord, word2: puzzle.combinations[1].combinedWord, word3: puzzle.combinations[2].combinedWord, keyword: puzzle!.keyword)
         viewController.currentStars = puzzle.currentStars
         viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.puzzle = self.puzzle
@@ -324,9 +312,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func showChallengeResults() {
         // This method is good for showing a view we won't need to return from
         var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengeResultsViewController") as! ChallengeResultsViewController
-        viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
-        viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
-        viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
+        viewController.setAnswerView(puzzle.combinations[0].combinedWord, word2: puzzle.combinations[1].combinedWord, word3: puzzle.combinations[2].combinedWord, keyword: puzzle!.keyword)
         viewController.currentStars = puzzle.currentStars
         viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.userChallenge = self.challenge

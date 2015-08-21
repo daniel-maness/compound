@@ -11,11 +11,12 @@ import UIKit
 class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     private let facebookManager = FacebookManager()
     private let challengeManager = ChallengeManager()
+    private var word1: String!
+    private var word2: String!
+    private var word3: String!
+    private var keyword: String!
     
     /* Properties */
-    var word0: NSMutableAttributedString!
-    var word1: NSMutableAttributedString!
-    var word2: NSMutableAttributedString!
     var totalStars: Int = 0
     var selectedFriendIds: [String] = []
     var puzzle: Puzzle!
@@ -27,13 +28,11 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     /* Outlets */
-    @IBOutlet weak var wordLabel0: UILabel!
-    @IBOutlet weak var wordLabel1: UILabel!
-    @IBOutlet weak var wordLabel2: UILabel!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var answerView: AnswerView!
     
     /* Actions */
     @IBAction func onExitPressed(sender: UIButton) {
@@ -55,12 +54,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     func setupView() {
-        word0.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word0.length))
-        word1.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word1.length))
-        word2.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word2.length))
-        wordLabel0.attributedText = word0
-        wordLabel1.attributedText = word1
-        wordLabel2.attributedText = word2
+        answerView.setText(self.word1, word2: self.word2, word3: self.word3, keyword: self.keyword)
         totalStarsLabel.text = String(totalStars)
         challengeButton.enabled = false
         self.setUserPicture(profilePicture)
@@ -131,5 +125,12 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
         var parent = self.parentViewController as! PuzzleCompletedViewController
         parent.challengeButton.enabled = !challengeSent
         self.view.removeFromSuperview()
+    }
+    
+    func setAnswerView(word1: String, word2: String, word3: String, keyword: String) {
+        self.word1 = word1
+        self.word2 = word2
+        self.word3 = word3
+        self.keyword = keyword
     }
 }

@@ -30,7 +30,7 @@ class Puzzle {
     var ended: Bool
     var time: Int
     var starsEarned: Int {
-        return self.maxStars - self.hintsUsed
+        return self.status == Status.Complete ? self.maxStars - self.hintsUsed : 0
     }
     
     var currentStars: Int {

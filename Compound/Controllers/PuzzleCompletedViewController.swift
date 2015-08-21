@@ -10,23 +10,22 @@ import UIKit
 
 class PuzzleCompletedViewController: BaseViewController {
     private let userManager = UserManager()
+    private var word1: String!
+    private var word2: String!
+    private var word3: String!
+    private var keyword: String!
     
     /* Properties */
-    var word0: NSMutableAttributedString!
-    var word1: NSMutableAttributedString!
-    var word2: NSMutableAttributedString!
     var currentStars: Int = 0
     var totalStars: Int = 0
     var puzzle: Puzzle!
     
     /* Outlets */
-    @IBOutlet weak var wordLabel0: UILabel!
-    @IBOutlet weak var wordLabel1: UILabel!
-    @IBOutlet weak var wordLabel2: UILabel!
     @IBOutlet weak var starsImageView: UIImageView!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var answerView: AnswerView!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
@@ -36,9 +35,7 @@ class PuzzleCompletedViewController: BaseViewController {
     @IBAction func onChallengePressed(sender: UIButton) {
         // This method is good for showing a view we may need to return from
         var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("ChallengePuzzleViewController") as! ChallengePuzzleViewController
-        viewController.word0 = wordLabel0.attributedText as! NSMutableAttributedString
-        viewController.word1 = wordLabel1.attributedText as! NSMutableAttributedString
-        viewController.word2 = wordLabel2.attributedText as! NSMutableAttributedString
+        viewController.setAnswerView(self.word1, word2: self.word2, word3: self.word3, keyword: self.keyword)
         viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.puzzle = self.puzzle
         self.addChildViewController(viewController)
@@ -55,17 +52,16 @@ class PuzzleCompletedViewController: BaseViewController {
     }
     
     func setupView() {
-        word0.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word0.length))
-        word1.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word1.length))
-        word2.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12.0), range: NSMakeRange(0, word2.length))
-        
-        wordLabel0.attributedText = word0
-        wordLabel1.attributedText = word1
-        wordLabel2.attributedText = word2
+        answerView.setText(self.word1, word2: self.word2, word3: self.word3, keyword: self.keyword)
         totalStarsLabel.text = String(totalStars)
-        
         starsImageView.image = UIImage(named: "star-group-" + String(currentStars))
-        
         self.setUserPicture(profilePicture)
+    }
+    
+    func setAnswerView(word1: String, word2: String, word3: String, keyword: String) {
+        self.word1 = word1
+        self.word2 = word2
+        self.word3 = word3
+        self.keyword = keyword
     }
 }

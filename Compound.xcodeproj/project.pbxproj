@@ -55,9 +55,15 @@
 		AA8C7D651B6C63D000AE4E4E /* star-count-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D611B6C63D000AE4E4E /* star-count-2.png */; };
 		AA8C7D661B6C63D000AE4E4E /* star-count-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D621B6C63D000AE4E4E /* star-count-3.png */; };
 		AA8C7D671B6C63D000AE4E4E /* star-count-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D631B6C63D000AE4E4E /* star-count-4.png */; };
+		AA9F1E0A1B85762000FADB8C /* challenge-finished.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E071B85762000FADB8C /* challenge-finished.png */; };
+		AA9F1E0B1B85762000FADB8C /* challenge-received.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E081B85762000FADB8C /* challenge-received.png */; };
+		AA9F1E0C1B85762000FADB8C /* challenge-sent.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E091B85762000FADB8C /* challenge-sent.png */; };
 		AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */; };
 		AA9FF7551B5C40D000A75571 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7541B5C40D000A75571 /* Global.swift */; };
 		AA9FF7571B5C991A00A75571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7561B5C991A00A75571 /* LoginViewController.swift */; };
+		AAADBFE61B86354F00820E7C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADBFE51B86354F00820E7C /* StringExtensions.swift */; };
+		AAADBFE81B863A3700820E7C /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAADBFE71B863A3700820E7C /* AnswerView.xib */; };
+		AAADBFEA1B863C5600820E7C /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADBFE91B863C5600820E7C /* AnswerView.swift */; };
 		AACA0BAE1B043BC00029351B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAC1B043BC00029351B /* Bolts.framework */; };
 		AACA0BAF1B043BC00029351B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAD1B043BC00029351B /* Parse.framework */; };
 		AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */; };
@@ -239,8 +245,14 @@
 		AA8C7D611B6C63D000AE4E4E /* star-count-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-2.png"; path = "images/star-count-2.png"; sourceTree = "<group>"; };
 		AA8C7D621B6C63D000AE4E4E /* star-count-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-3.png"; path = "images/star-count-3.png"; sourceTree = "<group>"; };
 		AA8C7D631B6C63D000AE4E4E /* star-count-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-4.png"; path = "images/star-count-4.png"; sourceTree = "<group>"; };
+		AA9F1E071B85762000FADB8C /* challenge-finished.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-finished.png"; path = "images/challenge-finished.png"; sourceTree = "<group>"; };
+		AA9F1E081B85762000FADB8C /* challenge-received.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-received.png"; path = "images/challenge-received.png"; sourceTree = "<group>"; };
+		AA9F1E091B85762000FADB8C /* challenge-sent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-sent.png"; path = "images/challenge-sent.png"; sourceTree = "<group>"; };
 		AA9FF7541B5C40D000A75571 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AA9FF7561B5C991A00A75571 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AAADBFE51B86354F00820E7C /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		AAADBFE71B863A3700820E7C /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
+		AAADBFE91B863C5600820E7C /* AnswerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerView.swift; path = Views/AnswerView.swift; sourceTree = "<group>"; };
 		AACA0BAC1B043BC00029351B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AACA0BAD1B043BC00029351B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AAD72BDB1B069900009CDAB5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/SignupViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +520,7 @@
 				AA65FB461B5D63D900BE9F01 /* Statistics.swift */,
 				AA603DB71AF7E59300EF7B99 /* User.swift */,
 				AAD7D86D1B6C594C00A4F8D2 /* CompoundCell.swift */,
+				AAADBFE51B86354F00820E7C /* StringExtensions.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -520,6 +533,8 @@
 				AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */,
 				AA1826CE1AE722D900A5E609 /* LaunchScreen.xib */,
 				AA1826CF1AE722D900A5E609 /* Main.storyboard */,
+				AAADBFE71B863A3700820E7C /* AnswerView.xib */,
+				AAADBFE91B863C5600820E7C /* AnswerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -549,6 +564,9 @@
 		AAFB401D1ADEE9F500F44C8F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA9F1E071B85762000FADB8C /* challenge-finished.png */,
+				AA9F1E081B85762000FADB8C /* challenge-received.png */,
+				AA9F1E091B85762000FADB8C /* challenge-sent.png */,
 				AA8C7D601B6C63D000AE4E4E /* star-count-1.png */,
 				AA8C7D611B6C63D000AE4E4E /* star-count-2.png */,
 				AA8C7D621B6C63D000AE4E4E /* star-count-3.png */,
@@ -858,6 +876,7 @@
 				AAFC6F2D1AE08B6B0032A98C /* container-white.png in Resources */,
 				AA65FB4B1B5D748C00BE9F01 /* exit-button-highlighted.png in Resources */,
 				AAFB40841ADEF6A100F44C8F /* Gotham-BookIta.otf in Resources */,
+				AA9F1E0B1B85762000FADB8C /* challenge-received.png in Resources */,
 				AAFB40B01ADEF6AD00F44C8F /* Gobold Thin.ttf in Resources */,
 				AAFB40A71ADEF6AD00F44C8F /* Gobold Bold.ttf in Resources */,
 				AAFB40AF1ADEF6AD00F44C8F /* Gobold Thin Italic.ttf in Resources */,
@@ -885,6 +904,7 @@
 				AAFB40AC1ADEF6AD00F44C8F /* Gobold Italic.ttf in Resources */,
 				AAFB40951ADEF6A100F44C8F /* GothaUltIta in Resources */,
 				AAFB40B11ADEF6AD00F44C8F /* Gobold.ttf in Resources */,
+				AA9F1E0A1B85762000FADB8C /* challenge-finished.png in Resources */,
 				AAFB407D1ADEF6A100F44C8F /* GothaLigIta in Resources */,
 				AAE52B7B1AE2F84300FFB13D /* star-group-3.png in Resources */,
 				AAFB40AD1ADEF6AD00F44C8F /* Gobold Light Italic.ttf in Resources */,
@@ -892,6 +912,7 @@
 				AAFB40AE1ADEF6AD00F44C8F /* Gobold Light.ttf in Resources */,
 				AAFB40371ADEEA3400F44C8F /* combinations.txt in Resources */,
 				AAFB408B1ADEF6A100F44C8F /* Gotham-ThinIta.otf in Resources */,
+				AAADBFE81B863A3700820E7C /* AnswerView.xib in Resources */,
 				AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */,
 				AAFB40961ADEF6A100F44C8F /* GothaXLig in Resources */,
 				AAFB40291ADEEA0500F44C8F /* lightbulb-2.png in Resources */,
@@ -901,6 +922,7 @@
 				AAFC6F411AE08C6A0032A98C /* newchallenge_button_inverse.png in Resources */,
 				AAE52B721AE2EC3200FFB13D /* logo-right.png in Resources */,
 				AAFC6F3D1AE08C6A0032A98C /* circle_behind-profile-pic.png in Resources */,
+				AA9F1E0C1B85762000FADB8C /* challenge-sent.png in Resources */,
 				AA70D4941AE8213900433140 /* logo-no-text.png in Resources */,
 				AAFB40251ADEEA0500F44C8F /* button-highlighted.png in Resources */,
 				AAFD69151AFD1858001F6063 /* container-green.png in Resources */,
@@ -932,11 +954,13 @@
 			files = (
 				AAD72BDE1B06A579009CDAB5 /* EmailLoginViewController.swift in Sources */,
 				AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */,
+				AAADBFEA1B863C5600820E7C /* AnswerView.swift in Sources */,
 				AAD7D8641B6BE4C800A4F8D2 /* UserManager.swift in Sources */,
 				AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */,
 				AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */,
 				AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */,
 				AA603DBE1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift in Sources */,
+				AAADBFE61B86354F00820E7C /* StringExtensions.swift in Sources */,
 				AAFB401B1ADEE9F200F44C8F /* PuzzleViewController.swift in Sources */,
 				AAD7D85F1B6AFC7E00A4F8D2 /* ErrorService.swift in Sources */,
 				AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */,
