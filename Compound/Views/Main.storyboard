@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Book.otf">
@@ -24,65 +26,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSq-fS-teb">
-                                <rect key="frame" x="70" y="395" width="180" height="60"/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="SETTINGS">
-                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="button-highlighted.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSettingsPressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="twO-KB-50r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HB3-2Q-jj9">
-                                <rect key="frame" x="70" y="279" width="180" height="60"/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="CHALLENGES">
-                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="button-highlighted.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onChallengesPressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="9hv-3x-Y1L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaY-9g-ndb">
-                                <rect key="frame" x="70" y="337" width="180" height="60"/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="PROFILE">
-                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted" title="PROFILE" backgroundImage="button-highlighted.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onProfilePressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="saw-lN-d01"/>
-                                </connections>
-                            </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="divider.png" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-Cy-bbi">
-                                <rect key="frame" x="70" y="337" width="180" height="1"/>
-                                <color key="backgroundColor" red="0.75294117647058822" green="0.77254901960784317" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="SJE-t6-x8A">
+                                <rect key="frame" x="0.0" y="-318" width="384" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SJE-t6-x8A" secondAttribute="height" multiplier="1:1" id="43l-Y9-NLq"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="43l-Y9-NLq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="70" y="0.0" width="260" height="260"/>
+                                    <mask key="constraints">
+                                        <include reference="43l-Y9-NLq"/>
+                                    </mask>
+                                </variation>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="divider.png" translatesAutoresizingMaskIntoConstraints="NO" id="HzF-8k-sgK">
-                                <rect key="frame" x="70" y="279" width="180" height="1"/>
-                                <color key="backgroundColor" red="0.75294117647058822" green="0.77254901960784317" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="divider.png" translatesAutoresizingMaskIntoConstraints="NO" id="H7N-pJ-j3p">
-                                <rect key="frame" x="70" y="395" width="180" height="1"/>
-                                <color key="backgroundColor" red="0.75294117650000003" green="0.7725490196" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tl2-qS-Zxd">
-                                <rect key="frame" x="0.0" y="30" width="320" height="160"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muf-Eh-OvJ">
-                                <rect key="frame" x="70" y="220" width="180" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muf-Eh-OvJ">
+                                <rect key="frame" x="0.0" y="249" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4p4-lF-g6S"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="PLAY">
@@ -91,17 +56,228 @@
                                 <state key="highlighted" backgroundImage="button-highlighted.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4p4-lF-g6S"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="268" width="400" height="60"/>
+                                    <mask key="constraints">
+                                        <include reference="4p4-lF-g6S"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="onPlayPressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="hZQ-Ig-D1o"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HB3-2Q-jj9">
+                                <rect key="frame" x="0.0" y="308" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="48g-2N-6p9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="CHALLENGES">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-highlighted.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="48g-2N-6p9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="328" width="400" height="60"/>
+                                    <mask key="constraints">
+                                        <include reference="48g-2N-6p9"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onChallengesPressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="9hv-3x-Y1L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaY-9g-ndb">
+                                <rect key="frame" x="0.0" y="366" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="oVI-FV-gao"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="PROFILE">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" title="PROFILE" backgroundImage="button-highlighted.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="oVI-FV-gao"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="388" width="400" height="60"/>
+                                    <mask key="constraints">
+                                        <include reference="oVI-FV-gao"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onProfilePressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="saw-lN-d01"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSq-fS-teb">
+                                <rect key="frame" x="0.0" y="424" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nDw-gE-7PW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="SETTINGS">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-highlighted.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nDw-gE-7PW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="448" width="400" height="60"/>
+                                    <mask key="constraints">
+                                        <include reference="nDw-gE-7PW"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onSettingsPressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="twO-KB-50r"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="divider.png" translatesAutoresizingMaskIntoConstraints="NO" id="HzF-8k-sgK">
+                                <rect key="frame" x="0.0" y="308" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.75294117647058822" green="0.77254901960784317" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0YF-TN-Cn2"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0YF-TN-Cn2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="328" width="400" height="1"/>
+                                    <mask key="constraints">
+                                        <include reference="0YF-TN-Cn2"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="divider.png" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-Cy-bbi">
+                                <rect key="frame" x="0.0" y="366" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.75294117647058822" green="0.77254901960784317" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="oxi-Lh-IXb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="oxi-Lh-IXb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="388" width="400" height="1"/>
+                                    <mask key="constraints">
+                                        <include reference="oxi-Lh-IXb"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="divider.png" translatesAutoresizingMaskIntoConstraints="NO" id="H7N-pJ-j3p">
+                                <rect key="frame" x="0.0" y="424" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.75294117650000003" green="0.7725490196" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="iPX-Zk-Owe"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iPX-Zk-Owe"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="448" width="400" height="1"/>
+                                    <mask key="constraints">
+                                        <include reference="iPX-Zk-Owe"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Muf-Eh-OvJ" firstAttribute="top" secondItem="SJE-t6-x8A" secondAttribute="bottom" constant="20" id="BTi-6o-bMv"/>
+                            <constraint firstAttribute="centerY" secondItem="Muf-Eh-OvJ" secondAttribute="centerY" id="Cn7-MP-Fla"/>
+                            <constraint firstAttribute="centerX" secondItem="Muf-Eh-OvJ" secondAttribute="centerX" id="NRP-bn-Vdf"/>
+                            <constraint firstItem="HB3-2Q-jj9" firstAttribute="top" secondItem="Muf-Eh-OvJ" secondAttribute="bottom" id="P6v-P1-i8c"/>
+                            <constraint firstItem="Muf-Eh-OvJ" firstAttribute="top" secondItem="SJE-t6-x8A" secondAttribute="bottom" id="SN4-At-O7J"/>
+                            <constraint firstAttribute="centerX" secondItem="HB3-2Q-jj9" secondAttribute="centerX" id="Sqt-g9-GSz"/>
+                            <constraint firstItem="wSq-fS-teb" firstAttribute="top" secondItem="iaY-9g-ndb" secondAttribute="bottom" id="T5U-9N-wbd"/>
+                            <constraint firstItem="H7N-pJ-j3p" firstAttribute="top" secondItem="iaY-9g-ndb" secondAttribute="bottom" id="W12-1e-Rar"/>
+                            <constraint firstAttribute="centerX" secondItem="wSq-fS-teb" secondAttribute="centerX" id="Y1A-Su-znX"/>
+                            <constraint firstItem="I0e-Cy-bbi" firstAttribute="top" secondItem="HB3-2Q-jj9" secondAttribute="bottom" id="Yb6-Sr-fF1"/>
+                            <constraint firstItem="HzF-8k-sgK" firstAttribute="top" secondItem="Muf-Eh-OvJ" secondAttribute="bottom" id="fpb-QR-LjO"/>
+                            <constraint firstAttribute="centerX" secondItem="iaY-9g-ndb" secondAttribute="centerX" id="nDM-e1-94c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SJE-t6-x8A" secondAttribute="trailing" constant="35" id="pTo-BX-2Ac"/>
+                            <constraint firstItem="SJE-t6-x8A" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="35" id="rVe-wJ-vs8"/>
+                            <constraint firstItem="iaY-9g-ndb" firstAttribute="top" secondItem="HB3-2Q-jj9" secondAttribute="bottom" id="vHT-Ew-DjP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SJE-t6-x8A"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="pTo-BX-2Ac"/>
+                                <exclude reference="rVe-wJ-vs8"/>
+                                <exclude reference="BTi-6o-bMv"/>
+                                <exclude reference="Cn7-MP-Fla"/>
+                                <exclude reference="NRP-bn-Vdf"/>
+                                <exclude reference="SN4-At-O7J"/>
+                                <exclude reference="P6v-P1-i8c"/>
+                                <exclude reference="Sqt-g9-GSz"/>
+                                <exclude reference="fpb-QR-LjO"/>
+                                <exclude reference="Yb6-Sr-fF1"/>
+                                <exclude reference="nDM-e1-94c"/>
+                                <exclude reference="vHT-Ew-DjP"/>
+                                <exclude reference="W12-1e-Rar"/>
+                                <exclude reference="T5U-9N-wbd"/>
+                                <exclude reference="Y1A-Su-znX"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="SJE-t6-x8A"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="pTo-BX-2Ac"/>
+                                <include reference="rVe-wJ-vs8"/>
+                                <include reference="BTi-6o-bMv"/>
+                                <include reference="Cn7-MP-Fla"/>
+                                <include reference="NRP-bn-Vdf"/>
+                                <include reference="SN4-At-O7J"/>
+                                <include reference="P6v-P1-i8c"/>
+                                <include reference="Sqt-g9-GSz"/>
+                                <include reference="fpb-QR-LjO"/>
+                                <include reference="Yb6-Sr-fF1"/>
+                                <include reference="nDM-e1-94c"/>
+                                <include reference="vHT-Ew-DjP"/>
+                                <include reference="W12-1e-Rar"/>
+                                <include reference="T5U-9N-wbd"/>
+                                <include reference="Y1A-Su-znX"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2205" y="-1988"/>
+            <point key="canvasLocation" x="-2667" y="-3330"/>
         </scene>
     </scenes>
     <resources>

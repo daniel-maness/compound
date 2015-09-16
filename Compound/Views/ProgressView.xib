@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressView" customModule="compound" customModuleProvider="target">
+            <connections>
+                <outlet property="starBar" destination="wNv-Dn-CRi" id="bRS-89-9JX"/>
+                <outlet property="trophyBar" destination="Jd5-uE-7T7" id="gNQ-HZ-m48"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="265"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="progress-trophy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sa6-hv-PkG">
+                    <rect key="frame" x="0.0" y="137" width="128" height="128"/>
+                </imageView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wNv-Dn-CRi">
+                    <rect key="frame" x="175" y="63" width="400" height="2"/>
+                </progressView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="progress-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="XLX-1e-K3M">
+                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                </imageView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jd5-uE-7T7">
+                    <rect key="frame" x="175" y="200" width="400" height="2"/>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="525" y="314.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="progress-star.png" width="159" height="159"/>
+        <image name="progress-trophy.png" width="244" height="227"/>
+    </resources>
+</document>

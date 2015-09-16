@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C213FA4F-39FE-4D52-BF77-702AF9A79692</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Compound</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D4EAEDD8AEDD08BAA48B716136A123835CF9401</key>
 		<string>https://github.com/daniel-maness/compound.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Compound.xcodeproj</string>
+	<string>Compound.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D4EAEDD8AEDD08BAA48B716136A123835CF9401</key>
