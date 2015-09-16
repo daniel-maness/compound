@@ -24,6 +24,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     var MAX_HINTS = 3
 
     /* Outlets */
+    @IBOutlet weak var statusBar: UIImageView!
     @IBOutlet weak var star0: UIImageView!
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
@@ -32,9 +33,10 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var hintButton: UIButton!
     @IBOutlet weak var hiddenText: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var wordLabel0: UILabel!
     @IBOutlet weak var wordLabel1: UILabel!
     @IBOutlet weak var wordLabel2: UILabel!
+    @IBOutlet weak var wordLabel3: UILabel!
+    @IBOutlet weak var wordLabelView: UIView!
     
     /* Actions */
     @IBAction func hiddenTextChanged(sender: AnyObject) {
@@ -60,12 +62,26 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         startPuzzle()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        var frame = answerLabel.frame
+        frame.origin.x = 100
+        frame.origin.y = 100
+        answerLabel.frame = frame
+        
+        answerLabel.center = CGPointMake(1, 0)
+    }
+    
     func setupView() {
         stars.append(star0)
         stars.append(star1)
         stars.append(star2)
         stars.append(star3)
+
         setupKeyboard()
+    }
+    
+    func resizeObjects() {
+        wordLabelView.frame = CGRectMake(0.0, 80.0, self.view.frame.size.width, 200.0)
     }
     
     func setupKeyboard() {
@@ -207,9 +223,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateWordLabels() {
-        wordLabel0.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[0])
-        wordLabel1.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[1])
-        wordLabel2.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[2])
+        wordLabel1.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[0])
+        wordLabel2.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[1])
+        wordLabel3.attributedText = formatIncompleteWord(puzzle.currentHint, combination: puzzle.combinations[2])
     }
     
     func updateAnswerLabel() {
@@ -251,9 +267,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func resetPuzzleView() {
-        wordLabel0.text = ""
         wordLabel1.text = ""
         wordLabel2.text = ""
+        wordLabel3.text = ""
         answerLabel.text = ""
         hiddenText.text = ""
         
