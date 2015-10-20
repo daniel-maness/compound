@@ -140,12 +140,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="challenge-flag.png" translatesAutoresizingMaskIntoConstraints="NO" id="f02-Dw-XDd">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="flag.png" translatesAutoresizingMaskIntoConstraints="NO" id="f02-Dw-XDd">
                                 <rect key="frame" x="30" y="319" width="36" height="36"/>
-                                <animations/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="challenge-shit.png" translatesAutoresizingMaskIntoConstraints="NO" id="rJ3-EW-UOP">
-                                <rect key="frame" x="30" y="363" width="36" height="36"/>
                                 <animations/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="largestar.png" translatesAutoresizingMaskIntoConstraints="NO" id="QwA-qr-wkN">
@@ -183,6 +179,10 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="poop.png" translatesAutoresizingMaskIntoConstraints="NO" id="rJ3-EW-UOP">
+                                <rect key="frame" x="30" y="363" width="36" height="36"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,14 +512,14 @@
     </scenes>
     <resources>
         <image name="button-highlighted.png" width="480" height="120"/>
-        <image name="challenge-flag.png" width="256" height="256"/>
-        <image name="challenge-shit.png" width="512" height="512"/>
         <image name="container-grey.png" width="32" height="32"/>
+        <image name="flag.png" width="600" height="600"/>
         <image name="group-icon.png" width="94" height="94"/>
         <image name="homeicon.png" width="65" height="65"/>
         <image name="largestar.png" width="159" height="159"/>
         <image name="logo-left.png" width="71" height="93"/>
         <image name="logo.png" width="384" height="318"/>
+        <image name="poop.png" width="600" height="600"/>
         <image name="profile-picture-overlay.png" width="192" height="192"/>
         <image name="uploadicon.png" width="36" height="50"/>
     </resources>

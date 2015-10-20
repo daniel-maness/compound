@@ -101,9 +101,9 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
         let time = DateTime.getFormattedSeconds(challenge.puzzle.time)
         
         if indexPath.row == 0 {
-            cell.trophyImage.image = UIImage(named: "trophy-flag")
+            cell.trophyImage.image = UIImage(named: "flag")
         } else if indexPath.row == results.count {
-            cell.trophyImage.image = UIImage(named: "trophy-shit")
+            cell.trophyImage.image = UIImage(named: "poop")
         }
         
         cell.profileImage.contentMode = .ScaleAspectFit

@@ -63,6 +63,9 @@
                                         <fontDescription key="fontDescription" name="GoboldThin" family="Gobold Thin" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="144" y="14" width="85" height="21"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-tv-9YQ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -204,7 +207,8 @@
                                                 <exclude reference="vs3-Jw-4Di"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="48"/>
                                             <mask key="subviews">
                                                 <include reference="jYD-xN-OhL"/>
                                                 <include reference="HIr-2J-dJv"/>
@@ -353,7 +357,8 @@
                                                         <exclude reference="g3p-Yf-FGX"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="28" width="232" height="1"/>
                                                     <mask key="constraints">
                                                         <include reference="g3p-Yf-FGX"/>
                                                     </mask>
@@ -378,7 +383,8 @@
                                                 <exclude reference="ylN-PE-qUe"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="70" y="28" width="232" height="56"/>
                                             <mask key="subviews">
                                                 <include reference="4NT-tS-zt5"/>
                                             </mask>
@@ -404,7 +410,8 @@
                                                         <exclude reference="pLw-jI-sdO"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="28" width="232" height="1"/>
                                                     <mask key="constraints">
                                                         <include reference="pLw-jI-sdO"/>
                                                     </mask>
@@ -429,7 +436,8 @@
                                                 <exclude reference="yf7-Dw-kRM"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="70" y="112" width="232" height="55"/>
                                             <mask key="subviews">
                                                 <include reference="Z7A-Fp-CRs"/>
                                             </mask>
@@ -447,6 +455,9 @@
                                         <fontDescription key="fontDescription" name="GoboldThin" family="Gobold Thin" pointSize="24"/>
                                         <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="123" y="167" width="126" height="28"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wordLabel1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7s-N3-MMh">
                                         <rect key="frame" x="0.0" y="50" width="320" height="50"/>
@@ -454,6 +465,9 @@
                                         <fontDescription key="fontDescription" name="GoboldThin" family="Gobold Thin" pointSize="24"/>
                                         <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="123" y="0.0" width="126" height="28"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wordLabel2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-Pl-cWo">
                                         <rect key="frame" x="0.0" y="122" width="320" height="50"/>
@@ -461,6 +475,9 @@
                                         <fontDescription key="fontDescription" name="GoboldThin" family="Gobold Thin" pointSize="24"/>
                                         <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="123" y="84" width="126" height="28"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -596,7 +613,8 @@
                                                 <exclude reference="Fh6-ec-7aZ"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="118" y="0.0" width="136" height="31"/>
                                             <mask key="constraints">
                                                 <include reference="Fh6-ec-7aZ"/>
                                             </mask>
@@ -875,6 +893,9 @@
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="45" y="100" width="310" height="42"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChB-6f-XML">
                                 <rect key="frame" x="175" y="250" width="250" height="50"/>

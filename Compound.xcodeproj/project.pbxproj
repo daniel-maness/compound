@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		AA01674E1BD5E83300666D91 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA01673F1BD5E81300666D91 /* SQLite.framework */; };
+		AA0167621BD6C86200666D91 /* challenge-in-progress.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01675D1BD6C86200666D91 /* challenge-in-progress.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167631BD6C86200666D91 /* challenge-play.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01675E1BD6C86200666D91 /* challenge-play.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167641BD6C86200666D91 /* challenge-results.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01675F1BD6C86200666D91 /* challenge-results.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167651BD6C86200666D91 /* poop.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167601BD6C86200666D91 /* poop.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167661BD6C86200666D91 /* single-play.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167611BD6C86200666D91 /* single-play.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167681BD6C87F00666D91 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167671BD6C87F00666D91 /* flag.png */; settings = {ASSET_TAGS = (); }; };
+		AA01678C1BD6C92900666D91 /* bar-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167811BD6C92900666D91 /* bar-1.png */; settings = {ASSET_TAGS = (); }; };
+		AA01678D1BD6C92900666D91 /* bar-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167821BD6C92900666D91 /* bar-2.png */; settings = {ASSET_TAGS = (); }; };
+		AA01678E1BD6C92900666D91 /* bar-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167831BD6C92900666D91 /* bar-3.png */; settings = {ASSET_TAGS = (); }; };
+		AA01678F1BD6C92900666D91 /* bar-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167841BD6C92900666D91 /* bar-4.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167901BD6C92900666D91 /* bar-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167851BD6C92900666D91 /* bar-5.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167911BD6C92900666D91 /* bar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167861BD6C92900666D91 /* bar-background.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167921BD6C92900666D91 /* trophy-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167871BD6C92900666D91 /* trophy-1.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167931BD6C92900666D91 /* trophy-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167881BD6C92900666D91 /* trophy-2.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167941BD6C92900666D91 /* trophy-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167891BD6C92900666D91 /* trophy-3.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167951BD6C92900666D91 /* trophy-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01678A1BD6C92900666D91 /* trophy-4.png */; settings = {ASSET_TAGS = (); }; };
+		AA0167961BD6C92900666D91 /* trophy-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01678B1BD6C92900666D91 /* trophy-5.png */; settings = {ASSET_TAGS = (); }; };
 		AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */; };
 		AA1826CC1AE7220F00A5E609 /* overlay-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CB1AE7220F00A5E609 /* overlay-mask.png */; };
 		AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */; };
@@ -55,8 +72,6 @@
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
 		AA8002A01B8800CA00F8E377 /* progress-star.png in Resources */ = {isa = PBXBuildFile; fileRef = AA80029E1B8800CA00F8E377 /* progress-star.png */; };
 		AA8002A11B8800CA00F8E377 /* progress-trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA80029F1B8800CA00F8E377 /* progress-trophy.png */; };
-		AA8002A41B8804D700F8E377 /* challenge-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8002A21B8804D700F8E377 /* challenge-flag.png */; };
-		AA8002A51B8804D700F8E377 /* challenge-shit.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8002A31B8804D700F8E377 /* challenge-shit.png */; };
 		AA8002AA1B880A2B00F8E377 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8002A81B880A2B00F8E377 /* ProgressView.swift */; };
 		AA8002AB1B880A2B00F8E377 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8002A91B880A2B00F8E377 /* ProgressView.xib */; };
 		AA8C7D641B6C63D000AE4E4E /* star-count-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D601B6C63D000AE4E4E /* star-count-1.png */; };
@@ -174,8 +189,6 @@
 		AAFC6F401AE08C6A0032A98C /* largestar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F311AE08C6A0032A98C /* largestar.png */; };
 		AAFC6F411AE08C6A0032A98C /* newchallenge_button_inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F321AE08C6A0032A98C /* newchallenge_button_inverse.png */; };
 		AAFC6F421AE08C6A0032A98C /* newchallenge_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F331AE08C6A0032A98C /* newchallenge_button.png */; };
-		AAFC6F431AE08C6A0032A98C /* play_1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F341AE08C6A0032A98C /* play_1-1.png */; };
-		AAFC6F441AE08C6A0032A98C /* play_challenge.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F351AE08C6A0032A98C /* play_challenge.png */; };
 		AAFC6F451AE08C6A0032A98C /* small_star_bestof_x1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F361AE08C6A0032A98C /* small_star_bestof_x1.png */; };
 		AAFC6F461AE08C6A0032A98C /* small_star_bestof_x2.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F371AE08C6A0032A98C /* small_star_bestof_x2.png */; };
 		AAFC6F471AE08C6A0032A98C /* small_star_bestof_x3.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFC6F381AE08C6A0032A98C /* small_star_bestof_x3.png */; };
@@ -269,6 +282,23 @@
 
 /* Begin PBXFileReference section */
 		AA0167321BD5E81300666D91 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "Compound/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		AA01675D1BD6C86200666D91 /* challenge-in-progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-in-progress.png"; path = "images/challenge-in-progress.png"; sourceTree = "<group>"; };
+		AA01675E1BD6C86200666D91 /* challenge-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-play.png"; path = "images/challenge-play.png"; sourceTree = "<group>"; };
+		AA01675F1BD6C86200666D91 /* challenge-results.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-results.png"; path = "images/challenge-results.png"; sourceTree = "<group>"; };
+		AA0167601BD6C86200666D91 /* poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = poop.png; path = images/poop.png; sourceTree = "<group>"; };
+		AA0167611BD6C86200666D91 /* single-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "single-play.png"; path = "images/single-play.png"; sourceTree = "<group>"; };
+		AA0167671BD6C87F00666D91 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flag.png; path = images/flag.png; sourceTree = "<group>"; };
+		AA0167811BD6C92900666D91 /* bar-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-1.png"; sourceTree = "<group>"; };
+		AA0167821BD6C92900666D91 /* bar-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-2.png"; sourceTree = "<group>"; };
+		AA0167831BD6C92900666D91 /* bar-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-3.png"; sourceTree = "<group>"; };
+		AA0167841BD6C92900666D91 /* bar-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-4.png"; sourceTree = "<group>"; };
+		AA0167851BD6C92900666D91 /* bar-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-5.png"; sourceTree = "<group>"; };
+		AA0167861BD6C92900666D91 /* bar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-background.png"; sourceTree = "<group>"; };
+		AA0167871BD6C92900666D91 /* trophy-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-1.png"; sourceTree = "<group>"; };
+		AA0167881BD6C92900666D91 /* trophy-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-2.png"; sourceTree = "<group>"; };
+		AA0167891BD6C92900666D91 /* trophy-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-3.png"; sourceTree = "<group>"; };
+		AA01678A1BD6C92900666D91 /* trophy-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-4.png"; sourceTree = "<group>"; };
+		AA01678B1BD6C92900666D91 /* trophy-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-5.png"; sourceTree = "<group>"; };
 		AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = Models/Challenge.swift; sourceTree = "<group>"; };
 		AA1826CB1AE7220F00A5E609 /* overlay-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "overlay-mask.png"; path = "images/overlay-mask.png"; sourceTree = "<group>"; };
 		AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Puzzle.storyboard; path = Views/Puzzle.storyboard; sourceTree = "<group>"; };
@@ -316,8 +346,6 @@
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
 		AA80029E1B8800CA00F8E377 /* progress-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "progress-star.png"; path = "images/progress-star.png"; sourceTree = "<group>"; };
 		AA80029F1B8800CA00F8E377 /* progress-trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "progress-trophy.png"; path = "images/progress-trophy.png"; sourceTree = "<group>"; };
-		AA8002A21B8804D700F8E377 /* challenge-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-flag.png"; path = "images/challenge-flag.png"; sourceTree = "<group>"; };
-		AA8002A31B8804D700F8E377 /* challenge-shit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-shit.png"; path = "images/challenge-shit.png"; sourceTree = "<group>"; };
 		AA8002A81B880A2B00F8E377 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = Views/ProgressView.swift; sourceTree = "<group>"; };
 		AA8002A91B880A2B00F8E377 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgressView.xib; path = Views/ProgressView.xib; sourceTree = "<group>"; };
 		AA8C7D601B6C63D000AE4E4E /* star-count-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-1.png"; path = "images/star-count-1.png"; sourceTree = "<group>"; };
@@ -440,8 +468,6 @@
 		AAFC6F311AE08C6A0032A98C /* largestar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = largestar.png; path = images/largestar.png; sourceTree = "<group>"; };
 		AAFC6F321AE08C6A0032A98C /* newchallenge_button_inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newchallenge_button_inverse.png; path = images/newchallenge_button_inverse.png; sourceTree = "<group>"; };
 		AAFC6F331AE08C6A0032A98C /* newchallenge_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newchallenge_button.png; path = images/newchallenge_button.png; sourceTree = "<group>"; };
-		AAFC6F341AE08C6A0032A98C /* play_1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_1-1.png"; path = "images/play_1-1.png"; sourceTree = "<group>"; };
-		AAFC6F351AE08C6A0032A98C /* play_challenge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_challenge.png; path = images/play_challenge.png; sourceTree = "<group>"; };
 		AAFC6F361AE08C6A0032A98C /* small_star_bestof_x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = small_star_bestof_x1.png; path = images/small_star_bestof_x1.png; sourceTree = "<group>"; };
 		AAFC6F371AE08C6A0032A98C /* small_star_bestof_x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = small_star_bestof_x2.png; path = images/small_star_bestof_x2.png; sourceTree = "<group>"; };
 		AAFC6F381AE08C6A0032A98C /* small_star_bestof_x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = small_star_bestof_x3.png; path = images/small_star_bestof_x3.png; sourceTree = "<group>"; };
@@ -504,6 +530,25 @@
 				AA01674D1BD5E81300666D91 /* SQLiteCipher Mac Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA0167801BD6C92900666D91 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				AA0167811BD6C92900666D91 /* bar-1.png */,
+				AA0167821BD6C92900666D91 /* bar-2.png */,
+				AA0167831BD6C92900666D91 /* bar-3.png */,
+				AA0167841BD6C92900666D91 /* bar-4.png */,
+				AA0167851BD6C92900666D91 /* bar-5.png */,
+				AA0167861BD6C92900666D91 /* bar-background.png */,
+				AA0167871BD6C92900666D91 /* trophy-1.png */,
+				AA0167881BD6C92900666D91 /* trophy-2.png */,
+				AA0167891BD6C92900666D91 /* trophy-3.png */,
+				AA01678A1BD6C92900666D91 /* trophy-4.png */,
+				AA01678B1BD6C92900666D91 /* trophy-5.png */,
+			);
+			name = Progress;
+			path = images/Progress;
 			sourceTree = "<group>";
 		};
 		AA577AB91BB33F1000168A6A /* Extensions */ = {
@@ -664,9 +709,14 @@
 		AAFB401D1ADEE9F500F44C8F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA0167801BD6C92900666D91 /* Progress */,
+				AA0167671BD6C87F00666D91 /* flag.png */,
+				AA01675D1BD6C86200666D91 /* challenge-in-progress.png */,
+				AA01675E1BD6C86200666D91 /* challenge-play.png */,
+				AA01675F1BD6C86200666D91 /* challenge-results.png */,
+				AA0167601BD6C86200666D91 /* poop.png */,
+				AA0167611BD6C86200666D91 /* single-play.png */,
 				AAD4A1051B93A3530070D960 /* background-puzzle.png */,
-				AA8002A21B8804D700F8E377 /* challenge-flag.png */,
-				AA8002A31B8804D700F8E377 /* challenge-shit.png */,
 				AA80029E1B8800CA00F8E377 /* progress-star.png */,
 				AA80029F1B8800CA00F8E377 /* progress-trophy.png */,
 				AA9F1E071B85762000FADB8C /* challenge-finished.png */,
@@ -702,8 +752,6 @@
 				AAFC6F311AE08C6A0032A98C /* largestar.png */,
 				AAFC6F321AE08C6A0032A98C /* newchallenge_button_inverse.png */,
 				AAFC6F331AE08C6A0032A98C /* newchallenge_button.png */,
-				AAFC6F341AE08C6A0032A98C /* play_1-1.png */,
-				AAFC6F351AE08C6A0032A98C /* play_challenge.png */,
 				AAFC6F361AE08C6A0032A98C /* small_star_bestof_x1.png */,
 				AAFC6F371AE08C6A0032A98C /* small_star_bestof_x2.png */,
 				AAFC6F381AE08C6A0032A98C /* small_star_bestof_x3.png */,
@@ -984,11 +1032,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAFB40381ADEEA3400F44C8F /* compound.sqlite in Resources */,
+				AA0167651BD6C86200666D91 /* poop.png in Resources */,
 				AA4FA4EB1AF2E0DA004D6934 /* appicon-80.png in Resources */,
 				AAFB408A1ADEF6A100F44C8F /* Gotham-Thin.otf in Resources */,
 				AA8C7D671B6C63D000AE4E4E /* star-count-4.png in Resources */,
 				AAFB40821ADEF6A100F44C8F /* Gotham-BoldIta.otf in Resources */,
 				AAFB40B81ADEF71500F44C8F /* smallstar-white.png in Resources */,
+				AA0167911BD6C92900666D91 /* bar-background.png in Resources */,
 				AAFB407A1ADEF6A100F44C8F /* GothaBoo in Resources */,
 				AA65FB491B5D71B900BE9F01 /* exit-button.png in Resources */,
 				AAFC6F491AE08C6A0032A98C /* small_star_bestof_x5.png in Resources */,
@@ -998,10 +1048,10 @@
 				AAFB40A91ADEF6AD00F44C8F /* Gobold Hollow Bold.ttf in Resources */,
 				AAFC6F471AE08C6A0032A98C /* small_star_bestof_x3.png in Resources */,
 				AAFC6F3F1AE08C6A0032A98C /* homeicon.png in Resources */,
-				AAFC6F441AE08C6A0032A98C /* play_challenge.png in Resources */,
 				AAFB408C1ADEF6A100F44C8F /* Gotham-Ultra.otf in Resources */,
 				AAFB40891ADEF6A100F44C8F /* Gotham-MediumItalic in Resources */,
 				AAFC6F4B1AE08C6A0032A98C /* uploadicon.png in Resources */,
+				AA0167641BD6C86200666D91 /* challenge-results.png in Resources */,
 				AAFB40811ADEF6A100F44C8F /* Gotham-Bold.otf in Resources */,
 				AAE52B711AE2EC3200FFB13D /* logo-left.png in Resources */,
 				AA1826CC1AE7220F00A5E609 /* overlay-mask.png in Resources */,
@@ -1009,7 +1059,6 @@
 				AA1826D21AE722D900A5E609 /* Main.storyboard in Resources */,
 				AAFB40921ADEF6A100F44C8F /* GothaThi in Resources */,
 				AAFC6F421AE08C6A0032A98C /* newchallenge_button.png in Resources */,
-				AAFC6F431AE08C6A0032A98C /* play_1-1.png in Resources */,
 				AAFB40801ADEF6A100F44C8F /* Gotham-Bold in Resources */,
 				AAFB40861ADEF6A100F44C8F /* Gotham-LightIta.otf in Resources */,
 				AAE52B7A1AE2F84300FFB13D /* star-group-2.png in Resources */,
@@ -1019,6 +1068,8 @@
 				AAFB402A1ADEEA0500F44C8F /* lightbulb-3.png in Resources */,
 				AAFB40791ADEF6A100F44C8F /* GothaBolIta in Resources */,
 				AAFC6F511AE091A40032A98C /* container-pink.png in Resources */,
+				AA01678F1BD6C92900666D91 /* bar-4.png in Resources */,
+				AA0167951BD6C92900666D91 /* trophy-4.png in Resources */,
 				AAFB40881ADEF6A100F44C8F /* Gotham-MediumIta.otf in Resources */,
 				AAFB40991ADEF6A100F44C8F /* HTF Gotham™ in Resources */,
 				AAFB408D1ADEF6A100F44C8F /* Gotham-UltraIta.otf in Resources */,
@@ -1027,13 +1078,13 @@
 				AAFB407B1ADEF6A100F44C8F /* GothaBooIta in Resources */,
 				AA8C7D661B6C63D000AE4E4E /* star-count-3.png in Resources */,
 				AAFB407F1ADEF6A100F44C8F /* Gotham-BlackIta.otf in Resources */,
+				AA01678D1BD6C92900666D91 /* bar-2.png in Resources */,
 				AAFB40851ADEF6A100F44C8F /* Gotham-Light.otf in Resources */,
 				AAFB407E1ADEF6A100F44C8F /* Gotham-Black.otf in Resources */,
 				AA8002AB1B880A2B00F8E377 /* ProgressView.xib in Resources */,
 				AAFB40281ADEEA0500F44C8F /* lightbulb-1.png in Resources */,
 				AAFC6F401AE08C6A0032A98C /* largestar.png in Resources */,
 				AAFB40B61ADEF71500F44C8F /* lightbulb-white.png in Resources */,
-				AA8002A51B8804D700F8E377 /* challenge-shit.png in Resources */,
 				AAFB40271ADEEA0500F44C8F /* lightbulb-0.png in Resources */,
 				AAFB403A1ADEEA3400F44C8F /* keywords2.xml in Resources */,
 				AAFC6F3E1AE08C6A0032A98C /* group-icon.png in Resources */,
@@ -1046,9 +1097,11 @@
 				AAFB40B01ADEF6AD00F44C8F /* Gobold Thin.ttf in Resources */,
 				AAFB40A71ADEF6AD00F44C8F /* Gobold Bold.ttf in Resources */,
 				AAFB40AF1ADEF6AD00F44C8F /* Gobold Thin Italic.ttf in Resources */,
-				AA8002A41B8804D700F8E377 /* challenge-flag.png in Resources */,
+				AA0167901BD6C92900666D91 /* bar-5.png in Resources */,
 				AA4FA4E91AF2E0DA004D6934 /* appicon-40.png in Resources */,
 				AAFB3FDC1ADED47100F44C8F /* Images.xcassets in Resources */,
+				AA0167631BD6C86200666D91 /* challenge-play.png in Resources */,
+				AA0167661BD6C86200666D91 /* single-play.png in Resources */,
 				AA4FA4EA1AF2E0DA004D6934 /* appicon-60.png in Resources */,
 				AA65FB4F1B5D7E0300BE9F01 /* profile-picture-overlay.png in Resources */,
 				AAFB40941ADEF6A100F44C8F /* GothaUlt in Resources */,
@@ -1057,11 +1110,16 @@
 				AAFC6F451AE08C6A0032A98C /* small_star_bestof_x1.png in Resources */,
 				AAE52B791AE2F84300FFB13D /* star-group-1.png in Resources */,
 				AAFB40971ADEF6A100F44C8F /* GothaXLigIta in Resources */,
+				AA0167961BD6C92900666D91 /* trophy-5.png in Resources */,
+				AA0167941BD6C92900666D91 /* trophy-3.png in Resources */,
 				AAFC6F481AE08C6A0032A98C /* small_star_bestof_x4.png in Resources */,
 				AAFB40981ADEF6A100F44C8F /* HTF Gotham 2™ in Resources */,
+				AA01678E1BD6C92900666D91 /* bar-3.png in Resources */,
 				AAFB40261ADEEA0500F44C8F /* divider.png in Resources */,
+				AA0167931BD6C92900666D91 /* trophy-2.png in Resources */,
 				AA4FA4ED1AF2E0DA004D6934 /* appicon-180.png in Resources */,
 				AAFC6F4F1AE08EFE0032A98C /* container-black.png in Resources */,
+				AA0167621BD6C86200666D91 /* challenge-in-progress.png in Resources */,
 				AAFB40B71ADEF71500F44C8F /* logo.png in Resources */,
 				AAFB40AB1ADEF6AD00F44C8F /* Gobold Hollow.ttf in Resources */,
 				AAFB40BB1ADF021F00F44C8F /* menu-container.png in Resources */,
@@ -1075,6 +1133,7 @@
 				AAFB407D1ADEF6A100F44C8F /* GothaLigIta in Resources */,
 				AAE52B7B1AE2F84300FFB13D /* star-group-3.png in Resources */,
 				AAFB40AD1ADEF6AD00F44C8F /* Gobold Light Italic.ttf in Resources */,
+				AA0167921BD6C92900666D91 /* trophy-1.png in Resources */,
 				AAFB40781ADEF6A100F44C8F /* GothaBol in Resources */,
 				AAFB40AE1ADEF6AD00F44C8F /* Gobold Light.ttf in Resources */,
 				AAFB40371ADEEA3400F44C8F /* combinations.txt in Resources */,
@@ -1083,6 +1142,7 @@
 				AAADBFE81B863A3700820E7C /* AnswerView.xib in Resources */,
 				AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */,
 				AAFB40961ADEF6A100F44C8F /* GothaXLig in Resources */,
+				AA0167681BD6C87F00666D91 /* flag.png in Resources */,
 				AAFB40291ADEEA0500F44C8F /* lightbulb-2.png in Resources */,
 				AAE52B7C1AE2F84300FFB13D /* star-group-4.png in Resources */,
 				AAFB40AA1ADEF6AD00F44C8F /* Gobold Hollow Italic.ttf in Resources */,
@@ -1092,6 +1152,7 @@
 				AAFC6F3D1AE08C6A0032A98C /* circle_behind-profile-pic.png in Resources */,
 				AA9F1E0C1B85762000FADB8C /* challenge-sent.png in Resources */,
 				AA70D4941AE8213900433140 /* logo-no-text.png in Resources */,
+				AA01678C1BD6C92900666D91 /* bar-1.png in Resources */,
 				AAFB40251ADEEA0500F44C8F /* button-highlighted.png in Resources */,
 				AAFD69151AFD1858001F6063 /* container-green.png in Resources */,
 				AAFB40931ADEF6A100F44C8F /* GothaThiIta in Resources */,

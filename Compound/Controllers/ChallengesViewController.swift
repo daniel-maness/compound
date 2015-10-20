@@ -113,9 +113,9 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
             image = self.challenges[indexPath.row].user.profilePicture
             
             if self.challenges[indexPath.row].status == Status.Complete {
-                statusIcon = UIImage(named: "challenge-finished")!
+                statusIcon = UIImage(named: "challenge-results")!
             } else {
-                statusIcon = UIImage(named: "challenge-sent")!
+                statusIcon = UIImage(named: "challenge-in-progress")!
             }
         }
         
