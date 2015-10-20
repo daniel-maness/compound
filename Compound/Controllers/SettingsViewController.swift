@@ -35,8 +35,6 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
         }
         
         setupView()
-        
-        let uiView = self.view as UIView
     }
     
     func setupView() {
@@ -61,8 +59,8 @@ class SettingsViewController: BaseViewController, FBSDKLoginButtonDelegate {
     
     func logOut() {
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
-            var storyboard = UIStoryboard(name: "User", bundle: nil)
-            var viewController = storyboard.instantiateViewControllerWithIdentifier("FacebookLoginViewController") as! FacebookLoginViewController
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("FacebookLoginViewController") as! FacebookLoginViewController
             self.presentViewController(viewController, animated: true, completion: nil)
         }
     }

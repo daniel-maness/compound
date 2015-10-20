@@ -55,7 +55,6 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
         
         createPuzzle()
@@ -94,7 +93,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if puzzleManager.checkAnswer(textField.text, answer: puzzle.keyword) {
+        if puzzleManager.checkAnswer(textField.text!, answer: puzzle.keyword) {
             endPuzzle(Status.Complete)
         } else {
             guess = ""
@@ -210,7 +209,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func updateHintButton() {
-        var image = UIImage(named: "lightbulb-" + String(MAX_HINTS - puzzle.hintsUsed))
+        let image = UIImage(named: "lightbulb-" + String(MAX_HINTS - puzzle.hintsUsed))
         hintButton.setImage(image, forState: UIControlState.Normal)
     }
     
@@ -234,26 +233,26 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
                 //hiddenText.text = puzzle.keyword.Name[0]
             }
             
-            if count(hiddenText.text) >= count(puzzle.keyword) {
-                hiddenText.text = hiddenText.text.subStringTo(count(puzzle.keyword))
+            if hiddenText.text!.characters.count >= puzzle.keyword.characters.count {
+                hiddenText.text = hiddenText.text!.substringTo(puzzle.keyword.characters.count)
             }
         
-            self.guess = hiddenText.text.uppercaseString
+            self.guess = hiddenText.text!.uppercaseString
             
             var attributedText: NSMutableAttributedString
             var formattedGuess = ""
             
-            for i in 0..<count(self.guess) {
+            for i in 0..<self.guess.characters.count {
                 formattedGuess += self.guess[i] + " "
             }
             
-            while count(formattedGuess) / 2 < count(puzzle.keyword) {
+            while formattedGuess.characters.count / 2 < puzzle.keyword.characters.count {
                 formattedGuess += "_ "
             }
             
             attributedText = NSMutableAttributedString(string: formattedGuess)
             
-            for i in 0..<count(formattedGuess) {
+            for i in 0..<formattedGuess.characters.count {
                 if formattedGuess[i] != "_" && formattedGuess[i] != " " {
                     attributedText.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(i, 1))
                 }
@@ -261,7 +260,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
             
             answerLabel.attributedText = attributedText
         } else {
-            self.guess = hiddenText.text.uppercaseString
+            self.guess = hiddenText.text!.uppercaseString
             answerLabel.attributedText = NSMutableAttributedString(string: guess)
         }
     }
@@ -281,9 +280,9 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func formatIncompleteWord(hint: String, combination: Combination) -> NSMutableAttributedString {
-        var location = combination.keywordLocation == Location.Left ? 0 : count(combination.leftWord)
-        var length = count(hint)
-        var attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ?
+        let location = combination.keywordLocation == Location.Left ? 0 : combination.leftWord.characters.count
+        let length = hint.characters.count
+        let attributedString = NSMutableAttributedString(string: combination.keywordLocation == Location.Left ?
             hint.uppercaseString + combination.rightWord.uppercaseString :
             combination.leftWord.uppercaseString + hint.uppercaseString)
 
@@ -299,7 +298,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     func showGiveUpView() {
         // This method is good for showing a view we may need to return from
         hideKeyboard()
-        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("GiveUpViewController") as! GiveUpViewController
+        let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("GiveUpViewController") as! GiveUpViewController
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)
         viewController.didMoveToParentViewController(self)
@@ -307,7 +306,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     
     func showPuzzleCompletedView() {
         // This method is good for showing a view we won't need to return from
-        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleCompletedViewController") as! PuzzleCompletedViewController
+        let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleCompletedViewController") as! PuzzleCompletedViewController
         viewController.setAnswerView(puzzle.combinations[0].combinedWord, word2: puzzle.combinations[1].combinedWord, word3: puzzle.combinations[2].combinedWord, keyword: puzzle!.keyword)
         viewController.currentStars = puzzle.currentStars
         viewController.totalStars = userManager.getStats().totalStarsEarned
@@ -318,7 +317,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     
     func showPuzzleFailedView(message: String) {
         // This method is good for showing a view we won't need to return from
-        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
+        let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleFailedViewController") as! PuzzleFailedViewController
         viewController.message = message
         viewController.totalStars = userManager.getStats().totalStarsEarned
         
@@ -327,7 +326,7 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     
     func showChallengeResults() {
         // This method is good for showing a view we won't need to return from
-        var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengeResultsViewController") as! ChallengeResultsViewController
+        let viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengeResultsViewController") as! ChallengeResultsViewController
         viewController.setAnswerView(puzzle.combinations[0].combinedWord, word2: puzzle.combinations[1].combinedWord, word3: puzzle.combinations[2].combinedWord, keyword: puzzle!.keyword)
         viewController.currentStars = puzzle.currentStars
         viewController.totalStars = userManager.getStats().totalStarsEarned

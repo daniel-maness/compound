@@ -19,7 +19,7 @@ class UserService {
     }
     
     func createUser(facebookUserId: String!, username: String, password: String, displayName: String!, email: String!) {
-        var user = PFUser()
+        let user = PFUser()
         
         user.username = username
         user.password = password
@@ -80,7 +80,7 @@ class UserService {
     }
     
     func getStats(userObject: PFUser) -> Statistics {
-        var stats = Statistics()
+        let stats = Statistics()
         
         stats.totalPuzzlesCompleted = userObject["totalPuzzlesCompleted"] == nil ? 0 : userObject["totalPuzzlesCompleted"] as! Int
         stats.totalPuzzlesTimeUp = userObject["totalPuzzlesTimeUp"] == nil ? 0 : userObject["totalPuzzlesTimeUp"] as! Int

@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
         self.init()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -40,8 +40,8 @@ class BaseViewController: UIViewController {
     }
     
     func showHomeViewController() {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     

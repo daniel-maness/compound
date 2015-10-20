@@ -8,12 +8,6 @@
 
 import Foundation
 
-extension String {
-    subscript (i: Int) -> String {
-        return String(Array(self)[i])
-    }
-}
-
 enum Location: Int {
     case Unknown = 0, Left, Right
 }
@@ -41,12 +35,12 @@ class Combination {
     init (keyword: String, combinedWord: String) {
         self.keyword = keyword
         
-        if combinedWord.subStringTo(count(keyword)) == keyword {
+        if combinedWord.substringTo(keyword.characters.count) == keyword {
             self.leftWord = keyword
-            self.rightWord = combinedWord.subStringFrom(count(keyword))
+            self.rightWord = combinedWord.substringTo(keyword.characters.count)
         } else {
-            self.leftWord = combinedWord.subStringTo(count(combinedWord) - count(keyword))
-            self.rightWord = combinedWord.subStringFrom(count(self.leftWord))
+            self.leftWord = combinedWord.substringTo(combinedWord.characters.count - keyword.characters.count)
+            self.rightWord = combinedWord.substringFrom(self.leftWord.characters.count)
         }
         
         self.keywordLocation = leftWord == keyword ? Location.Left : Location.Right

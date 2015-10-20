@@ -34,7 +34,7 @@ class PuzzleCompletedViewController: BaseViewController {
     
     @IBAction func onChallengePressed(sender: UIButton) {
         // This method is good for showing a view we may need to return from
-        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("ChallengePuzzleViewController") as! ChallengePuzzleViewController
+        let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("ChallengePuzzleViewController") as! ChallengePuzzleViewController
         viewController.setAnswerView(self.word1, word2: self.word2, word3: self.word3, keyword: self.keyword)
         viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.puzzle = self.puzzle
@@ -47,7 +47,6 @@ class PuzzleCompletedViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     

@@ -42,7 +42,6 @@ class Challenge {
         
         // Initialize the parent challenge, if it exists
         if let parentChallengeObject = pfObject["parentChallengeObject"] as? PFObject {
-            let parentUserObject = parentChallengeObject["userObject"] as! PFObject
             self.parentChallenge = Challenge(pfObject: parentChallengeObject)
         }
         

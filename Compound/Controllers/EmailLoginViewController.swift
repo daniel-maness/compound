@@ -18,8 +18,8 @@ class EmailLoginViewController: LoginViewController {
     
     /* Actions */
     @IBAction func onLoginPressed(sender: UIButton) {
-        var username = usernameTextField.text
-        var password = passwordTextField.text
+        let username = usernameTextField.text
+        let password = passwordTextField.text
         
         messageLabel.text = ""
         
@@ -30,7 +30,7 @@ class EmailLoginViewController: LoginViewController {
         } else {
             usernameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-            let result = self.loginParse(username, password: password, facebookUserId: nil, displayName: nil, email: nil)
+            let result = self.loginParse(username!, password: password!, facebookUserId: nil, displayName: nil, email: nil)
             if result.success {
                 self.showHomeViewController()
             } else {
@@ -43,7 +43,6 @@ class EmailLoginViewController: LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     
@@ -51,7 +50,7 @@ class EmailLoginViewController: LoginViewController {
         messageLabel.text = ""
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
 }

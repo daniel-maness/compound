@@ -16,7 +16,7 @@ class StreamReader {
     }
     
     func getWords() -> Array<String> {
-        var possibleContent = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+        let possibleContent = try? String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
         var array = Array<String>()
         
         if let content = possibleContent {

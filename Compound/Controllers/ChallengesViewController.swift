@@ -50,7 +50,6 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     
@@ -70,7 +69,7 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     func populateChallengesTable() {
         challengeManager.getChallengesReceived({ (result, error) -> Void in
             if error == nil {
-                self.challenges.extend(result)
+                self.challenges.appendContentsOf(result)
                 //self.challenges.sort({ $0.status.rawValue < $1.status.rawValue })
             } else {
                 EventService.logError(error!, description: "Challenges Received could not be fetched", object: "ChallengesViewController", function: "populateChallengesTable")
@@ -79,7 +78,7 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
         
         challengeManager.getChallengesSent({ (result, error) -> Void in
             if error == nil {
-                self.challenges.extend(result)
+                self.challenges.appendContentsOf(result)
                 //self.challenges.sort({ $0.status.rawValue < $1.status.rawValue })
             } else {
                 EventService.logError(error!, description: "Challenges Sent could not be fetched", object: "ChallengesViewController", function: "populateChallengesTable")
@@ -144,14 +143,14 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func playChallenge(challenge: Challenge) {
-        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
+        let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
         viewController.challenge = challenge
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     func viewChallengeResults(challenge: Challenge) {
-        var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengeResultsViewController") as! ChallengeResultsViewController
+        let viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengeResultsViewController") as! ChallengeResultsViewController
         
         viewController.setAnswerView(challenge.puzzle.combinations[0].combinedWord,
             word2: challenge.puzzle.combinations[1].combinedWord,

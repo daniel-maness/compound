@@ -49,7 +49,6 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     
@@ -110,7 +109,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let facebookUserId = self.friendsList[indexPath.row].facebookUserId
         
-        if let index = find(self.selectedFriendIds, facebookUserId) {
+        if let index = self.selectedFriendIds.indexOf(facebookUserId) {
             self.selectedFriendIds.removeAtIndex(index)
         }
         
@@ -122,7 +121,7 @@ class ChallengePuzzleViewController: BaseViewController, UITableViewDataSource, 
     }
     
     func exitView(challengeSent: Bool) {
-        var parent = self.parentViewController as! PuzzleCompletedViewController
+        let parent = self.parentViewController as! PuzzleCompletedViewController
         parent.challengeButton.enabled = !challengeSent
         self.view.removeFromSuperview()
     }

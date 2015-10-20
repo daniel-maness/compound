@@ -20,9 +20,9 @@ class SignupViewController: BaseViewController {
     
     /* Actions */
     @IBAction func onSignupPressed(sender: UIButton) {
-        var username = usernameTextField.text
-        var password = passwordTextField.text
-        var displayName = ""
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        let displayName = ""
         
         messageLabel.text = ""
         
@@ -33,7 +33,7 @@ class SignupViewController: BaseViewController {
         } else {
             usernameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-            if userSignUp(username, password: password, displayName: displayName) {
+            if userSignUp(username!, password: password!, displayName: displayName) {
                 self.showHomeViewController()
             }
         }
@@ -43,7 +43,6 @@ class SignupViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     
@@ -64,7 +63,7 @@ class SignupViewController: BaseViewController {
         return false
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
 }

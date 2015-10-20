@@ -12,22 +12,22 @@ import Parse
 class HomeViewController: BaseViewController {
     /* Actions */
     @IBAction func onPlayPressed(sender: UIButton) {
-        var viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
+        let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
 
     @IBAction func onChallengesPressed(sender: UIButton) {
-        var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengesViewController") as! ChallengesViewController
+        let viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengesViewController") as! ChallengesViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     @IBAction func onProfilePressed(sender: UIButton) {
-        var viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        let viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     @IBAction func onSettingsPressed(sender: UIButton) {
-        var viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        let viewController = UIStoryboard(name: "User", bundle: nil).instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     

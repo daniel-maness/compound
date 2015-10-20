@@ -48,7 +48,7 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
             challengeManager.markChallengeInactive(userChallenge)
         }
         
-        var viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengesViewController") as! ChallengesViewController
+        let viewController = UIStoryboard(name: "Challenge", bundle: nil).instantiateViewControllerWithIdentifier("ChallengesViewController") as! ChallengesViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     
@@ -56,7 +56,6 @@ class ChallengeResultsViewController: BaseViewController, UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     

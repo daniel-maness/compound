@@ -23,7 +23,7 @@ import UIKit
         xibSetup()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         xibSetup()
@@ -32,7 +32,7 @@ import UIKit
     func xibSetup() {
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         addSubview(view)
     }
     
@@ -53,19 +53,19 @@ import UIKit
     }
     
     func formatWord(word: String) -> NSMutableAttributedString {
-        var leftWord = word.subStringTo(count(self.keyword))
+        var leftWord = word.substringTo(self.keyword.characters.count)
         var rightWord: String
 
         if leftWord == self.keyword {
-            rightWord = word.subStringFrom(count(self.keyword))
+            rightWord = word.substringFrom(self.keyword.characters.count - 1)
         } else {
-            leftWord = word.subStringTo(count(word) - count(self.keyword))
-            rightWord = word.subStringFrom(count(leftWord))
+            leftWord = word.substringTo(word.characters.count - self.keyword.characters.count - 1)
+            rightWord = word.substringFrom(leftWord.characters.count)
         }
         
-        var location = leftWord == self.keyword ? 0 : count(leftWord)
-        var length = count(self.keyword)
-        var attributedString = NSMutableAttributedString(string: leftWord.uppercaseString + rightWord.uppercaseString)
+        let location = leftWord == self.keyword ? 0 : leftWord.characters.count
+        let length = self.keyword.characters.count
+        let attributedString = NSMutableAttributedString(string: leftWord.uppercaseString + rightWord.uppercaseString)
 
         attributedString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.black, range: NSMakeRange(location, length))
         //attributedString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFontOfSize(self.fontSize), range: NSMakeRange(location, length))

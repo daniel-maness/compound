@@ -11,7 +11,7 @@ import Foundation
 class DateTime {
     class func now() -> String {
         let date = NSDate()
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSS"
         let datetime = dateFormatter.stringFromDate(date)
         return datetime

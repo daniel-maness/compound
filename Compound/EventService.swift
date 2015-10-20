@@ -16,13 +16,13 @@ class EventService {
         errorObject["systemDescription"] = error.debugDescription as String
         
         errorObject.saveInBackgroundWithBlock({ (success, error) -> Void in
-            println("1: Generic error")
-            println("2: " + error.debugDescription)
+            print("1: Generic error")
+            print("2: " + error.debugDescription)
             
             if error == nil {
-                println("3: Error " + errorObject.objectId! + " saved in Parse\n")
+                print("3: Error " + errorObject.objectId! + " saved in Parse\n")
             } else {
-                println("3: Error failed to save in Parse\n")
+                print("3: Error failed to save in Parse\n")
             }
         })
     }
@@ -36,22 +36,22 @@ class EventService {
         errorObject["appFunction"] = function == nil ? NSNull() : function
         
         errorObject.saveInBackgroundWithBlock({ (success, err) -> Void in
-            println("1: " + description)
-            println("2: " + error.debugDescription)
+            print("1: " + description)
+            print("2: " + error.debugDescription)
             
             if err == nil {
-                println("3: Error " + errorObject.objectId! + " saved in Parse\n")
+                print("3: Error " + errorObject.objectId! + " saved in Parse\n")
             } else {
-                println("3: Error failed to save in Parse\n")
+                print("3: Error failed to save in Parse\n")
             }
         })
     }
     
     class func logSuccess(description: String) {
-        println("1: Success: " + description + "\n")
+        print("1: Success: " + description + "\n")
     }
     
     class func logEvent(description: String) {
-        println("1: Event: " + description + "\n")
+        print("1: Event: " + description + "\n")
     }
 }

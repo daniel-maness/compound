@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-//    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSDictionary]) -> Bool {
-//        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -57,8 +57,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    func applicationDidFinishLaunching(application: UIApplication) {
+        copyFile("compound.sqlite")
+    }
+    
+    func copyFile(fileName: NSString) {
+        let dbPath: String = getPath(fileName as String)
+        let fileManager = NSFileManager.defaultManager()
+        if !fileManager.fileExistsAtPath(dbPath) {
+            let documentsURL = NSBundle.mainBundle().resourceURL
+            let fromPath = documentsURL!.URLByAppendingPathComponent(fileName as String)
+            var error : NSError?
+            do {
+                try fileManager.copyItemAtPath(fromPath.path!, toPath: dbPath)
+            } catch let error1 as NSError {
+                error = error1
+            }
+            let alert: UIAlertView = UIAlertView()
+            if (error != nil) {
+                alert.title = "Error Occured"
+                alert.message = error?.localizedDescription
+            } else {
+                alert.title = "Successfully Copy"
+                alert.message = "Your database copy successfully"
+            }
+            alert.delegate = nil
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+    }
+    
+    func getPath(fileName: String) -> String {
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let fileURL = documentsURL.URLByAppendingPathComponent(fileName)
+        return fileURL.path!
     }
 }
 

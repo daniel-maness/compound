@@ -24,7 +24,6 @@ class GiveUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiView = self.view as UIView
         setupView()
     }
     

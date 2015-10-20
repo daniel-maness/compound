@@ -25,8 +25,6 @@ class FacebookLoginViewController: LoginViewController, FBSDKLoginButtonDelegate
             facebookLoginButton.readPermissions = FACEBOOK_PERMISSIONS
             facebookLoginButton.delegate = self
         }
-        
-        let uiView = self.view as UIView
     }
     
     override func viewDidAppear(animated: Bool) {

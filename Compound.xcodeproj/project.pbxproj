@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA081AF91B138B0F00F2228D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF81B138B0F00F2228D /* FBSDKShareKit.framework */; };
-		AA081AFB1B138B1600F2228D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AFA1B138B1600F2228D /* FBSDKLoginKit.framework */; };
+		AA01674E1BD5E83300666D91 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA01673F1BD5E81300666D91 /* SQLite.framework */; };
 		AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */; };
 		AA1826CC1AE7220F00A5E609 /* overlay-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CB1AE7220F00A5E609 /* overlay-mask.png */; };
 		AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */; };
@@ -21,13 +20,15 @@
 		AA2881691B03C5DA0066B95D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA28815D1B03C5DA0066B95D /* CFNetwork.framework */; };
 		AA28816A1B03C5DA0066B95D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA28815E1B03C5DA0066B95D /* CoreGraphics.framework */; };
 		AA28816B1B03C5DA0066B95D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA28815F1B03C5DA0066B95D /* CoreLocation.framework */; };
-		AA28816C1B03C5DA0066B95D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881601B03C5DA0066B95D /* libz.dylib */; };
 		AA28816D1B03C5DA0066B95D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881611B03C5DA0066B95D /* MobileCoreServices.framework */; };
 		AA28816E1B03C5DA0066B95D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881621B03C5DA0066B95D /* QuartzCore.framework */; };
 		AA28816F1B03C5DA0066B95D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881631B03C5DA0066B95D /* Security.framework */; };
 		AA2881701B03C5DA0066B95D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881641B03C5DA0066B95D /* Social.framework */; };
 		AA2881711B03C5DA0066B95D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881651B03C5DA0066B95D /* StoreKit.framework */; };
 		AA2881721B03C5DA0066B95D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2881661B03C5DA0066B95D /* SystemConfiguration.framework */; };
+		AA2EEE1F1BD357D40044BE9F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2EEE1C1BD357D40044BE9F /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
+		AA2EEE201BD357D40044BE9F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2EEE1D1BD357D40044BE9F /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		AA2EEE211BD357D40044BE9F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2EEE1E1BD357D40044BE9F /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
 		AA30B2301AFC445500C6CDC1 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30B22F1AFC445500C6CDC1 /* ChallengeService.swift */; };
 		AA4FA4E91AF2E0DA004D6934 /* appicon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E41AF2E0DA004D6934 /* appicon-40.png */; };
 		AA4FA4EA1AF2E0DA004D6934 /* appicon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E51AF2E0DA004D6934 /* appicon-60.png */; };
@@ -36,6 +37,7 @@
 		AA4FA4ED1AF2E0DA004D6934 /* appicon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */; };
 		AA5767AB1AFAD896006014FC /* container-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5767AA1AFAD896006014FC /* container-grey.png */; };
 		AA5767AF1AFAE094006014FC /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5767AE1AFAE094006014FC /* Friend.swift */; };
+		AA577ABB1BB33F2D00168A6A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA577ABA1BB33F2D00168A6A /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB21AF7E57600EF7B99 /* AdminService.swift */; };
 		AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB31AF7E57600EF7B99 /* UserService.swift */; };
 		AA603DB81AF7E59300EF7B99 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB61AF7E59300EF7B99 /* DateTime.swift */; };
@@ -64,7 +66,6 @@
 		AA9F1E0A1B85762000FADB8C /* challenge-finished.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E071B85762000FADB8C /* challenge-finished.png */; };
 		AA9F1E0B1B85762000FADB8C /* challenge-received.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E081B85762000FADB8C /* challenge-received.png */; };
 		AA9F1E0C1B85762000FADB8C /* challenge-sent.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E091B85762000FADB8C /* challenge-sent.png */; };
-		AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */; };
 		AA9FF7551B5C40D000A75571 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7541B5C40D000A75571 /* Global.swift */; };
 		AA9FF7571B5C991A00A75571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7561B5C991A00A75571 /* LoginViewController.swift */; };
 		AAADBFE81B863A3700820E7C /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAADBFE71B863A3700820E7C /* AnswerView.xib */; };
@@ -76,7 +77,7 @@
 		AAD72BDE1B06A579009CDAB5 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDD1B06A579009CDAB5 /* EmailLoginViewController.swift */; };
 		AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */; };
 		AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */; };
-		AAD7D85F1B6AFC7E00A4F8D2 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D85E1B6AFC7E00A4F8D2 /* ErrorService.swift */; };
+		AAD7D85F1B6AFC7E00A4F8D2 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D85E1B6AFC7E00A4F8D2 /* EventService.swift */; };
 		AAD7D8621B6BE4BF00A4F8D2 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */; };
 		AAD7D8641B6BE4C800A4F8D2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */; };
 		AAD7D8661B6BE4D800A4F8D2 /* PuzzleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */; };
@@ -89,6 +90,7 @@
 		AAE52B7A1AE2F84300FFB13D /* star-group-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B761AE2F84300FFB13D /* star-group-2.png */; };
 		AAE52B7B1AE2F84300FFB13D /* star-group-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B771AE2F84300FFB13D /* star-group-3.png */; };
 		AAE52B7C1AE2F84300FFB13D /* star-group-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B781AE2F84300FFB13D /* star-group-4.png */; };
+		AAED280D1BC1FF9E00645C66 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAED280C1BC1FF9E00645C66 /* libsqlite3.0.tbd */; };
 		AAF10DB11B043E030008CEF0 /* CompoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF10DB01B043E030008CEF0 /* CompoundTests.swift */; };
 		AAFB3FD51ADED47100F44C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB3FD41ADED47100F44C8F /* AppDelegate.swift */; };
 		AAFB3FDC1ADED47100F44C8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFB3FDB1ADED47100F44C8F /* Images.xcassets */; };
@@ -104,17 +106,14 @@
 		AAFB40291ADEEA0500F44C8F /* lightbulb-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40221ADEEA0500F44C8F /* lightbulb-2.png */; };
 		AAFB402A1ADEEA0500F44C8F /* lightbulb-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40231ADEEA0500F44C8F /* lightbulb-3.png */; };
 		AAFB402B1ADEEA0500F44C8F /* smallstar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40241ADEEA0500F44C8F /* smallstar.png */; };
-		AAFB40311ADEEA2C00F44C8F /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB402F1ADEEA2C00F44C8F /* SQLiteDB.swift */; };
-		AAFB40321ADEEA2C00F44C8F /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB40301ADEEA2C00F44C8F /* String-Extras.swift */; };
 		AAFB40371ADEEA3400F44C8F /* combinations.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40331ADEEA3400F44C8F /* combinations.txt */; };
-		AAFB40381ADEEA3400F44C8F /* compound.db in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40341ADEEA3400F44C8F /* compound.db */; };
+		AAFB40381ADEEA3400F44C8F /* compound.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40341ADEEA3400F44C8F /* compound.sqlite */; };
 		AAFB40391ADEEA3400F44C8F /* keywords.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40351ADEEA3400F44C8F /* keywords.txt */; };
 		AAFB403A1ADEEA3400F44C8F /* keywords2.xml in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40361ADEEA3400F44C8F /* keywords2.xml */; };
 		AAFB403D1ADEEA9900F44C8F /* PuzzleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */; };
 		AAFB403F1ADEEAEB00F44C8F /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB403E1ADEEAEB00F44C8F /* Combination.swift */; };
 		AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB40401ADEEB2E00F44C8F /* ChallengesViewController.swift */; };
 		AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB40421ADEEB9800F44C8F /* StreamReader.swift */; };
-		AAFB40481ADEED2100F44C8F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFB40461ADEEC6C00F44C8F /* libsqlite3.dylib */; };
 		AAFB40761ADEF6A100F44C8F /* GothaBla in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40521ADEF6A100F44C8F /* GothaBla */; };
 		AAFB40771ADEF6A100F44C8F /* GothaBlaIta in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40531ADEF6A100F44C8F /* GothaBlaIta */; };
 		AAFB40781ADEF6A100F44C8F /* GothaBol in Resources */ = {isa = PBXBuildFile; fileRef = AAFB40541ADEF6A100F44C8F /* GothaBol */; };
@@ -191,6 +190,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA01673E1BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC2B29E21B26F718001C60EA;
+			remoteInfo = "SQLite iOS";
+		};
+		AA0167401BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC2B29EC1B26F718001C60EA;
+			remoteInfo = "SQLite iOS Tests";
+		};
+		AA0167421BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC7253AC1B52ADEB009B38B1;
+			remoteInfo = "SQLite Mac";
+		};
+		AA0167441BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC7253B51B52ADEC009B38B1;
+			remoteInfo = "SQLite Mac Tests";
+		};
+		AA0167461BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCE7BB7A1B7434F90040D364;
+			remoteInfo = "SQLiteCipher iOS";
+		};
+		AA0167481BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCE7BB831B7434F90040D364;
+			remoteInfo = "SQLiteCipher iOS Tests";
+		};
+		AA01674A1BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCE7BBB01B7438610040D364;
+			remoteInfo = "SQLiteCipher Mac";
+		};
+		AA01674C1BD5E81300666D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCE7BBB91B7438620040D364;
+			remoteInfo = "SQLiteCipher Mac Tests";
+		};
 		AAFB3FE51ADED47100F44C8F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAFB3FC71ADED47100F44C8F /* Project object */;
@@ -200,10 +255,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AA47C9A41BB1CBE90034951F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		AA081AF81B138B0F00F2228D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		AA081AFA1B138B1600F2228D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		AA0167321BD5E81300666D91 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "Compound/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = Models/Challenge.swift; sourceTree = "<group>"; };
 		AA1826CB1AE7220F00A5E609 /* overlay-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "overlay-mask.png"; path = "images/overlay-mask.png"; sourceTree = "<group>"; };
 		AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Puzzle.storyboard; path = Views/Puzzle.storyboard; sourceTree = "<group>"; };
@@ -216,13 +281,15 @@
 		AA28815D1B03C5DA0066B95D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AA28815E1B03C5DA0066B95D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AA28815F1B03C5DA0066B95D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		AA2881601B03C5DA0066B95D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AA2881611B03C5DA0066B95D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AA2881621B03C5DA0066B95D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA2881631B03C5DA0066B95D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AA2881641B03C5DA0066B95D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AA2881651B03C5DA0066B95D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AA2881661B03C5DA0066B95D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AA2EEE1C1BD357D40044BE9F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		AA2EEE1D1BD357D40044BE9F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		AA2EEE1E1BD357D40044BE9F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		AA30B22F1AFC445500C6CDC1 /* ChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeService.swift; path = DataAccess/ChallengeService.swift; sourceTree = "<group>"; };
 		AA4FA4E41AF2E0DA004D6934 /* appicon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-40.png"; path = "images/appicon-40.png"; sourceTree = "<group>"; };
 		AA4FA4E51AF2E0DA004D6934 /* appicon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-60.png"; path = "images/appicon-60.png"; sourceTree = "<group>"; };
@@ -231,6 +298,7 @@
 		AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-180.png"; path = "images/appicon-180.png"; sourceTree = "<group>"; };
 		AA5767AA1AFAD896006014FC /* container-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "container-grey.png"; path = "images/container-grey.png"; sourceTree = "<group>"; };
 		AA5767AE1AFAE094006014FC /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Models/Friend.swift; sourceTree = "<group>"; };
+		AA577ABA1BB33F2D00168A6A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AA603DB21AF7E57600EF7B99 /* AdminService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminService.swift; path = DataAccess/AdminService.swift; sourceTree = "<group>"; };
 		AA603DB31AF7E57600EF7B99 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = DataAccess/UserService.swift; sourceTree = "<group>"; };
 		AA603DB61AF7E59300EF7B99 /* DateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTime.swift; path = Models/DateTime.swift; sourceTree = "<group>"; };
@@ -271,7 +339,7 @@
 		AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = Controllers/FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		AAD72BE91B06CBB4009CDAB5 /* Compound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Compound-Bridging-Header.h"; sourceTree = "<group>"; };
-		AAD7D85E1B6AFC7E00A4F8D2 /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
+		AAD7D85E1B6AFC7E00A4F8D2 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
 		AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleManager.swift; sourceTree = "<group>"; };
@@ -284,6 +352,7 @@
 		AAE52B761AE2F84300FFB13D /* star-group-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-group-2.png"; path = "images/star-group-2.png"; sourceTree = "<group>"; };
 		AAE52B771AE2F84300FFB13D /* star-group-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-group-3.png"; path = "images/star-group-3.png"; sourceTree = "<group>"; };
 		AAE52B781AE2F84300FFB13D /* star-group-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-group-4.png"; path = "images/star-group-4.png"; sourceTree = "<group>"; };
+		AAED280C1BC1FF9E00645C66 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AAF10DB01B043E030008CEF0 /* CompoundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundTests.swift; sourceTree = "<group>"; };
 		AAFB3FCF1ADED47100F44C8F /* compound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = compound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFB3FD31ADED47100F44C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -303,17 +372,14 @@
 		AAFB40221ADEEA0500F44C8F /* lightbulb-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lightbulb-2.png"; path = "images/lightbulb-2.png"; sourceTree = "<group>"; };
 		AAFB40231ADEEA0500F44C8F /* lightbulb-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lightbulb-3.png"; path = "images/lightbulb-3.png"; sourceTree = "<group>"; };
 		AAFB40241ADEEA0500F44C8F /* smallstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smallstar.png; path = images/smallstar.png; sourceTree = "<group>"; };
-		AAFB402F1ADEEA2C00F44C8F /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteDB.swift; path = SQLiteDB/SQLiteDB.swift; sourceTree = "<group>"; };
-		AAFB40301ADEEA2C00F44C8F /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String-Extras.swift"; path = "SQLiteDB/String-Extras.swift"; sourceTree = "<group>"; };
 		AAFB40331ADEEA3400F44C8F /* combinations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = combinations.txt; path = Data/combinations.txt; sourceTree = "<group>"; };
-		AAFB40341ADEEA3400F44C8F /* compound.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = compound.db; path = Data/compound.db; sourceTree = "<group>"; };
+		AAFB40341ADEEA3400F44C8F /* compound.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = compound.sqlite; path = Data/compound.sqlite; sourceTree = "<group>"; };
 		AAFB40351ADEEA3400F44C8F /* keywords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = keywords.txt; path = Data/keywords.txt; sourceTree = "<group>"; };
 		AAFB40361ADEEA3400F44C8F /* keywords2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = keywords2.xml; path = Data/keywords2.xml; sourceTree = "<group>"; };
 		AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleService.swift; path = DataAccess/PuzzleService.swift; sourceTree = "<group>"; };
 		AAFB403E1ADEEAEB00F44C8F /* Combination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combination.swift; path = Models/Combination.swift; sourceTree = "<group>"; };
 		AAFB40401ADEEB2E00F44C8F /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengesViewController.swift; path = Controllers/ChallengesViewController.swift; sourceTree = "<group>"; };
 		AAFB40421ADEEB9800F44C8F /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamReader.swift; path = DataAccess/StreamReader.swift; sourceTree = "<group>"; };
-		AAFB40461ADEEC6C00F44C8F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		AAFB40521ADEF6A100F44C8F /* GothaBla */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GothaBla; path = Resources/Fonts/gotham/GothaBla; sourceTree = "<group>"; };
 		AAFB40531ADEF6A100F44C8F /* GothaBlaIta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GothaBlaIta; path = Resources/Fonts/gotham/GothaBlaIta; sourceTree = "<group>"; };
 		AAFB40541ADEF6A100F44C8F /* GothaBol */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GothaBol; path = Resources/Fonts/gotham/GothaBol; sourceTree = "<group>"; };
@@ -394,23 +460,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA01674E1BD5E83300666D91 /* SQLite.framework in Frameworks */,
+				AAED280D1BC1FF9E00645C66 /* libsqlite3.0.tbd in Frameworks */,
 				AA2881671B03C5DA0066B95D /* Accelerate.framework in Frameworks */,
+				AA2EEE211BD357D40044BE9F /* FBSDKShareKit.framework in Frameworks */,
 				AA2881681B03C5DA0066B95D /* AudioToolbox.framework in Frameworks */,
 				AA2881691B03C5DA0066B95D /* CFNetwork.framework in Frameworks */,
 				AA28816A1B03C5DA0066B95D /* CoreGraphics.framework in Frameworks */,
 				AA28816B1B03C5DA0066B95D /* CoreLocation.framework in Frameworks */,
-				AA28816C1B03C5DA0066B95D /* libz.dylib in Frameworks */,
 				AACA0BAF1B043BC00029351B /* Parse.framework in Frameworks */,
 				AA28816D1B03C5DA0066B95D /* MobileCoreServices.framework in Frameworks */,
 				AA28816E1B03C5DA0066B95D /* QuartzCore.framework in Frameworks */,
-				AA081AFB1B138B1600F2228D /* FBSDKLoginKit.framework in Frameworks */,
 				AA28816F1B03C5DA0066B95D /* Security.framework in Frameworks */,
-				AA081AF91B138B0F00F2228D /* FBSDKShareKit.framework in Frameworks */,
-				AA9FF7511B5B0E9200A75571 /* FBSDKCoreKit.framework in Frameworks */,
+				AA2EEE1F1BD357D40044BE9F /* FBSDKCoreKit.framework in Frameworks */,
 				AA2881701B03C5DA0066B95D /* Social.framework in Frameworks */,
 				AA2881711B03C5DA0066B95D /* StoreKit.framework in Frameworks */,
 				AA2881721B03C5DA0066B95D /* SystemConfiguration.framework in Frameworks */,
-				AAFB40481ADEED2100F44C8F /* libsqlite3.dylib in Frameworks */,
+				AA2EEE201BD357D40044BE9F /* FBSDKLoginKit.framework in Frameworks */,
 				AACA0BAE1B043BC00029351B /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +491,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0167331BD5E81300666D91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA01673F1BD5E81300666D91 /* SQLite.framework */,
+				AA0167411BD5E81300666D91 /* SQLite iOS Tests.xctest */,
+				AA0167431BD5E81300666D91 /* SQLite.framework */,
+				AA0167451BD5E81300666D91 /* SQLite Mac Tests.xctest */,
+				AA0167471BD5E81300666D91 /* SQLiteCipher.framework */,
+				AA0167491BD5E81300666D91 /* SQLiteCipher iOS Tests.xctest */,
+				AA01674B1BD5E81300666D91 /* SQLiteCipher.framework */,
+				AA01674D1BD5E81300666D91 /* SQLiteCipher Mac Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA577AB91BB33F1000168A6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA577ABA1BB33F2D00168A6A /* StringExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		AAD7D8601B6BE4A600A4F8D2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,9 +528,10 @@
 		AAFB3FC61ADED47100F44C8F = {
 			isa = PBXGroup;
 			children = (
-				AA081AFA1B138B1600F2228D /* FBSDKLoginKit.framework */,
-				AA081AF81B138B0F00F2228D /* FBSDKShareKit.framework */,
-				AA081AF61B138AF600F2228D /* FBSDKCoreKit.framework */,
+				AAED280C1BC1FF9E00645C66 /* libsqlite3.0.tbd */,
+				AA2EEE1C1BD357D40044BE9F /* FBSDKCoreKit.framework */,
+				AA2EEE1D1BD357D40044BE9F /* FBSDKLoginKit.framework */,
+				AA2EEE1E1BD357D40044BE9F /* FBSDKShareKit.framework */,
 				AACA0BAC1B043BC00029351B /* Bolts.framework */,
 				AACA0BAD1B043BC00029351B /* Parse.framework */,
 				AA28815B1B03C5DA0066B95D /* Accelerate.framework */,
@@ -449,17 +539,16 @@
 				AA28815D1B03C5DA0066B95D /* CFNetwork.framework */,
 				AA28815E1B03C5DA0066B95D /* CoreGraphics.framework */,
 				AA28815F1B03C5DA0066B95D /* CoreLocation.framework */,
-				AA2881601B03C5DA0066B95D /* libz.dylib */,
 				AA2881611B03C5DA0066B95D /* MobileCoreServices.framework */,
 				AA2881621B03C5DA0066B95D /* QuartzCore.framework */,
 				AA2881631B03C5DA0066B95D /* Security.framework */,
 				AA2881641B03C5DA0066B95D /* Social.framework */,
 				AA2881651B03C5DA0066B95D /* StoreKit.framework */,
 				AA2881661B03C5DA0066B95D /* SystemConfiguration.framework */,
-				AAFB40461ADEEC6C00F44C8F /* libsqlite3.dylib */,
 				AAFB3FD11ADED47100F44C8F /* Compound */,
 				AAFB3FE71ADED47100F44C8F /* CompoundTests */,
 				AAFB3FD01ADED47100F44C8F /* Products */,
+				AA0167321BD5E81300666D91 /* SQLite.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -475,13 +564,13 @@
 		AAFB3FD11ADED47100F44C8F /* Compound */ = {
 			isa = PBXGroup;
 			children = (
+				AA577AB91BB33F1000168A6A /* Extensions */,
 				AAFB404A1ADEF5FF00F44C8F /* Resources */,
 				AAFB403B1ADEEA6700F44C8F /* Services */,
 				AAD7D8601B6BE4A600A4F8D2 /* Managers */,
 				AAFB40101ADEE9C900F44C8F /* Models */,
 				AAFB40111ADEE9CF00F44C8F /* Views */,
 				AAFB40121ADEE9D600F44C8F /* Controllers */,
-				AAFB402D1ADEEA1D00F44C8F /* SQLiteDB */,
 				AAFB402C1ADEEA1800F44C8F /* Data */,
 				AAFB401D1ADEE9F500F44C8F /* Images */,
 				AAFB3FD41ADED47100F44C8F /* AppDelegate.swift */,
@@ -643,20 +732,11 @@
 			isa = PBXGroup;
 			children = (
 				AAFB40331ADEEA3400F44C8F /* combinations.txt */,
-				AAFB40341ADEEA3400F44C8F /* compound.db */,
+				AAFB40341ADEEA3400F44C8F /* compound.sqlite */,
 				AAFB40351ADEEA3400F44C8F /* keywords.txt */,
 				AAFB40361ADEEA3400F44C8F /* keywords2.xml */,
 			);
 			name = Data;
-			sourceTree = "<group>";
-		};
-		AAFB402D1ADEEA1D00F44C8F /* SQLiteDB */ = {
-			isa = PBXGroup;
-			children = (
-				AAFB402F1ADEEA2C00F44C8F /* SQLiteDB.swift */,
-				AAFB40301ADEEA2C00F44C8F /* String-Extras.swift */,
-			);
-			name = SQLiteDB;
 			sourceTree = "<group>";
 		};
 		AAFB403B1ADEEA6700F44C8F /* Services */ = {
@@ -669,7 +749,7 @@
 				AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */,
 				AA9FF7541B5C40D000A75571 /* Global.swift */,
 				AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */,
-				AAD7D85E1B6AFC7E00A4F8D2 /* ErrorService.swift */,
+				AAD7D85E1B6AFC7E00A4F8D2 /* EventService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -763,6 +843,7 @@
 				AAFB3FCB1ADED47100F44C8F /* Sources */,
 				AAFB3FCC1ADED47100F44C8F /* Frameworks */,
 				AAFB3FCD1ADED47100F44C8F /* Resources */,
+				AA47C9A41BB1CBE90034951F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -797,7 +878,9 @@
 		AAFB3FC71ADED47100F44C8F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Devious Logic";
 				TargetAttributes = {
 					AAFB3FCE1ADED47100F44C8F = {
@@ -822,6 +905,12 @@
 			mainGroup = AAFB3FC61ADED47100F44C8F;
 			productRefGroup = AAFB3FD01ADED47100F44C8F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AA0167331BD5E81300666D91 /* Products */;
+					ProjectRef = AA0167321BD5E81300666D91 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AAFB3FCE1ADED47100F44C8F /* compound */,
@@ -830,12 +919,71 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		AA01673F1BD5E81300666D91 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = AA01673E1BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA0167411BD5E81300666D91 /* SQLite iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLite iOS Tests.xctest";
+			remoteRef = AA0167401BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA0167431BD5E81300666D91 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = AA0167421BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA0167451BD5E81300666D91 /* SQLite Mac Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLite Mac Tests.xctest";
+			remoteRef = AA0167441BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA0167471BD5E81300666D91 /* SQLiteCipher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLiteCipher.framework;
+			remoteRef = AA0167461BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA0167491BD5E81300666D91 /* SQLiteCipher iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteCipher iOS Tests.xctest";
+			remoteRef = AA0167481BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA01674B1BD5E81300666D91 /* SQLiteCipher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLiteCipher.framework;
+			remoteRef = AA01674A1BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA01674D1BD5E81300666D91 /* SQLiteCipher Mac Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteCipher Mac Tests.xctest";
+			remoteRef = AA01674C1BD5E81300666D91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		AAFB3FCD1ADED47100F44C8F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAFB40381ADEEA3400F44C8F /* compound.db in Resources */,
+				AAFB40381ADEEA3400F44C8F /* compound.sqlite in Resources */,
 				AA4FA4EB1AF2E0DA004D6934 /* appicon-80.png in Resources */,
 				AAFB408A1ADEF6A100F44C8F /* Gotham-Thin.otf in Resources */,
 				AA8C7D671B6C63D000AE4E4E /* star-count-4.png in Resources */,
@@ -979,13 +1127,13 @@
 				AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */,
 				AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */,
 				AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */,
+				AA577ABB1BB33F2D00168A6A /* StringExtension.swift in Sources */,
 				AA603DBE1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift in Sources */,
 				AAFB401B1ADEE9F200F44C8F /* PuzzleViewController.swift in Sources */,
-				AAD7D85F1B6AFC7E00A4F8D2 /* ErrorService.swift in Sources */,
+				AAD7D85F1B6AFC7E00A4F8D2 /* EventService.swift in Sources */,
 				AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */,
 				AAD7D86E1B6C594C00A4F8D2 /* CompoundCell.swift in Sources */,
 				AA1826DA1AE7231B00A5E609 /* GiveUpViewController.swift in Sources */,
-				AAFB40321ADEEA2C00F44C8F /* String-Extras.swift in Sources */,
 				AA603DB81AF7E59300EF7B99 /* DateTime.swift in Sources */,
 				AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */,
 				AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */,
@@ -1010,7 +1158,6 @@
 				AAFB403D1ADEEA9900F44C8F /* PuzzleService.swift in Sources */,
 				AA6ECE531B5EE06A00FAD8B3 /* FriendCell.swift in Sources */,
 				AA65FB471B5D63D900BE9F01 /* Statistics.swift in Sources */,
-				AAFB40311ADEEA2C00F44C8F /* SQLiteDB.swift in Sources */,
 				AAD7D8681B6BEEBC00A4F8D2 /* FacebookManager.swift in Sources */,
 				AAFB403F1ADEEAEB00F44C8F /* Combination.swift in Sources */,
 				AA603DB91AF7E59300EF7B99 /* User.swift in Sources */,
@@ -1058,6 +1205,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1136,6 +1284,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Compound/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deviouslogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = compound;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Compound-Bridging-Header.h";
@@ -1156,6 +1305,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Compound/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deviouslogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = compound;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Compound-Bridging-Header.h";
@@ -1181,6 +1331,7 @@
 				);
 				INFOPLIST_FILE = CompoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deviouslogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CompoundTests;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1202,6 +1353,7 @@
 				);
 				INFOPLIST_FILE = CompoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deviouslogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CompoundTests;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

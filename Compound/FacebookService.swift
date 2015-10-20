@@ -24,11 +24,11 @@ class FacebookService {
             }
         }
         
-        var fbRequest = FBSDKGraphRequest(graphPath:"/me/\(friendType)?fields=id,name,picture", parameters: nil);
+        let fbRequest = FBSDKGraphRequest(graphPath:"/me/\(friendType)?fields=id,name,picture", parameters: nil);
         fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             if error == nil {
-                var resultDict = result as! NSDictionary
-                var data: NSArray = resultDict.objectForKey("data") as! NSArray
+                let resultDict = result as! NSDictionary
+                let data: NSArray = resultDict.objectForKey("data") as! NSArray
                 totalFriends = data.count
                 
                 if data.count == 0 {
@@ -108,9 +108,9 @@ class FacebookService {
     func loadProfilePictureFromUrl(url: String, completion: (result: UIImage!, error: NSError!) -> Void) {
         let urlRequest = NSURLRequest(URL: NSURL(string: url)!)
         
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             if error == nil {
-                completion(result: UIImage(data: data)!, error: nil)
+                completion(result: UIImage(data: data!), error: nil)
             } else {
                 completion(result: nil, error: error)
             }
@@ -121,7 +121,7 @@ class FacebookService {
         let url = NSURL(string: "https://graph.facebook.com/\(facebookUserId)/picture?type=normal")
         let urlRequest = NSURLRequest(URL: url!)
         
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             if error == nil {
                 completion(result: data, error: nil)
             } else {
@@ -136,13 +136,21 @@ class FacebookService {
         var response: NSURLResponse?
         var error: NSError?
         
-        let result = NSURLConnection.sendSynchronousRequest(urlRequest, returningResponse: &response, error: &error)
+        let result: NSData?
+        do {
+            result = try NSURLConnection.sendSynchronousRequest(urlRequest, returningResponse: &response)
+        } catch let error1 as NSError {
+            error = error1
+            result = nil
+        }
         
         if error == nil {
             return (result, nil)
         } else {
-            EventService.logError(NSError(), description: "Could not load Facebook profile picture synchronously for \(facebookUserId)", object: "FacebookService", function: "loadProfilePicture")
-            return (nil, NSError())
+            let error = NSError(domain: "FacebookService", code: 100, userInfo: [NSLocalizedDescriptionKey: "loadProfilePicture"])
+            
+            EventService.logError(error, description: "Could not load Facebook profile picture synchronously for \(facebookUserId)", object: "FacebookService", function: "loadProfilePicture")
+            return (nil, error)
         }
     }
 }

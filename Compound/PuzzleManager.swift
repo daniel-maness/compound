@@ -9,10 +9,10 @@
 import Foundation
 
 class PuzzleManager {
-    private let puzzleService = PuzzleService()
+    private let puzzleService: PuzzleService
     
     init() {
-        
+        puzzleService = PuzzleService()
     }
     
     func newPuzzle() -> Puzzle {
@@ -32,12 +32,12 @@ class PuzzleManager {
         if hintsUsed == 1 {
             hint = "____"
         } else if hintsUsed == 2 {
-            for i in 0..<count(keyword) {
+            for _ in 0..<keyword.characters.count {
                 hint += " _"
             }
         } else if hintsUsed == 3 {
-            hint = keyword.subStringTo(1)
-            for i in 1..<count(keyword) {
+            hint = keyword.substringTo(0)
+            for _ in 1..<keyword.characters.count {
                 hint += " _"
             }
         }
