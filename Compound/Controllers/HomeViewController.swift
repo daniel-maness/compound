@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController {    
     /* Actions */
     @IBAction func onPlayPressed(sender: UIButton) {
         let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleViewController") as! PuzzleViewController
@@ -32,6 +32,6 @@ class HomeViewController: BaseViewController {
     }
     
     override func viewDidLoad() {
-        
+    
     }
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -850,7 +849,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioy-8C-eIT" customClass="AnswerView" customModule="compound" customModuleProvider="target">
                                 <rect key="frame" x="30" y="177" width="260" height="75"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -996,10 +994,16 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" image="container-black.png" translatesAutoresizingMaskIntoConstraints="NO" id="NON-AO-vLF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                </variation>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="container-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="3F1-gI-0OF">
                                 <rect key="frame" x="30" y="40" width="260" height="241"/>
                                 <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaU-dQ-MiG">
                                 <rect key="frame" x="256" y="43" width="32" height="32"/>
@@ -1007,6 +1011,9 @@
                                 <state key="normal" title="HOME" image="homeicon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="117" height="65"/>
+                                </variation>
                                 <connections>
                                     <action selector="onHomePressed:" destination="U0X-Qt-IGt" eventType="touchUpInside" id="eFv-P6-sbg"/>
                                 </connections>
@@ -1020,6 +1027,9 @@
                                 <state key="highlighted" title="NEXT" backgroundImage="container-white.png">
                                     <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="91" height="40"/>
+                                </variation>
                                 <connections>
                                     <segue destination="9Bb-KE-iFr" kind="show" id="Mjh-MX-Krp"/>
                                 </connections>
@@ -1027,14 +1037,23 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="smallstar.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-cN-VPN">
                                 <rect key="frame" x="72" y="49" width="24" height="24"/>
                                 <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                </variation>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="group-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="jEH-9f-mqX">
                                 <rect key="frame" x="32" y="45" width="32" height="32"/>
                                 <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                </variation>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="profile-picture-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oyt-EW-miF">
                                 <rect key="frame" x="32" y="45" width="32" height="32"/>
                                 <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
+                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYw-Kr-Sf0">
                                 <rect key="frame" x="101" y="52" width="64" height="24"/>
@@ -1042,6 +1061,9 @@
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="23" height="18"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-aB-mYE">
                                 <rect key="frame" x="30" y="105" width="260" height="35"/>
@@ -1049,10 +1071,16 @@
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="259" height="36"/>
+                                </variation>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="logo-no-text.png" translatesAutoresizingMaskIntoConstraints="NO" id="aVA-IG-24E">
                                 <rect key="frame" x="90" y="148" width="140" height="75"/>
                                 <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="223"/>
+                                </variation>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -1175,7 +1203,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="du4-et-XzW" customClass="AnswerView" customModule="compound" customModuleProvider="target">
                                 <rect key="frame" x="30" y="77" width="260" height="75"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -1215,6 +1242,6 @@
         <image name="star-group-4.png" width="640" height="159"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Kz-8D-V0O"/>
+        <segue reference="Mjh-MX-Krp"/>
     </inferredMetricsTieBreakers>
 </document>

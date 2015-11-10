@@ -29,7 +29,7 @@ class PuzzleService {
         let keywordId = Expression<Int>("KeywordId")
         var keywordIds: [Int] = []
         
-        for keyword in db.prepare(keywordView) {
+        for keyword in self.db.prepare(keywordView) {
             keywordIds.append(keyword[keywordId])
         }
         

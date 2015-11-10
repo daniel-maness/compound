@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TotalStarsProgressView" customModule="compound" customModuleProvider="target">
+            <connections>
+                <outlet property="progressBar" destination="vBg-mV-ZzY" id="r8A-vt-M2d"/>
+                <outlet property="starIcon" destination="18z-T2-oRt" id="jvs-kr-JbI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="progress-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="18z-T2-oRt">
+                    <rect key="frame" x="0.0" y="-159" width="159" height="159"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="18z-T2-oRt" secondAttribute="height" multiplier="1:1" id="TYl-0d-y51"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="TYl-0d-y51"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="TYl-0d-y51"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RCH-WV-yag">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <subviews>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" progressImage="bar-1.png" trackImage="bar-background.png" translatesAutoresizingMaskIntoConstraints="NO" id="vBg-mV-ZzY">
+                            <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
+                            <animations/>
+                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <rect key="frame" x="0.0" y="-2" width="150" height="2.5"/>
+                            </variation>
+                        </progressView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="vBg-mV-ZzY" secondAttribute="trailing" constant="10" id="I3H-1T-ceR">
+                            <variation key="widthClass=compact" constant="0.0"/>
+                        </constraint>
+                        <constraint firstItem="vBg-mV-ZzY" firstAttribute="centerY" secondItem="RCH-WV-yag" secondAttribute="centerY" id="aFd-zS-EZK"/>
+                        <constraint firstItem="vBg-mV-ZzY" firstAttribute="leading" secondItem="RCH-WV-yag" secondAttribute="leading" constant="10" id="ami-sU-HcF">
+                            <variation key="widthClass=compact" constant="20" symbolic="YES"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="vBg-mV-ZzY"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="I3H-1T-ceR"/>
+                            <exclude reference="aFd-zS-EZK"/>
+                            <exclude reference="ami-sU-HcF"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="vBg-mV-ZzY"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="I3H-1T-ceR"/>
+                            <include reference="aFd-zS-EZK"/>
+                            <include reference="ami-sU-HcF"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="18z-T2-oRt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5dU-tJ-IPh"/>
+                <constraint firstAttribute="bottom" secondItem="18z-T2-oRt" secondAttribute="bottom" id="VP3-Ah-v3Z"/>
+                <constraint firstAttribute="trailing" secondItem="RCH-WV-yag" secondAttribute="trailing" id="dqw-LW-K9F"/>
+                <constraint firstItem="RCH-WV-yag" firstAttribute="bottom" secondItem="18z-T2-oRt" secondAttribute="bottom" id="f7r-Kb-EZX"/>
+                <constraint firstItem="18z-T2-oRt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nn2-Xw-G5u"/>
+                <constraint firstItem="RCH-WV-yag" firstAttribute="top" secondItem="18z-T2-oRt" secondAttribute="top" id="uRh-e6-QTv"/>
+                <constraint firstItem="RCH-WV-yag" firstAttribute="leading" secondItem="18z-T2-oRt" secondAttribute="trailing" id="ysS-he-shD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="18z-T2-oRt"/>
+                    <exclude reference="RCH-WV-yag"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="5dU-tJ-IPh"/>
+                    <exclude reference="VP3-Ah-v3Z"/>
+                    <exclude reference="nn2-Xw-G5u"/>
+                    <exclude reference="dqw-LW-K9F"/>
+                    <exclude reference="f7r-Kb-EZX"/>
+                    <exclude reference="uRh-e6-QTv"/>
+                    <exclude reference="ysS-he-shD"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="18z-T2-oRt"/>
+                    <include reference="RCH-WV-yag"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="5dU-tJ-IPh"/>
+                    <include reference="VP3-Ah-v3Z"/>
+                    <include reference="nn2-Xw-G5u"/>
+                    <include reference="dqw-LW-K9F"/>
+                    <include reference="f7r-Kb-EZX"/>
+                    <include reference="uRh-e6-QTv"/>
+                    <include reference="ysS-he-shD"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="488" y="376"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bar-1.png" width="1200" height="600"/>
+        <image name="bar-background.png" width="1200" height="600"/>
+        <image name="progress-star.png" width="159" height="159"/>
+    </resources>
+</document>

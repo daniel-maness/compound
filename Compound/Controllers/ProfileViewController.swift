@@ -22,7 +22,6 @@ class ProfileViewController: BaseViewController {
     /* Outlets */
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
-    @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var totalPuzzlesLabel: UILabel!
     @IBOutlet weak var averageStarsLabel: UILabel!
     
@@ -38,15 +37,14 @@ class ProfileViewController: BaseViewController {
     /* Setup */
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserStats()
-        setupView()
+        //getUserStats()
+        //setupView()
         //userService.findFriends()
     }
     
     func setupView() {
         shareButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         self.setUserPicture(profilePicture)
-        totalStarsLabel.text = totalStars
         totalPuzzlesLabel.text = totalPuzzles
         averageStarsLabel.text = averageStars
     }
