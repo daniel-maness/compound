@@ -133,8 +133,6 @@
 		DCE7BBC71B7438740040D364 /* SQLiteCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = DCE7BBA01B7436140040D364 /* SQLiteCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCE7BBC91B743A320040D364 /* CipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE7BBC81B743A320040D364 /* CipherTests.swift */; };
 		DCE7BBCA1B743A320040D364 /* CipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE7BBC81B743A320040D364 /* CipherTests.swift */; };
-		DCE7BBD41B743C970040D364 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE7BB711B7434310040D364 /* libsqlcipher.a */; };
-		DCE7BBD51B743C9C0040D364 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE7BB711B7434310040D364 /* libsqlcipher.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,13 +150,6 @@
 			remoteGlobalIDString = DC7253AB1B52ADEB009B38B1;
 			remoteInfo = "SQLite Mac";
 		};
-		DCE7BB701B7434310040D364 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCE7BB6B1B7434310040D364 /* sqlcipher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D;
-			remoteInfo = sqlcipher;
-		};
 		DCE7BB851B7434F90040D364 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC2B29D91B26F718001C60EA /* Project object */;
@@ -166,26 +157,12 @@
 			remoteGlobalIDString = DCE7BB791B7434F90040D364;
 			remoteInfo = SQLiteCipher;
 		};
-		DCE7BBA51B7436D10040D364 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCE7BB6B1B7434310040D364 /* sqlcipher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = sqlcipher;
-		};
 		DCE7BBBB1B7438620040D364 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC2B29D91B26F718001C60EA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DCE7BBAF1B7438610040D364;
 			remoteInfo = "SQLiteCipher Mac";
-		};
-		DCE7BBD01B743C220040D364 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCE7BB6B1B7434310040D364 /* sqlcipher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = sqlcipher;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -233,7 +210,6 @@
 		DCA7B9E71B4D4F30006A9F04 /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		DCAA22851B4A9CB2005E00A2 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		DCDF55B21B49ACBC00E1A168 /* Collation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collation.swift; sourceTree = "<group>"; };
-		DCE7BB6B1B7434310040D364 /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlcipher.xcodeproj; path = Vendor/sqlcipher/sqlcipher.xcodeproj; sourceTree = "<group>"; };
 		DCE7BB721B7434B70040D364 /* Cipher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cipher.swift; sourceTree = "<group>"; };
 		DCE7BB7A1B7434F90040D364 /* SQLiteCipher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SQLiteCipher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE7BB831B7434F90040D364 /* SQLiteCipher iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SQLiteCipher iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,7 +261,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE7BBD41B743C970040D364 /* libsqlcipher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +276,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE7BBD51B743C9C0040D364 /* libsqlcipher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +299,6 @@
 				DC2B2A001B26FD44001C60EA /* Tests */,
 				DC2B2A0C1B26FDEF001C60EA /* Supporting Files */,
 				DC2B29E31B26F718001C60EA /* Products */,
-				DCE7BB6B1B7434310040D364 /* sqlcipher.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -438,14 +411,6 @@
 				DC72349D1B49D3AB007F513E /* Setter.swift */,
 			);
 			path = Typed;
-			sourceTree = "<group>";
-		};
-		DCE7BB6C1B7434310040D364 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DCE7BB711B7434310040D364 /* libsqlcipher.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		DCE7BB941B7435E90040D364 /* SQLite */ = {
@@ -602,7 +567,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DCE7BBA61B7436D10040D364 /* PBXTargetDependency */,
 			);
 			name = "SQLiteCipher iOS";
 			productName = SQLiteCipher;
@@ -639,7 +603,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DCE7BBD11B743C220040D364 /* PBXTargetDependency */,
 			);
 			name = "SQLiteCipher Mac";
 			productName = "SQLiteCipher Mac";
@@ -710,12 +673,6 @@
 			mainGroup = DC2B29D81B26F718001C60EA;
 			productRefGroup = DC2B29E31B26F718001C60EA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DCE7BB6C1B7434310040D364 /* Products */;
-					ProjectRef = DCE7BB6B1B7434310040D364 /* sqlcipher.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DC2B29E11B26F718001C60EA /* SQLite iOS */,
@@ -729,16 +686,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DCE7BB711B7434310040D364 /* libsqlcipher.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libsqlcipher.a;
-			remoteRef = DCE7BB701B7434310040D364 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DC2B29E01B26F718001C60EA /* Resources */ = {
@@ -980,20 +927,10 @@
 			target = DCE7BB791B7434F90040D364 /* SQLiteCipher iOS */;
 			targetProxy = DCE7BB851B7434F90040D364 /* PBXContainerItemProxy */;
 		};
-		DCE7BBA61B7436D10040D364 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = sqlcipher;
-			targetProxy = DCE7BBA51B7436D10040D364 /* PBXContainerItemProxy */;
-		};
 		DCE7BBBC1B7438620040D364 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCE7BBAF1B7438610040D364 /* SQLiteCipher Mac */;
 			targetProxy = DCE7BBBB1B7438620040D364 /* PBXContainerItemProxy */;
-		};
-		DCE7BBD11B743C220040D364 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = sqlcipher;
-			targetProxy = DCE7BBD01B743C220040D364 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

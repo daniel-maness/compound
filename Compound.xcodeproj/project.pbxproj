@@ -56,6 +56,7 @@
 		AA4FA4EB1AF2E0DA004D6934 /* appicon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E61AF2E0DA004D6934 /* appicon-80.png */; };
 		AA4FA4EC1AF2E0DA004D6934 /* appicon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E71AF2E0DA004D6934 /* appicon-120.png */; };
 		AA4FA4ED1AF2E0DA004D6934 /* appicon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */; };
+		AA55ECB31BF2CB6C00D7DF18 /* SQLite.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA01673F1BD5E81300666D91 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA5767AB1AFAD896006014FC /* container-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5767AA1AFAD896006014FC /* container-grey.png */; };
 		AA5767AF1AFAE094006014FC /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5767AE1AFAE094006014FC /* Friend.swift */; };
 		AA577ABB1BB33F2D00168A6A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA577ABA1BB33F2D00168A6A /* StringExtension.swift */; };
@@ -277,6 +278,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AA55ECB31BF2CB6C00D7DF18 /* SQLite.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,7 +1366,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviouslogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = compound;
-				PROVISIONING_PROFILE = "b1596934-7b51-4ed2-8308-e64290ed1db2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Compound-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1386,7 +1388,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviouslogic.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = compound;
-				PROVISIONING_PROFILE = "b1596934-7b51-4ed2-8308-e64290ed1db2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compound/Compound-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
