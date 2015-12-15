@@ -25,10 +25,6 @@
 		AA0167941BD6C92900666D91 /* trophy-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0167891BD6C92900666D91 /* trophy-3.png */; };
 		AA0167951BD6C92900666D91 /* trophy-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01678A1BD6C92900666D91 /* trophy-4.png */; };
 		AA0167961BD6C92900666D91 /* trophy-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01678B1BD6C92900666D91 /* trophy-5.png */; };
-		AA01679A1BD6EC3500666D91 /* TotalStarsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0167981BD6EC3500666D91 /* TotalStarsProgressView.swift */; };
-		AA01679B1BD6EC3500666D91 /* TotalStarsProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0167991BD6EC3500666D91 /* TotalStarsProgressView.xib */; };
-		AA01679E1BD7053F00666D91 /* FourStarsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01679C1BD7053F00666D91 /* FourStarsProgressView.swift */; };
-		AA01679F1BD7053F00666D91 /* FourStarsProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA01679D1BD7053F00666D91 /* FourStarsProgressView.xib */; };
 		AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */; };
 		AA1826CC1AE7220F00A5E609 /* overlay-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CB1AE7220F00A5E609 /* overlay-mask.png */; };
 		AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */; };
@@ -57,9 +53,18 @@
 		AA4FA4EC1AF2E0DA004D6934 /* appicon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E71AF2E0DA004D6934 /* appicon-120.png */; };
 		AA4FA4ED1AF2E0DA004D6934 /* appicon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */; };
 		AA55ECB31BF2CB6C00D7DF18 /* SQLite.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA01673F1BD5E81300666D91 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA55ECBF1BF52C7000D7DF18 /* progress-star.png in Resources */ = {isa = PBXBuildFile; fileRef = AA55ECBE1BF52C7000D7DF18 /* progress-star.png */; };
+		AA55ECC51BF56DDB00D7DF18 /* FourStarsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55ECC11BF56DDB00D7DF18 /* FourStarsProgressView.swift */; };
+		AA55ECC61BF56DDB00D7DF18 /* FourStarsProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA55ECC21BF56DDB00D7DF18 /* FourStarsProgressView.xib */; };
+		AA55ECC71BF56DDB00D7DF18 /* TotalStarsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55ECC31BF56DDB00D7DF18 /* TotalStarsProgressView.swift */; };
+		AA55ECC81BF56DDB00D7DF18 /* TotalStarsProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA55ECC41BF56DDB00D7DF18 /* TotalStarsProgressView.xib */; };
+		AA55ECCA1BF56DEB00D7DF18 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA55ECC91BF56DEB00D7DF18 /* AnswerView.xib */; };
+		AA55ECCF1BF56F4D00D7DF18 /* FlagsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55ECCB1BF56F4D00D7DF18 /* FlagsProgressView.swift */; };
+		AA55ECD01BF56F4D00D7DF18 /* FlagsProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA55ECCC1BF56F4D00D7DF18 /* FlagsProgressView.xib */; };
+		AA55ECD11BF56F4D00D7DF18 /* PoopProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55ECCD1BF56F4D00D7DF18 /* PoopProgressView.swift */; };
+		AA55ECD21BF56F4D00D7DF18 /* PoopProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA55ECCE1BF56F4D00D7DF18 /* PoopProgressView.xib */; };
 		AA5767AB1AFAD896006014FC /* container-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5767AA1AFAD896006014FC /* container-grey.png */; };
 		AA5767AF1AFAE094006014FC /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5767AE1AFAE094006014FC /* Friend.swift */; };
-		AA577ABB1BB33F2D00168A6A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA577ABA1BB33F2D00168A6A /* StringExtension.swift */; };
 		AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB21AF7E57600EF7B99 /* AdminService.swift */; };
 		AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB31AF7E57600EF7B99 /* UserService.swift */; };
 		AA603DB81AF7E59300EF7B99 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA603DB61AF7E59300EF7B99 /* DateTime.swift */; };
@@ -71,22 +76,28 @@
 		AA65FB491B5D71B900BE9F01 /* exit-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB481B5D71B900BE9F01 /* exit-button.png */; };
 		AA65FB4B1B5D748C00BE9F01 /* exit-button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */; };
 		AA65FB4F1B5D7E0300BE9F01 /* profile-picture-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */; };
-		AA6ECE511B5EBA0D00FAD8B3 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */; };
-		AA6ECE531B5EE06A00FAD8B3 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */; };
 		AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */; };
 		AA70D4941AE8213900433140 /* logo-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70D4931AE8213900433140 /* logo-no-text.png */; };
-		AA8002A01B8800CA00F8E377 /* progress-star.png in Resources */ = {isa = PBXBuildFile; fileRef = AA80029E1B8800CA00F8E377 /* progress-star.png */; };
 		AA8002A11B8800CA00F8E377 /* progress-trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA80029F1B8800CA00F8E377 /* progress-trophy.png */; };
 		AA8C7D641B6C63D000AE4E4E /* star-count-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D601B6C63D000AE4E4E /* star-count-1.png */; };
 		AA8C7D651B6C63D000AE4E4E /* star-count-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D611B6C63D000AE4E4E /* star-count-2.png */; };
 		AA8C7D661B6C63D000AE4E4E /* star-count-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D621B6C63D000AE4E4E /* star-count-3.png */; };
 		AA8C7D671B6C63D000AE4E4E /* star-count-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8C7D631B6C63D000AE4E4E /* star-count-4.png */; };
+		AA9BF7D71BF59E5600994A23 /* ChallengeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7D51BF59E5600994A23 /* ChallengeResultsViewController.swift */; };
+		AA9BF7D81BF59E5600994A23 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7D61BF59E5600994A23 /* LoginViewController.swift */; };
+		AA9BF7E21BF59E6900994A23 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7E11BF59E6900994A23 /* StringExtension.swift */; };
+		AA9BF7E51BF59E7C00994A23 /* CompoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7E31BF59E7C00994A23 /* CompoundCell.swift */; };
+		AA9BF7E61BF59E7C00994A23 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7E41BF59E7C00994A23 /* FriendCell.swift */; };
+		AA9BF7F41BF59E9700994A23 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7F01BF59E9700994A23 /* ChallengeManager.swift */; };
+		AA9BF7F51BF59E9700994A23 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7F11BF59E9700994A23 /* FacebookManager.swift */; };
+		AA9BF7F61BF59E9700994A23 /* PuzzleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7F21BF59E9700994A23 /* PuzzleManager.swift */; };
+		AA9BF7F71BF59E9700994A23 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7F31BF59E9700994A23 /* UserManager.swift */; };
+		AA9BF7FA1BF59EA600994A23 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7F81BF59EA600994A23 /* EventService.swift */; };
+		AA9BF7FB1BF59EA600994A23 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9BF7F91BF59EA600994A23 /* FacebookService.swift */; };
 		AA9F1E0A1B85762000FADB8C /* challenge-finished.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E071B85762000FADB8C /* challenge-finished.png */; };
 		AA9F1E0B1B85762000FADB8C /* challenge-received.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E081B85762000FADB8C /* challenge-received.png */; };
 		AA9F1E0C1B85762000FADB8C /* challenge-sent.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F1E091B85762000FADB8C /* challenge-sent.png */; };
 		AA9FF7551B5C40D000A75571 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7541B5C40D000A75571 /* Global.swift */; };
-		AA9FF7571B5C991A00A75571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7561B5C991A00A75571 /* LoginViewController.swift */; };
-		AAADBFE81B863A3700820E7C /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAADBFE71B863A3700820E7C /* AnswerView.xib */; };
 		AAADBFEA1B863C5600820E7C /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADBFE91B863C5600820E7C /* AnswerView.swift */; };
 		AACA0BAE1B043BC00029351B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAC1B043BC00029351B /* Bolts.framework */; };
 		AACA0BAF1B043BC00029351B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACA0BAD1B043BC00029351B /* Parse.framework */; };
@@ -95,13 +106,6 @@
 		AAD72BDE1B06A579009CDAB5 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BDD1B06A579009CDAB5 /* EmailLoginViewController.swift */; };
 		AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */; };
 		AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */; };
-		AAD7D85F1B6AFC7E00A4F8D2 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D85E1B6AFC7E00A4F8D2 /* EventService.swift */; };
-		AAD7D8621B6BE4BF00A4F8D2 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */; };
-		AAD7D8641B6BE4C800A4F8D2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */; };
-		AAD7D8661B6BE4D800A4F8D2 /* PuzzleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */; };
-		AAD7D8681B6BEEBC00A4F8D2 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D8671B6BEEBC00A4F8D2 /* FacebookManager.swift */; };
-		AAD7D86C1B6C54CA00A4F8D2 /* ChallengeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D86B1B6C54CA00A4F8D2 /* ChallengeResultsViewController.swift */; };
-		AAD7D86E1B6C594C00A4F8D2 /* CompoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7D86D1B6C594C00A4F8D2 /* CompoundCell.swift */; };
 		AAE52B711AE2EC3200FFB13D /* logo-left.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B6F1AE2EC3200FFB13D /* logo-left.png */; };
 		AAE52B721AE2EC3200FFB13D /* logo-right.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B701AE2EC3200FFB13D /* logo-right.png */; };
 		AAE52B791AE2F84300FFB13D /* star-group-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE52B751AE2F84300FFB13D /* star-group-1.png */; };
@@ -303,10 +307,6 @@
 		AA0167891BD6C92900666D91 /* trophy-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-3.png"; sourceTree = "<group>"; };
 		AA01678A1BD6C92900666D91 /* trophy-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-4.png"; sourceTree = "<group>"; };
 		AA01678B1BD6C92900666D91 /* trophy-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-5.png"; sourceTree = "<group>"; };
-		AA0167981BD6EC3500666D91 /* TotalStarsProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalStarsProgressView.swift; sourceTree = "<group>"; };
-		AA0167991BD6EC3500666D91 /* TotalStarsProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalStarsProgressView.xib; sourceTree = "<group>"; };
-		AA01679C1BD7053F00666D91 /* FourStarsProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourStarsProgressView.swift; sourceTree = "<group>"; };
-		AA01679D1BD7053F00666D91 /* FourStarsProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourStarsProgressView.xib; sourceTree = "<group>"; };
 		AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = Models/Challenge.swift; sourceTree = "<group>"; };
 		AA1826CB1AE7220F00A5E609 /* overlay-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "overlay-mask.png"; path = "images/overlay-mask.png"; sourceTree = "<group>"; };
 		AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Puzzle.storyboard; path = Views/Puzzle.storyboard; sourceTree = "<group>"; };
@@ -334,9 +334,18 @@
 		AA4FA4E61AF2E0DA004D6934 /* appicon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-80.png"; path = "images/appicon-80.png"; sourceTree = "<group>"; };
 		AA4FA4E71AF2E0DA004D6934 /* appicon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-120.png"; path = "images/appicon-120.png"; sourceTree = "<group>"; };
 		AA4FA4E81AF2E0DA004D6934 /* appicon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-180.png"; path = "images/appicon-180.png"; sourceTree = "<group>"; };
+		AA55ECBE1BF52C7000D7DF18 /* progress-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-star.png"; sourceTree = "<group>"; };
+		AA55ECC11BF56DDB00D7DF18 /* FourStarsProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourStarsProgressView.swift; path = Views/ProgressViews/FourStarsProgressView.swift; sourceTree = "<group>"; };
+		AA55ECC21BF56DDB00D7DF18 /* FourStarsProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FourStarsProgressView.xib; path = Views/ProgressViews/FourStarsProgressView.xib; sourceTree = "<group>"; };
+		AA55ECC31BF56DDB00D7DF18 /* TotalStarsProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalStarsProgressView.swift; path = Views/ProgressViews/TotalStarsProgressView.swift; sourceTree = "<group>"; };
+		AA55ECC41BF56DDB00D7DF18 /* TotalStarsProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TotalStarsProgressView.xib; path = Views/ProgressViews/TotalStarsProgressView.xib; sourceTree = "<group>"; };
+		AA55ECC91BF56DEB00D7DF18 /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnswerView.xib; path = Views/AnswerView.xib; sourceTree = "<group>"; };
+		AA55ECCB1BF56F4D00D7DF18 /* FlagsProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlagsProgressView.swift; path = Views/ProgressViews/FlagsProgressView.swift; sourceTree = "<group>"; };
+		AA55ECCC1BF56F4D00D7DF18 /* FlagsProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlagsProgressView.xib; path = Views/ProgressViews/FlagsProgressView.xib; sourceTree = "<group>"; };
+		AA55ECCD1BF56F4D00D7DF18 /* PoopProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoopProgressView.swift; path = Views/ProgressViews/PoopProgressView.swift; sourceTree = "<group>"; };
+		AA55ECCE1BF56F4D00D7DF18 /* PoopProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PoopProgressView.xib; path = Views/ProgressViews/PoopProgressView.xib; sourceTree = "<group>"; };
 		AA5767AA1AFAD896006014FC /* container-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "container-grey.png"; path = "images/container-grey.png"; sourceTree = "<group>"; };
 		AA5767AE1AFAE094006014FC /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Models/Friend.swift; sourceTree = "<group>"; };
-		AA577ABA1BB33F2D00168A6A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AA603DB21AF7E57600EF7B99 /* AdminService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminService.swift; path = DataAccess/AdminService.swift; sourceTree = "<group>"; };
 		AA603DB31AF7E57600EF7B99 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = DataAccess/UserService.swift; sourceTree = "<group>"; };
 		AA603DB61AF7E59300EF7B99 /* DateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTime.swift; path = Models/DateTime.swift; sourceTree = "<group>"; };
@@ -348,22 +357,28 @@
 		AA65FB481B5D71B900BE9F01 /* exit-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-button.png"; path = "images/exit-button.png"; sourceTree = "<group>"; };
 		AA65FB4A1B5D748C00BE9F01 /* exit-button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-button-highlighted.png"; path = "images/exit-button-highlighted.png"; sourceTree = "<group>"; };
 		AA65FB4E1B5D7E0300BE9F01 /* profile-picture-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile-picture-overlay.png"; path = "images/profile-picture-overlay.png"; sourceTree = "<group>"; };
-		AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
-		AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		AA70D4911AE8201100433140 /* PuzzleFailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleFailedViewController.swift; path = Controllers/PuzzleFailedViewController.swift; sourceTree = "<group>"; };
 		AA70D4931AE8213900433140 /* logo-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-no-text.png"; path = "images/logo-no-text.png"; sourceTree = "<group>"; };
-		AA80029E1B8800CA00F8E377 /* progress-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "progress-star.png"; path = "images/progress-star.png"; sourceTree = "<group>"; };
 		AA80029F1B8800CA00F8E377 /* progress-trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "progress-trophy.png"; path = "images/progress-trophy.png"; sourceTree = "<group>"; };
 		AA8C7D601B6C63D000AE4E4E /* star-count-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-1.png"; path = "images/star-count-1.png"; sourceTree = "<group>"; };
 		AA8C7D611B6C63D000AE4E4E /* star-count-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-2.png"; path = "images/star-count-2.png"; sourceTree = "<group>"; };
 		AA8C7D621B6C63D000AE4E4E /* star-count-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-3.png"; path = "images/star-count-3.png"; sourceTree = "<group>"; };
 		AA8C7D631B6C63D000AE4E4E /* star-count-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-count-4.png"; path = "images/star-count-4.png"; sourceTree = "<group>"; };
+		AA9BF7D51BF59E5600994A23 /* ChallengeResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeResultsViewController.swift; path = Controllers/ChallengeResultsViewController.swift; sourceTree = "<group>"; };
+		AA9BF7D61BF59E5600994A23 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		AA9BF7E11BF59E6900994A23 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
+		AA9BF7E31BF59E7C00994A23 /* CompoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundCell.swift; path = Models/CompoundCell.swift; sourceTree = "<group>"; };
+		AA9BF7E41BF59E7C00994A23 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendCell.swift; path = Models/FriendCell.swift; sourceTree = "<group>"; };
+		AA9BF7F01BF59E9700994A23 /* ChallengeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeManager.swift; path = Managers/ChallengeManager.swift; sourceTree = "<group>"; };
+		AA9BF7F11BF59E9700994A23 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookManager.swift; path = Managers/FacebookManager.swift; sourceTree = "<group>"; };
+		AA9BF7F21BF59E9700994A23 /* PuzzleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzleManager.swift; path = Managers/PuzzleManager.swift; sourceTree = "<group>"; };
+		AA9BF7F31BF59E9700994A23 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = Managers/UserManager.swift; sourceTree = "<group>"; };
+		AA9BF7F81BF59EA600994A23 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventService.swift; path = Services/EventService.swift; sourceTree = "<group>"; };
+		AA9BF7F91BF59EA600994A23 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookService.swift; path = Services/FacebookService.swift; sourceTree = "<group>"; };
 		AA9F1E071B85762000FADB8C /* challenge-finished.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-finished.png"; path = "images/challenge-finished.png"; sourceTree = "<group>"; };
 		AA9F1E081B85762000FADB8C /* challenge-received.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-received.png"; path = "images/challenge-received.png"; sourceTree = "<group>"; };
 		AA9F1E091B85762000FADB8C /* challenge-sent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "challenge-sent.png"; path = "images/challenge-sent.png"; sourceTree = "<group>"; };
 		AA9FF7541B5C40D000A75571 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		AA9FF7561B5C991A00A75571 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AAADBFE71B863A3700820E7C /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		AAADBFE91B863C5600820E7C /* AnswerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerView.swift; path = Views/AnswerView.swift; sourceTree = "<group>"; };
 		AACA0BAC1B043BC00029351B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AACA0BAD1B043BC00029351B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -373,13 +388,6 @@
 		AAD72BE51B06ACA2009CDAB5 /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = Controllers/FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		AAD72BE71B06AF8D009CDAB5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		AAD72BE91B06CBB4009CDAB5 /* Compound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Compound-Bridging-Header.h"; sourceTree = "<group>"; };
-		AAD7D85E1B6AFC7E00A4F8D2 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
-		AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
-		AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleManager.swift; sourceTree = "<group>"; };
-		AAD7D8671B6BEEBC00A4F8D2 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
-		AAD7D86B1B6C54CA00A4F8D2 /* ChallengeResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeResultsViewController.swift; sourceTree = "<group>"; };
-		AAD7D86D1B6C594C00A4F8D2 /* CompoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundCell.swift; sourceTree = "<group>"; };
 		AAE52B6F1AE2EC3200FFB13D /* logo-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-left.png"; path = "images/logo-left.png"; sourceTree = "<group>"; };
 		AAE52B701AE2EC3200FFB13D /* logo-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-right.png"; path = "images/logo-right.png"; sourceTree = "<group>"; };
 		AAE52B751AE2F84300FFB13D /* star-group-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-group-1.png"; path = "images/star-group-1.png"; sourceTree = "<group>"; };
@@ -541,6 +549,7 @@
 		AA0167801BD6C92900666D91 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				AA55ECBE1BF52C7000D7DF18 /* progress-star.png */,
 				AA0167811BD6C92900666D91 /* bar-1.png */,
 				AA0167821BD6C92900666D91 /* bar-2.png */,
 				AA0167831BD6C92900666D91 /* bar-3.png */,
@@ -560,10 +569,14 @@
 		AA0167971BD6EC0D00666D91 /* ProgressViews */ = {
 			isa = PBXGroup;
 			children = (
-				AA0167981BD6EC3500666D91 /* TotalStarsProgressView.swift */,
-				AA0167991BD6EC3500666D91 /* TotalStarsProgressView.xib */,
-				AA01679C1BD7053F00666D91 /* FourStarsProgressView.swift */,
-				AA01679D1BD7053F00666D91 /* FourStarsProgressView.xib */,
+				AA55ECCB1BF56F4D00D7DF18 /* FlagsProgressView.swift */,
+				AA55ECCC1BF56F4D00D7DF18 /* FlagsProgressView.xib */,
+				AA55ECCD1BF56F4D00D7DF18 /* PoopProgressView.swift */,
+				AA55ECCE1BF56F4D00D7DF18 /* PoopProgressView.xib */,
+				AA55ECC11BF56DDB00D7DF18 /* FourStarsProgressView.swift */,
+				AA55ECC21BF56DDB00D7DF18 /* FourStarsProgressView.xib */,
+				AA55ECC31BF56DDB00D7DF18 /* TotalStarsProgressView.swift */,
+				AA55ECC41BF56DDB00D7DF18 /* TotalStarsProgressView.xib */,
 			);
 			name = ProgressViews;
 			sourceTree = "<group>";
@@ -571,7 +584,7 @@
 		AA577AB91BB33F1000168A6A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AA577ABA1BB33F2D00168A6A /* StringExtension.swift */,
+				AA9BF7E11BF59E6900994A23 /* StringExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -579,10 +592,10 @@
 		AAD7D8601B6BE4A600A4F8D2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				AAD7D8611B6BE4BF00A4F8D2 /* ChallengeManager.swift */,
-				AAD7D8671B6BEEBC00A4F8D2 /* FacebookManager.swift */,
-				AAD7D8651B6BE4D800A4F8D2 /* PuzzleManager.swift */,
-				AAD7D8631B6BE4C800A4F8D2 /* UserManager.swift */,
+				AA9BF7F01BF59E9700994A23 /* ChallengeManager.swift */,
+				AA9BF7F11BF59E9700994A23 /* FacebookManager.swift */,
+				AA9BF7F21BF59E9700994A23 /* PuzzleManager.swift */,
+				AA9BF7F31BF59E9700994A23 /* UserManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -671,16 +684,16 @@
 		AAFB40101ADEE9C900F44C8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA9BF7E31BF59E7C00994A23 /* CompoundCell.swift */,
+				AA9BF7E41BF59E7C00994A23 /* FriendCell.swift */,
 				AA0E15F61AFE8E7F001FFAB5 /* Challenge.swift */,
 				AAFB403E1ADEEAEB00F44C8F /* Combination.swift */,
 				AA603DB61AF7E59300EF7B99 /* DateTime.swift */,
 				AA5767AE1AFAE094006014FC /* Friend.swift */,
-				AA6ECE521B5EE06A00FAD8B3 /* FriendCell.swift */,
 				AAFB40131ADEE9E900F44C8F /* Puzzle.swift */,
 				AAFB40141ADEE9E900F44C8F /* Resources.swift */,
 				AA65FB461B5D63D900BE9F01 /* Statistics.swift */,
 				AA603DB71AF7E59300EF7B99 /* User.swift */,
-				AAD7D86D1B6C594C00A4F8D2 /* CompoundCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -689,13 +702,13 @@
 			isa = PBXGroup;
 			children = (
 				AA0167971BD6EC0D00666D91 /* ProgressViews */,
+				AAADBFE91B863C5600820E7C /* AnswerView.swift */,
+				AA55ECC91BF56DEB00D7DF18 /* AnswerView.xib */,
 				AAFD69121AFD123C001F6063 /* Challenge.storyboard */,
 				AA603DBA1AF7E5A000EF7B99 /* User.storyboard */,
 				AA1826CD1AE722D900A5E609 /* Puzzle.storyboard */,
 				AA1826CE1AE722D900A5E609 /* LaunchScreen.xib */,
 				AA1826CF1AE722D900A5E609 /* Main.storyboard */,
-				AAADBFE71B863A3700820E7C /* AnswerView.xib */,
-				AAADBFE91B863C5600820E7C /* AnswerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -716,8 +729,8 @@
 				AAFB40171ADEE9F200F44C8F /* BaseViewController.swift */,
 				AAFB40181ADEE9F200F44C8F /* PuzzleViewController.swift */,
 				AAFB40191ADEE9F200F44C8F /* HomeViewController.swift */,
-				AA9FF7561B5C991A00A75571 /* LoginViewController.swift */,
-				AAD7D86B1B6C54CA00A4F8D2 /* ChallengeResultsViewController.swift */,
+				AA9BF7D51BF59E5600994A23 /* ChallengeResultsViewController.swift */,
+				AA9BF7D61BF59E5600994A23 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -733,7 +746,6 @@
 				AA0167601BD6C86200666D91 /* poop.png */,
 				AA0167611BD6C86200666D91 /* single-play.png */,
 				AAD4A1051B93A3530070D960 /* background-puzzle.png */,
-				AA80029E1B8800CA00F8E377 /* progress-star.png */,
 				AA80029F1B8800CA00F8E377 /* progress-trophy.png */,
 				AA9F1E071B85762000FADB8C /* challenge-finished.png */,
 				AA9F1E081B85762000FADB8C /* challenge-received.png */,
@@ -806,14 +818,14 @@
 		AAFB403B1ADEEA6700F44C8F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA9BF7F81BF59EA600994A23 /* EventService.swift */,
+				AA9BF7F91BF59EA600994A23 /* FacebookService.swift */,
 				AA30B22F1AFC445500C6CDC1 /* ChallengeService.swift */,
 				AA603DB21AF7E57600EF7B99 /* AdminService.swift */,
 				AA603DB31AF7E57600EF7B99 /* UserService.swift */,
 				AAFB40421ADEEB9800F44C8F /* StreamReader.swift */,
 				AAFB403C1ADEEA9900F44C8F /* PuzzleService.swift */,
 				AA9FF7541B5C40D000A75571 /* Global.swift */,
-				AA6ECE501B5EBA0D00FAD8B3 /* FacebookService.swift */,
-				AAD7D85E1B6AFC7E00A4F8D2 /* EventService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -1058,6 +1070,7 @@
 				AAFB407A1ADEF6A100F44C8F /* GothaBoo in Resources */,
 				AA65FB491B5D71B900BE9F01 /* exit-button.png in Resources */,
 				AAFC6F491AE08C6A0032A98C /* small_star_bestof_x5.png in Resources */,
+				AA55ECC61BF56DDB00D7DF18 /* FourStarsProgressView.xib in Resources */,
 				AAFB40391ADEEA3400F44C8F /* keywords.txt in Resources */,
 				AA5767AB1AFAD896006014FC /* container-grey.png in Resources */,
 				AAFB408F1ADEF6A100F44C8F /* Gotham-XLightIta.otf in Resources */,
@@ -1075,7 +1088,6 @@
 				AA1826D21AE722D900A5E609 /* Main.storyboard in Resources */,
 				AAFB40921ADEF6A100F44C8F /* GothaThi in Resources */,
 				AAFC6F421AE08C6A0032A98C /* newchallenge_button.png in Resources */,
-				AA01679B1BD6EC3500666D91 /* TotalStarsProgressView.xib in Resources */,
 				AAFB40801ADEF6A100F44C8F /* Gotham-Bold in Resources */,
 				AAFB40861ADEF6A100F44C8F /* Gotham-LightIta.otf in Resources */,
 				AAE52B7A1AE2F84300FFB13D /* star-group-2.png in Resources */,
@@ -1104,7 +1116,6 @@
 				AAFB40271ADEEA0500F44C8F /* lightbulb-0.png in Resources */,
 				AAFB403A1ADEEA3400F44C8F /* keywords2.xml in Resources */,
 				AAFC6F3E1AE08C6A0032A98C /* group-icon.png in Resources */,
-				AA8002A01B8800CA00F8E377 /* progress-star.png in Resources */,
 				AAFB40911ADEF6A100F44C8F /* GothaMedIta in Resources */,
 				AAFC6F2D1AE08B6B0032A98C /* container-white.png in Resources */,
 				AA65FB4B1B5D748C00BE9F01 /* exit-button-highlighted.png in Resources */,
@@ -1115,6 +1126,8 @@
 				AAFB40AF1ADEF6AD00F44C8F /* Gobold Thin Italic.ttf in Resources */,
 				AA0167901BD6C92900666D91 /* bar-5.png in Resources */,
 				AA4FA4E91AF2E0DA004D6934 /* appicon-40.png in Resources */,
+				AA55ECD21BF56F4D00D7DF18 /* PoopProgressView.xib in Resources */,
+				AA55ECD01BF56F4D00D7DF18 /* FlagsProgressView.xib in Resources */,
 				AAFB3FDC1ADED47100F44C8F /* Images.xcassets in Resources */,
 				AA0167631BD6C86200666D91 /* challenge-play.png in Resources */,
 				AA0167661BD6C86200666D91 /* single-play.png in Resources */,
@@ -1123,7 +1136,9 @@
 				AAFB40941ADEF6A100F44C8F /* GothaUlt in Resources */,
 				AAFB408E1ADEF6A100F44C8F /* Gotham-XLight.otf in Resources */,
 				AAFB40871ADEF6A100F44C8F /* Gotham-Medium.otf in Resources */,
+				AA55ECC81BF56DDB00D7DF18 /* TotalStarsProgressView.xib in Resources */,
 				AAFC6F451AE08C6A0032A98C /* small_star_bestof_x1.png in Resources */,
+				AA55ECCA1BF56DEB00D7DF18 /* AnswerView.xib in Resources */,
 				AAE52B791AE2F84300FFB13D /* star-group-1.png in Resources */,
 				AAFB40971ADEF6A100F44C8F /* GothaXLigIta in Resources */,
 				AA0167961BD6C92900666D91 /* trophy-5.png in Resources */,
@@ -1136,13 +1151,13 @@
 				AA4FA4ED1AF2E0DA004D6934 /* appicon-180.png in Resources */,
 				AAFC6F4F1AE08EFE0032A98C /* container-black.png in Resources */,
 				AA0167621BD6C86200666D91 /* challenge-in-progress.png in Resources */,
+				AA55ECBF1BF52C7000D7DF18 /* progress-star.png in Resources */,
 				AAFB40B71ADEF71500F44C8F /* logo.png in Resources */,
 				AAFB40AB1ADEF6AD00F44C8F /* Gobold Hollow.ttf in Resources */,
 				AAFB40BB1ADF021F00F44C8F /* menu-container.png in Resources */,
 				AAFB40771ADEF6A100F44C8F /* GothaBlaIta in Resources */,
 				AA603DBB1AF7E5A000EF7B99 /* User.storyboard in Resources */,
 				AAFD69131AFD123C001F6063 /* Challenge.storyboard in Resources */,
-				AA01679F1BD7053F00666D91 /* FourStarsProgressView.xib in Resources */,
 				AAFB40AC1ADEF6AD00F44C8F /* Gobold Italic.ttf in Resources */,
 				AAFB40951ADEF6A100F44C8F /* GothaUltIta in Resources */,
 				AAFB40B11ADEF6AD00F44C8F /* Gobold.ttf in Resources */,
@@ -1156,7 +1171,6 @@
 				AAFB40371ADEEA3400F44C8F /* combinations.txt in Resources */,
 				AAD4A1061B93A3530070D960 /* background-puzzle.png in Resources */,
 				AAFB408B1ADEF6A100F44C8F /* Gotham-ThinIta.otf in Resources */,
-				AAADBFE81B863A3700820E7C /* AnswerView.xib in Resources */,
 				AA1826D01AE722D900A5E609 /* Puzzle.storyboard in Resources */,
 				AAFB40961ADEF6A100F44C8F /* GothaXLig in Resources */,
 				AA0167681BD6C87F00666D91 /* flag.png in Resources */,
@@ -1198,48 +1212,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9BF7F41BF59E9700994A23 /* ChallengeManager.swift in Sources */,
 				AAD72BDE1B06A579009CDAB5 /* EmailLoginViewController.swift in Sources */,
 				AAD72BDC1B069900009CDAB5 /* SignupViewController.swift in Sources */,
 				AAADBFEA1B863C5600820E7C /* AnswerView.swift in Sources */,
-				AAD7D8641B6BE4C800A4F8D2 /* UserManager.swift in Sources */,
 				AAFB40431ADEEB9800F44C8F /* StreamReader.swift in Sources */,
+				AA9BF7F71BF59E9700994A23 /* UserManager.swift in Sources */,
 				AAFB40411ADEEB2E00F44C8F /* ChallengesViewController.swift in Sources */,
 				AA603DB51AF7E57600EF7B99 /* UserService.swift in Sources */,
-				AA577ABB1BB33F2D00168A6A /* StringExtension.swift in Sources */,
+				AA55ECD11BF56F4D00D7DF18 /* PoopProgressView.swift in Sources */,
+				AA9BF7F51BF59E9700994A23 /* FacebookManager.swift in Sources */,
 				AA603DBE1AF7E5AC00EF7B99 /* ChallengePuzzleViewController.swift in Sources */,
 				AAFB401B1ADEE9F200F44C8F /* PuzzleViewController.swift in Sources */,
-				AAD7D85F1B6AFC7E00A4F8D2 /* EventService.swift in Sources */,
+				AA55ECCF1BF56F4D00D7DF18 /* FlagsProgressView.swift in Sources */,
 				AA70D4921AE8201100433140 /* PuzzleFailedViewController.swift in Sources */,
-				AAD7D86E1B6C594C00A4F8D2 /* CompoundCell.swift in Sources */,
 				AA1826DA1AE7231B00A5E609 /* GiveUpViewController.swift in Sources */,
+				AA9BF7E61BF59E7C00994A23 /* FriendCell.swift in Sources */,
 				AA603DB81AF7E59300EF7B99 /* DateTime.swift in Sources */,
 				AA0E15F71AFE8E7F001FFAB5 /* Challenge.swift in Sources */,
 				AA603DB41AF7E57600EF7B99 /* AdminService.swift in Sources */,
 				AAFB40161ADEE9E900F44C8F /* Resources.swift in Sources */,
 				AA1826D41AE722E600A5E609 /* PuzzleCompletedViewController.swift in Sources */,
-				AAD7D8621B6BE4BF00A4F8D2 /* ChallengeManager.swift in Sources */,
-				AA6ECE511B5EBA0D00FAD8B3 /* FacebookService.swift in Sources */,
 				AA30B2301AFC445500C6CDC1 /* ChallengeService.swift in Sources */,
 				AAFB401A1ADEE9F200F44C8F /* BaseViewController.swift in Sources */,
 				AA603DBF1AF7E5AC00EF7B99 /* ProfileViewController.swift in Sources */,
+				AA9BF7D81BF59E5600994A23 /* LoginViewController.swift in Sources */,
+				AA9BF7F61BF59E9700994A23 /* PuzzleManager.swift in Sources */,
 				AAD72BE61B06ACA2009CDAB5 /* FacebookLoginViewController.swift in Sources */,
-				AA9FF7571B5C991A00A75571 /* LoginViewController.swift in Sources */,
+				AA55ECC51BF56DDB00D7DF18 /* FourStarsProgressView.swift in Sources */,
 				AAFB3FD51ADED47100F44C8F /* AppDelegate.swift in Sources */,
 				AA5767AF1AFAE094006014FC /* Friend.swift in Sources */,
-				AAD7D8661B6BE4D800A4F8D2 /* PuzzleManager.swift in Sources */,
-				AA01679A1BD6EC3500666D91 /* TotalStarsProgressView.swift in Sources */,
+				AA9BF7E21BF59E6900994A23 /* StringExtension.swift in Sources */,
+				AA9BF7FA1BF59EA600994A23 /* EventService.swift in Sources */,
 				AA9FF7551B5C40D000A75571 /* Global.swift in Sources */,
-				AA01679E1BD7053F00666D91 /* FourStarsProgressView.swift in Sources */,
+				AA55ECC71BF56DDB00D7DF18 /* TotalStarsProgressView.swift in Sources */,
 				AAD72BE81B06AF8D009CDAB5 /* SettingsViewController.swift in Sources */,
-				AAD7D86C1B6C54CA00A4F8D2 /* ChallengeResultsViewController.swift in Sources */,
+				AA9BF7E51BF59E7C00994A23 /* CompoundCell.swift in Sources */,
 				AAFB40151ADEE9E900F44C8F /* Puzzle.swift in Sources */,
 				AAFB401C1ADEE9F200F44C8F /* HomeViewController.swift in Sources */,
 				AAFB403D1ADEEA9900F44C8F /* PuzzleService.swift in Sources */,
-				AA6ECE531B5EE06A00FAD8B3 /* FriendCell.swift in Sources */,
 				AA65FB471B5D63D900BE9F01 /* Statistics.swift in Sources */,
-				AAD7D8681B6BEEBC00A4F8D2 /* FacebookManager.swift in Sources */,
+				AA9BF7D71BF59E5600994A23 /* ChallengeResultsViewController.swift in Sources */,
 				AAFB403F1ADEEAEB00F44C8F /* Combination.swift in Sources */,
 				AA603DB91AF7E59300EF7B99 /* User.swift in Sources */,
+				AA9BF7FB1BF59EA600994A23 /* FacebookService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@ class Statistics {
     var threeStarsEarned: Int!
     var twoStarsEarned: Int!
     var oneStarsEarned: Int!
+    var totalFlags: Int!
+    var totalPoop: Int!
     
     var totalPuzzlesPlayed: Int {
         return totalPuzzlesCompleted + totalPuzzlesGaveUp + totalPuzzlesTimeUp

@@ -105,52 +105,66 @@ class FacebookService {
         return nil
     }
     
-    func loadProfilePictureFromUrl(url: String, completion: (result: UIImage!, error: NSError!) -> Void) {
-        let urlRequest = NSURLRequest(URL: NSURL(string: url)!)
-        
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-            if error == nil {
-                completion(result: UIImage(data: data!), error: nil)
-            } else {
-                completion(result: nil, error: error)
+    func loadProfilePictureFromUrl(url: String, completion: (result: UIImage!, error: NSError!) -> Void) {        
+        if let url = NSURL(string: url) {
+            if let data = NSData(contentsOfURL: url) {
+                completion(result: UIImage(data: data), error: nil)
             }
+        } else {
+        
+        let error = NSError(domain: "FacebookService", code: 100, userInfo: [NSLocalizedDescriptionKey: "loadProfilePicture"])
+        EventService.logError(error, description: "Could not load Facebook profile picture synchronously from URL", object: "FacebookService", function: "loadProfilePictureFromUrl")
+        
+        completion(result: nil, error: error)
         }
     }
     
     func loadProfilePictureAsync(facebookUserId: String, completion: (result: NSData!, error: NSError!) -> Void) {
         let url = NSURL(string: "https://graph.facebook.com/\(facebookUserId)/picture?type=normal")
-        let urlRequest = NSURLRequest(URL: url!)
+        let urlRequest = NSMutableURLRequest(URL: url!)
         
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+        let task = NSURLSession().dataTaskWithRequest(urlRequest) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error == nil {
                 completion(result: data, error: nil)
             } else {
                 completion(result: nil, error: error)
             }
         }
+        
+        task.resume()
     }
     
     func loadProfilePicture(facebookUserId: String) -> (data: NSData!, error: NSError!) {
-        let url = NSURL(string: "http://graph.facebook.com/\(facebookUserId)/picture?type=normal")
-        let urlRequest = NSURLRequest(URL: url!)
-        var response: NSURLResponse?
-        var error: NSError?
-        
-        let result: NSData?
-        do {
-            result = try NSURLConnection.sendSynchronousRequest(urlRequest, returningResponse: &response)
-        } catch let error1 as NSError {
-            error = error1
-            result = nil
+        if let url = NSURL(string: "http://graph.facebook.com/\(facebookUserId)/picture?type=large") {
+            if let data = NSData(contentsOfURL: url) {
+                return (data, error: nil)
+            }
         }
         
-        if error == nil {
-            return (result, nil)
-        } else {
-            let error = NSError(domain: "FacebookService", code: 100, userInfo: [NSLocalizedDescriptionKey: "loadProfilePicture"])
-            
-            EventService.logError(error, description: "Could not load Facebook profile picture synchronously for \(facebookUserId)", object: "FacebookService", function: "loadProfilePicture")
-            return (nil, error)
-        }
+        let error = NSError(domain: "FacebookService", code: 100, userInfo: [NSLocalizedDescriptionKey: "loadProfilePicture"])
+        EventService.logError(error, description: "Could not load Facebook profile picture synchronously for \(facebookUserId)", object: "FacebookService", function: "loadProfilePicture")
+        
+        return (nil, error)
     }
 }
+//        let urlRequest = NSURLRequest(URL: url!)
+//        var response: NSURLResponse?
+//        var error: NSError?
+//        let result: NSData?
+//        do {
+//            result = try NSURLConnection.sendSynchronousRequest(urlRequest, returningResponse: &response)
+//        } catch let error1 as NSError {
+//            error = error1
+//            result = nil
+//        }
+//        
+//        if error == nil {
+//            return (result, nil)
+//        } else {
+//            let error = NSError(domain: "FacebookService", code: 100, userInfo: [NSLocalizedDescriptionKey: "loadProfilePicture"])
+//            
+//            EventService.logError(error, description: "Could not load Facebook profile picture synchronously for \(facebookUserId)", object: "FacebookService", function: "loadProfilePicture")
+//            return (nil, error)
+//        }
+//    }
+//}

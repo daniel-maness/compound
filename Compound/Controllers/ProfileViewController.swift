@@ -15,15 +15,22 @@ class ProfileViewController: BaseViewController {
     
     /* Properties */
     let userService = UserService()
-    var totalStars: String = ""
     var totalPuzzles: String = ""
     var averageStars: String = ""
+    var versusWon: String = ""
+    var versusLost: String = ""
+    var bestOfWon: String = ""
+    var bestOfLost: String = ""
     
     /* Outlets */
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var totalPuzzlesLabel: UILabel!
     @IBOutlet weak var averageStarsLabel: UILabel!
+    @IBOutlet weak var versusWonLabel: UILabel!
+    @IBOutlet weak var versusLostLabel: UILabel!
+    @IBOutlet weak var bestOfWonLabel: UILabel!
+    @IBOutlet weak var bestOfLostLabel: UILabel!
     
     /* Actions */
     @IBAction func onHomePressed(sender: UIButton) {
@@ -37,24 +44,30 @@ class ProfileViewController: BaseViewController {
     /* Setup */
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getUserStats()
-        //setupView()
+        getUserStats()
+        setupView()
         //userService.findFriends()
     }
     
     func setupView() {
-        shareButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         self.setUserPicture(profilePicture)
         totalPuzzlesLabel.text = totalPuzzles
         averageStarsLabel.text = averageStars
+        versusWonLabel.text = versusWon
+        versusLostLabel.text = versusLost
+        bestOfWonLabel.text = bestOfWon
+        bestOfLostLabel.text = bestOfLost
     }
     
     /* Logic */
     func getUserStats() {
         let stats = userManager.getStats()
         
-        totalStars = String(stats.totalStarsEarned)
         totalPuzzles = String(stats.totalPuzzlesPlayed)
         averageStars = String(format:"%.1f", stats.averageStars)
+        versusWon = String(0)
+        versusLost = "-" + String(0)
+        bestOfWon = String(0)
+        bestOfLost = "-" + String(0)
     }
 }

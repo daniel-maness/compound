@@ -91,6 +91,8 @@ class UserService {
         stats.threeStarsEarned = userObject["threeStarsEarned"] == nil ? 0 : userObject["threeStarsEarned"] as! Int
         stats.twoStarsEarned = userObject["twoStarsEarned"] == nil ? 0 : userObject["twoStarsEarned"] as! Int
         stats.oneStarsEarned = userObject["oneStarsEarned"] == nil ? 0 : userObject["oneStarsEarned"] as! Int
+        stats.totalFlags = userObject["totalFlags"] == nil ? 0 : userObject["totalFlags"] as! Int
+        stats.totalPoop = userObject["totalPoop"] == nil ? 0 : userObject["totalPoop"] as! Int
         
         return stats
     }

@@ -17,12 +17,10 @@ class PuzzleCompletedViewController: BaseViewController {
     
     /* Properties */
     var currentStars: Int = 0
-    var totalStars: Int = 0
     var puzzle: Puzzle!
     
     /* Outlets */
     @IBOutlet weak var starsImageView: UIImageView!
-    @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var challengeButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var answerView: AnswerView!
@@ -52,7 +50,6 @@ class PuzzleCompletedViewController: BaseViewController {
     
     func setupView() {
         answerView.setText(self.word1, word2: self.word2, word3: self.word3, keyword: self.keyword)
-        totalStarsLabel.text = String(totalStars)
         starsImageView.image = UIImage(named: "star-group-" + String(currentStars))
         self.setUserPicture(profilePicture)
     }

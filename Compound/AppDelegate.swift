@@ -52,17 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         FBSDKAppEvents.activateApp()
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let cfBundleVersion = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as! String
-        if userDefaults.valueForKey("version") == nil {
-            copyFile("compound.sqlite")
-            userDefaults.setObject(cfBundleVersion, forKey: "version")
-        }
-        
-        if NSUserDefaults.standardUserDefaults().stringForKey("version") != cfBundleVersion {
-            copyFile("compound.sqlite")
-            userDefaults.setObject(cfBundleVersion, forKey: "version")
-        }
+        copyFile("compound.sqlite")
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -78,10 +68,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fileManager = NSFileManager.defaultManager()
         let documentsURL = NSBundle.mainBundle().resourceURL
         let fromPath = documentsURL!.URLByAppendingPathComponent(fileName as String)
-        do {
-            try fileManager.copyItemAtPath(fromPath.path!, toPath: dbPath)
-        } catch let error as NSError {
-            EventService.logError(error, description: "Could not copy database", object: "AppDelegate", function: "copyFile")
+        
+        if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") {
+            do {
+                try fileManager.removeItemAtPath(dbPath)
+            } catch _ as NSError {
+                print("Database does not exist at " + dbPath)
+            }
+            
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
+        }
+        
+        if !fileManager.fileExistsAtPath(dbPath) {
+            do {
+                try fileManager.copyItemAtPath(fromPath.path!, toPath: dbPath)
+            } catch _ as NSError {
+                print("Could not copy database to " + dbPath)
+            }
         }
     }
     

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,7 +24,6 @@
             <string>Gotham-Book</string>
         </mutableArray>
         <mutableArray key="Gotham-Medium.otf">
-            <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
             <string>Gotham-Medium</string>
@@ -771,11 +770,11 @@
                                 <animations/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="container-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="wwr-Bl-mCe">
-                                <rect key="frame" x="30" y="40" width="260" height="320"/>
+                                <rect key="frame" x="30" y="40" width="260" height="350"/>
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-aI-Mlx">
-                                <rect key="frame" x="30" y="260" width="260" height="50"/>
+                                <rect key="frame" x="30" y="290" width="260" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="32"/>
@@ -794,7 +793,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyx-2k-m36">
-                                <rect key="frame" x="30" y="310" width="260" height="50"/>
+                                <rect key="frame" x="30" y="340" width="260" height="50"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="32"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
@@ -806,10 +805,6 @@
                                     <segue destination="9Bb-KE-iFr" kind="show" id="4Kz-8D-V0O"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="smallstar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fjy-RO-T0F">
-                                <rect key="frame" x="72" y="49" width="24" height="24"/>
-                                <animations/>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="group-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-kS-O9X">
                                 <rect key="frame" x="35" y="45" width="32" height="32"/>
                                 <animations/>
@@ -818,22 +813,20 @@
                                 <rect key="frame" x="35" y="45" width="32" height="32"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6U-zd-MqT">
-                                <rect key="frame" x="101" y="52" width="64" height="24"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0E3-ni-cdB" customClass="TotalStarsProgressView" customModule="compound" customModuleProvider="target">
+                                <rect key="frame" x="75" y="40" width="173" height="35"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdi-2v-0gL">
-                                <rect key="frame" x="30" y="134" width="260" height="35"/>
+                                <rect key="frame" x="30" y="164" width="260" height="35"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-group-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-wp-Pfl">
-                                <rect key="frame" x="30" y="81" width="260" height="45"/>
+                                <rect key="frame" x="30" y="111" width="260" height="45"/>
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBQ-30-OJv">
@@ -847,8 +840,13 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioy-8C-eIT" customClass="AnswerView" customModule="compound" customModuleProvider="target">
-                                <rect key="frame" x="30" y="177" width="260" height="75"/>
+                                <rect key="frame" x="30" y="207" width="260" height="75"/>
                                 <animations/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oh7-qV-vex" customClass="FourStarsProgressView" customModule="compound" customModuleProvider="target">
+                                <rect key="frame" x="75" y="75" width="173" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -858,7 +856,6 @@
                         <outlet property="challengeButton" destination="Qy3-aI-Mlx" id="dpQ-lr-aYK"/>
                         <outlet property="profilePicture" destination="Of3-kS-O9X" id="1eU-Bn-cTK"/>
                         <outlet property="starsImageView" destination="xzn-wp-Pfl" id="PNa-oL-59d"/>
-                        <outlet property="totalStarsLabel" destination="K6U-zd-MqT" id="oc1-QS-n1a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8w-ac-PhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1242,6 +1239,6 @@
         <image name="star-group-4.png" width="640" height="159"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mjh-MX-Krp"/>
+        <segue reference="4Kz-8D-V0O"/>
     </inferredMetricsTieBreakers>
 </document>

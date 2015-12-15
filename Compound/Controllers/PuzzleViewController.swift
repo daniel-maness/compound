@@ -309,7 +309,6 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         let viewController = UIStoryboard(name: "Puzzle", bundle: nil).instantiateViewControllerWithIdentifier("PuzzleCompletedViewController") as! PuzzleCompletedViewController
         viewController.setAnswerView(puzzle.combinations[0].combinedWord, word2: puzzle.combinations[1].combinedWord, word3: puzzle.combinations[2].combinedWord, keyword: puzzle!.keyword)
         viewController.currentStars = puzzle.currentStars
-        viewController.totalStars = userManager.getStats().totalStarsEarned
         viewController.puzzle = self.puzzle
         
         self.presentViewController(viewController, animated: true, completion: nil)
