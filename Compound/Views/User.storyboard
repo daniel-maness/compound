@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dCI-Is-lLo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dCI-Is-lLo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -9,6 +9,10 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
@@ -190,11 +194,17 @@
                                         <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="0.0" width="360" height="19"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGG-VX-hMZ" customClass="FourStarsProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="174" width="288" height="25"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="69" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxg-Qj-bql">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -208,10 +218,16 @@
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="5" width="180" height="14"/>
+                                                        </variation>
                                                     </label>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="NNY-4w-xEw">
                                                         <rect key="frame" x="72" y="234" width="48" height="48"/>
                                                         <animations/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="19" y="29" width="71" height="42"/>
+                                                        </variation>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrI-Fu-9If">
                                                         <rect key="frame" x="122" y="248" width="50" height="20"/>
@@ -219,6 +235,9 @@
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="90" y="29" width="71" height="42"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <animations/>
@@ -260,7 +279,8 @@
                                                         <exclude reference="rDE-NK-Mge"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="81"/>
                                                     <mask key="subviews">
                                                         <include reference="bt0-eF-5yu"/>
                                                         <include reference="NNY-4w-xEw"/>
@@ -289,6 +309,9 @@
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="5" width="180" height="14"/>
+                                                        </variation>
                                                     </label>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="largestar.png" translatesAutoresizingMaskIntoConstraints="NO" id="A9F-gU-CUC">
                                                         <rect key="frame" x="206" y="234" width="48" height="48"/>
@@ -301,7 +324,8 @@
                                                                 <exclude reference="zFl-HO-5KF"/>
                                                             </mask>
                                                         </variation>
-                                                        <variation key="widthClass=compact">
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="69" y="29" width="42" height="42"/>
                                                             <mask key="constraints">
                                                                 <include reference="zFl-HO-5KF"/>
                                                             </mask>
@@ -313,6 +337,9 @@
                                                         <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="80.5" y="42" width="19.5" height="16.5"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <animations/>
@@ -348,7 +375,8 @@
                                                         <exclude reference="rcS-8K-0zT"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="180" y="0.0" width="180" height="81"/>
                                                     <mask key="subviews">
                                                         <include reference="ZBH-rr-PbZ"/>
                                                         <include reference="A9F-gU-CUC"/>
@@ -395,7 +423,8 @@
                                                 <exclude reference="i6c-eb-kS7"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="119" width="360" height="81"/>
                                             <mask key="subviews">
                                                 <include reference="8vs-UI-Jok"/>
                                                 <include reference="nA5-f7-sU9"/>
@@ -416,6 +445,9 @@
                                         <rect key="frame" x="16" y="141" width="288" height="25"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="19" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -503,16 +535,25 @@
                                         <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="19.5" y="0.0" width="361" height="19"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bw-aY-kXP" customClass="FlagsProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="141" width="288" height="25"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="19" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-tJ-KKK" customClass="PoopProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="174" width="288" height="25"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="69" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ID4-Vz-6Xf">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -528,7 +569,8 @@
                                                         <exclude reference="ska-Gr-HQm"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="89.5" y="10.5" width="40.5" height="40.5"/>
                                                     <mask key="constraints">
                                                         <include reference="ska-Gr-HQm"/>
                                                     </mask>
@@ -540,6 +582,9 @@
                                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="8"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="104.5" y="29" width="10.5" height="9.5"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doX-3Y-nVt">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
@@ -547,6 +592,9 @@
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="83" y="51" width="27" height="19"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-FG-Pin">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
@@ -554,6 +602,9 @@
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="110" y="51" width="33" height="19"/>
+                                                </variation>
                                             </label>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="largestar.png" translatesAutoresizingMaskIntoConstraints="NO" id="tWd-qL-SdJ">
                                                 <rect key="frame" x="72" y="412" width="48" height="48"/>
@@ -566,7 +617,8 @@
                                                         <exclude reference="VeC-ox-kDw"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="230" y="10.5" width="40.5" height="40.5"/>
                                                     <mask key="constraints">
                                                         <include reference="VeC-ox-kDw"/>
                                                     </mask>
@@ -578,6 +630,9 @@
                                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="8"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="238" y="24" width="24.5" height="19"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-EB-VRt">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
@@ -585,6 +640,9 @@
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="223.5" y="51" width="27" height="19"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmY-oW-Veg">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
@@ -592,6 +650,9 @@
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="250.5" y="51" width="33" height="19"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <animations/>
@@ -633,28 +694,29 @@
                                                 <exclude reference="RmY-oW-Veg"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="SSV-Js-rl1"/>
+                                                <exclude reference="je9-OK-8U5"/>
                                                 <exclude reference="DO2-Xu-1Pj"/>
                                                 <exclude reference="Qif-Of-mJ6"/>
-                                                <exclude reference="AoD-KU-A7i"/>
-                                                <exclude reference="Uq3-is-owa"/>
-                                                <exclude reference="hhu-Hx-Y54"/>
-                                                <exclude reference="cfw-8U-fF6"/>
-                                                <exclude reference="vM6-Mg-hI2"/>
+                                                <exclude reference="DjR-NE-ehr"/>
+                                                <exclude reference="K9G-Ur-Jze"/>
                                                 <exclude reference="1pe-mG-NCI"/>
                                                 <exclude reference="fL2-Ka-BmO"/>
-                                                <exclude reference="dTL-UI-wd3"/>
-                                                <exclude reference="piN-Qh-mso"/>
-                                                <exclude reference="vrd-BW-F7G"/>
                                                 <exclude reference="8ki-f0-b4m"/>
                                                 <exclude reference="FJE-EQ-JRG"/>
                                                 <exclude reference="JaF-R0-ksn"/>
-                                                <exclude reference="SSV-Js-rl1"/>
-                                                <exclude reference="je9-OK-8U5"/>
-                                                <exclude reference="DjR-NE-ehr"/>
-                                                <exclude reference="K9G-Ur-Jze"/>
+                                                <exclude reference="cfw-8U-fF6"/>
+                                                <exclude reference="vM6-Mg-hI2"/>
+                                                <exclude reference="dTL-UI-wd3"/>
+                                                <exclude reference="piN-Qh-mso"/>
+                                                <exclude reference="vrd-BW-F7G"/>
+                                                <exclude reference="AoD-KU-A7i"/>
+                                                <exclude reference="Uq3-is-owa"/>
+                                                <exclude reference="hhu-Hx-Y54"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="119" width="360" height="81"/>
                                             <mask key="subviews">
                                                 <include reference="QwA-qr-wkN"/>
                                                 <include reference="JZi-7U-0Sr"/>
@@ -666,25 +728,25 @@
                                                 <include reference="RmY-oW-Veg"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <include reference="SSV-Js-rl1"/>
+                                                <include reference="je9-OK-8U5"/>
                                                 <include reference="DO2-Xu-1Pj"/>
                                                 <include reference="Qif-Of-mJ6"/>
-                                                <include reference="AoD-KU-A7i"/>
-                                                <include reference="Uq3-is-owa"/>
-                                                <include reference="hhu-Hx-Y54"/>
-                                                <include reference="cfw-8U-fF6"/>
-                                                <include reference="vM6-Mg-hI2"/>
+                                                <include reference="DjR-NE-ehr"/>
+                                                <include reference="K9G-Ur-Jze"/>
                                                 <include reference="1pe-mG-NCI"/>
                                                 <include reference="fL2-Ka-BmO"/>
-                                                <include reference="dTL-UI-wd3"/>
-                                                <include reference="piN-Qh-mso"/>
-                                                <include reference="vrd-BW-F7G"/>
                                                 <include reference="8ki-f0-b4m"/>
                                                 <include reference="FJE-EQ-JRG"/>
                                                 <include reference="JaF-R0-ksn"/>
-                                                <include reference="SSV-Js-rl1"/>
-                                                <include reference="je9-OK-8U5"/>
-                                                <include reference="DjR-NE-ehr"/>
-                                                <include reference="K9G-Ur-Jze"/>
+                                                <include reference="cfw-8U-fF6"/>
+                                                <include reference="vM6-Mg-hI2"/>
+                                                <include reference="dTL-UI-wd3"/>
+                                                <include reference="piN-Qh-mso"/>
+                                                <include reference="vrd-BW-F7G"/>
+                                                <include reference="AoD-KU-A7i"/>
+                                                <include reference="Uq3-is-owa"/>
+                                                <include reference="hhu-Hx-Y54"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -718,9 +780,10 @@
                                         <exclude reference="ID4-Vz-6Xf"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="1kW-YM-Oao"/>
-                                        <exclude reference="LFW-Zp-cLG"/>
-                                        <exclude reference="cB8-DX-KG5"/>
+                                        <exclude reference="MPg-5e-yiv"/>
+                                        <exclude reference="Oeb-ze-Rsq"/>
+                                        <exclude reference="it3-6E-oK5"/>
+                                        <exclude reference="vln-ts-ioG"/>
                                         <exclude reference="Eld-2a-2RV"/>
                                         <exclude reference="R5L-6W-LZB"/>
                                         <exclude reference="UY9-fd-hpO"/>
@@ -729,10 +792,9 @@
                                         <exclude reference="5jp-bh-KSu"/>
                                         <exclude reference="69d-Nn-eXb"/>
                                         <exclude reference="l1I-TM-cmr"/>
-                                        <exclude reference="MPg-5e-yiv"/>
-                                        <exclude reference="Oeb-ze-Rsq"/>
-                                        <exclude reference="it3-6E-oK5"/>
-                                        <exclude reference="vln-ts-ioG"/>
+                                        <exclude reference="1kW-YM-Oao"/>
+                                        <exclude reference="LFW-Zp-cLG"/>
+                                        <exclude reference="cB8-DX-KG5"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -743,9 +805,10 @@
                                         <include reference="ID4-Vz-6Xf"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="1kW-YM-Oao"/>
-                                        <include reference="LFW-Zp-cLG"/>
-                                        <include reference="cB8-DX-KG5"/>
+                                        <include reference="MPg-5e-yiv"/>
+                                        <include reference="Oeb-ze-Rsq"/>
+                                        <include reference="it3-6E-oK5"/>
+                                        <include reference="vln-ts-ioG"/>
                                         <include reference="Eld-2a-2RV"/>
                                         <include reference="R5L-6W-LZB"/>
                                         <include reference="UY9-fd-hpO"/>
@@ -754,10 +817,9 @@
                                         <include reference="5jp-bh-KSu"/>
                                         <include reference="69d-Nn-eXb"/>
                                         <include reference="l1I-TM-cmr"/>
-                                        <include reference="MPg-5e-yiv"/>
-                                        <include reference="Oeb-ze-Rsq"/>
-                                        <include reference="it3-6E-oK5"/>
-                                        <include reference="vln-ts-ioG"/>
+                                        <include reference="1kW-YM-Oao"/>
+                                        <include reference="LFW-Zp-cLG"/>
+                                        <include reference="cB8-DX-KG5"/>
                                     </mask>
                                 </variation>
                             </view>
