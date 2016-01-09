@@ -134,6 +134,12 @@ class ChallengesViewController: BaseViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let challenge = self.challenges[indexPath.row]
         
+        if challenge.status == Status.Complete {
+            challengeManager.markChallengeInactive(challenge)
+            let cell: FriendCell = self.tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as! FriendCell
+            cell.removeFromSuperview()
+        }
+        
         if challenge.user.objectId == CurrentUser.objectId {
             playChallenge(challenge)
         } else {

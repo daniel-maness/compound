@@ -62,12 +62,10 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        var frame = answerLabel.frame
-        frame.origin.x = 100
-        frame.origin.y = 100
-        answerLabel.frame = frame
-        
-        answerLabel.center = CGPointMake(1, 0)
+        answerLabel.frame.origin.x = 100
+        answerLabel.frame.origin.y = 100
+        answerLabel.center.x = 100
+        answerLabel.center.y = 100
     }
     
     func setupView() {
@@ -77,10 +75,11 @@ class PuzzleViewController: BaseViewController, UITextFieldDelegate {
         stars.append(star3)
 
         setupKeyboard()
-    }
-    
-    func resizeObjects() {
-        wordLabelView.frame = CGRectMake(0.0, 80.0, self.view.frame.size.width, 200.0)
+        
+        answerLabel.frame.origin.x = 100
+        answerLabel.frame.origin.y = 100
+        answerLabel.center.x = 100
+        answerLabel.center.y = 100
     }
     
     func setupKeyboard() {

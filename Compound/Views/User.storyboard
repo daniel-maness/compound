@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dCI-Is-lLo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dCI-Is-lLo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -9,6 +9,9 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
+            <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
@@ -49,7 +52,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKa-yN-3p4">
                                         <rect key="frame" x="5" y="5" width="36" height="36"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uKa-yN-3p4" secondAttribute="height" multiplier="18:25" id="NEh-Pk-ql9"/>
                                         </constraints>
@@ -69,11 +71,9 @@
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="group-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-bS-Scq">
                                         <rect key="frame" x="76" y="8" width="96" height="96"/>
-                                        <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyP-X3-GlO">
                                         <rect key="frame" x="284" y="5" width="36" height="36"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hyP-X3-GlO" secondAttribute="height" multiplier="1:1" id="q3a-gP-KCB"/>
                                         </constraints>
@@ -96,7 +96,6 @@
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="profile-picture-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-OC-Bsd">
                                         <rect key="frame" x="76" y="8" width="96" height="96"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vt8-OC-Bsd" secondAttribute="height" multiplier="1:1" id="ihT-m7-9NH"/>
                                         </constraints>
@@ -112,7 +111,6 @@
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="mXa-bS-Scq" firstAttribute="width" secondItem="vt8-OC-Bsd" secondAttribute="width" id="7gV-0f-1MT"/>
@@ -185,16 +183,20 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="PERSONAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNZ-nE-uxe">
                                         <rect key="frame" x="16" y="112" width="288" height="21"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.89411764705882357" green="0.20392156862745098" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="0.0" width="360" height="19"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGG-VX-hMZ" customClass="FourStarsProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="174" width="288" height="25"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="69" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxg-Qj-bql">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -204,24 +206,29 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzles Solved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt0-eF-5yu">
                                                         <rect key="frame" x="72" y="219" width="100" height="20"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="5" width="180" height="14"/>
+                                                        </variation>
                                                     </label>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="NNY-4w-xEw">
                                                         <rect key="frame" x="72" y="234" width="48" height="48"/>
-                                                        <animations/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="19" y="29" width="71" height="42"/>
+                                                        </variation>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrI-Fu-9If">
                                                         <rect key="frame" x="122" y="248" width="50" height="20"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="90" y="29" width="71" height="42"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="mrI-Fu-9If" firstAttribute="top" secondItem="NNY-4w-xEw" secondAttribute="top" id="JeV-Wj-nE1"/>
@@ -260,7 +267,8 @@
                                                         <exclude reference="rDE-NK-Mge"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="81"/>
                                                     <mask key="subviews">
                                                         <include reference="bt0-eF-5yu"/>
                                                         <include reference="NNY-4w-xEw"/>
@@ -285,14 +293,15 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avg. Stars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBH-rr-PbZ">
                                                         <rect key="frame" x="180" y="219" width="100" height="20"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="5" width="180" height="14"/>
+                                                        </variation>
                                                     </label>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="largestar.png" translatesAutoresizingMaskIntoConstraints="NO" id="A9F-gU-CUC">
                                                         <rect key="frame" x="206" y="234" width="48" height="48"/>
-                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="A9F-gU-CUC" secondAttribute="height" multiplier="1:1" id="zFl-HO-5KF"/>
                                                         </constraints>
@@ -301,7 +310,8 @@
                                                                 <exclude reference="zFl-HO-5KF"/>
                                                             </mask>
                                                         </variation>
-                                                        <variation key="widthClass=compact">
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="69" y="29" width="42" height="42"/>
                                                             <mask key="constraints">
                                                                 <include reference="zFl-HO-5KF"/>
                                                             </mask>
@@ -309,13 +319,14 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6m-xR-efW">
                                                         <rect key="frame" x="209" y="248" width="42" height="21"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="80.5" y="42" width="19.5" height="16.5"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="R6m-xR-efW" firstAttribute="centerY" secondItem="A9F-gU-CUC" secondAttribute="centerY" id="6ve-L6-0GW"/>
@@ -348,7 +359,8 @@
                                                         <exclude reference="rcS-8K-0zT"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="180" y="0.0" width="180" height="81"/>
                                                     <mask key="subviews">
                                                         <include reference="ZBH-rr-PbZ"/>
                                                         <include reference="A9F-gU-CUC"/>
@@ -367,7 +379,6 @@
                                                 </variation>
                                             </view>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="8vs-UI-Jok" firstAttribute="leading" secondItem="Bxg-Qj-bql" secondAttribute="leading" id="0Zp-M4-A08"/>
@@ -395,7 +406,8 @@
                                                 <exclude reference="i6c-eb-kS7"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="119" width="360" height="81"/>
                                             <mask key="subviews">
                                                 <include reference="8vs-UI-Jok"/>
                                                 <include reference="nA5-f7-sU9"/>
@@ -414,11 +426,12 @@
                                     </view>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdg-IO-7MC" customClass="TotalStarsProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="141" width="288" height="25"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="19" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="nGG-VX-hMZ" firstAttribute="width" secondItem="CEo-1Y-bHP" secondAttribute="width" multiplier="0.8" id="1cH-XD-dIA"/>
@@ -498,28 +511,33 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="CHALLENGES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-Nd-XBt">
                                         <rect key="frame" x="16" y="290" width="288" height="21"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.89411764709999997" green="0.20392156859999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="19.5" y="0.0" width="361" height="19"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bw-aY-kXP" customClass="FlagsProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="141" width="288" height="25"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="19" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-tJ-KKK" customClass="PoopProgressView" customModule="compound" customModuleProvider="target">
                                         <rect key="frame" x="16" y="174" width="288" height="25"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="40" y="69" width="320" height="50"/>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ID4-Vz-6Xf">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="largestar.png" translatesAutoresizingMaskIntoConstraints="NO" id="QwA-qr-wkN">
                                                 <rect key="frame" x="206" y="412" width="48" height="48"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="QwA-qr-wkN" secondAttribute="height" multiplier="1:1" id="ska-Gr-HQm"/>
                                                 </constraints>
@@ -528,7 +546,8 @@
                                                         <exclude reference="ska-Gr-HQm"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="89.5" y="10.5" width="40.5" height="40.5"/>
                                                     <mask key="constraints">
                                                         <include reference="ska-Gr-HQm"/>
                                                     </mask>
@@ -536,28 +555,33 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZi-7U-0Sr">
                                                 <rect key="frame" x="209" y="248" width="42" height="21"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="8"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="104.5" y="29" width="10.5" height="9.5"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doX-3Y-nVt">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="83" y="51" width="27" height="19"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-FG-Pin">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="110" y="51" width="33" height="19"/>
+                                                </variation>
                                             </label>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="largestar.png" translatesAutoresizingMaskIntoConstraints="NO" id="tWd-qL-SdJ">
                                                 <rect key="frame" x="72" y="412" width="48" height="48"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tWd-qL-SdJ" secondAttribute="height" multiplier="1:1" id="VeC-ox-kDw"/>
                                                 </constraints>
@@ -566,7 +590,8 @@
                                                         <exclude reference="VeC-ox-kDw"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="230" y="10.5" width="40.5" height="40.5"/>
                                                     <mask key="constraints">
                                                         <include reference="VeC-ox-kDw"/>
                                                     </mask>
@@ -574,27 +599,32 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST OF" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmK-4Y-KcJ">
                                                 <rect key="frame" x="209" y="248" width="42" height="21"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="8"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="238" y="24" width="24.5" height="19"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-EB-VRt">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.93333333330000001" green="0.0" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="223.5" y="51" width="27" height="19"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmY-oW-Veg">
                                                 <rect key="frame" x="122" y="248" width="50" height="20"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="250.5" y="51" width="33" height="19"/>
+                                                </variation>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="nd1-FG-Pin" firstAttribute="top" secondItem="QwA-qr-wkN" secondAttribute="bottom" id="1pe-mG-NCI"/>
@@ -633,28 +663,29 @@
                                                 <exclude reference="RmY-oW-Veg"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="SSV-Js-rl1"/>
+                                                <exclude reference="je9-OK-8U5"/>
                                                 <exclude reference="DO2-Xu-1Pj"/>
                                                 <exclude reference="Qif-Of-mJ6"/>
-                                                <exclude reference="AoD-KU-A7i"/>
-                                                <exclude reference="Uq3-is-owa"/>
-                                                <exclude reference="hhu-Hx-Y54"/>
-                                                <exclude reference="cfw-8U-fF6"/>
-                                                <exclude reference="vM6-Mg-hI2"/>
+                                                <exclude reference="DjR-NE-ehr"/>
+                                                <exclude reference="K9G-Ur-Jze"/>
                                                 <exclude reference="1pe-mG-NCI"/>
                                                 <exclude reference="fL2-Ka-BmO"/>
-                                                <exclude reference="dTL-UI-wd3"/>
-                                                <exclude reference="piN-Qh-mso"/>
-                                                <exclude reference="vrd-BW-F7G"/>
                                                 <exclude reference="8ki-f0-b4m"/>
                                                 <exclude reference="FJE-EQ-JRG"/>
                                                 <exclude reference="JaF-R0-ksn"/>
-                                                <exclude reference="SSV-Js-rl1"/>
-                                                <exclude reference="je9-OK-8U5"/>
-                                                <exclude reference="DjR-NE-ehr"/>
-                                                <exclude reference="K9G-Ur-Jze"/>
+                                                <exclude reference="cfw-8U-fF6"/>
+                                                <exclude reference="vM6-Mg-hI2"/>
+                                                <exclude reference="dTL-UI-wd3"/>
+                                                <exclude reference="piN-Qh-mso"/>
+                                                <exclude reference="vrd-BW-F7G"/>
+                                                <exclude reference="AoD-KU-A7i"/>
+                                                <exclude reference="Uq3-is-owa"/>
+                                                <exclude reference="hhu-Hx-Y54"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="119" width="360" height="81"/>
                                             <mask key="subviews">
                                                 <include reference="QwA-qr-wkN"/>
                                                 <include reference="JZi-7U-0Sr"/>
@@ -666,30 +697,29 @@
                                                 <include reference="RmY-oW-Veg"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <include reference="SSV-Js-rl1"/>
+                                                <include reference="je9-OK-8U5"/>
                                                 <include reference="DO2-Xu-1Pj"/>
                                                 <include reference="Qif-Of-mJ6"/>
-                                                <include reference="AoD-KU-A7i"/>
-                                                <include reference="Uq3-is-owa"/>
-                                                <include reference="hhu-Hx-Y54"/>
-                                                <include reference="cfw-8U-fF6"/>
-                                                <include reference="vM6-Mg-hI2"/>
+                                                <include reference="DjR-NE-ehr"/>
+                                                <include reference="K9G-Ur-Jze"/>
                                                 <include reference="1pe-mG-NCI"/>
                                                 <include reference="fL2-Ka-BmO"/>
-                                                <include reference="dTL-UI-wd3"/>
-                                                <include reference="piN-Qh-mso"/>
-                                                <include reference="vrd-BW-F7G"/>
                                                 <include reference="8ki-f0-b4m"/>
                                                 <include reference="FJE-EQ-JRG"/>
                                                 <include reference="JaF-R0-ksn"/>
-                                                <include reference="SSV-Js-rl1"/>
-                                                <include reference="je9-OK-8U5"/>
-                                                <include reference="DjR-NE-ehr"/>
-                                                <include reference="K9G-Ur-Jze"/>
+                                                <include reference="cfw-8U-fF6"/>
+                                                <include reference="vM6-Mg-hI2"/>
+                                                <include reference="dTL-UI-wd3"/>
+                                                <include reference="piN-Qh-mso"/>
+                                                <include reference="vrd-BW-F7G"/>
+                                                <include reference="AoD-KU-A7i"/>
+                                                <include reference="Uq3-is-owa"/>
+                                                <include reference="hhu-Hx-Y54"/>
                                             </mask>
                                         </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="fYp-Nd-XBt" firstAttribute="width" secondItem="n46-gh-QOX" secondAttribute="width" multiplier="0.9" id="1kW-YM-Oao">
@@ -718,9 +748,10 @@
                                         <exclude reference="ID4-Vz-6Xf"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="1kW-YM-Oao"/>
-                                        <exclude reference="LFW-Zp-cLG"/>
-                                        <exclude reference="cB8-DX-KG5"/>
+                                        <exclude reference="MPg-5e-yiv"/>
+                                        <exclude reference="Oeb-ze-Rsq"/>
+                                        <exclude reference="it3-6E-oK5"/>
+                                        <exclude reference="vln-ts-ioG"/>
                                         <exclude reference="Eld-2a-2RV"/>
                                         <exclude reference="R5L-6W-LZB"/>
                                         <exclude reference="UY9-fd-hpO"/>
@@ -729,10 +760,9 @@
                                         <exclude reference="5jp-bh-KSu"/>
                                         <exclude reference="69d-Nn-eXb"/>
                                         <exclude reference="l1I-TM-cmr"/>
-                                        <exclude reference="MPg-5e-yiv"/>
-                                        <exclude reference="Oeb-ze-Rsq"/>
-                                        <exclude reference="it3-6E-oK5"/>
-                                        <exclude reference="vln-ts-ioG"/>
+                                        <exclude reference="1kW-YM-Oao"/>
+                                        <exclude reference="LFW-Zp-cLG"/>
+                                        <exclude reference="cB8-DX-KG5"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -743,9 +773,10 @@
                                         <include reference="ID4-Vz-6Xf"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="1kW-YM-Oao"/>
-                                        <include reference="LFW-Zp-cLG"/>
-                                        <include reference="cB8-DX-KG5"/>
+                                        <include reference="MPg-5e-yiv"/>
+                                        <include reference="Oeb-ze-Rsq"/>
+                                        <include reference="it3-6E-oK5"/>
+                                        <include reference="vln-ts-ioG"/>
                                         <include reference="Eld-2a-2RV"/>
                                         <include reference="R5L-6W-LZB"/>
                                         <include reference="UY9-fd-hpO"/>
@@ -754,15 +785,13 @@
                                         <include reference="5jp-bh-KSu"/>
                                         <include reference="69d-Nn-eXb"/>
                                         <include reference="l1I-TM-cmr"/>
-                                        <include reference="MPg-5e-yiv"/>
-                                        <include reference="Oeb-ze-Rsq"/>
-                                        <include reference="it3-6E-oK5"/>
-                                        <include reference="vln-ts-ioG"/>
+                                        <include reference="1kW-YM-Oao"/>
+                                        <include reference="LFW-Zp-cLG"/>
+                                        <include reference="cB8-DX-KG5"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RCs-bX-6dP" firstAttribute="height" secondItem="zfX-bx-e0p" secondAttribute="height" multiplier="0.333" id="6Ed-4C-Vyg"/>
@@ -850,26 +879,22 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaX-Zy-REU">
                                 <rect key="frame" x="16" y="202" width="288" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8U1-R7-Xo0">
                                 <rect key="frame" x="16" y="245" width="288" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU5-tk-4s3">
                                 <rect key="frame" x="16" y="173" width="288" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                 <color key="textColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO5-9G-qiu">
                                 <rect key="frame" x="16" y="442" width="50" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -881,7 +906,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMI-pT-853">
                                 <rect key="frame" x="16" y="298" width="288" height="60"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="SIGNUP">
@@ -896,10 +920,8 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="aiz-8M-q3D">
                                 <rect key="frame" x="50" y="0.0" width="220" height="160"/>
-                                <animations/>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -929,13 +951,11 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vS1-PH-13t">
                                 <rect key="frame" x="16" y="246" width="288" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loh-Dv-KIM">
                                 <rect key="frame" x="16" y="298" width="288" height="60"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="LOGIN">
@@ -950,34 +970,29 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tC0-lF-TaU">
                                 <rect key="frame" x="16" y="173" width="288" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                 <color key="textColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SeP-dN-Zph">
                                 <rect key="frame" x="16" y="203" width="288" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIu-6b-WjQ">
                                 <rect key="frame" x="234" y="278" width="46" height="30"/>
-                                <animations/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkW-Uq-LCb">
                                 <rect key="frame" x="159" y="442" width="100" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                 <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAk-Gq-Stg">
                                 <rect key="frame" x="258" y="442" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                 <state key="normal" title="HERE">
                                     <color key="titleColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -989,7 +1004,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywe-ua-tRh">
                                 <rect key="frame" x="16" y="442" width="50" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" red="0.3803921569" green="0.90588235289999997" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1001,10 +1015,8 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fns-XZ-d5f">
                                 <rect key="frame" x="50" y="0.0" width="220" height="160"/>
-                                <animations/>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -1034,11 +1046,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-M7-OB0">
                                 <rect key="frame" x="50" y="0.0" width="220" height="160"/>
-                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-Z3-jqu">
                                 <rect key="frame" x="60" y="316" width="200" height="40"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Log in with Email" backgroundImage="container-grey.png"/>
@@ -1051,7 +1061,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woi-Hb-aiI" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="20" y="210" width="280" height="60"/>
-                                <animations/>
                                 <state key="normal" title="Facebook Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1060,7 +1069,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -1085,30 +1093,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="svJ-Rt-mye">
-                                <rect key="frame" x="50" y="0.0" width="220" height="160"/>
-                                <animations/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHW-uo-Huf">
-                                <rect key="frame" x="234" y="278" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-PY-oW7">
-                                <rect key="frame" x="284" y="5" width="36" height="36"/>
-                                <animations/>
-                                <state key="normal" image="homeicon.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onHomePressed:" destination="waF-oB-RCF" eventType="touchUpInside" id="srz-2k-pvn"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wp-hA-1mi">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="svJ-Rt-mye">
+                                        <rect key="frame" x="50" y="0.0" width="220" height="160"/>
+                                        <variation key="widthClass=compact" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                                        </variation>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-PY-oW7">
+                                        <rect key="frame" x="284" y="5" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hVy-PY-oW7" secondAttribute="height" multiplier="1:1" id="yee-ZJ-xsz"/>
+                                        </constraints>
+                                        <state key="normal" image="homeicon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="yee-ZJ-xsz"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" ambiguous="YES">
+                                            <rect key="frame" x="350" y="0.0" width="50" height="50"/>
+                                            <mask key="constraints">
+                                                <include reference="yee-ZJ-xsz"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onHomePressed:" destination="waF-oB-RCF" eventType="touchUpInside" id="srz-2k-pvn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="svJ-Rt-mye" firstAttribute="width" secondItem="0wp-hA-1mi" secondAttribute="width" id="2bm-N3-Tp9"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVy-PY-oW7" secondAttribute="trailing" id="6fc-Rd-YG2"/>
+                                    <constraint firstItem="svJ-Rt-mye" firstAttribute="centerX" secondItem="0wp-hA-1mi" secondAttribute="centerX" id="Kz5-04-LqY"/>
+                                    <constraint firstItem="hVy-PY-oW7" firstAttribute="height" secondItem="0wp-hA-1mi" secondAttribute="height" multiplier="0.25" id="QAj-yu-ZTz"/>
+                                    <constraint firstItem="hVy-PY-oW7" firstAttribute="top" secondItem="0wp-hA-1mi" secondAttribute="top" id="sYI-b5-IWT"/>
+                                    <constraint firstItem="svJ-Rt-mye" firstAttribute="height" secondItem="0wp-hA-1mi" secondAttribute="height" id="wVV-bM-yQM"/>
+                                    <constraint firstItem="svJ-Rt-mye" firstAttribute="centerY" secondItem="0wp-hA-1mi" secondAttribute="centerY" id="xeH-U6-BhU"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="svJ-Rt-mye"/>
+                                        <exclude reference="hVy-PY-oW7"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="2bm-N3-Tp9"/>
+                                        <exclude reference="Kz5-04-LqY"/>
+                                        <exclude reference="wVV-bM-yQM"/>
+                                        <exclude reference="xeH-U6-BhU"/>
+                                        <exclude reference="6fc-Rd-YG2"/>
+                                        <exclude reference="QAj-yu-ZTz"/>
+                                        <exclude reference="sYI-b5-IWT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                                    <mask key="subviews">
+                                        <include reference="svJ-Rt-mye"/>
+                                        <include reference="hVy-PY-oW7"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="2bm-N3-Tp9"/>
+                                        <include reference="Kz5-04-LqY"/>
+                                        <include reference="wVV-bM-yQM"/>
+                                        <include reference="xeH-U6-BhU"/>
+                                        <include reference="6fc-Rd-YG2"/>
+                                        <include reference="QAj-yu-ZTz"/>
+                                        <include reference="sYI-b5-IWT"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-0l-GFe" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="20" y="241" width="280" height="60"/>
-                                <animations/>
                                 <state key="normal" title="Facebook Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1116,27 +1177,42 @@
                                     <outlet property="delegate" destination="waF-oB-RCF" id="kBf-yT-ugF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVD-Ns-2oZ">
-                                <rect key="frame" x="60" y="251" width="200" height="40"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Log Out" backgroundImage="container-grey.png"/>
-                                <state key="highlighted" backgroundImage="button-highlighted.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLogOutPressed:" destination="waF-oB-RCF" eventType="touchUpInside" id="Tbd-Mh-bx1"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0wp-hA-1mi" firstAttribute="height" secondItem="DqR-fj-WUp" secondAttribute="height" multiplier="0.333" id="3lG-Lr-5fn"/>
+                            <constraint firstItem="0wp-hA-1mi" firstAttribute="top" secondItem="bx2-FW-gBQ" secondAttribute="bottom" id="4UN-xp-RER"/>
+                            <constraint firstItem="0wp-hA-1mi" firstAttribute="width" secondItem="DqR-fj-WUp" secondAttribute="width" id="eEz-mk-oMU"/>
+                            <constraint firstItem="kqv-0l-GFe" firstAttribute="centerX" secondItem="DqR-fj-WUp" secondAttribute="centerX" id="jK9-J5-Dwj"/>
+                            <constraint firstItem="kqv-0l-GFe" firstAttribute="centerY" secondItem="DqR-fj-WUp" secondAttribute="centerY" id="qmR-Vl-i4C"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0wp-hA-1mi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3lG-Lr-5fn"/>
+                                <exclude reference="4UN-xp-RER"/>
+                                <exclude reference="eEz-mk-oMU"/>
+                                <exclude reference="jK9-J5-Dwj"/>
+                                <exclude reference="qmR-Vl-i4C"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="0wp-hA-1mi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3lG-Lr-5fn"/>
+                                <include reference="4UN-xp-RER"/>
+                                <include reference="eEz-mk-oMU"/>
+                                <include reference="jK9-J5-Dwj"/>
+                                <include reference="qmR-Vl-i4C"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="emailLogOutButton" destination="SVD-Ns-2oZ" id="E4X-Fy-GiV"/>
                         <outlet property="facebookLoginButton" destination="kqv-0l-GFe" id="D3w-il-cEw"/>
                     </connections>
                 </viewController>

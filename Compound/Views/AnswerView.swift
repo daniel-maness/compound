@@ -53,11 +53,11 @@ import UIKit
     }
     
     func formatWord(word: String) -> NSMutableAttributedString {
-        var leftWord = word.substringTo(self.keyword.characters.count)
+        var leftWord = word.substringTo(self.keyword.characters.count - 1)
         var rightWord: String
 
         if leftWord == self.keyword {
-            rightWord = word.substringFrom(self.keyword.characters.count - 1)
+            rightWord = word.substringFrom(self.keyword.characters.count)
         } else {
             leftWord = word.substringTo(word.characters.count - self.keyword.characters.count - 1)
             rightWord = word.substringFrom(leftWord.characters.count)
