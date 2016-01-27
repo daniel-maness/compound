@@ -1376,7 +1376,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/danielmaness/Documents/FacebookSDK,
+					/Users/sunnihammer/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Compound/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1398,7 +1398,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/danielmaness/Documents/FacebookSDK,
+					/Users/sunnihammer/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Compound/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
